@@ -3,61 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AI 订阅看板</title>
+    <title>AI 订阅看板 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
-        body { background-color: #0b0f1a; color: #e2e8f0; font-family: sans-serif; overflow-x: hidden; }
-        .glass-card { background: rgba(22, 30, 46, 0.9); border: 1px solid rgba(255,255,255,0.08); }
-        .compact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
-        @media (min-width: 768px) { .compact-grid { grid-template-columns: repeat(3, 1fr); } }
-        .active-ring { ring: 2px solid #3b82f6; background: rgba(59, 130, 246, 0.1) !important; }
+        body { background-color: #0b111e; color: #e2e8f0; font-family: sans-serif; }
+        .glass-card { background: rgba(22, 32, 51, 0.9); border: 1px solid rgba(255,255,255,0.06); }
+        .compact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .active-ring { ring: 2px solid #3b82f6; background: rgba(59, 130, 246, 0.15) !important; }
+        [x-cloak] { display: none !important; }
     </style>
 </head>
-<body x-data="aiManager()" x-init="loadData()" class="p-2 sm:p-4">
+<body x-data="aiManager()" x-init="loadData()" class="p-3 sm:p-6">
 
-    <div class="max-w-md mx-auto sm:max-w-4xl">
+    <div class="max-w-md mx-auto">
         
-        <header class="glass-card p-4 rounded-xl mb-4 sticky top-0 z-50 shadow-2xl">
-            <div class="flex justify-between items-center mb-2">
-                <h1 class="text-lg font-bold text-blue-400">AI 订阅资产</h1>
+        <header class="glass-card p-4 rounded-2xl mb-6 sticky top-0 z-50 shadow-2xl">
+            <div class="flex justify-between items-center mb-3">
+                <h1 class="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">AI 订阅资产</h1>
                 <div class="text-right">
-                    <p class="text-xl font-mono font-bold text-emerald-400" x-text="'¥' + totalCNY.toFixed(0)"></p>
-                    <p class="text-xs text-slate-500" x-text="'$' + totalUSD.toFixed(1)"></p>
+                    <p class="text-2xl font-mono font-bold text-emerald-400" x-text="'¥' + totalCNY.toFixed(0)"></p>
+                    <p class="text-[10px] text-slate-500 uppercase">Est. $ <span x-text="totalUSD.toFixed(1)"></span></p>
                 </div>
             </div>
             
-            <div class="border-t border-slate-800 pt-2">
-                <p class="text-[10px] text-slate-500 uppercase tracking-tighter mb-1">当前订阅清单:</p>
-                <div class="flex flex-wrap gap-1">
+            <div class="border-t border-slate-700/50 pt-3">
+                <p class="text-[10px] text-slate-500 font-bold mb-2">已购清单:</p>
+                <div class="flex flex-wrap gap-1.5">
                     <template x-for="name in purchased" :key="name">
-                        <span class="text-[10px] px-1.5 py-0.5 bg-blue-500/20 text-blue-300 rounded" x-text="name"></span>
+                        <span class="text-[10px] px-2 py-0.5 bg-blue-500/20 text-blue-300 rounded-md border border-blue-500/30" x-text="name"></span>
                     </template>
-                    <span x-show="purchased.length === 0" class="text-[10px] text-slate-600">暂无勾选</span>
+                    <span x-show="purchased.length === 0" class="text-[10px] text-slate-600 italic">暂无勾选...</span>
                 </div>
             </div>
         </header>
 
-        <div class="space-y-6">
+        <div class="space-y-8">
             <template x-for="(group, category) in tools" :key="category">
                 <section>
-                    <h2 class="text-xs font-bold mb-2 text-slate-500 flex items-center gap-2">
-                        <span class="w-1 h-3 bg-blue-500"></span>
+                    <h2 class="text-[11px] font-black mb-3 text-slate-500 uppercase tracking-widest flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
                         <span x-text="category"></span>
                     </h2>
                     <div class="compact-grid">
                         <template x-for="tool in group" :key="tool.name">
                             <div @click="toggleTool(tool)" 
                                  :class="isPurchased(tool.name) ? 'active-ring border-blue-500' : ''"
-                                 class="glass-card p-3 rounded-lg cursor-pointer transition-all active:scale-95">
-                                <div class="flex justify-between items-start">
-                                    <div class="w-8 h-8 rounded bg-slate-800 flex items-center justify-center text-sm font-bold mb-1" x-text="tool.name[0]"></div>
-                                    <div x-show="isPurchased(tool.name)" class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                                 class="glass-card p-3 rounded-xl cursor-pointer transition-all active:scale-95 hover:border-slate-600">
+                                <div class="flex justify-between items-center mb-2">
+                                    <div class="w-7 h-7 rounded-lg bg-slate-800 flex items-center justify-center text-xs font-bold" x-text="tool.name[0]"></div>
+                                    <div x-show="isPurchased(tool.name)" class="w-2 h-2 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6]"></div>
                                 </div>
-                                <h3 class="text-xs font-bold text-slate-200 truncate" x-text="tool.name"></h3>
+                                <h3 class="text-xs font-bold text-slate-200" x-text="tool.name"></h3>
                                 <div class="flex justify-between items-center mt-2">
-                                    <span class="text-[10px] text-slate-500" x-text="tool.priceStr"></span>
-                                    <span class="text-[9px] text-blue-500 font-mono" x-text="tool.short"></span>
+                                    <span :class="tool.price === 0 ? 'text-emerald-500' : 'text-slate-500'" class="text-[10px] font-mono" x-text="tool.priceStr"></span>
+                                    <span class="text-[9px] text-slate-600" x-text="tool.short"></span>
                                 </div>
                             </div>
                         </template>
@@ -66,8 +66,29 @@
             </template>
         </div>
 
-        <footer class="mt-8 mb-4 text-center text-[10px] text-slate-700">
-            去重逻辑：GPT/Sora 统一计费 | Gemini/NotebookLM 统一计费
+        <section class="mt-12 mb-10">
+            <h2 class="text-[11px] font-black mb-3 text-slate-500 uppercase tracking-widest flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-purple-500 rounded-full"></span>
+                <span>社区反馈 (留言板)</span>
+            </h2>
+            <div class="glass-card p-4 rounded-2xl">
+                <textarea x-model="newComment" class="w-full bg-slate-900/50 border border-slate-700 rounded-xl p-3 text-xs focus:outline-none focus:border-purple-500 placeholder-slate-600" rows="3" placeholder="说下你正在用的模型和价格..."></textarea>
+                <button @click="addComment()" class="mt-2 w-full bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold py-2 rounded-lg transition-colors">提交留言</button>
+                
+                <div class="mt-4 space-y-3 max-h-48 overflow-y-auto pr-2">
+                    <template x-for="cmt in comments" :key="cmt.time">
+                        <div class="bg-slate-800/40 p-2.5 rounded-lg border-l-2 border-purple-500">
+                            <p class="text-[11px] text-slate-300" x-text="cmt.text"></p>
+                            <p class="text-[9px] text-slate-600 mt-1" x-text="cmt.time"></p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-10 mb-6 text-center text-[9px] text-slate-700 space-y-1">
+            <p>已购数据与留言均存储于本地浏览器</p>
+            <p>去重: GPT/Sora | Gemini/NotebookLM</p>
         </footer>
     </div>
 
@@ -76,12 +97,16 @@
             return {
                 exchangeRate: 7.2,
                 purchased: [],
+                newComment: '',
+                comments: [],
                 tools: {
                     "大模型": [
                         { name: "ChatGPT", short: "OpenAI", price: 20, unit: "USD", priceStr: "$20", bundle: "openai" },
                         { name: "Gemini", short: "Google", price: 20, unit: "USD", priceStr: "$20", bundle: "google" },
+                        { name: "元宝", short: "Tencent", price: 0, unit: "CNY", priceStr: "Free" },
+                        { name: "豆包", short: "Byte", price: 0, unit: "CNY", priceStr: "Free" },
                         { name: "Grok", short: "xAI", price: 16, unit: "USD", priceStr: "$16" },
-                        { name: "智谱清言", short: "Domestic", price: 49, unit: "CNY", priceStr: "¥49" },
+                        { name: "智谱清言", short: "Zhipu", price: 49, unit: "CNY", priceStr: "¥49" },
                         { name: "千问", short: "Ali", price: 0, unit: "CNY", priceStr: "Free" }
                     ],
                     "视频 & 绘画": [
@@ -91,26 +116,23 @@
                         { name: "Lovart", short: "Art", price: 12, unit: "USD", priceStr: "$12" },
                         { name: "海螺", short: "MiniMax", price: 58, unit: "CNY", priceStr: "¥58" }
                     ],
-                    "VibeCoding & PPT": [
-                        { name: "Claude", short: "Logic", price: 20, unit: "USD", priceStr: "$20" },
-                        { name: "Cursor", short: "Code", price: 20, unit: "USD", priceStr: "$20" },
+                    "效率 & Vibe": [
+                        { name: "Claude", short: "Anthropic", price: 20, unit: "USD", priceStr: "$20" },
+                        { name: "Cursor", short: "IDE", price: 20, unit: "USD", priceStr: "$20" },
                         { name: "Manus", short: "PPT", price: 19, unit: "USD", priceStr: "$19" },
                         { name: "YouMind", short: "Design", price: 15, unit: "USD", priceStr: "$15" },
                         { name: "NotebookLM", short: "Google", price: 0, unit: "USD", priceStr: "Free", bundle: "google" }
                     ],
-                    "Agent": [
-                        { name: "OiiOii", short: "Auto", price: 25, unit: "USD", priceStr: "$25" },
-                        { name: "medeo", short: "Logic", price: 20, unit: "USD", priceStr: "$20" }
+                    "智能体": [
+                        { name: "OiiOii", short: "Agent", price: 25, unit: "USD", priceStr: "$25" },
+                        { name: "medeo", short: "Medical", price: 20, unit: "USD", priceStr: "$20" }
                     ]
                 },
 
-                // 核心去重算法
                 get totalUSD() {
                     let total = 0;
                     let processedBundles = new Set();
-                    let selectedTools = this.allToolsArray().filter(t => this.purchased.includes(t.name));
-
-                    selectedTools.forEach(tool => {
+                    this.allToolsArray().filter(t => this.purchased.includes(t.name)).forEach(tool => {
                         if (tool.bundle) {
                             if (!processedBundles.has(tool.bundle)) {
                                 total += tool.unit === "USD" ? tool.price : tool.price / this.exchangeRate;
@@ -126,18 +148,33 @@
                 get totalCNY() { return this.totalUSD * this.exchangeRate; },
                 allToolsArray() { return Object.values(this.tools).flat(); },
                 toggleTool(tool) {
-                    if (this.purchased.includes(tool.name)) {
-                        this.purchased = this.purchased.filter(t => t !== tool.name);
-                    } else {
-                        this.purchased.push(tool.name);
-                    }
+                    this.purchased = this.purchased.includes(tool.name) 
+                        ? this.purchased.filter(t => t !== tool.name) 
+                        : [...this.purchased, tool.name];
                     this.saveData();
                 },
                 isPurchased(name) { return this.purchased.includes(name); },
-                saveData() { localStorage.setItem('ai_tracker_v3', JSON.stringify(this.purchased)); },
+                
+                addComment() {
+                    if (!this.newComment.trim()) return;
+                    this.comments.unshift({
+                        text: this.newComment,
+                        time: new Date().toLocaleString('zh-CN', { hour12: false })
+                    });
+                    this.newComment = '';
+                    this.saveData();
+                },
+
+                saveData() {
+                    localStorage.setItem('ai_tracker_final', JSON.stringify({
+                        purchased: this.purchased,
+                        comments: this.comments
+                    }));
+                },
                 loadData() {
-                    const saved = localStorage.getItem('ai_tracker_v3');
-                    if (saved) this.purchased = JSON.parse(saved);
+                    const saved = JSON.parse(localStorage.getItem('ai_tracker_final') || '{}');
+                    this.purchased = saved.purchased || [];
+                    this.comments = saved.comments || [];
                 }
             }
         }
