@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI 订阅看板</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body { background-color: #0b0f1a; color: #e2e8f0; font-family: sans-serif; overflow-x: hidden; }
+        .glass-card { background: rgba(22, 30, 46, 0.9); border: 1px solid rgba(255,255,255,0.08); }
+        .compact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+        @media (min-width: 768px) { .compact-grid { grid-template-columns: repeat(3, 1fr); } }
+        .active-ring { ring: 2px solid #3b82f6; background: rgba(59, 130, 246, 0.1) !important; }
+    </style>
+</head>
+<body x-data="aiManager()" x-init="loadData()" class="p-2 sm:p-4">
+
+    <div class="max-w-md mx-auto sm:max-w-4xl">
+        
+        <header class="glass-card p-4 rounded-xl mb-4 sticky top-0 z-50 shadow-2xl">
+            <div class="flex justify-between items-center mb-2">
+                <h1 class="text-lg font-bold text-blue-400">AI 订阅资产</h1>
+                <div class="text-right">
+                    <p class="text-xl font-mono font-bold text-emerald-400" x-text="'¥' + totalCNY.toFixed(0)"></p>
+                    <p class="text-xs text-slate-500" x-text="'$' + totalUSD.toFixed(1)"></p>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-2">
+                <p class="text-[10px] text-slate-500 uppercase tracking-tighter mb-1">当前订阅清单:</p>
+                <div class="flex flex-wrap gap-1">
+                    <template x-for="name in purchased" :key="name">
+                        <span class="text-[10px] px-1.5 py-0.5 bg-blue-500/20 text-blue-300 rounded" x-text="name"></span>
+                    </template>
+                    <span x-show="purchased.length === 0" class="text-[10px] text-slate-600">暂无勾选</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="space-y-6">
+            <template x-for="(group, category) in tools" :key="category">
+                <section>
+                    <h2 class="text-xs font-bold mb-2 text-slate-500 flex items-center gap-2">
+                        <span class="w-1 h-3 bg-blue-500"></span>
+                        <span x-text="category"></span>
+                    </h2>
+                    <div class="compact-grid">
+                        <template x-for="tool in group" :key="tool.name">
+                            <div @click="toggleTool(tool)" 
+                                 :class="isPurchased(tool.name) ? 'active-ring border-blue-500' : ''"
+                                 class="glass-card p-3 rounded-lg cursor-pointer transition-all active:scale-95">
+                                <div class="flex justify-between items-start">
+                                    <div class="w-8 h-8 rounded bg-slate-800 flex items-center justify-center text-sm font-bold mb-1" x-text="tool.name[0]"></div>
+                                    <div x-show="isPurchased(tool.name)" class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                                </div>
+                                <h3 class="text-xs font-bold text-slate-200 truncate" x-text="tool.name"></h3>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-[10px] text-slate-500" x-text="tool.priceStr"></span>
+                                    <span class="text-[9px] text-blue-500 font-mono" x-text="tool.short"></span>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </section>
+            </template>
+        </div>
+
+        <footer class="mt-8 mb-4 text-center text-[10px] text-slate-700">
+            去重逻辑：GPT/Sora 统一计费 | Gemini/NotebookLM 统一计费
+        </footer>
+    </div>
+
+    <script>
+        function aiManager() {
+            return {
+                exchangeRate: 7.2,
+                purchased: [],
+                tools: {
+                    "大模型": [
+                        { name: "ChatGPT", short: "OpenAI", price: 20, unit: "USD", priceStr: "$20", bundle: "openai" },
+                        { name: "Gemini", short: "Google", price: 20, unit: "USD", priceStr: "$20", bundle: "google" },
+                        { name: "Grok", short: "xAI", price: 16, unit: "USD", priceStr: "$16" },
+                        { name: "智谱清言", short: "Domestic", price: 49, unit: "CNY", priceStr: "¥49" },
+                        { name: "千问", short: "Ali", price: 0, unit: "CNY", priceStr: "Free" }
+                    ],
+                    "视频 & 绘画": [
+                        { name: "Sora", short: "OpenAI", price: 20, unit: "USD", priceStr: "Bundle", bundle: "openai" },
+                        { name: "可灵", short: "Kling", price: 66, unit: "CNY", priceStr: "¥66" },
+                        { name: "即梦", short: "Byte", price: 69, unit: "CNY", priceStr: "¥69" },
+                        { name: "Lovart", short: "Art", price: 12, unit: "USD", priceStr: "$12" },
+                        { name: "海螺", short: "MiniMax", price: 58, unit: "CNY", priceStr: "¥58" }
+                    ],
+                    "VibeCoding & PPT": [
+                        { name: "Claude", short: "Logic", price: 20, unit: "USD", priceStr: "$20" },
+                        { name: "Cursor", short: "Code", price: 20, unit: "USD", priceStr: "$20" },
+                        { name: "Manus", short: "PPT", price: 19, unit: "USD", priceStr: "$19" },
+                        { name: "YouMind", short: "Design", price: 15, unit: "USD", priceStr: "$15" },
+                        { name: "NotebookLM", short: "Google", price: 0, unit: "USD", priceStr: "Free", bundle: "google" }
+                    ],
+                    "Agent": [
+                        { name: "OiiOii", short: "Auto", price: 25, unit: "USD", priceStr: "$25" },
+                        { name: "medeo", short: "Logic", price: 20, unit: "USD", priceStr: "$20" }
+                    ]
+                },
+
+                // 核心去重算法
+                get totalUSD() {
+                    let total = 0;
+                    let processedBundles = new Set();
+                    let selectedTools = this.allToolsArray().filter(t => this.purchased.includes(t.name));
+
+                    selectedTools.forEach(tool => {
+                        if (tool.bundle) {
+                            if (!processedBundles.has(tool.bundle)) {
+                                total += tool.unit === "USD" ? tool.price : tool.price / this.exchangeRate;
+                                processedBundles.add(tool.bundle);
+                            }
+                        } else {
+                            total += tool.unit === "USD" ? tool.price : tool.price / this.exchangeRate;
+                        }
+                    });
+                    return total;
+                },
+
+                get totalCNY() { return this.totalUSD * this.exchangeRate; },
+                allToolsArray() { return Object.values(this.tools).flat(); },
+                toggleTool(tool) {
+                    if (this.purchased.includes(tool.name)) {
+                        this.purchased = this.purchased.filter(t => t !== tool.name);
+                    } else {
+                        this.purchased.push(tool.name);
+                    }
+                    this.saveData();
+                },
+                isPurchased(name) { return this.purchased.includes(name); },
+                saveData() { localStorage.setItem('ai_tracker_v3', JSON.stringify(this.purchased)); },
+                loadData() {
+                    const saved = localStorage.getItem('ai_tracker_v3');
+                    if (saved) this.purchased = JSON.parse(saved);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
