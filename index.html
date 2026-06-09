@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mda100_20260609_161939</title>
+  <title>mda100_20260609_164705</title>
   <style>
     :root {
       --ink:#101418; --muted:#667085; --paper:#eef2ff; --panel:#fff; --line:#d8dee7;
@@ -88,6 +88,24 @@
     .card-section-title { color:#344054; font-size:12px; font-weight:850; margin-bottom:7px; }
     .card-section-content { color:#344054; font-size:13px; line-height:1.7; }
     .card-section.advice .card-section-content { color:#1f2937; }
+    .advice-panel { border:1px solid #e2e8f0; background:#fbfcfe; border-radius:10px; overflow:hidden; font-size:13px; }
+    .advice-head { display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:10px 12px; background:#f8fafc; border-bottom:1px solid #e5e7eb; color:#344054; }
+    .advice-head strong { color:#111827; font-weight:850; }
+    .advice-tag { display:inline-flex; align-items:center; border-radius:999px; padding:2px 8px; background:#e0f2fe; color:#075985; font-size:11px; font-weight:850; }
+    .advice-line { display:grid; grid-template-columns:58px 1fr; gap:10px; padding:10px 12px; border-bottom:1px solid #eef2f7; color:#344054; line-height:1.65; }
+    .advice-label { color:#667085; font-size:11px; font-weight:850; letter-spacing:.2px; white-space:nowrap; }
+    .advice-actions { display:grid; grid-template-columns:1fr 1fr; gap:0; border-bottom:1px solid #eef2f7; }
+    .advice-action { padding:10px 12px; min-width:0; }
+    .advice-action + .advice-action { border-left:1px solid #eef2f7; }
+    .advice-action .op-badge { margin-top:5px; }
+    .advice-metrics { display:flex; flex-wrap:wrap; gap:8px; padding:10px 12px; }
+    .advice-metrics span { display:inline-flex; gap:6px; align-items:center; border-radius:8px; padding:6px 8px; background:#fff; border:1px solid #e5e7eb; color:#344054; line-height:1.4; }
+    .advice-metrics b { color:#475467; font-size:11px; white-space:nowrap; }
+    .advice-metrics .defense { background:#fff7ed; border-color:#fed7aa; color:#9a3412; }
+    .advice-metrics .risk { background:#f8fafc; border-color:#cbd5e1; color:#334155; }
+    .advice-buy .advice-head { background:#fff1f2; } .advice-buy .advice-tag { background:#fee2e2; color:#991b1b; }
+    .advice-hold .advice-head { background:#eff6ff; } .advice-hold .advice-tag { background:#dbeafe; color:#1e40af; }
+    .advice-watch .advice-head { background:#f8fafc; } .advice-watch .advice-tag { background:#e2e8f0; color:#334155; }
     .no-results { display:none; color:#667085; padding:24px; text-align:center; border:1px dashed #cbd5e1; background:#f8fafc; }
     .detail-list { display:grid; grid-template-columns:repeat(auto-fill,minmax(420px,1fr)); gap:10px; }
     .detail-card { border:1px solid #e5e7eb; background:#fff; border-radius:10px; padding:12px; }
@@ -98,7 +116,7 @@
     .detail-card.score-5 .mini-score { background:#fee2e2; color:#dc2626; } .detail-card.score-4 .mini-score { background:#dbeafe; color:#1f5eff; } .detail-card.score-3 .mini-score { background:#dcfce7; color:#0f766e; }
     .detail-meta { display:flex; flex-wrap:wrap; gap:7px; margin-top:10px; }
     .detail-meta span { background:#f8fafc; border:1px solid #edf2f7; border-radius:999px; padding:4px 8px; font-size:12px; color:#475467; max-width:100%; overflow-wrap:anywhere; }
-    @media (max-width:960px) { .grid,.kpis,.summary-grid,.cards-container,.detail-list{grid-template-columns:1fr;} .shell{padding:12px;} .hero-head{display:block;} .stats-pill{margin-left:0;} }
+    @media (max-width:960px) { .grid,.kpis,.summary-grid,.cards-container,.detail-list,.advice-actions{grid-template-columns:1fr;} .shell{padding:12px;} .hero-head{display:block;} .stats-pill{margin-left:0;} .advice-action + .advice-action{border-left:0;border-top:1px solid #eef2f7;} }
     @page { size:A4 landscape; margin:10mm; }
     @media print { *{-webkit-print-color-adjust:exact; print-color-adjust:exact;} body{background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 52%,#f1f5f9 100%);} .shell{max-width:none; padding:12px;} .summary-grid{grid-template-columns:repeat(6,minmax(110px,1fr)) !important;} .kpis{grid-template-columns:repeat(4,minmax(120px,1fr)) !important;} .grid{grid-template-columns:1.1fr .9fr !important;} .cards-container{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .detail-list{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .hero,.stock-card,.detail-card{break-inside:avoid;} table{font-size:8px; min-width:0;} .card-controls{display:none;} }
   </style>
@@ -108,7 +126,7 @@
     <div class="hero">
       <div class="hero-head">
         <div>
-          <h1>mda100_20260609_161939</h1>
+          <h1>mda100_20260609_164705</h1>
           <div class="subtitle">mda100以核心100只AI科技股票等权编制，历史曲线自2026年首个交易日开始累计。行情标记：VERIFIED_FUTU_OPEND。</div>
           <div class="verify-strip">
             <span>二次确认</span>
@@ -117,7 +135,7 @@
             <span class="verify-detail" title="报告日期与指数日期一致:OK / 行情日期覆盖本次报告日:OK / 所有可用行情均已打 Futu 核验标记:OK / 指数涨跌幅与股票池等权涨跌一致:OK / 上涨数量一致:OK / 下跌数量一致:OK / 覆盖率一致:OK">生成与发布前已复核</span>
           </div>
         </div>
-        <div class="meta">Report 2026-06-09<br>Index 2026-06-09<br>Generated 2026-06-09T16:19:39</div>
+        <div class="meta">Report 2026-06-09<br>Index 2026-06-09<br>Generated 2026-06-09T16:47:05</div>
       </div>
       <div class="summary-grid">
         <div class="summary-card"><div class="label">6月9日 mda100点位</div><div class="value">2190.5</div></div>
@@ -323,7 +341,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">已经出现支撑确认或假破位修复，更接近可执行买点。高纯石英材料方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；5/10日金叉；放量转强。操作上，未建仓可围绕观察区小仓试探，站上5日线68.5再加；已建仓可在不破支撑时加仓，跌回支撑线下方且收不回则减仓，防守位参考67.8。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：67.8。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-buy">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>已经出现支撑确认或假破位修复，更接近可执行买点。</strong>
+                <span>高纯石英材料方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；5/10日金叉；放量转强</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-buy">买入/加仓</span><span class="op-text">可围绕观察区小仓试探，站上5日线68.5再加。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">不破支撑可加仓；跌回支撑线下方且收不回则减仓，防守位参考67.8。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>67.8</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -354,7 +399,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">已经出现支撑确认或假破位修复，更接近可执行买点。半导体硅片方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；5/10日金叉；20日新高突破。操作上，未建仓可围绕观察区小仓试探，站上5日线28.2再加；已建仓可在不破支撑时加仓，跌回支撑线下方且收不回则减仓，防守位参考26.5。参考买入观察区：31.1-32.4；防守位：26.5。主要风险：短线偏离20日线过大。</div>
+            
+            <div class="advice-panel advice-buy">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>已经出现支撑确认或假破位修复，更接近可执行买点。</strong>
+                <span>半导体硅片方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；5/10日金叉；20日新高突破</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-buy">买入/加仓</span><span class="op-text">可围绕观察区小仓试探，站上5日线28.2再加。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">不破支撑可加仓；跌回支撑线下方且收不回则减仓，防守位参考26.5。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>31.1-32.4</span>
+                <span class="defense"><b>防守位</b>26.5</span>
+                <span class="risk"><b>风险</b>短线偏离20日线过大</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -385,7 +457,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">已经出现支撑确认或假破位修复，更接近可执行买点。光连接器/光器件方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；放量转强。操作上，未建仓可围绕观察区小仓试探，站上5日线168.9再加；已建仓可在不破支撑时加仓，跌回支撑线下方且收不回则减仓，防守位参考158.9。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：158.9。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-buy">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>已经出现支撑确认或假破位修复，更接近可执行买点。</strong>
+                <span>光连接器/光器件方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；放量转强</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-buy">买入/加仓</span><span class="op-text">可围绕观察区小仓试探，站上5日线168.9再加。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">不破支撑可加仓；跌回支撑线下方且收不回则减仓，防守位参考158.9。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>158.9</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -416,7 +515,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">已经出现支撑确认或假破位修复，更接近可执行买点。存储模组/存储芯片方向仍可跟踪；当前信号为：20日线向上；强势曲线；回踩30日线附近；踩上30日线并拉回；30日线附近洗盘低吸；30日线假破位修复；缩量回踩。操作上，未建仓可围绕观察区小仓试探，站上5日线312.0再加；已建仓可在不破支撑时加仓，跌回支撑线下方且收不回则减仓，防守位参考292.8。参考买入观察区：300.4-309.6；防守位：292.8。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-buy">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>已经出现支撑确认或假破位修复，更接近可执行买点。</strong>
+                <span>存储模组/存储芯片方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>20日线向上；强势曲线；回踩30日线附近；踩上30日线并拉回；30日线附近洗盘低吸；30日线假破位修复；缩量回踩</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-buy">买入/加仓</span><span class="op-text">可围绕观察区小仓试探，站上5日线312.0再加。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">不破支撑可加仓；跌回支撑线下方且收不回则减仓，防守位参考292.8。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>300.4-309.6</span>
+                <span class="defense"><b>防守位</b>292.8</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -447,7 +573,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">已经出现支撑确认或假破位修复，更接近可执行买点。设备精密零部件方向仍可跟踪；当前信号为：均线多头；20日线向上；强势曲线；踩上30日线并拉回；30日线假破位修复；放量转强。操作上，未建仓可围绕观察区小仓试探，站上5日线147.5再加；已建仓可在不破支撑时加仓，跌回支撑线下方且收不回则减仓，防守位参考151.8。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：151.8。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-buy">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>已经出现支撑确认或假破位修复，更接近可执行买点。</strong>
+                <span>设备精密零部件方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；强势曲线；踩上30日线并拉回；30日线假破位修复；放量转强</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-buy">买入/加仓</span><span class="op-text">可围绕观察区小仓试探，站上5日线147.5再加。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">不破支撑可加仓；跌回支撑线下方且收不回则减仓，防守位参考151.8。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>151.8</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -478,7 +631,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">已经出现支撑确认或假破位修复，更接近可执行买点。PCB制造方向仍可跟踪；当前信号为：均线多头；20日线向上；强势曲线；踩上30日线并拉回。操作上，未建仓可围绕观察区小仓试探，站上5日线122.1再加；已建仓可在不破支撑时加仓，跌回支撑线下方且收不回则减仓，防守位参考113.4。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：113.4。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-buy">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>已经出现支撑确认或假破位修复，更接近可执行买点。</strong>
+                <span>PCB制造方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；强势曲线；踩上30日线并拉回</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-buy">买入/加仓</span><span class="op-text">可围绕观察区小仓试探，站上5日线122.1再加。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">不破支撑可加仓；跌回支撑线下方且收不回则减仓，防守位参考113.4。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>113.4</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -509,7 +689,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。贵金属/电子材料方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线24.2继续持有，跌破5日线先减1/3，跌破10日线23.0减到半仓，跌破20日线21.7则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：21.0。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>贵金属/电子材料方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线；放量转强</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线24.2继续持有；跌破5日线先减1/3；跌破10日线23.0减到半仓；跌破20日线21.7卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>21.0</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -540,7 +747,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势和买点较好，但更适合等价格落到舒服位置。CMP抛光液/湿电子化学品方向仍可跟踪；当前信号为：20日线向上；回踩30日线附近；踩上50日线并拉回；30日线辅助买点；50日线假破位修复；缩量回踩。操作上，不建议情绪化追高，优先等回踩观察区、缩量企稳或盘中承接明显后再动。参考买入观察区：276.8-285.2；防守位：283.8。主要风险：跌破20日线或放量大跌。</div>
+            
+            <div class="advice-panel advice-watch">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势和买点较好，但更适合等价格落到舒服位置。</strong>
+                <span>CMP抛光液/湿电子化学品方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>20日线向上；回踩30日线附近；踩上50日线并拉回；30日线辅助买点；50日线假破位修复；缩量回踩</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不建议情绪化追高，优先等回踩观察区、缩量企稳或盘中承接明显后再动。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-hold">持有</span><span class="op-text">已有仓位可持有观察，靠近压力位或放量滞涨时降低仓位。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>276.8-285.2</span>
+                <span class="defense"><b>防守位</b>283.8</span>
+                <span class="risk"><b>风险</b>跌破20日线或放量大跌</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -571,7 +805,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。存储芯片/SoC方向仍可跟踪；当前信号为：均线多头；20日线向上；强势曲线；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线148.7继续持有，跌破5日线先减1/3，跌破10日线150.9减到半仓，跌破20日线145.6则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：141.3。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>存储芯片/SoC方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；强势曲线；放量转强</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线148.7继续持有；跌破5日线先减1/3；跌破10日线150.9减到半仓；跌破20日线145.6卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>141.3</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -602,7 +863,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。高速光模块/CPO方向仍可跟踪；当前信号为：均线多头；20日线向上；强势曲线；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线1214.0继续持有，跌破5日线先减1/3，跌破10日线1186.2减到半仓，跌破20日线1118.9则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：1085.4。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>高速光模块/CPO方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；强势曲线；放量转强</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线1214.0继续持有；跌破5日线先减1/3；跌破10日线1186.2减到半仓；跌破20日线1118.9卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>1085.4</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -633,7 +921,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。存储芯片/MCU方向仍可跟踪；当前信号为：均线多头；20日线向上；强势曲线；5/10日金叉。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线496.8继续持有，跌破5日线先减1/3，跌破10日线489.1减到半仓，跌破20日线458.6则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：444.9。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>存储芯片/MCU方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；强势曲线；5/10日金叉</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线496.8继续持有；跌破5日线先减1/3；跌破10日线489.1减到半仓；跌破20日线458.6卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>444.9</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -664,7 +979,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势底色还在，但买点确认度不够。封测/高性能计算封装方向仍可跟踪；当前信号为：20日线向上；回踩20日线附近；缩量回踩；5/10日金叉。操作上，先放入观察，不急于开仓，等金叉、放量反包或重新站上短均线。参考买入观察区：63.6-65.5；防守位：62.6。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-watch">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势底色还在，但买点确认度不够。</strong>
+                <span>封测/高性能计算封装方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>20日线向上；回踩20日线附近；缩量回踩；5/10日金叉</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">先放入观察，不急于开仓，等金叉、放量反包或重新站上短均线。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">已有仓位轻仓跟踪，跌破关键均线则先降仓。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>63.6-65.5</span>
+                <span class="defense"><b>防守位</b>62.6</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -695,7 +1037,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。光刻胶/电子特气/MO源方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；5/10日金叉；MACD金叉；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线56.1继续持有，跌破5日线先减1/3，跌破10日线54.5减到半仓，跌破20日线56.1则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：54.4。主要风险：连续拉升后利好兑现/追高风险；高位放量，谨防诱多；更适合持仓，不适合作为新买点追入。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>光刻胶/电子特气/MO源方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线；5/10日金叉；MACD金叉；放量转强</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线56.1继续持有；跌破5日线先减1/3；跌破10日线54.5减到半仓；跌破20日线56.1卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>54.4</span>
+                <span class="risk"><b>风险</b>连续拉升后利好兑现/追高风险；高位放量，谨防诱多；更适合持仓，不适合作为新买点追入</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -726,7 +1095,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。MLCC瓷粉/电子陶瓷粉体方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线62.7继续持有，跌破5日线先减1/3，跌破10日线57.6减到半仓，跌破20日线50.7则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：49.2。主要风险：短线偏离20日线过大。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>MLCC瓷粉/电子陶瓷粉体方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线；放量转强</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线62.7继续持有；跌破5日线先减1/3；跌破10日线57.6减到半仓；跌破20日线50.7卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>49.2</span>
+                <span class="risk"><b>风险</b>短线偏离20日线过大</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -757,7 +1153,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。MLCC制程材料方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线87.3继续持有，跌破5日线先减1/3，跌破10日线79.4减到半仓，跌破20日线67.9则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：65.8。主要风险：短线偏离20日线过大。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>MLCC制程材料方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线；放量转强</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线87.3继续持有；跌破5日线先减1/3；跌破10日线79.4减到半仓；跌破20日线67.9卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>65.8</span>
+                <span class="risk"><b>风险</b>短线偏离20日线过大</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -788,7 +1211,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。光纤光缆/海缆方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；20日新高突破。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线97.2继续持有，跌破5日线先减1/3，跌破10日线86.1减到半仓，跌破20日线79.4则卖出大部或退出。参考买入观察区：102.9-107.1；防守位：77.1。主要风险：短线偏离20日线过大。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>光纤光缆/海缆方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线；20日新高突破</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线97.2继续持有；跌破5日线先减1/3；跌破10日线86.1减到半仓；跌破20日线79.4卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>102.9-107.1</span>
+                <span class="defense"><b>防守位</b>77.1</span>
+                <span class="risk"><b>风险</b>短线偏离20日线过大</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -819,7 +1269,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。光纤上游材料方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线51.0继续持有，跌破5日线先减1/3，跌破10日线47.0减到半仓，跌破20日线46.7则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：45.3。主要风险：短线偏离20日线过大。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>光纤上游材料方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线；放量转强</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线51.0继续持有；跌破5日线先减1/3；跌破10日线47.0减到半仓；跌破20日线46.7卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>45.3</span>
+                <span class="risk"><b>风险</b>短线偏离20日线过大</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -850,7 +1327,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。高速PCB/AI服务器板方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线136.4继续持有，跌破5日线先减1/3，跌破10日线132.9减到半仓，跌破20日线121.8则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：118.1。主要风险：短线偏离20日线过大。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>高速PCB/AI服务器板方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线；放量转强</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线136.4继续持有；跌破5日线先减1/3；跌破10日线132.9减到半仓；跌破20日线121.8卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>118.1</span>
+                <span class="risk"><b>风险</b>短线偏离20日线过大</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -881,7 +1385,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。PCB电镀/VCP设备方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线88.3继续持有，跌破5日线先减1/3，跌破10日线86.6减到半仓，跌破20日线81.0则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：78.5。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>PCB电镀/VCP设备方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线88.3继续持有；跌破5日线先减1/3；跌破10日线86.6减到半仓；跌破20日线81.0卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>78.5</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -912,7 +1443,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。PCB钻针/硬质合金刀具方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线71.0继续持有，跌破5日线先减1/3，跌破10日线68.6减到半仓，跌破20日线64.1则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：62.1。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>PCB钻针/硬质合金刀具方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线71.0继续持有；跌破5日线先减1/3；跌破10日线68.6减到半仓；跌破20日线64.1卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>62.1</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -943,7 +1501,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。PCB激光钻孔设备方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线285.7继续持有，跌破5日线先减1/3，跌破10日线286.0减到半仓，跌破20日线264.2则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：256.3。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>PCB激光钻孔设备方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线285.7继续持有；跌破5日线先减1/3；跌破10日线286.0减到半仓；跌破20日线264.2卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>256.3</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -974,7 +1559,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。器件建模/EDA工具方向仍可跟踪；当前信号为：均线多头；20日线向上；5/10日金叉。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线39.0继续持有，跌破5日线先减1/3，跌破10日线38.9减到半仓，跌破20日线38.9则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：37.7。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>器件建模/EDA工具方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；5/10日金叉</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线39.0继续持有；跌破5日线先减1/3；跌破10日线38.9减到半仓；跌破20日线38.9卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>37.7</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -1005,7 +1617,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。PCB电子化学品方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线173.0继续持有，跌破5日线先减1/3，跌破10日线168.9减到半仓，跌破20日线161.8则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：156.9。主要风险：常规波动。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>PCB电子化学品方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线173.0继续持有；跌破5日线先减1/3；跌破10日线168.9减到半仓；跌破20日线161.8卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>等待回踩关键均线或放量确认后再定价</span>
+                <span class="defense"><b>防守位</b>156.9</span>
+                <span class="risk"><b>风险</b>常规波动</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         
@@ -1036,7 +1675,34 @@
           </div>
           <div class="card-section advice">
             <div class="card-section-title">6月10日操作建议</div>
-            <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。CCL覆铜板方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；20日新高突破。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线140.5继续持有，跌破5日线先减1/3，跌破10日线138.3减到半仓，跌破20日线120.2则卖出大部或退出。参考买入观察区：144.5-150.4；防守位：116.6。主要风险：短线偏离20日线过大。</div>
+            
+            <div class="advice-panel advice-hold">
+              <div class="advice-head">
+                <span class="advice-tag">判断</span>
+                <strong>趋势质量较好，更像持仓票，而不是新开仓追价点。</strong>
+                <span>CCL覆铜板方向仍可跟踪</span>
+              </div>
+              <div class="advice-line">
+                <span class="advice-label">信号</span>
+                <span>均线多头；20日线向上；极强曲线；20日新高突破</span>
+              </div>
+              <div class="advice-actions">
+                <div class="advice-action">
+                  <div class="advice-label">未建仓</div>
+                  <span class="op-badge op-watch">观察</span><span class="op-text">不追新仓，等回踩5/10日线或主支撑再说。</span>
+                </div>
+                <div class="advice-action">
+                  <div class="advice-label">已建仓</div>
+                  <span class="op-badge op-sell">减仓/卖出</span><span class="op-text">收盘不破5日线140.5继续持有；跌破5日线先减1/3；跌破10日线138.3减到半仓；跌破20日线120.2卖出大部或退出。</span>
+                </div>
+              </div>
+              <div class="advice-metrics">
+                <span><b>观察区</b>144.5-150.4</span>
+                <span class="defense"><b>防守位</b>116.6</span>
+                <span class="risk"><b>风险</b>短线偏离20日线过大</span>
+              </div>
+            </div>
+    
           </div>
         </article>
         </div>
