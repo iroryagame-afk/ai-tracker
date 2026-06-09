@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mda100_20260609_165114</title>
+  <title>mda100_20260609_165337</title>
   <style>
     :root {
       --ink:#101418; --muted:#667085; --paper:#eef2ff; --panel:#fff; --line:#d8dee7;
@@ -107,15 +107,18 @@
     .advice-hold .advice-head { background:#eff6ff; } .advice-hold .advice-tag { background:#dbeafe; color:#1e40af; }
     .advice-watch .advice-head { background:#f8fafc; } .advice-watch .advice-tag { background:#e2e8f0; color:#334155; }
     .no-results { display:none; color:#667085; padding:24px; text-align:center; border:1px dashed #cbd5e1; background:#f8fafc; }
-    .detail-list { display:grid; grid-template-columns:repeat(auto-fill,minmax(420px,1fr)); gap:10px; }
-    .detail-card { border:1px solid #e5e7eb; background:#fff; border-radius:10px; padding:12px; }
-    .detail-main { display:flex; gap:10px; align-items:flex-start; }
-    .detail-main h3 { margin:0 0 4px; font-size:15px; }
-    .detail-main p { margin:0; color:#667085; font-size:12px; }
-    .mini-score { width:34px; height:34px; border-radius:9px; background:#eef2ff; color:#1f5eff; display:flex; align-items:center; justify-content:center; font-weight:850; flex:0 0 auto; }
+    .detail-list { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:8px; }
+    .detail-card { border:1px solid #e5e7eb; background:#fff; border-radius:9px; padding:9px; min-height:0; }
+    .detail-main { display:flex; gap:8px; align-items:flex-start; }
+    .detail-main h3 { margin:0 0 2px; font-size:14px; line-height:1.25; }
+    .detail-main p { margin:0; color:#667085; font-size:11px; line-height:1.35; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:285px; }
+    .mini-score { width:30px; height:30px; border-radius:8px; background:#eef2ff; color:#1f5eff; display:flex; align-items:center; justify-content:center; font-weight:850; flex:0 0 auto; }
     .detail-card.score-5 .mini-score { background:#fee2e2; color:#dc2626; } .detail-card.score-4 .mini-score { background:#dbeafe; color:#1f5eff; } .detail-card.score-3 .mini-score { background:#dcfce7; color:#0f766e; }
-    .detail-meta { display:flex; flex-wrap:wrap; gap:7px; margin-top:10px; }
-    .detail-meta span { background:#f8fafc; border:1px solid #edf2f7; border-radius:999px; padding:4px 8px; font-size:12px; color:#475467; max-width:100%; overflow-wrap:anywhere; }
+    .detail-meta { display:flex; flex-wrap:wrap; gap:5px; margin-top:7px; }
+    .detail-meta span { background:#f8fafc; border:1px solid #edf2f7; border-radius:999px; padding:3px 7px; font-size:11px; color:#475467; max-width:100%; overflow-wrap:anywhere; line-height:1.35; }
+    .detail-meta .detail-wide { flex-basis:100%; border-radius:7px; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; padding:5px 7px; }
+    .detail-meta .detail-wide b { color:#344054; margin-right:6px; white-space:nowrap; }
+    .detail-meta .detail-risk { background:#fff7ed; border-color:#fed7aa; color:#9a3412; }
     @media (max-width:960px) { .grid,.kpis,.summary-grid,.cards-container,.detail-list,.advice-actions{grid-template-columns:1fr;} .shell{padding:12px;} .hero-head{display:block;} .stats-pill{margin-left:0;} .advice-action + .advice-action{border-left:0;border-top:1px solid #eef2f7;} }
     @page { size:A4 landscape; margin:10mm; }
     @media print { *{-webkit-print-color-adjust:exact; print-color-adjust:exact;} body{background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 52%,#f1f5f9 100%);} .shell{max-width:none; padding:12px;} .summary-grid{grid-template-columns:repeat(6,minmax(110px,1fr)) !important;} .kpis{grid-template-columns:repeat(4,minmax(120px,1fr)) !important;} .grid{grid-template-columns:1.1fr .9fr !important;} .cards-container{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .detail-list{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .hero,.stock-card,.detail-card{break-inside:avoid;} table{font-size:8px; min-width:0;} .card-controls{display:none;} }
@@ -126,7 +129,7 @@
     <div class="hero">
       <div class="hero-head">
         <div>
-          <h1>mda100_20260609_165114</h1>
+          <h1>mda100_20260609_165337</h1>
           <div class="subtitle">mda100以核心100只AI科技股票等权编制，历史曲线自2026年首个交易日开始累计。行情标记：VERIFIED_FUTU_OPEND。</div>
           <div class="verify-strip">
             <span>二次确认</span>
@@ -135,7 +138,7 @@
             <span class="verify-detail" title="报告日期与指数日期一致:OK / 行情日期覆盖本次报告日:OK / 所有可用行情均已打 Futu 核验标记:OK / 指数涨跌幅与股票池等权涨跌一致:OK / 上涨数量一致:OK / 下跌数量一致:OK / 覆盖率一致:OK">生成与发布前已复核</span>
           </div>
         </div>
-        <div class="meta">Report 2026-06-09<br>Index 2026-06-09<br>Generated 2026-06-09T16:51:14</div>
+        <div class="meta">Report 2026-06-09<br>Index 2026-06-09<br>Generated 2026-06-09T16:53:37</div>
       </div>
       <div class="summary-grid">
         <div class="summary-card"><div class="label">6月9日 mda100点位</div><div class="value">2190.5</div></div>
@@ -1724,10 +1727,9 @@
             <span class="positive">10.0%</span>
             <span>强候选</span>
             <span>反弹买入趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；5/10日金叉；放量转强</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；踩上20日线并拉回；等</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -1743,10 +1745,9 @@
             <span class="positive">20.0%</span>
             <span>强候选</span>
             <span>反弹买入趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；5/10日金叉；20日新高突破</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；踩上20日线并拉回；等</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -1762,10 +1763,9 @@
             <span class="positive">18.1%</span>
             <span>强候选</span>
             <span>反弹买入趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；放量转强</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；踩上20日线并拉回；等</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -1781,10 +1781,9 @@
             <span class="positive">5.8%</span>
             <span>强候选</span>
             <span>反弹买入趋势</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>20日线向上；强势曲线；回踩30日线附近；踩上30日线并拉回；30日线附近洗盘低吸；30日线假破位修复；缩量回踩</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；强势曲线；回踩30日线附近；踩上30日线并拉回；等</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -1800,10 +1799,9 @@
             <span class="positive">20.0%</span>
             <span>强候选</span>
             <span>反弹买入趋势</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>均线多头；20日线向上；强势曲线；踩上30日线并拉回；30日线假破位修复；放量转强</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线；踩上30日线并拉回；等</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -1819,10 +1817,9 @@
             <span class="positive">11.4%</span>
             <span>观察低吸</span>
             <span>反弹买入趋势</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>均线多头；20日线向上；强势曲线；踩上30日线并拉回</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线；踩上30日线并拉回</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -1838,10 +1835,9 @@
             <span class="positive">1.1%</span>
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；放量转强</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；放量转强</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -1857,10 +1853,9 @@
             <span class="positive">7.5%</span>
             <span>观察低吸</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩30日线附近；踩上50日线并拉回；30日线辅助买点；50日线假破位修复；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩30日线附近；踩上50日线并拉回；30日线辅助买点；等</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -1876,10 +1871,9 @@
             <span class="positive">7.1%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>均线多头；20日线向上；强势曲线；放量转强</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线；放量转强</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -1895,10 +1889,9 @@
             <span class="positive">2.2%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>均线多头；20日线向上；强势曲线；放量转强</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线；放量转强</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -1914,10 +1907,9 @@
             <span class="positive">5.6%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>均线多头；20日线向上；强势曲线；5/10日金叉</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线；5/10日金叉</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -1933,10 +1925,9 @@
             <span class="positive">3.5%</span>
             <span>趋势观察</span>
             <span>弱修复观察</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩20日线附近；缩量回踩；5/10日金叉</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩20日线附近；缩量回踩；5/10日金叉</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -1952,10 +1943,9 @@
             <span class="positive">9.7%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；5/10日金叉；MACD金叉；放量转强</span>
-            <span>连续拉升后利好兑现/追高风险；高位放量，谨防诱多；更适合持仓，不适合作为新买点追入</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；5/10日金叉；等</span>
+            <span class="detail-wide detail-risk"><b>风险</b>连续拉升后利好兑现/追高风险；高位放量，谨防诱多；等</span>
           </div>
         </article>
         
@@ -1971,10 +1961,9 @@
             <span class="positive">15.3%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；放量转强</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；放量转强</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -1990,10 +1979,9 @@
             <span class="positive">10.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；放量转强</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；放量转强</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2009,10 +1997,9 @@
             <span class="positive">10.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；20日新高突破</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；20日新高突破</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2028,10 +2015,9 @@
             <span class="positive">4.5%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；放量转强</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；放量转强</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2047,10 +2033,9 @@
             <span class="positive">3.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；放量转强</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；放量转强</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2066,10 +2051,9 @@
             <span class="positive">6.2%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2085,10 +2069,9 @@
             <span class="positive">4.2%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2104,10 +2087,9 @@
             <span class="positive">4.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2123,10 +2105,9 @@
             <span class="positive">2.3%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>均线多头；20日线向上；5/10日金叉</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；5/10日金叉</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2142,10 +2123,9 @@
             <span class="positive">1.9%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2161,10 +2141,9 @@
             <span class="positive">10.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；20日新高突破</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；20日新高突破</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2180,10 +2159,9 @@
             <span class="positive">10.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；MACD金叉</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；MACD金叉</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2199,10 +2177,9 @@
             <span class="positive">10.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；5/10日金叉；MACD金叉</span>
-            <span>短线偏离20日线过大；连续拉升后利好兑现/追高风险；更适合持仓，不适合作为新买点追入</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；5/10日金叉；等</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
         </article>
         
@@ -2218,10 +2195,9 @@
             <span class="positive">7.1%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>均线多头；20日线向上；强势曲线</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2237,10 +2213,9 @@
             <span class="positive">6.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>均线多头；20日线向上；强势曲线</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2256,10 +2231,9 @@
             <span class="positive">5.3%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>均线多头；20日线向上；强势曲线</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2275,10 +2249,9 @@
             <span class="positive">3.1%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>均线多头；20日线向上；强势曲线</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2294,10 +2267,9 @@
             <span class="positive">3.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>均线多头；20日线向上；强势曲线</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2313,10 +2285,9 @@
             <span class="positive">1.6%</span>
             <span>趋势观察</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>20日线向上；强势曲线；回踩30日线附近；踩上30日线并拉回；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；强势曲线；回踩30日线附近；踩上30日线并拉回；等</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -2332,10 +2303,9 @@
             <span class="positive">6.2%</span>
             <span>趋势观察</span>
             <span>弱修复观察</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩20日线附近；缩量回踩</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩20日线附近；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2351,10 +2321,9 @@
             <span class="positive">6.1%</span>
             <span>趋势观察</span>
             <span>弱修复观察</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩20日线附近；缩量回踩</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩20日线附近；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2370,10 +2339,9 @@
             <span class="positive">5.3%</span>
             <span>趋势观察</span>
             <span>弱修复观察</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩20日线附近；缩量回踩</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩20日线附近；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2389,10 +2357,9 @@
             <span class="positive">5.0%</span>
             <span>趋势观察</span>
             <span>弱修复观察</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩20日线附近；缩量回踩</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩20日线附近；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2408,10 +2375,9 @@
             <span class="positive">2.9%</span>
             <span>趋势观察</span>
             <span>弱修复观察</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩20日线附近；缩量回踩</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩20日线附近；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2427,10 +2393,9 @@
             <span class="positive">20.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；MACD金叉；多头趋势保护</span>
-            <span>短线偏离20日线过大；连续拉升后利好兑现/追高风险；更适合持仓，不适合作为新买点追入</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；MACD金叉；等</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
         </article>
         
@@ -2446,10 +2411,9 @@
             <span class="positive">16.4%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大；连续拉升后利好兑现/追高风险；更适合持仓，不适合作为新买点追入</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
         </article>
         
@@ -2465,10 +2429,9 @@
             <span class="positive">15.4%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大；连续拉升后利好兑现/追高风险；更适合持仓，不适合作为新买点追入</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
         </article>
         
@@ -2484,10 +2447,9 @@
             <span class="positive">14.7%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2503,10 +2465,9 @@
             <span class="positive">11.2%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大；连续拉升后利好兑现/追高风险；更适合持仓，不适合作为新买点追入</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
         </article>
         
@@ -2522,10 +2483,9 @@
             <span class="positive">10.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2541,10 +2501,9 @@
             <span class="positive">10.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大；连续拉升后利好兑现/追高风险；更适合持仓，不适合作为新买点追入</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
         </article>
         
@@ -2560,10 +2519,9 @@
             <span class="positive">10.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2579,10 +2537,9 @@
             <span class="positive">10.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2598,10 +2555,9 @@
             <span class="positive">10.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；放量转强；多头趋势保护</span>
-            <span>短线偏离20日线过大；连续拉升后利好兑现/追高风险；更适合持仓，不适合作为新买点追入</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；放量转强；等</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
         </article>
         
@@ -2617,10 +2573,9 @@
             <span class="positive">9.2%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2636,10 +2591,9 @@
             <span class="positive">8.4%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2655,10 +2609,9 @@
             <span class="positive">7.4%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2674,10 +2627,9 @@
             <span class="positive">6.5%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2693,10 +2645,9 @@
             <span class="positive">6.4%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>均线多头；20日线向上；强势曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2712,10 +2663,9 @@
             <span class="positive">6.1%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大；连续拉升后利好兑现/追高风险；更适合持仓，不适合作为新买点追入</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
         </article>
         
@@ -2731,10 +2681,9 @@
             <span class="positive">5.4%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>均线多头；20日线向上；强势曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2750,10 +2699,9 @@
             <span class="positive">5.2%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>均线多头；20日线向上；强势曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2769,10 +2717,9 @@
             <span class="positive">3.5%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大；连续拉升后利好兑现/追高风险；更适合持仓，不适合作为新买点追入</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
         </article>
         
@@ -2788,10 +2735,9 @@
             <span class="positive">3.2%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2807,10 +2753,9 @@
             <span class="positive">2.8%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2826,10 +2771,9 @@
             <span class="negative">-0.5%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线</span>
-            <span>短线偏离20日线过大</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
         </article>
         
@@ -2845,10 +2789,9 @@
             <span class="negative">-1.9%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>极强曲线 / 20日线</span>
-            <span>均线多头；20日线向上；极强曲线；多头趋势保护</span>
-            <span>短线偏离20日线过大；连续拉升后利好兑现/追高风险；更适合持仓，不适合作为新买点追入</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
         </article>
         
@@ -2864,10 +2807,9 @@
             <span class="positive">8.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>均线多头；放量转强</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；放量转强</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2883,10 +2825,9 @@
             <span class="positive">7.1%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>均线多头；20日线向上</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2902,10 +2843,9 @@
             <span class="positive">5.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>均线多头；20日线向上</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2921,10 +2861,9 @@
             <span class="positive">4.4%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>均线多头；20日线向上</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2940,10 +2879,9 @@
             <span class="positive">3.0%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>均线多头；20日线向上</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -2959,10 +2897,9 @@
             <span class="positive">12.6%</span>
             <span>弱观察</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -2978,10 +2915,9 @@
             <span class="positive">10.0%</span>
             <span>弱观察</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -2997,10 +2933,9 @@
             <span class="positive">7.4%</span>
             <span>弱观察</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3016,10 +2951,9 @@
             <span class="positive">6.4%</span>
             <span>弱观察</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3035,10 +2969,9 @@
             <span class="positive">6.1%</span>
             <span>弱观察</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3054,10 +2987,9 @@
             <span class="positive">5.8%</span>
             <span>弱观察</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3073,10 +3005,9 @@
             <span class="positive">5.4%</span>
             <span>弱观察</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3092,10 +3023,9 @@
             <span class="positive">4.6%</span>
             <span>弱观察</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3111,10 +3041,9 @@
             <span class="positive">4.4%</span>
             <span>弱观察</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3130,10 +3059,9 @@
             <span class="positive">2.8%</span>
             <span>弱观察</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3149,10 +3077,9 @@
             <span class="positive">1.8%</span>
             <span>弱观察</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3168,10 +3095,9 @@
             <span class="positive">8.8%</span>
             <span>弱观察</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>踩上50日线并拉回；30日线辅助买点；50日线假破位修复</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>踩上50日线并拉回；30日线辅助买点；50日线假破位修复</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3187,10 +3113,9 @@
             <span class="positive">3.5%</span>
             <span>弱观察</span>
             <span>弱修复观察</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上</span>
-            <span>常规波动</span>
+            <span class="detail-wide"><b>买点</b>20日线向上</span>
+            <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
         </article>
         
@@ -3206,10 +3131,9 @@
             <span class="positive">7.7%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>回踩30日线附近；30日线辅助买点；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>回踩30日线附近；30日线辅助买点；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3225,10 +3149,9 @@
             <span class="positive">5.5%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>强势曲线 / 30日线</span>
-            <span>20日线向上；强势曲线；20日线辅助买点；5/10日金叉</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；强势曲线；20日线辅助买点；5/10日金叉</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3244,10 +3167,9 @@
             <span class="negative">-0.6%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>回踩30日线附近；30日线辅助买点；缩量回踩</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>回踩30日线附近；30日线辅助买点；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3263,10 +3185,9 @@
             <span class="positive">6.6%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>踩上50日线并拉回</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>踩上50日线并拉回</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3282,10 +3203,9 @@
             <span class="positive">5.0%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>30日线辅助买点；5/10日金叉</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>30日线辅助买点；5/10日金叉</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3301,10 +3221,9 @@
             <span class="positive">6.6%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上；30日线辅助买点</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上；30日线辅助买点</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3320,10 +3239,9 @@
             <span class="positive">6.2%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3339,10 +3257,9 @@
             <span class="positive">3.5%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3358,10 +3275,9 @@
             <span class="positive">1.6%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>20日线向上</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>20日线向上</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3377,10 +3293,9 @@
             <span class="positive">5.1%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>回踩50日线附近；缩量回踩</span>
-            <span>跌破20日线或放量大跌；跌破50日线未收回</span>
+            <span class="detail-wide"><b>买点</b>回踩50日线附近；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
         </article>
         
@@ -3396,10 +3311,9 @@
             <span class="positive">2.3%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>无明显买点</span>
-            <span>跌破20日线或放量大跌</span>
+            <span class="detail-wide"><b>买点</b>无明显买点</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
         </article>
         
@@ -3415,10 +3329,9 @@
             <span class="positive">8.2%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>修复/弱曲线 / 50日线</span>
-            <span>回踩50日线附近；缩量回踩</span>
-            <span>跌破20日线或放量大跌；跌破50日线未收回</span>
+            <span class="detail-wide"><b>买点</b>回踩50日线附近；缩量回踩</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
         </article>
         
@@ -3434,10 +3347,9 @@
             <span class="positive">3.3%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>趋势曲线 / 50日线</span>
-            <span>无明显买点</span>
-            <span>跌破20日线或放量大跌；跌破50日线未收回</span>
+            <span class="detail-wide"><b>买点</b>无明显买点</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
         </article>
         
@@ -3453,10 +3365,9 @@
             <span class="positive">10.6%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>修复/弱曲线 / 50日线</span>
-            <span>无明显买点</span>
-            <span>跌破20日线或放量大跌；跌破50日线未收回</span>
+            <span class="detail-wide"><b>买点</b>无明显买点</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
         </article>
         
@@ -3472,10 +3383,9 @@
             <span class="positive">6.8%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>修复/弱曲线 / 50日线</span>
-            <span>无明显买点</span>
-            <span>跌破20日线或放量大跌；跌破50日线未收回</span>
+            <span class="detail-wide"><b>买点</b>无明显买点</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
         </article>
         
@@ -3491,10 +3401,9 @@
             <span class="positive">2.7%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>修复/弱曲线 / 50日线</span>
-            <span>无明显买点</span>
-            <span>跌破20日线或放量大跌；跌破50日线未收回</span>
+            <span class="detail-wide"><b>买点</b>无明显买点</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
         </article>
         
@@ -3510,10 +3419,9 @@
             <span class="positive">2.4%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>修复/弱曲线 / 50日线</span>
-            <span>无明显买点</span>
-            <span>跌破20日线或放量大跌；跌破50日线未收回</span>
+            <span class="detail-wide"><b>买点</b>无明显买点</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
         </article>
         
@@ -3529,10 +3437,9 @@
             <span class="positive">10.0%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>修复/弱曲线 / 50日线</span>
-            <span>无明显买点</span>
-            <span>跌破20日线或放量大跌；跌破50日线未收回</span>
+            <span class="detail-wide"><b>买点</b>无明显买点</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
         </article>
         
@@ -3548,10 +3455,9 @@
             <span class="positive">2.1%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>修复/弱曲线 / 50日线</span>
-            <span>无明显买点</span>
-            <span>跌破20日线或放量大跌；跌破50日线未收回</span>
+            <span class="detail-wide"><b>买点</b>无明显买点</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
         </article>
         
@@ -3567,10 +3473,9 @@
             <span class="positive">1.6%</span>
             <span>暂不优先</span>
             <span>破位观望</span>
-            <span>大盘震荡均衡</span>
             <span>修复/弱曲线 / 50日线</span>
-            <span>无明显买点</span>
-            <span>跌破20日线或放量大跌；跌破50日线未收回</span>
+            <span class="detail-wide"><b>买点</b>无明显买点</span>
+            <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
         </article>
         
@@ -3586,10 +3491,9 @@
             <span class="positive">无数据</span>
             <span>数据不足</span>
             <span>未分类</span>
-            <span>大盘震荡均衡</span>
             <span>未分层 / 待确认</span>
-            <span>无明显买点</span>
-            <span>K线不足: 42</span>
+            <span class="detail-wide"><b>买点</b>无明显买点</span>
+            <span class="detail-wide detail-risk"><b>风险</b>K线不足: 42</span>
           </div>
         </article>
         
@@ -3605,10 +3509,9 @@
             <span class="positive">无数据</span>
             <span>数据不足</span>
             <span>未分类</span>
-            <span>大盘震荡均衡</span>
             <span>未分层 / 待确认</span>
-            <span>无明显买点</span>
-            <span>K线不足: 47</span>
+            <span class="detail-wide"><b>买点</b>无明显买点</span>
+            <span class="detail-wide detail-risk"><b>风险</b>K线不足: 47</span>
           </div>
         </article>
         </div>
