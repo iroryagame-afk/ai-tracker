@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mda100_20260609_160920</title>
+  <title>mda100_20260609_161939</title>
   <style>
     :root {
       --ink:#101418; --muted:#667085; --paper:#eef2ff; --panel:#fff; --line:#d8dee7;
@@ -27,6 +27,8 @@
     .verify-strip .verify-detail { color:#475467; font-weight:650; }
     .module { background:var(--panel); border:1px solid var(--line); margin:14px 0; padding:18px; }
     .module h2 { margin:0 0 14px; font-size:18px; border-bottom:1px solid var(--line); padding-bottom:8px; }
+    .subsection-title { margin:18px 0 8px; font-size:15px; line-height:1.35; color:#172033; }
+    .subsection-title:first-of-type { margin-top:4px; }
     .grid { display:grid; grid-template-columns:1.1fr .9fr; gap:16px; }
     .kpis { display:grid; grid-template-columns:repeat(4,minmax(120px,1fr)); gap:10px; margin-bottom:14px; }
     .kpi { border:1px solid var(--line2); background:#fbfcfe; padding:10px; min-height:72px; }
@@ -45,6 +47,7 @@
     tr:nth-child(even) td { background:#fafbfc; }
     code { background:#eef2f7; padding:1px 5px; border-radius:3px; }
     .kpi-table table { min-width:320px; }
+    .kpi-table th,.kpi-table td { width:50%; }
     .op-badge { display:inline-flex; align-items:center; justify-content:center; min-width:66px; border-radius:999px; padding:4px 9px; margin:0 8px 4px 0; font-size:12px; font-weight:850; white-space:nowrap; }
     .op-buy { color:#991b1b; background:#fee2e2; border:1px solid #fecaca; }
     .op-hold { color:#1e40af; background:#dbeafe; border:1px solid #bfdbfe; }
@@ -105,7 +108,7 @@
     <div class="hero">
       <div class="hero-head">
         <div>
-          <h1>mda100_20260609_160920</h1>
+          <h1>mda100_20260609_161939</h1>
           <div class="subtitle">mda100以核心100只AI科技股票等权编制，历史曲线自2026年首个交易日开始累计。行情标记：VERIFIED_FUTU_OPEND。</div>
           <div class="verify-strip">
             <span>二次确认</span>
@@ -114,13 +117,13 @@
             <span class="verify-detail" title="报告日期与指数日期一致:OK / 行情日期覆盖本次报告日:OK / 所有可用行情均已打 Futu 核验标记:OK / 指数涨跌幅与股票池等权涨跌一致:OK / 上涨数量一致:OK / 下跌数量一致:OK / 覆盖率一致:OK">生成与发布前已复核</span>
           </div>
         </div>
-        <div class="meta">Report 2026-06-09<br>Index 2026-06-09<br>Generated 2026-06-09T16:09:20</div>
+        <div class="meta">Report 2026-06-09<br>Index 2026-06-09<br>Generated 2026-06-09T16:19:39</div>
       </div>
       <div class="summary-grid">
-        <div class="summary-card"><div class="label">mda100点位</div><div class="value">2190.5</div></div>
-        <div class="summary-card"><div class="label">指数日涨跌</div><div class="value up">6.7%</div></div>
-        <div class="summary-card"><div class="label">上涨/下跌</div><div class="value">95/3</div></div>
-        <div class="summary-card"><div class="label">行情覆盖率</div><div class="value">98.0%</div></div>
+        <div class="summary-card"><div class="label">6月9日 mda100点位</div><div class="value">2190.5</div></div>
+        <div class="summary-card"><div class="label">6月9日指数涨跌</div><div class="value up">6.7%</div></div>
+        <div class="summary-card"><div class="label">6月9日上涨/下跌</div><div class="value">95/3</div></div>
+        <div class="summary-card"><div class="label">6月9日行情覆盖率</div><div class="value">98.0%</div></div>
         <div class="summary-card"><div class="label">4分以上</div><div class="value">8</div></div>
         <div class="summary-card"><div class="label">平均评分</div><div class="value">2.5</div></div>
       </div>
@@ -128,10 +131,10 @@
     <section class="module" id="moda100">
       <h2>第一模块：mda100指数曲线</h2>
       <div class="kpis">
-        <div class="kpi"><div class="label">当前点位</div><div class="value">2190.5</div></div>
-        <div class="kpi"><div class="label">当日涨跌幅</div><div class="value up">6.7%</div></div>
-        <div class="kpi"><div class="label">上涨/下跌</div><div class="value">95/3</div></div>
-        <div class="kpi"><div class="label">覆盖率</div><div class="value">98.0%</div></div>
+        <div class="kpi"><div class="label">6月9日点位</div><div class="value">2190.5</div></div>
+        <div class="kpi"><div class="label">6月9日涨跌幅</div><div class="value up">6.7%</div></div>
+        <div class="kpi"><div class="label">6月9日上涨/下跌</div><div class="value">95/3</div></div>
+        <div class="kpi"><div class="label">6月9日覆盖率</div><div class="value">98.0%</div></div>
       </div>
       
 <svg class="index-chart" viewBox="0 0 900 260" role="img" aria-label="mda100指数曲线">
@@ -255,14 +258,16 @@
 
     </section>
     <section class="module" id="review">
-      <h2>第二模块：今日数据回顾</h2>
-      <h3 class="subsection-title">今日操作：未建仓 / 已建仓</h3>
-      <div class="grid"><div><div class="table-wrap kpi-table"><table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>平均评分</td><td>2.5</td></tr><tr><td>4分以上</td><td>8</td></tr><tr><td>3分</td><td>57</td></tr><tr><td>1-2分</td><td>33</td></tr><tr><td>数据不足</td><td>2</td></tr><tr><td>对比口径</td><td>昨日/上一交易日</td></tr></tbody></table></div></div><div><div class="table-wrap "><table><thead><tr><th>股票</th><th>代码</th><th>上次评分</th><th>今日评分</th><th>变化</th><th>类型</th><th>未建仓操作</th><th>已建仓操作</th></tr></thead><tbody><tr><td>太辰光</td><td><code>300570</code></td><td>1</td><td>5</td><td>+4</td><td>反弹买入趋势</td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">可小仓试探，优先等回踩主观察线；站上5日线再加</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">踩线拉回可加仓；跌破158.9收不回先减仓</span></td></tr><tr><td>石英股份</td><td><code>603688</code></td><td>1</td><td>5</td><td>+4</td><td>反弹买入趋势</td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">可小仓试探，优先等回踩主观察线；站上5日线再加</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">踩线拉回可加仓；跌破67.8收不回先减仓</span></td></tr><tr><td>沪硅产业</td><td><code>688126</code></td><td>1</td><td>5</td><td>+4</td><td>反弹买入趋势</td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">可小仓试探，优先31.1-32.4；站上5日线再加</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">踩线拉回可加仓；跌破26.5收不回先减仓</span></td></tr><tr><td>富创精密</td><td><code>688409</code></td><td>1</td><td>5</td><td>+4</td><td>反弹买入趋势</td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">可小仓试探，优先等回踩主观察线；站上5日线再加</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">踩线拉回可加仓；跌破151.8收不回先减仓</span></td></tr><tr><td>佰维存储</td><td><code>688525</code></td><td>1</td><td>5</td><td>+4</td><td>反弹买入趋势</td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">可小仓试探，优先300.4-309.6；站上5日线再加</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">踩线拉回可加仓；跌破292.8收不回先减仓</span></td></tr><tr><td>新莱应材</td><td><code>300260</code></td><td>5</td><td>3</td><td>-2</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或72.4-75.4</span></td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">持有为主；沿5日线62.9上行，不追高加仓</span></td></tr><tr><td>烽火通信</td><td><code>600498</code></td><td>5</td><td>3</td><td>-2</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或等回踩主观察线</span></td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">持有为主；沿5日线54.9上行，不追高加仓</span></td></tr><tr><td>兴森科技</td><td><code>002436</code></td><td>4</td><td>3</td><td>-1</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或等回踩主观察线</span></td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">持有为主；沿5日线38.7上行，不追高加仓</span></td></tr><tr><td>深南电路</td><td><code>002916</code></td><td>4</td><td>3</td><td>-1</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或等回踩主观察线</span></td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">持有为主；沿5日线382.8上行，不追高加仓</span></td></tr><tr><td>北京君正</td><td><code>300223</code></td><td>4</td><td>3</td><td>-1</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或等回踩主观察线</span></td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">持有为主；沿5日线148.7上行，不追高加仓</span></td></tr></tbody></table></div></div></div>
-      <h3 class="subsection-title">上一交易日推荐今日表现</h3>
-      <div class="table-wrap "><table><thead><tr><th>昨日推荐</th><th>代码</th><th>昨日评分</th><th>今日涨跌</th><th>今日评分</th><th>表现</th><th>明日操作</th></tr></thead><tbody><tr><td>烽火通信</td><td><code>600498</code></td><td>5</td><td>8.0%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>新莱应材</td><td><code>300260</code></td><td>5</td><td>20.0%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>绿的谐波</td><td><code>688017</code></td><td>4</td><td>-1.9%</td><td>3</td><td>下跌</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>中天科技</td><td><code>600522</code></td><td>4</td><td>10.0%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>深南电路</td><td><code>002916</code></td><td>4</td><td>7.1%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>兴森科技</td><td><code>002436</code></td><td>4</td><td>3.1%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>罗博特科</td><td><code>300757</code></td><td>4</td><td>3.0%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>北京君正</td><td><code>300223</code></td><td>4</td><td>7.1%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>天承科技</td><td><code>688603</code></td><td>4</td><td>1.9%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>盛美上海</td><td><code>688082</code></td><td>4</td><td>7.4%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>工业富联</td><td><code>601138</code></td><td>4</td><td>6.0%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr></tbody></table></div>
+      <h2>第二模块：6月9日数据回顾</h2>
+      <h3 class="subsection-title">6月8日推荐在6月9日表现</h3>
+      <div class="table-wrap "><table><thead><tr><th>6月8日推荐</th><th>代码</th><th>6月8日评分</th><th>6月9日涨跌</th><th>6月9日评分</th><th>6月9日表现</th><th>6月10日建议</th></tr></thead><tbody><tr><td>烽火通信</td><td><code>600498</code></td><td>5</td><td>8.0%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>新莱应材</td><td><code>300260</code></td><td>5</td><td>20.0%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>绿的谐波</td><td><code>688017</code></td><td>4</td><td>-1.9%</td><td>3</td><td>下跌</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>中天科技</td><td><code>600522</code></td><td>4</td><td>10.0%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>深南电路</td><td><code>002916</code></td><td>4</td><td>7.1%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>兴森科技</td><td><code>002436</code></td><td>4</td><td>3.1%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>罗博特科</td><td><code>300757</code></td><td>4</td><td>3.0%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>北京君正</td><td><code>300223</code></td><td>4</td><td>7.1%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>天承科技</td><td><code>688603</code></td><td>4</td><td>1.9%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>盛美上海</td><td><code>688082</code></td><td>4</td><td>7.4%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr><tr><td>工业富联</td><td><code>601138</code></td><td>4</td><td>6.0%</td><td>3</td><td>上涨</td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有，不追高</span></td></tr></tbody></table></div>
+      <h3 class="subsection-title">6月9日评分概览</h3>
+      <div class="table-wrap kpi-table"><table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>平均评分</td><td>2.5</td></tr><tr><td>4分以上</td><td>8</td></tr><tr><td>3分</td><td>57</td></tr><tr><td>1-2分</td><td>33</td></tr><tr><td>数据不足</td><td>2</td></tr><tr><td>对比基准</td><td>6月8日</td></tr></tbody></table></div>
+      <h3 class="subsection-title">6月10日操作建议：未建仓 / 已建仓</h3>
+      <div class="table-wrap "><table><thead><tr><th>股票</th><th>代码</th><th>6月8日评分</th><th>6月9日评分</th><th>变化</th><th>类型</th><th>未建仓 6月10日建议</th><th>已建仓 6月10日建议</th></tr></thead><tbody><tr><td>太辰光</td><td><code>300570</code></td><td>1</td><td>5</td><td>+4</td><td>反弹买入趋势</td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">可小仓试探，优先等回踩主观察线；站上5日线再加</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">踩线拉回可加仓；跌破158.9收不回先减仓</span></td></tr><tr><td>石英股份</td><td><code>603688</code></td><td>1</td><td>5</td><td>+4</td><td>反弹买入趋势</td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">可小仓试探，优先等回踩主观察线；站上5日线再加</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">踩线拉回可加仓；跌破67.8收不回先减仓</span></td></tr><tr><td>沪硅产业</td><td><code>688126</code></td><td>1</td><td>5</td><td>+4</td><td>反弹买入趋势</td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">可小仓试探，优先31.1-32.4；站上5日线再加</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">踩线拉回可加仓；跌破26.5收不回先减仓</span></td></tr><tr><td>富创精密</td><td><code>688409</code></td><td>1</td><td>5</td><td>+4</td><td>反弹买入趋势</td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">可小仓试探，优先等回踩主观察线；站上5日线再加</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">踩线拉回可加仓；跌破151.8收不回先减仓</span></td></tr><tr><td>佰维存储</td><td><code>688525</code></td><td>1</td><td>5</td><td>+4</td><td>反弹买入趋势</td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">可小仓试探，优先300.4-309.6；站上5日线再加</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">踩线拉回可加仓；跌破292.8收不回先减仓</span></td></tr><tr><td>新莱应材</td><td><code>300260</code></td><td>5</td><td>3</td><td>-2</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或72.4-75.4</span></td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">持有为主；沿5日线62.9上行，不追高加仓</span></td></tr><tr><td>烽火通信</td><td><code>600498</code></td><td>5</td><td>3</td><td>-2</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或等回踩主观察线</span></td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">持有为主；沿5日线54.9上行，不追高加仓</span></td></tr><tr><td>兴森科技</td><td><code>002436</code></td><td>4</td><td>3</td><td>-1</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或等回踩主观察线</span></td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">持有为主；沿5日线38.7上行，不追高加仓</span></td></tr><tr><td>深南电路</td><td><code>002916</code></td><td>4</td><td>3</td><td>-1</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或等回踩主观察线</span></td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">持有为主；沿5日线382.8上行，不追高加仓</span></td></tr><tr><td>北京君正</td><td><code>300223</code></td><td>4</td><td>3</td><td>-1</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或等回踩主观察线</span></td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">持有为主；沿5日线148.7上行，不追高加仓</span></td></tr></tbody></table></div>
     </section>
     <section class="module" id="recommendations">
-      <h2>第三模块：明日股票推荐</h2>
+      <h2>第三模块：6月10日股票推荐</h2>
       
     
         <div class="card-controls">
@@ -301,10 +306,10 @@
             <div class="score-badge">5</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">强候选</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">强候选</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">反弹买入趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">74.7</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">10.0%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">74.7</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">10.0%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">67.8</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">强候选</div></div>
@@ -313,11 +318,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；5/10日金叉；放量转强</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">已经出现支撑确认或假破位修复，更接近可执行买点。高纯石英材料方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；5/10日金叉；放量转强。操作上，未建仓可围绕观察区小仓试探，站上5日线68.5再加；已建仓可在不破支撑时加仓，跌回支撑线下方且收不回则减仓，防守位参考67.8。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：67.8。主要风险：常规波动。</div>
           </div>
         </article>
@@ -332,10 +337,10 @@
             <div class="score-badge">5</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">强候选</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">强候选</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">反弹买入趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">31.7</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">20.0%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">31.7</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">20.0%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">31.1-32.4</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">26.5</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">强候选</div></div>
@@ -344,11 +349,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；5/10日金叉；20日新高突破</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">已经出现支撑确认或假破位修复，更接近可执行买点。半导体硅片方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；5/10日金叉；20日新高突破。操作上，未建仓可围绕观察区小仓试探，站上5日线28.2再加；已建仓可在不破支撑时加仓，跌回支撑线下方且收不回则减仓，防守位参考26.5。参考买入观察区：31.1-32.4；防守位：26.5。主要风险：短线偏离20日线过大。</div>
           </div>
         </article>
@@ -363,10 +368,10 @@
             <div class="score-badge">5</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">强候选</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">强候选</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">反弹买入趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">181.7</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">18.1%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">181.7</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">18.1%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">158.9</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">强候选</div></div>
@@ -375,11 +380,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；放量转强</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">已经出现支撑确认或假破位修复，更接近可执行买点。光连接器/光器件方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；踩上20日线并拉回；20日线假破位修复；放量转强。操作上，未建仓可围绕观察区小仓试探，站上5日线168.9再加；已建仓可在不破支撑时加仓，跌回支撑线下方且收不回则减仓，防守位参考158.9。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：158.9。主要风险：常规波动。</div>
           </div>
         </article>
@@ -394,10 +399,10 @@
             <div class="score-badge">5</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">强候选</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">强候选</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">反弹买入趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">305.1</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">5.8%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">305.1</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">5.8%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">300.4-309.6</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">292.8</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">强候选</div></div>
@@ -406,11 +411,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">30日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">20日线向上；强势曲线；回踩30日线附近；踩上30日线并拉回；30日线附近洗盘低吸；30日线假破位修复；缩量回踩</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">已经出现支撑确认或假破位修复，更接近可执行买点。存储模组/存储芯片方向仍可跟踪；当前信号为：20日线向上；强势曲线；回踩30日线附近；踩上30日线并拉回；30日线附近洗盘低吸；30日线假破位修复；缩量回踩。操作上，未建仓可围绕观察区小仓试探，站上5日线312.0再加；已建仓可在不破支撑时加仓，跌回支撑线下方且收不回则减仓，防守位参考292.8。参考买入观察区：300.4-309.6；防守位：292.8。主要风险：常规波动。</div>
           </div>
         </article>
@@ -425,10 +430,10 @@
             <div class="score-badge">5</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">强候选</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">强候选</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">反弹买入趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">164.6</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">20.0%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">164.6</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">20.0%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">151.8</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">强候选</div></div>
@@ -437,11 +442,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">30日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；强势曲线；踩上30日线并拉回；30日线假破位修复；放量转强</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">已经出现支撑确认或假破位修复，更接近可执行买点。设备精密零部件方向仍可跟踪；当前信号为：均线多头；20日线向上；强势曲线；踩上30日线并拉回；30日线假破位修复；放量转强。操作上，未建仓可围绕观察区小仓试探，站上5日线147.5再加；已建仓可在不破支撑时加仓，跌回支撑线下方且收不回则减仓，防守位参考151.8。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：151.8。主要风险：常规波动。</div>
           </div>
         </article>
@@ -456,10 +461,10 @@
             <div class="score-badge">4</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">观察低吸</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">观察低吸</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">反弹买入趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">124.9</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">11.4%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">124.9</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">11.4%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">113.4</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">观察低吸</div></div>
@@ -468,11 +473,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">30日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；强势曲线；踩上30日线并拉回</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">已经出现支撑确认或假破位修复，更接近可执行买点。PCB制造方向仍可跟踪；当前信号为：均线多头；20日线向上；强势曲线；踩上30日线并拉回。操作上，未建仓可围绕观察区小仓试探，站上5日线122.1再加；已建仓可在不破支撑时加仓，跌回支撑线下方且收不回则减仓，防守位参考113.4。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：113.4。主要风险：常规波动。</div>
           </div>
         </article>
@@ -487,10 +492,10 @@
             <div class="score-badge">4</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">观察低吸</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">观察低吸</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">24.1</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">1.1%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">24.1</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">1.1%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">21.0</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">观察低吸</div></div>
@@ -499,11 +504,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线；放量转强</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。贵金属/电子材料方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线24.2继续持有，跌破5日线先减1/3，跌破10日线23.0减到半仓，跌破20日线21.7则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：21.0。主要风险：常规波动。</div>
           </div>
         </article>
@@ -518,10 +523,10 @@
             <div class="score-badge">4</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">观察低吸</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">观察低吸</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">破位观望</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">279.3</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">7.5%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">279.3</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">7.5%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">276.8-285.2</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">283.8</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">观察低吸</div></div>
@@ -530,11 +535,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">50日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">20日线向上；回踩30日线附近；踩上50日线并拉回；30日线辅助买点；50日线假破位修复；缩量回踩</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势和买点较好，但更适合等价格落到舒服位置。CMP抛光液/湿电子化学品方向仍可跟踪；当前信号为：20日线向上；回踩30日线附近；踩上50日线并拉回；30日线辅助买点；50日线假破位修复；缩量回踩。操作上，不建议情绪化追高，优先等回踩观察区、缩量企稳或盘中承接明显后再动。参考买入观察区：276.8-285.2；防守位：283.8。主要风险：跌破20日线或放量大跌。</div>
           </div>
         </article>
@@ -549,10 +554,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">159.9</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">7.1%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">159.9</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">7.1%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">141.3</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -561,11 +566,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">30日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；强势曲线；放量转强</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。存储芯片/SoC方向仍可跟踪；当前信号为：均线多头；20日线向上；强势曲线；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线148.7继续持有，跌破5日线先减1/3，跌破10日线150.9减到半仓，跌破20日线145.6则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：141.3。主要风险：常规波动。</div>
           </div>
         </article>
@@ -580,10 +585,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">1180.0</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">2.2%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">1180.0</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">2.2%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">1085.4</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -592,11 +597,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">30日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；强势曲线；放量转强</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。高速光模块/CPO方向仍可跟踪；当前信号为：均线多头；20日线向上；强势曲线；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线1214.0继续持有，跌破5日线先减1/3，跌破10日线1186.2减到半仓，跌破20日线1118.9则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：1085.4。主要风险：常规波动。</div>
           </div>
         </article>
@@ -611,10 +616,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">500.5</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">5.6%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">500.5</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">5.6%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">444.9</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -623,11 +628,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">30日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；强势曲线；5/10日金叉</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。存储芯片/MCU方向仍可跟踪；当前信号为：均线多头；20日线向上；强势曲线；5/10日金叉。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线496.8继续持有，跌破5日线先减1/3，跌破10日线489.1减到半仓，跌破20日线458.6则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：444.9。主要风险：常规波动。</div>
           </div>
         </article>
@@ -642,10 +647,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">弱修复观察</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">64.4</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">3.5%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">64.4</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">3.5%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">63.6-65.5</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">62.6</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -654,11 +659,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">50日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">20日线向上；回踩20日线附近；缩量回踩；5/10日金叉</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势底色还在，但买点确认度不够。封测/高性能计算封装方向仍可跟踪；当前信号为：20日线向上；回踩20日线附近；缩量回踩；5/10日金叉。操作上，先放入观察，不急于开仓，等金叉、放量反包或重新站上短均线。参考买入观察区：63.6-65.5；防守位：62.6。主要风险：常规波动。</div>
           </div>
         </article>
@@ -673,10 +678,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">62.7</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">9.7%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">62.7</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">9.7%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">54.4</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -685,11 +690,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线；5/10日金叉；MACD金叉；放量转强</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。光刻胶/电子特气/MO源方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；5/10日金叉；MACD金叉；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线56.1继续持有，跌破5日线先减1/3，跌破10日线54.5减到半仓，跌破20日线56.1则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：54.4。主要风险：连续拉升后利好兑现/追高风险；高位放量，谨防诱多；更适合持仓，不适合作为新买点追入。</div>
           </div>
         </article>
@@ -704,10 +709,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">66.4</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">15.3%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">66.4</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">15.3%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">49.2</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -716,11 +721,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线；放量转强</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。MLCC瓷粉/电子陶瓷粉体方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线62.7继续持有，跌破5日线先减1/3，跌破10日线57.6减到半仓，跌破20日线50.7则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：49.2。主要风险：短线偏离20日线过大。</div>
           </div>
         </article>
@@ -735,10 +740,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">88.3</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">10.0%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">88.3</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">10.0%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">65.8</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -747,11 +752,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线；放量转强</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。MLCC制程材料方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线87.3继续持有，跌破5日线先减1/3，跌破10日线79.4减到半仓，跌破20日线67.9则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：65.8。主要风险：短线偏离20日线过大。</div>
           </div>
         </article>
@@ -766,10 +771,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">105.0</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">10.0%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">105.0</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">10.0%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">102.9-107.1</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">77.1</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -778,11 +783,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线；20日新高突破</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。光纤光缆/海缆方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；20日新高突破。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线97.2继续持有，跌破5日线先减1/3，跌破10日线86.1减到半仓，跌破20日线79.4则卖出大部或退出。参考买入观察区：102.9-107.1；防守位：77.1。主要风险：短线偏离20日线过大。</div>
           </div>
         </article>
@@ -797,10 +802,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">54.5</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">4.5%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">54.5</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">4.5%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">45.3</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -809,11 +814,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线；放量转强</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。光纤上游材料方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线51.0继续持有，跌破5日线先减1/3，跌破10日线47.0减到半仓，跌破20日线46.7则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：45.3。主要风险：短线偏离20日线过大。</div>
           </div>
         </article>
@@ -828,10 +833,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">141.1</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">3.0%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">141.1</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">3.0%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">118.1</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -840,11 +845,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线；放量转强</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。高速PCB/AI服务器板方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；放量转强。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线136.4继续持有，跌破5日线先减1/3，跌破10日线132.9减到半仓，跌破20日线121.8则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：118.1。主要风险：短线偏离20日线过大。</div>
           </div>
         </article>
@@ -859,10 +864,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">90.0</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">6.2%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">90.0</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">6.2%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">78.5</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -871,11 +876,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。PCB电镀/VCP设备方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线88.3继续持有，跌破5日线先减1/3，跌破10日线86.6减到半仓，跌破20日线81.0则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：78.5。主要风险：常规波动。</div>
           </div>
         </article>
@@ -890,10 +895,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">70.8</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">4.2%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">70.8</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">4.2%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">62.1</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -902,11 +907,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。PCB钻针/硬质合金刀具方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线71.0继续持有，跌破5日线先减1/3，跌破10日线68.6减到半仓，跌破20日线64.1则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：62.1。主要风险：常规波动。</div>
           </div>
         </article>
@@ -921,10 +926,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">288.7</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">4.0%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">288.7</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">4.0%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">256.3</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -933,11 +938,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。PCB激光钻孔设备方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线285.7继续持有，跌破5日线先减1/3，跌破10日线286.0减到半仓，跌破20日线264.2则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：256.3。主要风险：常规波动。</div>
           </div>
         </article>
@@ -952,10 +957,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">40.8</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">2.3%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">40.8</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">2.3%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">37.7</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -964,11 +969,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">50日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；5/10日金叉</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。器件建模/EDA工具方向仍可跟踪；当前信号为：均线多头；20日线向上；5/10日金叉。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线39.0继续持有，跌破5日线先减1/3，跌破10日线38.9减到半仓，跌破20日线38.9则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：37.7。主要风险：常规波动。</div>
           </div>
         </article>
@@ -983,10 +988,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">181.0</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">1.9%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">181.0</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">1.9%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">等待回踩确认</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">156.9</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -995,11 +1000,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。PCB电子化学品方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线173.0继续持有，跌破5日线先减1/3，跌破10日线168.9减到半仓，跌破20日线161.8则卖出大部或退出。参考买入观察区：等待回踩关键均线或放量确认后再定价；防守位：156.9。主要风险：常规波动。</div>
           </div>
         </article>
@@ -1014,10 +1019,10 @@
             <div class="score-badge">3</div>
           </div>
           <div class="card-info">
-            <div class="info-item"><div class="info-label">动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
+            <div class="info-item"><div class="info-label">6月10日动作</div><div class="info-value "><span class="action-badge">趋势观察</span></div></div>
             <div class="info-item"><div class="info-label">类型</div><div class="info-value ">多头持仓趋势</div></div>
-            <div class="info-item"><div class="info-label">现价</div><div class="info-value ">147.5</div></div>
-            <div class="info-item"><div class="info-label">涨跌幅</div><div class="info-value positive">10.0%</div></div>
+            <div class="info-item"><div class="info-label">6月9日收盘</div><div class="info-value ">147.5</div></div>
+            <div class="info-item"><div class="info-label">6月9日涨跌幅</div><div class="info-value positive">10.0%</div></div>
             <div class="info-item"><div class="info-label">观察区</div><div class="info-value ">144.5-150.4</div></div>
             <div class="info-item"><div class="info-label">止损</div><div class="info-value ">116.6</div></div>
             <div class="info-item"><div class="info-label">评级</div><div class="info-value ">趋势观察</div></div>
@@ -1026,11 +1031,11 @@
             <div class="info-item"><div class="info-label">主线</div><div class="info-value ">20日线</div></div>
           </div>
           <div class="card-section">
-            <div class="card-section-title">买点依据</div>
+            <div class="card-section-title">6月9日买点依据</div>
             <div class="card-section-content">均线多头；20日线向上；极强曲线；20日新高突破</div>
           </div>
           <div class="card-section advice">
-            <div class="card-section-title">操作建议</div>
+            <div class="card-section-title">6月10日操作建议</div>
             <div class="card-section-content">趋势质量较好，更像持仓票而不是新开仓买点。CCL覆铜板方向仍可跟踪；当前信号为：均线多头；20日线向上；极强曲线；20日新高突破。操作上，未建仓不追，等回踩5/10日线或主支撑再说；已建仓按学院派均线纪律处理：收盘不破5日线140.5继续持有，跌破5日线先减1/3，跌破10日线138.3减到半仓，跌破20日线120.2则卖出大部或退出。参考买入观察区：144.5-150.4；防守位：116.6。主要风险：短线偏离20日线过大。</div>
           </div>
         </article>
@@ -1039,7 +1044,7 @@
     
     </section>
     <section class="module" id="details">
-      <h2>第四模块：详情</h2>
+      <h2>第四模块：6月9日详情</h2>
       <div class="detail-list">
         <article class="detail-card score-5" data-search="石英股份 603688 sh.603688 半导体材料 高纯石英材料 强候选 shiyinggufen 603688 sh603688 ticailiao gaoshiyingcailiao sygf 603688 sh603688 tcl gsycl">
           <div class="detail-main">
