@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mda100_20260610_115437</title>
+  <title>mda100_20260610_132244</title>
   <style>
     :root {
       --ink:#101418; --muted:#667085; --paper:#eef2ff; --panel:#fff; --line:#d8dee7;
@@ -86,6 +86,23 @@
     .opening-guard-table { border-color:#fecaca; border-radius:10px; overflow:hidden; box-shadow:0 6px 14px rgba(185,28,28,.05); }
     .opening-guard-table th { background:#991b1b; }
     .opening-guard-table td:first-child { color:#991b1b; font-weight:850; }
+    .core-watch-note { display:flex; flex-wrap:wrap; gap:8px; align-items:center; border:1px solid #c7d2fe; background:linear-gradient(135deg,#eef2ff 0%,#f8fbff 100%); color:#344054; border-radius:10px; padding:10px 12px; margin:0 0 10px; }
+    .core-watch-note strong { color:#3730a3; }
+    .sector-watch-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-bottom:14px; }
+    .sector-watch-card { border:1px solid #dbeafe; background:linear-gradient(135deg,#ffffff 0%,#f8fbff 100%); border-radius:12px; overflow:hidden; box-shadow:0 7px 16px rgba(30,64,175,.05); }
+    .sector-watch-head { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; padding:12px 14px; background:linear-gradient(135deg,#eef2ff 0%,#eff6ff 100%); border-bottom:1px solid #dbeafe; }
+    .sector-watch-head h4 { margin:0 0 4px; font-size:15px; color:#1e3a8a; }
+    .sector-watch-head p { margin:0; color:#475467; font-size:12px; line-height:1.45; }
+    .sector-watch-head span { flex:0 0 auto; border-radius:999px; background:#dbeafe; color:#1e40af; padding:4px 9px; font-size:12px; font-weight:850; }
+    .watch-table-wrap { overflow-x:auto; }
+    .watch-table { min-width:720px; font-size:11px; }
+    .watch-table th { background:#1e3a8a; padding:6px 7px; }
+    .watch-table td { padding:7px; }
+    .watch-table td:nth-child(2) strong { color:#172033; }
+    .watch-clue { display:inline-flex; border-radius:999px; padding:3px 7px; background:#f5f3ff; border:1px solid #ddd6fe; color:#5b21b6; font-weight:850; white-space:nowrap; }
+    .watch-theme { margin-top:2px; color:#667085; font-size:10px; line-height:1.3; }
+    .watch-position { display:inline-flex; border-radius:999px; padding:3px 7px; background:#f0fdfa; border:1px solid #99f6e4; color:#0f766e; font-weight:850; white-space:nowrap; }
+    .watch-note { margin-top:4px; color:#344054; line-height:1.5; max-width:360px; }
     .serenity-note { display:flex; flex-wrap:wrap; gap:8px; align-items:center; border:1px solid #c7d2fe; background:linear-gradient(135deg,#eef2ff 0%,#fff 100%); color:#344054; border-radius:10px; padding:10px 12px; margin:0 0 10px; }
     .serenity-note strong { color:#1e3a8a; }
     .long-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:10px; margin:10px 0; }
@@ -126,6 +143,7 @@
     .ret-pill { display:inline-flex; min-width:56px; justify-content:center; border-radius:999px; padding:3px 8px; font-weight:850; }
     .positive-bg { color:#166534; background:#dcfce7; border:1px solid #bbf7d0; }
     .negative-bg { color:#991b1b; background:#fee2e2; border:1px solid #fecaca; }
+    .neutral-bg { color:#334155; background:#e2e8f0; border:1px solid #cbd5e1; }
     .score-chip { display:inline-flex; align-items:center; justify-content:center; min-width:30px; height:26px; border-radius:8px; padding:0 9px; font-weight:900; border:1px solid #cbd5e1; background:#f1f5f9; color:#334155; }
     .score-chip-5 { color:#991b1b; background:linear-gradient(135deg,#fee2e2,#ffedd5); border-color:#fecaca; box-shadow:0 4px 10px rgba(220,38,38,.10); }
     .score-chip-4 { color:#1e40af; background:#dbeafe; border-color:#bfdbfe; box-shadow:0 4px 10px rgba(37,99,235,.10); }
@@ -202,9 +220,9 @@
     .detail-meta .detail-wide { flex-basis:100%; border-radius:7px; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; padding:5px 7px; }
     .detail-meta .detail-wide b { color:#344054; margin-right:6px; white-space:nowrap; }
     .detail-meta .detail-risk { background:#fff7ed; border-color:#fed7aa; color:#9a3412; }
-    @media (max-width:960px) { .grid,.kpis,.summary-grid,.market-overview,.winrate-strip,.long-grid,.cards-container,.detail-list,.advice-actions{grid-template-columns:1fr;} .shell{padding:12px;} .hero-head{display:block;} .stats-pill{margin-left:0;} .advice-action + .advice-action{border-left:0;border-top:1px solid #eef2f7;} }
+    @media (max-width:960px) { .grid,.kpis,.summary-grid,.market-overview,.winrate-strip,.sector-watch-grid,.long-grid,.cards-container,.detail-list,.advice-actions{grid-template-columns:1fr;} .shell{padding:12px;} .hero-head{display:block;} .stats-pill{margin-left:0;} .advice-action + .advice-action{border-left:0;border-top:1px solid #eef2f7;} }
     @page { size:A4 landscape; margin:10mm; }
-    @media print { *{-webkit-print-color-adjust:exact; print-color-adjust:exact;} body{background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 52%,#f1f5f9 100%);} .shell{max-width:none; padding:12px;} .summary-grid{grid-template-columns:repeat(6,minmax(110px,1fr)) !important;} .kpis{grid-template-columns:repeat(4,minmax(120px,1fr)) !important;} .grid{grid-template-columns:1.1fr .9fr !important;} .long-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .cards-container{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .detail-list{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .hero,.long-card,.stock-card,.detail-card{break-inside:avoid;} table{font-size:8px; min-width:0;} .card-controls{display:none;} }
+    @media print { *{-webkit-print-color-adjust:exact; print-color-adjust:exact;} body{background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 52%,#f1f5f9 100%);} .shell{max-width:none; padding:12px;} .summary-grid{grid-template-columns:repeat(6,minmax(110px,1fr)) !important;} .kpis{grid-template-columns:repeat(4,minmax(120px,1fr)) !important;} .grid{grid-template-columns:1.1fr .9fr !important;} .sector-watch-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .long-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .cards-container{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .detail-list{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .hero,.sector-watch-card,.long-card,.stock-card,.detail-card{break-inside:avoid;} table{font-size:8px; min-width:0;} .card-controls{display:none;} }
   </style>
 </head>
 <body>
@@ -212,7 +230,7 @@
     <div class="hero">
       <div class="hero-head">
         <div>
-          <h1>mda100_20260610_115437</h1>
+          <h1>mda100_20260610_132244</h1>
           <div class="subtitle">mda100以核心100只AI科技股票等权编制，历史曲线自2026年首个交易日开始累计。行情标记：VERIFIED_FUTU_OPEND。</div>
           <div class="verify-strip">
             <span>二次确认</span>
@@ -221,7 +239,7 @@
             <span class="verify-detail" title="报告日期与指数日期一致:OK / 行情日期覆盖本次报告日:OK / 所有可用行情均已打 Futu 核验标记:OK / 指数涨跌幅与股票池等权涨跌一致:OK / 上涨数量一致:OK / 下跌数量一致:OK / 覆盖率一致:OK">生成与发布前已复核</span>
           </div>
         </div>
-        <div class="meta">Report 2026-06-09<br>Index 2026-06-09<br>Generated 2026-06-10T11:54:37</div>
+        <div class="meta">Report 2026-06-09<br>Index 2026-06-09<br>Generated 2026-06-10T13:22:44</div>
       </div>
       <div class="summary-grid">
         <div class="summary-card"><div class="label">6月9日 mda100点位</div><div class="value">2190.5</div></div>
@@ -394,6 +412,258 @@
         <span>5分只是收盘后的候选资格，次日开盘先看隔夜美股、A50/恒科、集合竞价和9:45承接，再决定是否动手。</span>
       </div>
       <div class="table-wrap opening-guard-table"><table><thead><tr><th>风控项</th><th>触发条件</th><th>执行动作</th></tr></thead><tbody><tr><td>隔夜AI链风险</td><td>纳指&lt;-1.0%、SOX&lt;-1.5%，或美股AI核心股普遍大跌</td><td><span class="op-badge op-watch">观察</span><span class="op-text">5分不再开盘直接买，先降为观察，等9:45后确认。</span></td></tr><tr><td>外盘传导风险</td><td>A50、恒科或离岸人民币早盘明显走弱</td><td><span class="op-badge op-watch">观察</span><span class="op-text">只处理持仓纪律，新开仓延后到10:00后看承接。</span></td></tr><tr><td>个股竞价风险</td><td>低开超过2.5%，或开盘15分钟跌破5日线/昨日收盘且无承接</td><td><span class="op-badge op-watch">观察</span><span class="op-text">取消追买，等待收回分时均线、5日线或主支撑后再评估。</span></td></tr><tr><td>高位兑现风险</td><td>连续拉升后又叠加利好、小作文或高开回落</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不做开盘追价，只接受缩量回踩后的二次确认。</span></td></tr></tbody></table></div>
+    
+      <h3 class="subsection-title">6月10日 14:30核心赛道观察</h3>
+      
+      <div class="core-watch-note">
+        <strong>样式预览</strong>
+        <span>当前用6月9日收盘已核验数据占位；14:30自动任务会替换成盘中价、分时均线/VWAP和成交量承接。</span>
+      </div>
+      <div class="sector-watch-grid">
+          <article class="sector-watch-card">
+            <div class="sector-watch-head">
+              <div>
+                <h4>PCB核心</h4>
+                <p>突破只看承接，回踩只看支撑，不追连续高开。</p>
+              </div>
+              <span>6只</span>
+            </div>
+            <div class="watch-table-wrap">
+              <table class="watch-table">
+                <thead><tr><th>线索</th><th>标的</th><th>分</th><th>6月9日涨跌</th><th>位置</th><th>6月10日14:30动作</th></tr></thead>
+                <tbody>
+              <tr>
+                <td><span class="watch-clue">亚马逊突破</span></td>
+                <td><strong>沪电股份</strong> <code>002463</code><div class="watch-theme">高速PCB/AI服务器板</div></td>
+                <td><span class="score-chip score-chip-3">3</span></td>
+                <td><span class="ret-pill positive-bg">3.0%</span></td>
+                <td><span class="watch-position">站上5日线</span></td>
+                <td><span class="op-badge op-hold">持有</span><span class="op-text">持有</span><div class="watch-note">持仓票看纪律：14:30仍在136.4上方继续，跌破136.4且收不回先减1/3。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">PCB弹性</span></td>
+                <td><strong>胜宏科技</strong> <code>300476</code><div class="watch-theme">高速PCB/AI服务器板</div></td>
+                <td><span class="score-chip score-chip-2">2</span></td>
+                <td><span class="ret-pill positive-bg">8.8%</span></td>
+                <td><span class="watch-position">守50日线</span></td>
+                <td><span class="op-badge op-watch">观察</span><span class="op-text">观察</span><div class="watch-note">短线评分不足；14:30只观察是否重新站回343.3/353.1，不列入主动买入。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">欧洲钻针</span></td>
+                <td><strong>鼎泰高科</strong> <code>301377</code><div class="watch-theme">PCB钻针/刀具</div></td>
+                <td><span class="score-chip score-chip-3">3</span></td>
+                <td><span class="ret-pill positive-bg">3.5%</span></td>
+                <td><span class="watch-position">站上5日线</span></td>
+                <td><span class="op-badge op-hold">持有</span><span class="op-text">持有</span><div class="watch-note">持仓票看纪律：14:30仍在410.6上方继续，跌破410.6且收不回先减1/3。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">欧洲钻针备选</span></td>
+                <td><strong>欧科亿</strong> <code>688308</code><div class="watch-theme">数控刀具/硬质合金</div></td>
+                <td><span class="score-chip score-chip-3">3</span></td>
+                <td><span class="ret-pill positive-bg">5.2%</span></td>
+                <td><span class="watch-position">站上5日线</span></td>
+                <td><span class="op-badge op-hold">持有</span><span class="op-text">持有</span><div class="watch-note">持仓票看纪律：14:30仍在152.5上方继续，跌破152.5且收不回先减1/3。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">X-ray检测</span></td>
+                <td><strong>日联科技</strong> <code>688531</code><div class="watch-theme">PCB核心</div></td>
+                <td><span class="score-chip score-chip-0">0</span></td>
+                <td><span class="ret-pill neutral-bg">待行情</span></td>
+                <td><span class="watch-position">待行情</span></td>
+                <td><span class="op-badge op-watch">观察</span><span class="op-text">观察</span><div class="watch-note">先补行情和池内身份；没有盘中价、均线和成交量，不参与主动买入。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">X-ray检测备选</span></td>
+                <td><strong>奕瑞科技</strong> <code>688301</code><div class="watch-theme">PCB核心</div></td>
+                <td><span class="score-chip score-chip-0">0</span></td>
+                <td><span class="ret-pill neutral-bg">待行情</span></td>
+                <td><span class="watch-position">待行情</span></td>
+                <td><span class="op-badge op-watch">观察</span><span class="op-text">观察</span><div class="watch-note">先补行情和池内身份；没有盘中价、均线和成交量，不参与主动买入。</div></td>
+              </tr>
+            </tbody>
+              </table>
+            </div>
+          </article>
+        
+          <article class="sector-watch-card">
+            <div class="sector-watch-head">
+              <div>
+                <h4>光核心</h4>
+                <p>三大光持有纪律优先，大萝卜走趋势，不在放量冲高后追。</p>
+              </div>
+              <span>4只</span>
+            </div>
+            <div class="watch-table-wrap">
+              <table class="watch-table">
+                <thead><tr><th>线索</th><th>标的</th><th>分</th><th>6月9日涨跌</th><th>位置</th><th>6月10日14:30动作</th></tr></thead>
+                <tbody>
+              <tr>
+                <td><span class="watch-clue">三大光</span></td>
+                <td><strong>中际旭创</strong> <code>300308</code><div class="watch-theme">高速光模块/CPO</div></td>
+                <td><span class="score-chip score-chip-3">3</span></td>
+                <td><span class="ret-pill positive-bg">2.2%</span></td>
+                <td><span class="watch-position">破10守20</span></td>
+                <td><span class="op-badge op-hold">持有</span><span class="op-text">持有</span><div class="watch-note">持仓票看纪律：14:30仍在1214.0上方继续，跌破1214.0且收不回先减1/3。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">三大光</span></td>
+                <td><strong>新易盛</strong> <code>300502</code><div class="watch-theme">高速光模块/CPO</div></td>
+                <td><span class="score-chip score-chip-3">3</span></td>
+                <td><span class="ret-pill positive-bg">8.4%</span></td>
+                <td><span class="watch-position">站上5日线</span></td>
+                <td><span class="op-badge op-hold">持有</span><span class="op-text">持有</span><div class="watch-note">持仓票看纪律：14:30仍在763.4上方继续，跌破763.4且收不回先减1/3。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">三大光</span></td>
+                <td><strong>天孚通信</strong> <code>300394</code><div class="watch-theme">光器件/光引擎</div></td>
+                <td><span class="score-chip score-chip-3">3</span></td>
+                <td><span class="ret-pill positive-bg">4.4%</span></td>
+                <td><span class="watch-position">破10守20</span></td>
+                <td><span class="op-badge op-hold">持有</span><span class="op-text">持有</span><div class="watch-note">持仓票看纪律：14:30仍在460.8上方继续，跌破460.8且收不回先减1/3。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">大萝卜</span></td>
+                <td><strong>罗博特科</strong> <code>300757</code><div class="watch-theme">CPO自动化设备</div></td>
+                <td><span class="score-chip score-chip-3">3</span></td>
+                <td><span class="ret-pill positive-bg">3.0%</span></td>
+                <td><span class="watch-position">破10守20</span></td>
+                <td><span class="op-badge op-hold">持有</span><span class="op-text">持有</span><div class="watch-note">持仓票看纪律：14:30仍在651.7上方继续，跌破651.7且收不回先减1/3。</div></td>
+              </tr>
+            </tbody>
+              </table>
+            </div>
+          </article>
+        
+          <article class="sector-watch-card">
+            <div class="sector-watch-head">
+              <div>
+                <h4>芯核心</h4>
+                <p>大芯龙走趋势，六氟化钨独立看材料景气和资金承接。</p>
+              </div>
+              <span>6只</span>
+            </div>
+            <div class="watch-table-wrap">
+              <table class="watch-table">
+                <thead><tr><th>线索</th><th>标的</th><th>分</th><th>6月9日涨跌</th><th>位置</th><th>6月10日14:30动作</th></tr></thead>
+                <tbody>
+              <tr>
+                <td><span class="watch-clue">大芯</span></td>
+                <td><strong>寒武纪</strong> <code>688256</code><div class="watch-theme">AI训练/推理芯片</div></td>
+                <td><span class="score-chip score-chip-3">3</span></td>
+                <td><span class="ret-pill positive-bg">1.6%</span></td>
+                <td><span class="watch-position">守30日线</span></td>
+                <td><span class="op-badge op-watch">观察</span><span class="op-text">观察</span><div class="watch-note">有趋势但买点不足；等收回1311.3或站上1270.0附近再看，不做情绪追单。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">大芯备选</span></td>
+                <td><strong>海光信息</strong> <code>688041</code><div class="watch-theme">DCU/GPGPU算力芯片</div></td>
+                <td><span class="score-chip score-chip-1">1</span></td>
+                <td><span class="ret-pill positive-bg">3.3%</span></td>
+                <td><span class="watch-position">破50日线</span></td>
+                <td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">减仓/回避</span><div class="watch-note">14:30仍在50日线下方时不接；先等重新站回20日线302.8或出现放量反包。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">龙</span></td>
+                <td><strong>龙芯中科</strong> <code>688047</code><div class="watch-theme">自主CPU/基础处理器</div></td>
+                <td><span class="score-chip score-chip-1">1</span></td>
+                <td><span class="ret-pill positive-bg">2.1%</span></td>
+                <td><span class="watch-position">破50日线</span></td>
+                <td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">减仓/回避</span><div class="watch-note">14:30仍在50日线下方时不接；先等重新站回20日线152.5或出现放量反包。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">芯片IP</span></td>
+                <td><strong>芯原股份</strong> <code>688521</code><div class="watch-theme">半导体IP/定制芯片</div></td>
+                <td><span class="score-chip score-chip-1">1</span></td>
+                <td><span class="ret-pill positive-bg">6.8%</span></td>
+                <td><span class="watch-position">破50日线</span></td>
+                <td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">减仓/回避</span><div class="watch-note">14:30仍在50日线下方时不接；先等重新站回20日线256.4或出现放量反包。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">六氟化钨</span></td>
+                <td><strong>中船特气</strong> <code>688146</code><div class="watch-theme">电子特气</div></td>
+                <td><span class="score-chip score-chip-3">3</span></td>
+                <td><span class="ret-pill negative-bg">-0.5%</span></td>
+                <td><span class="watch-position">站上5日线</span></td>
+                <td><span class="op-badge op-hold">持有</span><span class="op-text">持有</span><div class="watch-note">持仓票看纪律：14:30仍在227.2上方继续，跌破227.2且收不回先减1/3。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">电子特气</span></td>
+                <td><strong>华特气体</strong> <code>688268</code><div class="watch-theme">电子特气</div></td>
+                <td><span class="score-chip score-chip-2">2</span></td>
+                <td><span class="ret-pill positive-bg">3.5%</span></td>
+                <td><span class="watch-position">破5守10</span></td>
+                <td><span class="op-badge op-watch">观察</span><span class="op-text">观察</span><div class="watch-note">短线评分不足；14:30只观察是否重新站回189.8/169.8，不列入主动买入。</div></td>
+              </tr>
+            </tbody>
+              </table>
+            </div>
+          </article>
+        
+          <article class="sector-watch-card">
+            <div class="sector-watch-head">
+              <div>
+                <h4>内存核心</h4>
+                <p>持有票看趋势纪律，君子剑这类回调关注，不抢第一根下跌。</p>
+              </div>
+              <span>4只</span>
+            </div>
+            <div class="watch-table-wrap">
+              <table class="watch-table">
+                <thead><tr><th>线索</th><th>标的</th><th>分</th><th>6月9日涨跌</th><th>位置</th><th>6月10日14:30动作</th></tr></thead>
+                <tbody>
+              <tr>
+                <td><span class="watch-clue">老姨</span></td>
+                <td><strong>兆易创新</strong> <code>603986</code><div class="watch-theme">存储芯片/MCU</div></td>
+                <td><span class="score-chip score-chip-3">3</span></td>
+                <td><span class="ret-pill positive-bg">5.6%</span></td>
+                <td><span class="watch-position">站上5日线</span></td>
+                <td><span class="op-badge op-hold">持有</span><span class="op-text">持有</span><div class="watch-note">持仓票看纪律：14:30仍在496.8上方继续，跌破496.8且收不回先减1/3。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">君子剑</span></td>
+                <td><strong>北京君正</strong> <code>300223</code><div class="watch-theme">存储芯片/SoC</div></td>
+                <td><span class="score-chip score-chip-3">3</span></td>
+                <td><span class="ret-pill positive-bg">7.1%</span></td>
+                <td><span class="watch-position">站上5日线</span></td>
+                <td><span class="op-badge op-hold">持有</span><span class="op-text">持有</span><div class="watch-note">持仓票看纪律：14:30仍在148.7上方继续，跌破148.7且收不回先减1/3。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">存储模组</span></td>
+                <td><strong>佰维存储</strong> <code>688525</code><div class="watch-theme">存储模组/存储芯片</div></td>
+                <td><span class="score-chip score-chip-5">5</span></td>
+                <td><span class="ret-pill positive-bg">5.8%</span></td>
+                <td><span class="watch-position">守30日线</span></td>
+                <td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">买入/加仓</span><div class="watch-note">14:30若站回分时均线/VWAP且不破312.0，可小仓试探；跌回313.6下方取消追买。</div></td>
+              </tr>
+            
+              <tr>
+                <td><span class="watch-clue">内存接口</span></td>
+                <td><strong>澜起科技</strong> <code>688008</code><div class="watch-theme">内存接口/AI互联芯片</div></td>
+                <td><span class="score-chip score-chip-2">2</span></td>
+                <td><span class="ret-pill positive-bg">5.4%</span></td>
+                <td><span class="watch-position">守30日线</span></td>
+                <td><span class="op-badge op-watch">观察</span><span class="op-text">观察</span><div class="watch-note">短线评分不足；14:30只观察是否重新站回242.7/246.2，不列入主动买入。</div></td>
+              </tr>
+            </tbody>
+              </table>
+            </div>
+          </article>
+        </div>
     
       <h3 class="subsection-title">6月9日评分概览</h3>
       <div class="table-wrap kpi-table"><table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>平均评分</td><td>2.5</td></tr><tr><td>4分以上</td><td>8</td></tr><tr><td>5分</td><td>5</td></tr><tr><td>3分</td><td>57</td></tr><tr><td>1-2分</td><td>33</td></tr><tr><td>数据不足</td><td>2</td></tr><tr><td>对比基准</td><td>6月8日</td></tr></tbody></table></div>
