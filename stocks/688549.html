@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中巨芯-U_688549_mda100资料页</title>
+  <style>
+    :root { --ink:#101418; --muted:#667085; --line:#d8dee7; --head:#172033; --red:#b42318; --green:#0f766e; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 48%,#fff7ed 100%); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; font-size:14px; line-height:1.65; }
+    .shell { max-width:1180px; margin:0 auto; padding:22px; }
+    .hero { background:#fff; border:1px solid #e2e8f0; border-top:6px solid #991b1b; border-radius:16px; padding:24px; box-shadow:0 12px 28px rgba(15,23,42,.10); }
+    .topbar { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; margin-bottom:14px; }
+    .back { display:inline-flex; border:1px solid #dbe3ef; background:#f8fafc; color:#1e3a8a; border-radius:999px; padding:8px 12px; text-decoration:none; font-weight:850; }
+    h1 { margin:0; font-size:32px; line-height:1.15; }
+    .code { margin-top:6px; color:#667085; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:15px; }
+    .summary { margin:14px 0 0; color:#344054; font-size:15px; max-width:980px; }
+    .meta-strip { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+    .pill { display:inline-flex; border-radius:999px; padding:5px 10px; font-weight:900; border:1px solid #cbd5e1; background:#f8fafc; color:#334155; }
+    .strategy-pill { display:inline-flex; align-items:center; justify-content:center; min-width:32px; border-radius:999px; padding:4px 9px; font-size:12px; font-weight:900; border:1px solid #cbd5e1; background:#f8fafc; color:#334155; }
+    .strategy-必 { color:#991b1b; background:#fee2e2; border-color:#fecaca; }
+    .strategy-野 { color:#1e40af; background:#dbeafe; border-color:#bfdbfe; }
+    .grid { display:grid; grid-template-columns:1.15fr .85fr; gap:16px; margin-top:16px; }
+    .panel { background:#fff; border:1px solid #e2e8f0; border-radius:14px; padding:16px; box-shadow:0 8px 18px rgba(15,23,42,.05); }
+    h2 { margin:0 0 10px; font-size:18px; border-bottom:1px solid #e5e7eb; padding-bottom:8px; }
+    .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:10px; background:#fff; }
+    table { width:100%; border-collapse:collapse; min-width:0; font-size:13px; }
+    th { background:var(--head); color:#fff; text-align:left; padding:8px 10px; }
+    td { border-top:1px solid #edf2f7; padding:8px 10px; vertical-align:top; }
+    tr:nth-child(even) td { background:#fafbfc; }
+    code { background:#eef2f7; padding:1px 5px; border-radius:4px; }
+    .score-chip { display:inline-flex; align-items:center; justify-content:center; min-width:30px; height:26px; border-radius:8px; padding:0 9px; font-weight:900; border:1px solid #cbd5e1; background:#f1f5f9; color:#334155; }
+    .score-chip-5 { color:#991b1b; background:linear-gradient(135deg,#fee2e2,#ffedd5); border-color:#fecaca; }
+    .score-chip-4 { color:#1e40af; background:#dbeafe; border-color:#bfdbfe; }
+    .score-chip-3 { color:#0f766e; background:#ccfbf1; border-color:#99f6e4; }
+    .score-chip-2 { color:#92400e; background:#fef3c7; border-color:#fde68a; }
+    .score-chip-1,.score-chip-0 { color:#475569; background:#f1f5f9; border-color:#cbd5e1; }
+    .ret-pill { display:inline-flex; min-width:56px; justify-content:center; border-radius:999px; padding:3px 8px; font-weight:850; }
+    .positive-bg { color:#991b1b; background:#fee2e2; border:1px solid #fecaca; }
+    .negative-bg { color:#166534; background:#dcfce7; border:1px solid #bbf7d0; }
+    .neutral-bg { color:#334155; background:#e2e8f0; border:1px solid #cbd5e1; }
+    .op-badge { display:inline-flex; align-items:center; justify-content:center; min-width:66px; border-radius:999px; padding:4px 9px; margin:0 8px 4px 0; font-size:12px; font-weight:850; white-space:nowrap; }
+    .op-buy { color:#991b1b; background:#fee2e2; border:1px solid #fecaca; }
+    .op-hold { color:#1e40af; background:#dbeafe; border:1px solid #bfdbfe; }
+    .op-sell { color:#9a3412; background:#ffedd5; border:1px solid #fed7aa; }
+    .op-watch { color:#334155; background:#e2e8f0; border:1px solid #cbd5e1; }
+    .op-neutral { color:#374151; background:#f3f4f6; border:1px solid #d1d5db; }
+    .stock-page-action-text { color:#344054; }
+    .detail-judgement { display:grid; gap:8px; margin-top:8px; }
+    .detail-judgement div { display:grid; grid-template-columns:58px 1fr; gap:8px; align-items:start; border:1px solid #edf2f7; background:#fbfcfe; border-radius:9px; padding:8px 9px; }
+    .detail-judgement b { color:#1e3a8a; white-space:nowrap; }
+    .detail-judgement span { color:#344054; }
+    .verify { margin-top:14px; color:#475467; font-size:12px; }
+    .verify code { color:#14532d; background:#dcfce7; }
+    @media (max-width:900px) { .grid{grid-template-columns:1fr;} .topbar{display:block;} h1{font-size:26px;} }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="topbar">
+        <div>
+          <h1>中巨芯-U</h1>
+          <div class="code">688549 · SH.688549</div>
+        </div>
+        <a class="back" href="javascript:history.back()">返回报告</a>
+      </div>
+      <div class="meta-strip">
+        <span class="strategy-pill strategy-必">必</span>
+        <span class="pill">电子湿化学品/电子特气</span>
+        <span class="pill">电子湿化学品/电子特气</span>
+        <span class="pill">6月11日评分 <span class="score-chip score-chip-0">0</span></span>
+      </div>
+      <p class="summary">中巨芯-U 属于 电子湿化学品/电子特气 / 电子湿化学品/电子特气。半导体材料链扩展池；关注电子湿化学品、电子特气和国产替代 在 mda100 中当前按“必”处理：处在AI/机器人链高价值或低替代性环节。 它的主要观察点是：半导体电子化学材料</p>
+      <div class="verify">生成时间 2026-06-11T16:38:36；行情标记 <code>VERIFIED_FUTU_OPEND_INTRADAY_SURGE</code>；发布校验 <code>DOUBLE_VERIFIED_MDA100_DATA_INDEX_MATCH</code></div>
+    </section>
+    <div class="grid">
+      <section class="panel">
+        <h2>一眼看懂</h2>
+        <div class="table-wrap stock-page-table"><table><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>产业/主题定位</td><td>电子湿化学品/电子特气</td></tr><tr><td>细分方向</td><td>电子湿化学品/电子特气</td></tr><tr><td>业务/供应链角色</td><td>半导体电子化学材料</td></tr><tr><td>入池说明</td><td>半导体材料链扩展池；关注电子湿化学品、电子特气和国产替代</td></tr><tr><td>必/野</td><td><span class="strategy-pill strategy-必">必</span> <span>核心必看</span></td></tr><tr><td>纯度</td><td>待核验 / </td></tr><tr><td>综合评分</td><td><span class="score-chip score-chip-1">1</span></td></tr><tr><td>供需/瓶颈评分</td><td><span class="score-chip score-chip-4">4</span></td></tr><tr><td>位置评分</td><td><span class="score-chip score-chip-0">0</span></td></tr><tr><td>6月11日短线评分</td><td><span class="score-chip score-chip-0">0</span></td></tr><tr><td>当前形态</td><td>盘中异动观察</td></tr><tr><td>曲线/主支撑</td><td>待补K线 / 待补K线</td></tr><tr><td>买点依据</td><td>盘中涨幅 19.0%；半导体材料链扩展池；关注电子湿化学品、电子特气和国产替代</td></tr><tr><td>观察区</td><td>等待确认</td></tr><tr><td>防守位</td><td>按关键均线防守</td></tr><tr><td>风险</td><td>扩展池标的，尚未纳入mda100核心评分；需补公告、新闻和K线确认</td></tr><tr><td>未建仓操作</td><td><span class="op-badge op-neutral">操作</span><span class="op-text">只做备选，除非出现明确右侧信号，否则不进入6月12日优先清单。</span></td></tr><tr><td>已建仓操作</td><td><span class="op-badge op-neutral">操作</span><span class="op-text">已有仓位以防守为主，弱于关键均线则降低仓位。</span></td></tr></tbody></table></div>
+      </section>
+      <section class="panel">
+        <h2>6月11日行情与均线</h2>
+        <div class="table-wrap stock-market-table"><table><thead><tr><th>指标</th><th>数值</th></tr></thead><tbody><tr><td>6月11日收盘</td><td>无数据</td></tr><tr><td>6月11日涨跌</td><td><span class="ret-pill positive-bg">19.0%</span></td></tr><tr><td>5日线</td><td></td></tr><tr><td>10日线</td><td></td></tr><tr><td>20日线</td><td></td></tr><tr><td>30日线</td><td></td></tr><tr><td>50日线</td><td></td></tr><tr><td>量能比</td><td></td></tr><tr><td>行情核验</td><td>VERIFIED_FUTU_OPEND_INTRADAY_SURGE<br><span>2026-06-11T14:45:08</span></td></tr></tbody></table></div>
+      </section>
+    </div>
+    <section class="panel" style="margin-top:16px;">
+      <h2>6月12日关键判断</h2>
+      
+          <div class="detail-judgement">
+            <div><b>判断</b><span>当前技术位置不够主动。 核心必看：处在AI/机器人链高价值或低替代性环节。</span></div>
+            <div><b>位置</b><span>收盘无数据；5/10/20日线 待确认/待确认/待确认；主线看待补K线，曲线强度为待补K线，当前归为盘中异动观察。</span></div>
+            <div><b>执行</b><span>未建仓：只做备选，除非出现明确右侧信号，否则不进入6月12日优先清单。 已建仓：已有仓位以防守为主，弱于关键均线则降低仓位。</span></div>
+            <div><b>验证</b><span>信号：盘中涨幅 19.0%；半导体材料链扩展池；关注电子湿化学品、电子特气和国产替代；观察区：等待回踩关键均线或放量确认后再定价；防守：以跌破20日线或放量大阴线作为防守线。</span></div>
+          </div>
+    
+    </section>
+  </main>
+</body>
+</html>
