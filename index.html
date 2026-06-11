@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mda100_20260611_163836</title>
+  <title>mda100_20260611_173751</title>
   <style>
     :root {
       --ink:#101418; --muted:#667085; --paper:#eef2ff; --panel:#fff; --line:#d8dee7;
@@ -269,6 +269,13 @@
     .detail-meta .detail-wide { flex-basis:100%; border-radius:7px; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; padding:5px 7px; }
     .detail-meta .detail-wide b { color:#344054; margin-right:6px; white-space:nowrap; }
     .detail-meta .detail-risk { background:#fff7ed; border-color:#fed7aa; color:#9a3412; }
+    .decision-tags { gap:5px !important; flex-wrap:wrap; padding:6px 8px !important; }
+    .decision-tag { display:inline-flex; align-items:center; height:22px; border-radius:999px; padding:0 8px; font-size:11px; font-weight:900; border:1px solid #dbe4ef; background:#f8fafc; color:#475569; }
+    .decision-tag.positive { background:#fee2e2; border-color:#fecaca; color:#991b1b; }
+    .decision-tag.watch { background:#dbeafe; border-color:#bfdbfe; color:#1e40af; }
+    .decision-tag.supply { background:#fef3c7; border-color:#fde68a; color:#92400e; }
+    .decision-tag.risk { background:#fff7ed; border-color:#fdba74; color:#9a3412; }
+    .decision-tag.muted { background:#f1f5f9; color:#64748b; }
     .detail-judgement { display:grid; gap:5px; margin-top:8px; border-top:1px solid #edf2f7; padding-top:8px; }
     .detail-judgement div { display:grid; grid-template-columns:42px 1fr; gap:7px; align-items:start; border:1px solid #edf2f7; background:#fbfcfe; border-radius:7px; padding:6px 7px; }
     .detail-judgement b { color:#1e3a8a; font-size:11px; line-height:1.45; white-space:nowrap; }
@@ -281,13 +288,17 @@
     .price-hike-table table { min-width:0; table-layout:fixed; font-size:11px; }
     .price-hike-table th { background:#9a3412; padding:7px 8px; }
     .price-hike-table td { padding:7px 8px; line-height:1.45; }
-    .price-hike-table th:nth-child(1), .price-hike-table td:nth-child(1) { width:15%; }
-    .price-hike-table th:nth-child(2), .price-hike-table td:nth-child(2) { width:12%; }
-    .price-hike-table th:nth-child(3), .price-hike-table td:nth-child(3) { width:8%; }
+    .price-hike-table th:nth-child(1), .price-hike-table td:nth-child(1) { width:13%; }
+    .price-hike-table th:nth-child(2), .price-hike-table td:nth-child(2) { width:24%; }
+    .price-hike-table th:nth-child(3), .price-hike-table td:nth-child(3) { width:10%; }
     .price-hike-table th:nth-child(4), .price-hike-table td:nth-child(4) { width:7%; }
-    .price-hike-table th:nth-child(5), .price-hike-table td:nth-child(5) { width:9%; }
-    .price-hike-table th:nth-child(6), .price-hike-table td:nth-child(6) { width:49%; }
+    .price-hike-table th:nth-child(5), .price-hike-table td:nth-child(5) { width:6%; }
+    .price-hike-table th:nth-child(6), .price-hike-table td:nth-child(6) { width:8%; }
+    .price-hike-table th:nth-child(7), .price-hike-table td:nth-child(7) { width:32%; }
     .price-hike-table .op-badge { margin-bottom:0; }
+    .subsector-cell { display:grid; gap:3px; max-width:100%; }
+    .subsector-cell strong { color:#9a3412; font-size:12px; line-height:1.25; }
+    .subsector-cell span { color:#475569; font-size:10px; line-height:1.35; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
     .judgement-cell { display:grid; gap:4px; min-width:0; }
     .judgement-cell div { display:grid; grid-template-columns:48px 1fr; gap:6px; align-items:start; }
     .judgement-cell b { color:#9a3412; font-size:10px; white-space:nowrap; }
@@ -365,7 +376,7 @@
     <div class="hero">
       <div class="hero-head">
         <div>
-          <h1>mda100_20260611_163836</h1>
+          <h1>mda100_20260611_173751</h1>
           <div class="subtitle">mda100以核心100只AI科技股票等权编制，历史曲线自2026年首个交易日开始累计。行情标记：VERIFIED_FUTU_OPEND。</div>
           <div class="verify-strip">
             <span>二次确认</span>
@@ -374,13 +385,13 @@
             <span class="verify-detail" title="报告日期与指数日期一致:OK / 行情日期覆盖本次报告日:OK / 所有可用行情均已打 Futu 核验标记:OK / 指数涨跌幅与股票池等权涨跌一致:OK / 上涨数量一致:OK / 下跌数量一致:OK / 覆盖率一致:OK">生成与发布前已复核</span>
           </div>
         </div>
-        <div class="meta">Report 2026-06-11<br>Index 2026-06-11<br>Generated 2026-06-11T16:38:36</div>
+        <div class="meta">Report 2026-06-11<br>Index 2026-06-11<br>Generated 2026-06-11T17:37:51</div>
       </div>
       <div class="report-stamp" aria-label="报告生成时间和版本">
         <div class="stamp-badge">16:00收盘版</div>
         <div class="stamp-main">
           <div class="stamp-label">收盘复盘生成时间</div>
-          <div class="stamp-time">6月11日 16:38:36</div>
+          <div class="stamp-time">6月11日 17:37:51</div>
           <div class="stamp-desc">用于下一交易日计划，重点看收盘确认、均线位置、评分变化和隔夜风险闸门。</div>
         </div>
         <div class="stamp-scope">16:00后收盘核验</div>
@@ -644,6 +655,7 @@
             <span>强候选</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -670,6 +682,7 @@
             <span>强候选</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -696,6 +709,7 @@
             <span>强候选</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；强势曲线；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -722,6 +736,7 @@
             <span>强候选</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；强势曲线；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -748,6 +763,7 @@
             <span>强候选</span>
             <span>多头持仓趋势</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；回踩20日线附近；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -774,6 +790,7 @@
             <span>强候选</span>
             <span>反弹观察趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；20日线向上；强势曲线；回踩20日线附近；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -800,6 +817,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -826,6 +844,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -852,6 +871,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
@@ -878,6 +898,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
@@ -904,6 +925,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
@@ -930,6 +952,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
@@ -956,6 +979,7 @@
             <span>观察低吸</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；20日线向上；回踩30日线附近；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -982,6 +1006,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；放量转强</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1008,6 +1033,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
@@ -1034,6 +1060,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
@@ -1060,6 +1087,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
@@ -1086,6 +1114,7 @@
             <span>趋势观察</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；回踩50日线附近；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -1112,6 +1141,7 @@
             <span>趋势观察</span>
             <span>弱修复观察</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>20日线向上；回踩20日线附近；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1138,6 +1168,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1164,6 +1195,7 @@
             <span>趋势观察</span>
             <span>弱修复观察</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>20日线向上；回踩20日线附近；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1190,6 +1222,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；MACD金叉</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1216,6 +1249,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；20日线向上</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1242,6 +1276,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；20日线向上</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1268,6 +1303,7 @@
             <span>弱观察</span>
             <span>弱修复观察</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；20日线向上；放量转强</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险</span>
           </div>
@@ -1294,6 +1330,7 @@
             <span>趋势观察</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；回踩30日线附近；30日线辅助买点；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -1320,6 +1357,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
@@ -1346,6 +1384,7 @@
             <span>趋势观察</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -1372,6 +1411,7 @@
             <span>趋势观察</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>20日线向上；回踩30日线附近；30日线辅助买点；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -1398,6 +1438,7 @@
             <span>弱观察</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -1424,6 +1465,7 @@
             <span>弱观察</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；20日线向上；5/10日金叉</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -1450,6 +1492,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>无明显买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -1476,6 +1519,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>踩上50日线并拉回</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -1502,6 +1546,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>20日线向上</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -1528,6 +1573,7 @@
             <span>强候选</span>
             <span>多头持仓趋势</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；回踩20日线附近；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1554,6 +1600,7 @@
             <span>强候选</span>
             <span>反弹买入趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；强势曲线；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1580,6 +1627,7 @@
             <span>强候选</span>
             <span>反弹买入趋势</span>
             <span>修复/弱曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；回踩50日线附近；踩上50日线并拉回；50日线附近洗盘低吸；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1606,6 +1654,7 @@
             <span>强候选</span>
             <span>弱修复观察</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；20日线向上；回踩20日线附近；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1632,6 +1681,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1658,6 +1708,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1684,6 +1735,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1710,6 +1762,7 @@
             <span>强候选</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；强势曲线；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1736,6 +1789,7 @@
             <span>强候选</span>
             <span>反弹观察趋势</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>20日线向上；回踩20日线附近；回踩30日线附近；30日线辅助买点；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1762,6 +1816,7 @@
             <span>强候选</span>
             <span>反弹观察趋势</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>回踩20日线附近；回踩30日线附近；30日线辅助买点；5/10日金叉；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1788,6 +1843,7 @@
             <span>强候选</span>
             <span>多头持仓趋势</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；回踩20日线附近；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1814,6 +1870,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
@@ -1840,6 +1897,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；强势曲线</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1866,6 +1924,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；高位放量，谨防诱多</span>
           </div>
@@ -1892,6 +1951,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；强势曲线；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1918,6 +1978,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；20日线向上；回踩20日线附近；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1944,6 +2005,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；20日线向上；回踩20日线附近；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1970,6 +2032,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；强势曲线</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -1996,6 +2059,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
@@ -2022,6 +2086,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；均线多头；20日线向上；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
@@ -2048,6 +2113,7 @@
             <span>观察低吸</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；极强曲线；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
@@ -2074,6 +2140,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；极强曲线</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
@@ -2100,6 +2167,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；极强曲线；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
@@ -2126,6 +2194,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；极强曲线</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
@@ -2152,6 +2221,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；极强曲线</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
@@ -2178,6 +2248,7 @@
             <span>趋势观察</span>
             <span>弱修复观察</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>20日线向上；回踩20日线附近；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -2204,6 +2275,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -2230,6 +2302,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -2256,6 +2329,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；20日线向上</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -2282,6 +2356,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；多头趋势保护</span>
             <span class="detail-wide detail-risk"><b>风险</b>常规波动</span>
           </div>
@@ -2308,6 +2383,7 @@
             <span>弱观察</span>
             <span>弱修复观察</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>涨价/供货紧张；瓶颈供给；放量转强；20日新高突破</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；高位放量，谨防诱多</span>
           </div>
@@ -2334,6 +2410,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；极强曲线</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
@@ -2360,6 +2437,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；极强曲线</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
@@ -2386,6 +2464,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；极强曲线；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
@@ -2412,6 +2491,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；极强曲线</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
@@ -2438,6 +2518,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
@@ -2464,6 +2545,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
@@ -2490,6 +2572,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；多头趋势保护</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
@@ -2516,6 +2599,7 @@
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>强势曲线 / 30日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>均线多头；20日线向上；强势曲线；多头趋势保护</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大</span>
           </div>
@@ -2542,6 +2626,7 @@
             <span>弱观察</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>回踩30日线附近；30日线辅助买点；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2568,6 +2653,7 @@
             <span>弱观察</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>回踩30日线附近；30日线辅助买点；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2594,6 +2680,7 @@
             <span>弱观察</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>回踩30日线附近；30日线辅助买点；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2620,6 +2707,7 @@
             <span>弱观察</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>回踩50日线附近；靠近50日线观察；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2646,6 +2734,7 @@
             <span>弱观察</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>20日线向上；回踩50日线附近；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2672,6 +2761,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2698,6 +2788,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2724,6 +2815,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>20日线向上</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2750,6 +2842,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>无明显买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2776,6 +2869,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>回踩50日线附近；缩量回踩</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2802,6 +2896,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>20日线向上；30日线辅助买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2828,6 +2923,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；20日线向上</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2854,6 +2950,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>30日线辅助买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2880,6 +2977,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>20日线向上</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2906,6 +3004,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>20日线向上</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2932,6 +3031,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>20日线向上</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2958,6 +3058,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>趋势曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>无明显买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌</span>
           </div>
@@ -2984,6 +3085,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>修复/弱曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>无明显买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
@@ -3010,6 +3112,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>修复/弱曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>无明显买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
@@ -3036,6 +3139,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>修复/弱曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>无明显买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
@@ -3062,6 +3166,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>修复/弱曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>无明显买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
@@ -3088,6 +3193,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>修复/弱曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>无明显买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
@@ -3114,6 +3220,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>修复/弱曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>无明显买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
@@ -3140,6 +3247,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>修复/弱曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>无明显买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
@@ -3166,6 +3274,7 @@
             <span>数据不足</span>
             <span>未分类</span>
             <span>未分层 / 待确认</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>无明显买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>K线不足: 49</span>
           </div>
@@ -3192,6 +3301,7 @@
             <span>暂不优先</span>
             <span>破位观望</span>
             <span>修复/弱曲线 / 50日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>无明显买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>跌破20日线或放量大跌；跌破50日线未收回</span>
           </div>
@@ -3218,6 +3328,7 @@
             <span>数据不足</span>
             <span>未分类</span>
             <span>未分层 / 待确认</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
             <span class="detail-wide"><b>买点</b>无明显买点</span>
             <span class="detail-wide detail-risk"><b>风险</b>K线不足: 44</span>
           </div>
@@ -3235,7 +3346,7 @@
     <section class="module report-page" data-page="material" id="material-page">
       <h2>资料页：半导体材料</h2>
       <h3 class="subsection-title">涨价行业评级</h3>
-      <div class="table-wrap price-hike-table"><table><thead><tr><th>细分行业</th><th>股票</th><th>代码</th><th>评分</th><th>6月11日涨跌</th><th>关键判断与操作</th></tr></thead><tbody><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><a class="stock-link" href="stocks/603688.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">石英股份</span></a></td><td><code>603688</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill positive-bg">3.9%</span></td><td>
+      <div class="table-wrap price-hike-table"><table><thead><tr><th>细分行业</th><th>细分说明</th><th>股票</th><th>代码</th><th>评分</th><th>6月11日涨跌</th><th>关键判断与操作</th></tr></thead><tbody><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><div class="subsector-cell"><strong>高纯石英材料</strong><span>扩散、刻蚀、清洗、光刻等前道环节的关键耗材，半导体级认证和供给弹性是核心。 核验：半导体级收入占比、海外替代、价格和供给紧张程度。</span></div></td><td><a class="stock-link" href="stocks/603688.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">石英股份</span></a></td><td><code>603688</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill positive-bg">3.9%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜强位置</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3244,7 +3355,7 @@
         <div><b>已建仓</b><span>收盘不破5日线72.3继续持有；跌破5日线先减1/3；跌破10日线68.2减到半仓；跌破20日线69.9卖出大部或退出。</span></div>
         <div><b>防守</b><span>67.8</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><a class="stock-link" href="stocks/002916.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">深南电路</span></a></td><td><code>002916</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill negative-bg">-1.8%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><div class="subsector-cell"><strong>PCB / CCL / 铜箔</strong><span>AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。</span></div></td><td><a class="stock-link" href="stocks/002916.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">深南电路</span></a></td><td><code>002916</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill negative-bg">-1.8%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜强位置</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3253,7 +3364,7 @@
         <div><b>已建仓</b><span>收盘不破5日线379.6继续持有；跌破5日线先减1/3；跌破10日线386.3减到半仓；跌破20日线375.0卖出大部或退出。</span></div>
         <div><b>防守</b><span>363.8</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><a class="stock-link" href="stocks/601869.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">长飞光纤</span></a></td><td><code>601869</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-2.2%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><div class="subsector-cell"><strong>光纤供货难</strong><span>保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。</span></div></td><td><a class="stock-link" href="stocks/601869.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">长飞光纤</span></a></td><td><code>601869</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-2.2%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜较好位置</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3262,7 +3373,7 @@
         <div><b>已建仓</b><span>收盘不破5日线452.3继续持有；跌破5日线先减1/3；跌破10日线434.6减到半仓；跌破20日线408.3卖出大部或退出。</span></div>
         <div><b>防守</b><span>396.1</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><a class="stock-link" href="stocks/002463.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">沪电股份</span></a></td><td><code>002463</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-2.8%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><div class="subsector-cell"><strong>PCB / CCL / 铜箔</strong><span>AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。</span></div></td><td><a class="stock-link" href="stocks/002463.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">沪电股份</span></a></td><td><code>002463</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-2.8%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜较好位置</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3271,7 +3382,7 @@
         <div><b>已建仓</b><span>收盘不破5日线133.8继续持有；跌破5日线先减1/3；跌破10日线132.5减到半仓；跌破20日线123.7卖出大部或退出。</span></div>
         <div><b>防守</b><span>120.0</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><a class="stock-link" href="stocks/300285.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">国瓷材料</span></a></td><td><code>300285</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill positive-bg">2.1%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><div class="subsector-cell"><strong>MLCC上游</strong><span>AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。</span></div></td><td><a class="stock-link" href="stocks/300285.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">国瓷材料</span></a></td><td><code>300285</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill positive-bg">2.1%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜趋势跟踪</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3280,7 +3391,7 @@
         <div><b>已建仓</b><span>收盘不破5日线62.5继续持有；跌破5日线先减1/3；跌破10日线59.8减到半仓；跌破20日线52.7卖出大部或退出。</span></div>
         <div><b>防守</b><span>51.1</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><a class="stock-link" href="stocks/600183.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">生益科技</span></a></td><td><code>600183</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill positive-bg">1.9%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><div class="subsector-cell"><strong>PCB / CCL / 铜箔</strong><span>AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。</span></div></td><td><a class="stock-link" href="stocks/600183.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">生益科技</span></a></td><td><code>600183</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill positive-bg">1.9%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜趋势跟踪</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3289,7 +3400,7 @@
         <div><b>已建仓</b><span>收盘不破5日线143.1继续持有；跌破5日线先减1/3；跌破10日线141.4减到半仓；跌破20日线125.7卖出大部或退出。</span></div>
         <div><b>防守</b><span>122.0</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><a class="stock-link" href="stocks/688143.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">长盈通</span></a></td><td><code>688143</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill positive-bg">0.7%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><div class="subsector-cell"><strong>光纤供货难</strong><span>保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。</span></div></td><td><a class="stock-link" href="stocks/688143.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">长盈通</span></a></td><td><code>688143</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill positive-bg">0.7%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜趋势跟踪</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3298,7 +3409,7 @@
         <div><b>已建仓</b><span>收盘不破5日线187.1继续持有；跌破5日线先减1/3；跌破10日线179.9减到半仓；跌破20日线159.9卖出大部或退出。</span></div>
         <div><b>防守</b><span>155.1</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><a class="stock-link" href="stocks/600487.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">亨通光电</span></a></td><td><code>600487</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-4.2%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><div class="subsector-cell"><strong>光纤供货难</strong><span>保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。</span></div></td><td><a class="stock-link" href="stocks/600487.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">亨通光电</span></a></td><td><code>600487</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-4.2%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜趋势跟踪</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3307,7 +3418,7 @@
         <div><b>已建仓</b><span>收盘不破5日线101.2继续持有；跌破5日线先减1/3；跌破10日线93.1减到半仓；跌破20日线82.4卖出大部或退出。</span></div>
         <div><b>防守</b><span>80.0</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><a class="stock-link" href="stocks/688183.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">生益电子</span></a></td><td><code>688183</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-0.2%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><div class="subsector-cell"><strong>PCB / CCL / 铜箔</strong><span>AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。</span></div></td><td><a class="stock-link" href="stocks/688183.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">生益电子</span></a></td><td><code>688183</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-0.2%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>破位观望｜趋势跟踪</span></div>
         <div><b>判断</b><span>趋势和买点较好，但更适合等价格落到舒服位置。</span></div>
@@ -3316,7 +3427,7 @@
         <div><b>已建仓</b><span>已有仓位可持有观察，靠近压力位或放量滞涨时降低仓位。</span></div>
         <div><b>防守</b><span>114.6</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><a class="stock-link" href="stocks/688146.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">中船特气</span></a></td><td><code>688146</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">19.8%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><div class="subsector-cell"><strong>电子特气 / 六氟化钨</strong><span>前道制程气体，覆盖沉积、刻蚀、清洗等环节，客户认证周期长。 核验：六氟化钨价格、客户导入、国产替代、产能释放。</span></div></td><td><a class="stock-link" href="stocks/688146.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">中船特气</span></a></td><td><code>688146</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">19.8%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜弱修复</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3325,7 +3436,7 @@
         <div><b>已建仓</b><span>收盘不破5日线275.2继续持有；跌破5日线先减1/3；跌破10日线231.4减到半仓；跌破20日线186.4卖出大部或退出。</span></div>
         <div><b>防守</b><span>180.8</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><a class="stock-link" href="stocks/300346.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">南大光电</span></a></td><td><code>300346</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">8.1%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><div class="subsector-cell"><strong>光刻胶 / MO源</strong><span>光刻胶和MO源属于关键制程材料，弹性大，但需要用收入占比和客户验证区分真兑现。 核验：ArF/KrF光刻胶进展、MO源订单、半导体材料收入占比。</span></div></td><td><a class="stock-link" href="stocks/300346.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">南大光电</span></a></td><td><code>300346</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">8.1%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜弱修复</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3334,7 +3445,7 @@
         <div><b>已建仓</b><span>收盘不破5日线61.1继续持有；跌破5日线先减1/3；跌破10日线55.9减到半仓；跌破20日线56.8卖出大部或退出。</span></div>
         <div><b>防守</b><span>55.1</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><a class="stock-link" href="stocks/603186.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">华正新材</span></a></td><td><code>603186</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">4.3%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><div class="subsector-cell"><strong>PCB / CCL / 铜箔</strong><span>AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。</span></div></td><td><a class="stock-link" href="stocks/603186.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">华正新材</span></a></td><td><code>603186</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">4.3%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜弱修复</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3343,7 +3454,7 @@
         <div><b>已建仓</b><span>收盘不破5日线148.6继续持有；跌破5日线先减1/3；跌破10日线135.9减到半仓；跌破20日线126.9卖出大部或退出。</span></div>
         <div><b>防守</b><span>123.1</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><a class="stock-link" href="stocks/300476.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">胜宏科技</span></a></td><td><code>300476</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill negative-bg">-1.4%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><div class="subsector-cell"><strong>PCB / CCL / 铜箔</strong><span>AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。</span></div></td><td><a class="stock-link" href="stocks/300476.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">胜宏科技</span></a></td><td><code>300476</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill negative-bg">-1.4%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>破位观望｜弱修复</span></div>
         <div><b>判断</b><span>趋势底色还在，但买点确认度不够。</span></div>
@@ -3352,7 +3463,7 @@
         <div><b>已建仓</b><span>已有仓位轻仓跟踪，跌破关键均线则先降仓。</span></div>
         <div><b>防守</b><span>340.8</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><a class="stock-link" href="stocks/688268.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">华特气体</span></a></td><td><code>688268</code></td><td><span class="score-chip score-chip-2">2</span></td><td><span class="ret-pill positive-bg">20.0%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><div class="subsector-cell"><strong>电子特气 / 六氟化钨</strong><span>前道制程气体，覆盖沉积、刻蚀、清洗等环节，客户认证周期长。 核验：六氟化钨价格、客户导入、国产替代、产能释放。</span></div></td><td><a class="stock-link" href="stocks/688268.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">华特气体</span></a></td><td><code>688268</code></td><td><span class="score-chip score-chip-2">2</span></td><td><span class="ret-pill positive-bg">20.0%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>弱修复观察｜破位偏弱</span></div>
         <div><b>判断</b><span>当前技术位置不够主动。</span></div>
@@ -3361,7 +3472,7 @@
         <div><b>已建仓</b><span>已有仓位以防守为主，弱于关键均线则降低仓位。</span></div>
         <div><b>防守</b><span>169.1</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="半导体关键材料中的细分方向，锗资源、红外材料和磷化铟链条具备资源周期与化合物半导体双重弹性。">半导体关键材料 / 锗-磷化铟</span></td><td><a class="stock-link" href="stocks/002428.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">云南锗业</span></a></td><td><code>002428</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill positive-bg">10.0%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="半导体关键材料中的细分方向，锗资源、红外材料和磷化铟链条具备资源周期与化合物半导体双重弹性。">半导体关键材料 / 锗-磷化铟</span></td><td><div class="subsector-cell"><strong>稀有金属锗 / 磷化铟 / 化合物半导体</strong><span>属于半导体关键材料里的细分方向，从大类电子料进一步落到锗资源、红外材料和磷化铟链条，兼具资源价格弹性和化合物半导体映射。 核验：锗价周期、出口管制、红外材料订单、磷化铟链条兑现和库存变化。</span></div></td><td><a class="stock-link" href="stocks/002428.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">云南锗业</span></a></td><td><code>002428</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill positive-bg">10.0%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜强位置</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3370,7 +3481,7 @@
         <div><b>已建仓</b><span>收盘不破5日线83.5继续持有；跌破5日线先减1/3；跌破10日线85.4减到半仓；跌破20日线86.6卖出大部或退出。</span></div>
         <div><b>防守</b><span>84.0</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><a class="stock-link" href="stocks/688603.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">天承科技</span></a></td><td><code>688603</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill negative-bg">-3.9%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><div class="subsector-cell"><strong>PCB / CCL / 铜箔</strong><span>AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。</span></div></td><td><a class="stock-link" href="stocks/688603.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">天承科技</span></a></td><td><code>688603</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill negative-bg">-3.9%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>弱修复观察｜强位置</span></div>
         <div><b>判断</b><span>多个买点共振，属于优先盯盘标的。</span></div>
@@ -3379,7 +3490,7 @@
         <div><b>已建仓</b><span>已有仓位可继续跟踪，放量突破时再考虑加仓。</span></div>
         <div><b>防守</b><span>159.2</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><a class="stock-link" href="stocks/300408.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">三环集团</span></a></td><td><code>300408</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-0.3%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><div class="subsector-cell"><strong>MLCC上游</strong><span>AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。</span></div></td><td><a class="stock-link" href="stocks/300408.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">三环集团</span></a></td><td><code>300408</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-0.3%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜较好位置</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3388,7 +3499,7 @@
         <div><b>已建仓</b><span>收盘不破5日线132.5继续持有；跌破5日线先减1/3；跌破10日线132.5减到半仓；跌破20日线119.6卖出大部或退出。</span></div>
         <div><b>防守</b><span>116.0</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><a class="stock-link" href="stocks/002859.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">洁美科技</span></a></td><td><code>002859</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-5.5%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><div class="subsector-cell"><strong>MLCC上游</strong><span>AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。</span></div></td><td><a class="stock-link" href="stocks/002859.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">洁美科技</span></a></td><td><code>002859</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-5.5%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜较好位置</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3397,7 +3508,7 @@
         <div><b>已建仓</b><span>收盘不破5日线83.2继续持有；跌破5日线先减1/3；跌破10日线82.2减到半仓；跌破20日线70.6卖出大部或退出。</span></div>
         <div><b>防守</b><span>68.5</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><a class="stock-link" href="stocks/605376.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">博迁新材</span></a></td><td><code>605376</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-6.7%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><div class="subsector-cell"><strong>MLCC上游</strong><span>AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。</span></div></td><td><a class="stock-link" href="stocks/605376.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">博迁新材</span></a></td><td><code>605376</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-6.7%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜较好位置</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3406,7 +3517,7 @@
         <div><b>已建仓</b><span>收盘不破5日线183.3继续持有；跌破5日线先减1/3；跌破10日线184.3减到半仓；跌破20日线165.9卖出大部或退出。</span></div>
         <div><b>防守</b><span>160.9</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><a class="stock-link" href="stocks/688300.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">联瑞新材</span></a></td><td><code>688300</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-1.4%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><div class="subsector-cell"><strong>球形硅微粉 / 电子填料</strong><span>封装材料、覆铜板和先进封装相关填料，跟随AI封装和高端基板升级。 核验：高端填料占比、先进封装客户、毛利率和扩产节奏。</span></div></td><td><a class="stock-link" href="stocks/688300.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">联瑞新材</span></a></td><td><code>688300</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-1.4%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜趋势跟踪</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3415,7 +3526,7 @@
         <div><b>已建仓</b><span>收盘不破5日线168.0继续持有；跌破5日线先减1/3；跌破10日线169.9减到半仓；跌破20日线152.1卖出大部或退出。</span></div>
         <div><b>防守</b><span>147.6</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><a class="stock-link" href="stocks/603938.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">三孚股份</span></a></td><td><code>603938</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-1.7%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><div class="subsector-cell"><strong>光纤供货难</strong><span>保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。</span></div></td><td><a class="stock-link" href="stocks/603938.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">三孚股份</span></a></td><td><code>603938</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-1.7%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜趋势跟踪</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3424,7 +3535,7 @@
         <div><b>已建仓</b><span>收盘不破5日线55.7继续持有；跌破5日线先减1/3；跌破10日线50.4减到半仓；跌破20日线48.4卖出大部或退出。</span></div>
         <div><b>防守</b><span>47.0</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><a class="stock-link" href="stocks/688545.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">兴福电子</span></a></td><td><code>688545</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">20.0%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><div class="subsector-cell"><strong>湿电子化学品</strong><span>清洗、蚀刻等环节用高纯化学品，受益晶圆厂扩产和国产替代。 核验：高端品类占比、客户认证、产能利用率、价格传导。</span></div></td><td><a class="stock-link" href="stocks/688545.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">兴福电子</span></a></td><td><code>688545</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">20.0%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜弱修复</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3433,7 +3544,7 @@
         <div><b>已建仓</b><span>收盘不破5日线88.2继续持有；跌破5日线先减1/3；跌破10日线83.4减到半仓；跌破20日线83.5卖出大部或退出。</span></div>
         <div><b>防守</b><span>81.0</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><a class="stock-link" href="stocks/000636.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">风华高科</span></a></td><td><code>000636</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">7.5%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><div class="subsector-cell"><strong>MLCC上游</strong><span>AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。</span></div></td><td><a class="stock-link" href="stocks/000636.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">风华高科</span></a></td><td><code>000636</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">7.5%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>多头持仓趋势｜弱修复</span></div>
         <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
@@ -3442,7 +3553,7 @@
         <div><b>已建仓</b><span>收盘不破5日线60.1继续持有；跌破5日线先减1/3；跌破10日线59.2减到半仓；跌破20日线48.1卖出大部或退出。</span></div>
         <div><b>防守</b><span>46.7</span></div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><a class="stock-link" href="stocks/600498.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">烽火通信</span></a></td><td><code>600498</code></td><td><span class="score-chip score-chip-2">2</span></td><td><span class="ret-pill positive-bg">9.5%</span></td><td>
+    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><div class="subsector-cell"><strong>光纤供货难</strong><span>保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。</span></div></td><td><a class="stock-link" href="stocks/600498.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">烽火通信</span></a></td><td><code>600498</code></td><td><span class="score-chip score-chip-2">2</span></td><td><span class="ret-pill positive-bg">9.5%</span></td><td>
       <div class="judgement-cell">
         <div><b>状态</b><span>弱修复观察｜破位偏弱</span></div>
         <div><b>判断</b><span>当前技术位置不够主动。</span></div>
@@ -3452,8 +3563,6 @@
         <div><b>防守</b><span>52.5</span></div>
       </div>
     </td></tr></tbody></table></div>
-      <h3 class="subsection-title">半导体关键材料细分说明</h3>
-      <div class="table-wrap semiconductor-material-table"><table><thead><tr><th>细分方向</th><th>对应股票</th><th>产业链作用</th><th>核验重点</th></tr></thead><tbody><tr><td><span class="industry-pill">高纯石英材料</span></td><td>石英股份 603688</td><td>扩散、刻蚀、清洗、光刻等前道环节的关键耗材，半导体级认证和供给弹性是核心。</td><td>半导体级收入占比、海外替代、价格和供给紧张程度。</td></tr><tr><td><span class="industry-pill">电子特气 / 六氟化钨</span></td><td>中船特气 688146、华特气体 688268</td><td>前道制程气体，覆盖沉积、刻蚀、清洗等环节，客户认证周期长。</td><td>六氟化钨价格、客户导入、国产替代、产能释放。</td></tr><tr><td><span class="industry-pill">光刻胶 / MO源</span></td><td>南大光电 300346、华懋科技 603306</td><td>光刻胶和MO源属于关键制程材料，弹性大，但需要用收入占比和客户验证区分真兑现。</td><td>ArF/KrF光刻胶进展、MO源订单、半导体材料收入占比。</td></tr><tr><td><span class="industry-pill">湿电子化学品</span></td><td>兴福电子 688545</td><td>清洗、蚀刻等环节用高纯化学品，受益晶圆厂扩产和国产替代。</td><td>高端品类占比、客户认证、产能利用率、价格传导。</td></tr><tr><td><span class="industry-pill">球形硅微粉 / 电子填料</span></td><td>联瑞新材 688300、华海诚科 688535</td><td>封装材料、覆铜板和先进封装相关填料，跟随AI封装和高端基板升级。</td><td>高端填料占比、先进封装客户、毛利率和扩产节奏。</td></tr><tr><td><span class="industry-pill">稀有金属锗 / 磷化铟 / 化合物半导体</span></td><td>云南锗业 002428</td><td>属于半导体关键材料里的细分方向，从大类电子料进一步落到锗资源、红外材料和磷化铟链条，兼具资源价格弹性和化合物半导体映射。</td><td>锗价周期、出口管制、红外材料订单、磷化铟链条兑现和库存变化。</td></tr><tr><td><span class="industry-pill">SiC衬底材料</span></td><td>天岳先进 688234</td><td>碳化硅衬底材料，属于化合物半导体材料，但不与锗资源链条混在一起。</td><td>导电型/半绝缘衬底订单、价格、良率和下游功率/射频需求。</td></tr></tbody></table></div>
       <h3 class="subsection-title">半导体材料当日评分与操作</h3>
       <div class="table-wrap semiconductor-material-current-table"><table><thead><tr><th>细分方向</th><th>股票</th><th>代码</th><th>评分</th><th>6月11日涨跌</th><th>关键判断与操作</th></tr></thead><tbody><tr><td><span class="industry-pill">SiC衬底材料</span></td><td><a class="stock-link" href="stocks/688234.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">天岳先进</span></a></td><td><code>688234</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="ret-pill positive-bg">0.7%</span></td><td>
       <div class="judgement-cell">
