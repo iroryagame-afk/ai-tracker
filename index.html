@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mda100_20260611_144934</title>
+  <title>mda100_20260611_162521</title>
   <style>
     :root {
       --ink:#101418; --muted:#667085; --paper:#eef2ff; --panel:#fff; --line:#d8dee7;
@@ -11,8 +11,12 @@
     }
     * { box-sizing:border-box; }
     body { margin:0; background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 52%,#f1f5f9 100%); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; font-size:14px; line-height:1.55; }
+    body.report-intraday { background:linear-gradient(135deg,#eef2ff 0%,#eff6ff 48%,#f8fafc 100%); }
+    body.report-close { background:linear-gradient(135deg,#fff7ed 0%,#f8fafc 52%,#eef2ff 100%); }
     .shell { max-width:1500px; margin:0 auto; padding:22px; }
     .hero { background:linear-gradient(135deg,#ffffff 0%,#f8f9ff 100%); border:1px solid rgba(255,255,255,.85); border-radius:16px; padding:28px 32px; margin-bottom:18px; box-shadow:0 10px 28px rgba(15,23,42,.12); }
+    body.report-intraday .hero { background:linear-gradient(135deg,#ffffff 0%,#eef2ff 58%,#eff6ff 100%); border-top:6px solid #4f46e5; }
+    body.report-close .hero { background:linear-gradient(135deg,#ffffff 0%,#fff7ed 58%,#f8fafc 100%); border-top:6px solid #f97316; }
     .hero-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; margin-bottom:18px; }
     h1 { margin:0; font-size:30px; letter-spacing:0; line-height:1.2; }
     .subtitle { margin-top:8px; color:var(--muted); font-size:14px; line-height:1.7; }
@@ -26,6 +30,18 @@
     .nav-tab:hover { border-color:#9db4ff; color:#1e40af; background:#eef2ff; }
     .nav-tab.active { border-color:#172033; background:#172033; color:#fff; box-shadow:0 8px 18px rgba(23,32,51,.18); }
     .meta { color:var(--muted); font-size:12px; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    .report-stamp { display:grid; grid-template-columns:auto minmax(220px,1fr) auto; gap:14px; align-items:center; margin:0 0 18px; padding:14px 16px; border-radius:14px; border:1px solid #dbeafe; background:linear-gradient(135deg,#eff6ff 0%,#fff 100%); box-shadow:0 8px 18px rgba(30,64,175,.08); }
+    .stamp-badge { display:inline-flex; align-items:center; justify-content:center; border-radius:999px; padding:8px 13px; font-size:14px; font-weight:950; white-space:nowrap; background:#3730a3; color:#fff; box-shadow:0 6px 14px rgba(55,48,163,.20); }
+    .stamp-main { min-width:0; }
+    .stamp-label { color:#475467; font-size:12px; font-weight:850; letter-spacing:.2px; }
+    .stamp-time { margin-top:2px; font-size:28px; line-height:1.1; font-weight:950; color:#111827; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    .stamp-desc { color:#475467; font-size:12px; line-height:1.5; }
+    .stamp-scope { display:inline-flex; align-items:center; justify-content:center; border-radius:10px; padding:8px 10px; font-size:12px; font-weight:900; color:#1e3a8a; background:#dbeafe; border:1px solid #bfdbfe; white-space:nowrap; }
+    body.report-close .report-stamp { border-color:#fed7aa; background:linear-gradient(135deg,#fff7ed 0%,#fff 100%); box-shadow:0 8px 18px rgba(154,52,18,.08); }
+    body.report-close .stamp-badge { background:#c2410c; box-shadow:0 6px 14px rgba(194,65,12,.20); }
+    body.report-close .stamp-scope { color:#9a3412; background:#ffedd5; border-color:#fed7aa; }
+    body.report-intraday #recommendations { border-top-color:#4f46e5; background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%); }
+    body.report-close #recommendations { border-top-color:#f97316; background:linear-gradient(180deg,#ffffff 0%,#fffaf5 100%); }
     .verify-strip { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:14px 0 0; padding:10px 12px; border:1px solid #bbf7d0; background:#f0fdf4; color:#166534; border-radius:10px; font-size:12px; font-weight:750; }
     .verify-strip code { background:#dcfce7; color:#14532d; }
     .verify-strip .verify-detail { color:#475467; font-weight:650; }
@@ -337,17 +353,17 @@
     .wild-pool-table th:nth-child(7), .wild-pool-table td:nth-child(7) { width:22%; }
     .wild-pool-table th:nth-child(8), .wild-pool-table td:nth-child(8) { width:14%; }
     .industry-pill { display:inline-flex; max-width:100%; border-radius:999px; padding:4px 8px; background:#fff7ed; border:1px solid #fed7aa; color:#9a3412; font-size:11px; font-weight:900; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-    @media (max-width:960px) { .grid,.kpis,.summary-grid,.market-overview,.winrate-strip,.sector-watch-grid,.long-grid,.cards-container,.detail-list,.advice-actions{grid-template-columns:1fr;} .shell{padding:12px;} .hero-head{display:block;} .stats-pill{margin-left:0;} .advice-action + .advice-action{border-left:1px solid #e5e7eb;border-top:0;} }
+    @media (max-width:960px) { .grid,.kpis,.summary-grid,.market-overview,.winrate-strip,.sector-watch-grid,.long-grid,.cards-container,.detail-list,.advice-actions{grid-template-columns:1fr;} .shell{padding:12px;} .hero-head{display:block;} .report-stamp{grid-template-columns:1fr; align-items:start;} .stamp-time{font-size:22px;} .stamp-scope{justify-content:flex-start;} .stats-pill{margin-left:0;} .advice-action + .advice-action{border-left:1px solid #e5e7eb;border-top:0;} }
     @page { size:A4 landscape; margin:10mm; }
     @media print { *{-webkit-print-color-adjust:exact; print-color-adjust:exact;} body{background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 52%,#f1f5f9 100%);} .shell{max-width:none; padding:12px;} .page-nav{display:none;} .report-page{display:block !important; break-before:page;} .report-page:first-of-type{break-before:auto;} .summary-grid{grid-template-columns:repeat(6,minmax(110px,1fr)) !important;} .kpis{grid-template-columns:repeat(4,minmax(120px,1fr)) !important;} .grid{grid-template-columns:1.1fr .9fr !important;} .sector-watch-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .long-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .cards-container{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .detail-list{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .hero,.sector-watch-card,.long-card,.stock-card,.detail-card{break-inside:avoid;} table{font-size:8px; min-width:0;} .card-controls{display:none;} }
   </style>
 </head>
-<body>
+<body class="report-close">
   <div class="shell">
     <div class="hero">
       <div class="hero-head">
         <div>
-          <h1>mda100_20260611_144934</h1>
+          <h1>mda100_20260611_162521</h1>
           <div class="subtitle">mda100以核心100只AI科技股票等权编制，历史曲线自2026年首个交易日开始累计。行情标记：VERIFIED_FUTU_OPEND。</div>
           <div class="verify-strip">
             <span>二次确认</span>
@@ -356,7 +372,16 @@
             <span class="verify-detail" title="报告日期与指数日期一致:OK / 行情日期覆盖本次报告日:OK / 所有可用行情均已打 Futu 核验标记:OK / 指数涨跌幅与股票池等权涨跌一致:OK / 上涨数量一致:OK / 下跌数量一致:OK / 覆盖率一致:OK">生成与发布前已复核</span>
           </div>
         </div>
-        <div class="meta">Report 2026-06-11<br>Index 2026-06-11<br>Generated 2026-06-11T14:49:34</div>
+        <div class="meta">Report 2026-06-11<br>Index 2026-06-11<br>Generated 2026-06-11T16:25:21</div>
+      </div>
+      <div class="report-stamp" aria-label="报告生成时间和版本">
+        <div class="stamp-badge">16:00收盘版</div>
+        <div class="stamp-main">
+          <div class="stamp-label">收盘复盘生成时间</div>
+          <div class="stamp-time">6月11日 16:25:21</div>
+          <div class="stamp-desc">用于下一交易日计划，重点看收盘确认、均线位置、评分变化和隔夜风险闸门。</div>
+        </div>
+        <div class="stamp-scope">16:00后收盘核验</div>
       </div>
       <div class="summary-grid">
         <div class="summary-card"><div class="label">6月11日 mda100点位</div><div class="value">2176.5</div></div>
