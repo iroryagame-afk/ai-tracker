@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mda100_20260611_174851</title>
+  <title>mda100_20260611_182723</title>
   <style>
     :root {
       --ink:#101418; --muted:#667085; --paper:#eef2ff; --panel:#fff; --line:#d8dee7;
@@ -53,6 +53,7 @@
     #material-page { border-top:4px solid #a16207; }
     #must-page { border-top:4px solid #1e40af; }
     #wild-page { border-top:4px solid #475569; }
+    #self-media-page { border-top:4px solid #7c2d12; }
     .module h2 { margin:0 0 14px; font-size:18px; border-bottom:1px solid var(--line); padding-bottom:8px; }
     .subsection-title { margin:18px 0 8px; font-size:15px; line-height:1.35; color:#172033; }
     .subsection-title:first-of-type { margin-top:4px; }
@@ -366,6 +367,23 @@
     .wild-pool-table th:nth-child(7), .wild-pool-table td:nth-child(7) { width:22%; }
     .wild-pool-table th:nth-child(8), .wild-pool-table td:nth-child(8) { width:14%; }
     .industry-pill { display:inline-flex; max-width:100%; border-radius:999px; padding:4px 8px; background:#fff7ed; border:1px solid #fed7aa; color:#9a3412; font-size:11px; font-weight:900; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .self-media-note { display:flex; flex-wrap:wrap; gap:8px; align-items:center; border:1px solid #fed7aa; background:linear-gradient(135deg,#fff7ed 0%,#fff 100%); color:#344054; border-radius:10px; padding:10px 12px; margin:0 0 10px; }
+    .self-media-note strong { color:#9a3412; }
+    .self-media-table { border-color:#fed7aa; border-radius:12px; overflow:hidden; box-shadow:0 7px 16px rgba(154,52,18,.05); background:#fffaf5; }
+    .self-media-table table { min-width:0; table-layout:fixed; font-size:11px; }
+    .self-media-table th { background:#7c2d12; padding:7px 8px; }
+    .self-media-table td { padding:8px; line-height:1.5; vertical-align:top; }
+    .self-media-table th:nth-child(1), .self-media-table td:nth-child(1) { width:14%; }
+    .self-media-table th:nth-child(2), .self-media-table td:nth-child(2) { width:20%; }
+    .self-media-table th:nth-child(3), .self-media-table td:nth-child(3) { width:10%; }
+    .self-media-table th:nth-child(4), .self-media-table td:nth-child(4) { width:9%; }
+    .self-media-table th:nth-child(5), .self-media-table td:nth-child(5) { width:37%; }
+    .self-media-table th:nth-child(6), .self-media-table td:nth-child(6) { width:10%; }
+    .source-time { color:#475569; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:10px; }
+    .source-tags { color:#667085; font-size:10px; margin-top:2px; }
+    .source-status { display:inline-flex; border-radius:999px; padding:3px 8px; color:#92400e; background:#fef3c7; border:1px solid #fde68a; font-weight:900; }
+    .source-link { display:inline-flex; justify-content:center; border-radius:999px; padding:4px 9px; color:#1e40af; background:#dbeafe; border:1px solid #bfdbfe; text-decoration:none; font-weight:900; white-space:nowrap; }
+    .source-link:hover { background:#bfdbfe; }
     @media (max-width:960px) { .grid,.kpis,.summary-grid,.market-overview,.winrate-strip,.sector-watch-grid,.long-grid,.cards-container,.detail-list,.advice-actions{grid-template-columns:1fr;} .shell{padding:12px;} .hero-head{display:block;} .report-stamp{grid-template-columns:1fr; align-items:start;} .stamp-time{font-size:22px;} .stamp-scope{justify-content:flex-start;} .stats-pill{margin-left:0;} .advice-action + .advice-action{border-left:1px solid #e5e7eb;border-top:0;} }
     @page { size:A4 landscape; margin:10mm; }
     @media print { *{-webkit-print-color-adjust:exact; print-color-adjust:exact;} body{background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 52%,#f1f5f9 100%);} .shell{max-width:none; padding:12px;} .page-nav{display:none;} .report-page{display:block !important; break-before:page;} .report-page:first-of-type{break-before:auto;} .summary-grid{grid-template-columns:repeat(6,minmax(110px,1fr)) !important;} .kpis{grid-template-columns:repeat(4,minmax(120px,1fr)) !important;} .grid{grid-template-columns:1.1fr .9fr !important;} .sector-watch-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .long-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .cards-container{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .detail-list{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .hero,.sector-watch-card,.long-card,.stock-card,.detail-card{break-inside:avoid;} table{font-size:8px; min-width:0;} .card-controls{display:none;} }
@@ -376,7 +394,7 @@
     <div class="hero">
       <div class="hero-head">
         <div>
-          <h1>mda100_20260611_174851</h1>
+          <h1>mda100_20260611_182723</h1>
           <div class="subtitle">mda100以核心100只AI科技股票等权编制，历史曲线自2026年首个交易日开始累计。行情标记：VERIFIED_FUTU_OPEND。</div>
           <div class="verify-strip">
             <span>二次确认</span>
@@ -385,13 +403,13 @@
             <span class="verify-detail" title="报告日期与指数日期一致:OK / 行情日期覆盖本次报告日:OK / 所有可用行情均已打 Futu 核验标记:OK / 指数涨跌幅与股票池等权涨跌一致:OK / 上涨数量一致:OK / 下跌数量一致:OK / 覆盖率一致:OK">生成与发布前已复核</span>
           </div>
         </div>
-        <div class="meta">Report 2026-06-11<br>Index 2026-06-11<br>Generated 2026-06-11T17:48:51</div>
+        <div class="meta">Report 2026-06-11<br>Index 2026-06-11<br>Generated 2026-06-11T18:27:23</div>
       </div>
       <div class="report-stamp" aria-label="报告生成时间和版本">
         <div class="stamp-badge">16:00收盘版</div>
         <div class="stamp-main">
           <div class="stamp-label">收盘复盘生成时间</div>
-          <div class="stamp-time">6月11日 17:48:51</div>
+          <div class="stamp-time">6月11日 18:27:23</div>
           <div class="stamp-desc">用于下一交易日计划，重点看收盘确认、均线位置、评分变化和隔夜风险闸门。</div>
         </div>
         <div class="stamp-scope">16:00后收盘核验</div>
@@ -412,6 +430,7 @@
         <button class="nav-tab" type="button" data-page-target="material">半导体材料</button>
         <button class="nav-tab" type="button" data-page-target="must">必选池</button>
         <button class="nav-tab" type="button" data-page-target="wild">打野池</button>
+        <button class="nav-tab" type="button" data-page-target="self-media">自媒体信息源</button>
       </nav>
     </div>
     <section class="module report-page active" data-page="operations" id="recommendations">
@@ -3665,6 +3684,16 @@
     <section class="module report-page" data-page="wild" id="wild-page">
       <h2>资料页：打野池介绍</h2>
       <div class="wild-note"><strong>打野口径</strong><span>非核心必选仓，主要用6月11日技术位置、供需催化和短期弹性做6月12日交易参考；仓位更轻，纪律优先于想象空间。</span></div><div class="table-wrap wild-pool-table"><table><thead><tr><th>方向</th><th>股票</th><th>代码</th><th>评分</th><th>6月11日涨跌</th><th>状态</th><th>为什么是打野</th><th>操作纪律</th></tr></thead><tbody><tr><td><span class="industry-pill">EDA工具</span></td><td><a class="stock-link" href="stocks/688206.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">概伦电子</span></a></td><td><code>688206</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill positive-bg">3.0%</span></td><td>多头持仓趋势</td><td>EDA方向重要，但当前先按阶段交易而非必选仓。</td><td>看政策、订单和技术位置共振。</td></tr><tr><td><span class="industry-pill">CCL / 覆铜板弹性</span></td><td><a class="stock-link" href="stocks/688519.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">南亚新材</span></a></td><td><code>688519</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">5.4%</span></td><td>多头持仓趋势</td><td>CCL弹性可看，但龙头/确定性弱于生益、华正。</td><td>材料涨价确认后再提高权重。</td></tr><tr><td><span class="industry-pill">EDA工具</span></td><td><a class="stock-link" href="stocks/301269.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">华大九天</span></a></td><td><code>301269</code></td><td><span class="score-chip score-chip-2">2</span></td><td><span class="ret-pill negative-bg">-0.4%</span></td><td>破位观望</td><td>国产EDA重要，当前先按打野交易而非必选。</td><td>不追高，等待明确回踩或催化。</td></tr><tr><td><span class="industry-pill">半导体设备 / 涂胶显影</span></td><td><a class="stock-link" href="stocks/688037.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">芯源微</span></a></td><td><code>688037</code></td><td><span class="score-chip score-chip-2">2</span></td><td><span class="ret-pill positive-bg">6.6%</span></td><td>破位观望</td><td>设备平台重要，当前池内先按阶段弹性处理。</td><td>看国产替代订单和趋势线支撑。</td></tr><tr><td><span class="industry-pill">光器件 / 光模块链</span></td><td><a class="stock-link" href="stocks/002281.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">光迅科技</span></a></td><td><code>002281</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="ret-pill positive-bg">1.4%</span></td><td>破位观望</td><td>链条重要，但可替代供给多于三大光，先按弹性交易处理。</td><td>只做强趋势或回踩确认，不追连续放量高开。</td></tr><tr><td><span class="industry-pill">光模块 / 交换互联弹性</span></td><td><a class="stock-link" href="stocks/603083.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">剑桥科技</span></a></td><td><code>603083</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="ret-pill negative-bg">-2.8%</span></td><td>破位观望</td><td>弹性强，但核心不可替代性弱于三大光。</td><td>看订单和趋势承接，跌破主支撑先降仓。</td></tr><tr><td><span class="industry-pill">半导体检测设备</span></td><td><a class="stock-link" href="stocks/688001.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">华兴源创</span></a></td><td><code>688001</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="ret-pill negative-bg">-3.4%</span></td><td>破位观望</td><td>设备映射成立，但AI链决定性不足。</td><td>按设备板块节奏和技术位置交易。</td></tr><tr><td><span class="industry-pill">光器件 / EDFA/Pump Laser</span></td><td><a class="stock-link" href="stocks/688205.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">德科立</span></a></td><td><code>688205</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="ret-pill positive-bg">6.8%</span></td><td>破位观望</td><td>器件配套层受益，产业链决定性仍低于核心模块和瓶颈材料。</td><td>跟随光链情绪，等待缩量回踩或放量确认。</td></tr><tr><td><span class="industry-pill">精密连接器</span></td><td><a class="stock-link" href="stocks/301486.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">致尚科技</span></a></td><td><code>301486</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="ret-pill negative-bg">-0.3%</span></td><td>破位观望</td><td>精密连接器弹性强，AI链不可替代性仍需验证。</td><td>优先看趋势承接和客户兑现。</td></tr></tbody></table></div>
+    </section>
+    <section class="module report-page" data-page="self-media" id="self-media-page">
+      <h2>资料页：自媒体信息源</h2>
+      
+    <div class="self-media-note">
+      <strong>自媒体资料库</strong>
+      <span>这里放用户手动投喂的独立信息源。主页只展示概述；原文、抽取文本和归档路径放在详情页。</span>
+    </div>
+    <div class="table-wrap self-media-table"><table><thead><tr><th>归档时间</th><th>资料</th><th>来源</th><th>状态</th><th>概述</th><th>详情</th></tr></thead><tbody><tr><td><span class="source-time">2026-06-11T18:13:30</span></td><td><strong>供需失衡_细分环节打分排名_v1</strong><div class="source-tags">供需失衡,细分环节,涨价,瓶颈</div></td><td>自媒体/手动文档</td><td><span class="source-status">待核验</span></td><td>一句话结论：电子特气（核心 WF₆/光刻气）是本轮最极致的卡脖子环节，应为重仓主攻方向；光刻胶结构壁垒最高但属慢变量、宜试仓跟踪；MLCC 粉体与靶材为轻度失衡的观察清单；封装材料与湿电子化学品在环节口径下失衡不足，仅适合精选个股（华海诚科、格林达）。</td><td><a class="source-link" href="self_media/20260611_181330_3493ba86.html" target="_blank" rel="noopener">查看详情</a></td></tr></tbody></table></div>
+    
     </section>
   </div>
   <script>
