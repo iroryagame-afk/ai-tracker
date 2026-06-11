@@ -561,6 +561,35 @@
       text-overflow: ellipsis;
     }
 
+    .macro-source {
+      display: inline-flex;
+      align-items: center;
+      max-width: 100%;
+      margin-top: 4px;
+      padding: 2px 6px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 900;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .source-code {
+      background: var(--teal-soft);
+      color: #086a73;
+    }
+
+    .source-warn {
+      background: var(--orange-soft);
+      color: #965414;
+    }
+
+    .source-pending {
+      background: #f0f2f7;
+      color: var(--muted);
+    }
+
     .macro-move {
       min-width: 24px;
       height: 24px;
@@ -941,7 +970,7 @@
     <section class="panel" style="margin-top: 18px;">
       <div class="panel-title">
         <h2>宏观冲击三情景推演</h2>
-        <span class="small">数字为情景观察区间，非实时行情</span>
+        <span class="small">Futu OpenD 已连接；价格权限见各指标</span>
       </div>
       <div class="scenario-grid">
         <article class="scenario good">
@@ -951,14 +980,14 @@
             <span class="node">7262</span><span class="arrow">→</span><span class="node">7421</span><span class="arrow">→</span><span class="node">7500+</span>
           </div>
           <div class="macro-board" aria-label="利多冲击宏观指标方向">
-            <div class="macro-item"><span class="macro-code">DXY</span><span><span class="macro-label">美元指数</span><span class="macro-value">104.0 → 102.5</span></span><span class="macro-move down">↓</span></div>
-            <div class="macro-item"><span class="macro-code">USDJPY</span><span><span class="macro-label">美元兑日元</span><span class="macro-value">148 → 145</span></span><span class="macro-move down">↓</span></div>
-            <div class="macro-item"><span class="macro-code">US10Y</span><span><span class="macro-label">10 年美债收益率</span><span class="macro-value">4.50% → 4.30%</span></span><span class="macro-move down">↓</span></div>
-            <div class="macro-item"><span class="macro-code">VIX</span><span><span class="macro-label">波动率</span><span class="macro-value">38.5 → 30-32</span></span><span class="macro-move down">↓</span></div>
-            <div class="macro-item"><span class="macro-code">WTI</span><span><span class="macro-label">油价压力</span><span class="macro-value">$75 → $72</span></span><span class="macro-move flat">↘</span></div>
-            <div class="macro-item"><span class="macro-code">Gold</span><span><span class="macro-label">避险需求</span><span class="macro-value">$3400 → $3350</span></span><span class="macro-move flat">↘</span></div>
-            <div class="macro-item"><span class="macro-code">AI</span><span><span class="macro-label">AI 链风险偏好</span><span class="macro-value">+3% 至 +8%</span></span><span class="macro-move down">↑</span></div>
-            <div class="macro-item"><span class="macro-code">DRAM</span><span><span class="macro-label">存储股 Beta</span><span class="macro-value">+4% 至 +10%</span></span><span class="macro-move down">↑</span></div>
+            <div class="macro-item"><span class="macro-code">DXY</span><span><span class="macro-label">美元指数</span><span class="macro-value">104.0 → 102.5</span><span class="macro-source source-pending" title="OpenD 已连接；未在富途 US/FX 基础信息中确认 DXY 主代码">Futu 代码待确认</span></span><span class="macro-move down">↓</span></div>
+            <div class="macro-item"><span class="macro-code">USDJPY</span><span><span class="macro-label">美元兑日元</span><span class="macro-value">148 → 145</span><span class="macro-source source-pending" title="OpenD 已连接；FX 市场枚举返回空，USDJPY 富途代码待确认">Futu FX 待确认</span></span><span class="macro-move down">↓</span></div>
+            <div class="macro-item"><span class="macro-code">US10Y</span><span><span class="macro-label">10 年美债收益率</span><span class="macro-value">4.50% → 4.30%</span><span class="macro-source source-warn" title="富途基础信息确认代码 US..TNX；指数行情接口返回 US stock indices are not supported">Futu US..TNX · 接口限制</span></span><span class="macro-move down">↓</span></div>
+            <div class="macro-item"><span class="macro-code">VIX</span><span><span class="macro-label">波动率</span><span class="macro-value">38.5 → 30-32</span><span class="macro-source source-warn" title="富途基础信息确认代码 US..VIX；指数行情接口返回 US stock indices are not supported">Futu US..VIX · 接口限制</span></span><span class="macro-move down">↓</span></div>
+            <div class="macro-item"><span class="macro-code">WTI</span><span><span class="macro-label">油价压力</span><span class="macro-value">$75 → $72</span><span class="macro-source source-warn" title="富途主连代码 US.CLmain；当前账号返回期货行情权限不足">Futu US.CLmain · 权限不足</span></span><span class="macro-move flat">↘</span></div>
+            <div class="macro-item"><span class="macro-code">Gold</span><span><span class="macro-label">避险需求</span><span class="macro-value">$3400 → $3350</span><span class="macro-source source-warn" title="富途主连代码 US.GCmain；当前账号返回期货行情权限不足">Futu US.GCmain · 权限不足</span></span><span class="macro-move flat">↘</span></div>
+            <div class="macro-item"><span class="macro-code">AI</span><span><span class="macro-label">AI 链风险偏好</span><span class="macro-value">+3% 至 +8%</span><span class="macro-source source-pending">情景联动 · 非富途行情</span></span><span class="macro-move down">↑</span></div>
+            <div class="macro-item"><span class="macro-code">DRAM</span><span><span class="macro-label">存储股 Beta</span><span class="macro-value">+4% 至 +10%</span><span class="macro-source source-pending">情景联动 · 非富途行情</span></span><span class="macro-move down">↑</span></div>
           </div>
           <div class="chips">
             <span class="chip green">收益率下行</span>
@@ -974,14 +1003,14 @@
             <span class="node">7300</span><span class="arrow">↔</span><span class="node">7200</span>
           </div>
           <div class="macro-board" aria-label="中性消化宏观指标方向">
-            <div class="macro-item"><span class="macro-code">DXY</span><span><span class="macro-label">美元指数</span><span class="macro-value">103.0-104.2</span></span><span class="macro-move flat">→</span></div>
-            <div class="macro-item"><span class="macro-code">USDJPY</span><span><span class="macro-label">美元兑日元</span><span class="macro-value">146.5-148.5</span></span><span class="macro-move flat">→</span></div>
-            <div class="macro-item"><span class="macro-code">US10Y</span><span><span class="macro-label">10 年美债收益率</span><span class="macro-value">4.35%-4.50%</span></span><span class="macro-move flat">→</span></div>
-            <div class="macro-item"><span class="macro-code">VIX</span><span><span class="macro-label">波动率</span><span class="macro-value">34-39</span></span><span class="macro-move flat">↔</span></div>
-            <div class="macro-item"><span class="macro-code">WTI</span><span><span class="macro-label">油价压力</span><span class="macro-value">$73-$77</span></span><span class="macro-move flat">→</span></div>
-            <div class="macro-item"><span class="macro-code">Gold</span><span><span class="macro-label">避险需求</span><span class="macro-value">$3350-$3420</span></span><span class="macro-move flat">→</span></div>
-            <div class="macro-item"><span class="macro-code">AI</span><span><span class="macro-label">AI 链风险偏好</span><span class="macro-value">-3% 至 +3%</span></span><span class="macro-move mixed">分</span></div>
-            <div class="macro-item"><span class="macro-code">DRAM</span><span><span class="macro-label">存储股 Beta</span><span class="macro-value">-5% 至 +5%</span></span><span class="macro-move mixed">分</span></div>
+            <div class="macro-item"><span class="macro-code">DXY</span><span><span class="macro-label">美元指数</span><span class="macro-value">103.0-104.2</span><span class="macro-source source-pending" title="OpenD 已连接；未在富途 US/FX 基础信息中确认 DXY 主代码">Futu 代码待确认</span></span><span class="macro-move flat">→</span></div>
+            <div class="macro-item"><span class="macro-code">USDJPY</span><span><span class="macro-label">美元兑日元</span><span class="macro-value">146.5-148.5</span><span class="macro-source source-pending" title="OpenD 已连接；FX 市场枚举返回空，USDJPY 富途代码待确认">Futu FX 待确认</span></span><span class="macro-move flat">→</span></div>
+            <div class="macro-item"><span class="macro-code">US10Y</span><span><span class="macro-label">10 年美债收益率</span><span class="macro-value">4.35%-4.50%</span><span class="macro-source source-warn" title="富途基础信息确认代码 US..TNX；指数行情接口返回 US stock indices are not supported">Futu US..TNX · 接口限制</span></span><span class="macro-move flat">→</span></div>
+            <div class="macro-item"><span class="macro-code">VIX</span><span><span class="macro-label">波动率</span><span class="macro-value">34-39</span><span class="macro-source source-warn" title="富途基础信息确认代码 US..VIX；指数行情接口返回 US stock indices are not supported">Futu US..VIX · 接口限制</span></span><span class="macro-move flat">↔</span></div>
+            <div class="macro-item"><span class="macro-code">WTI</span><span><span class="macro-label">油价压力</span><span class="macro-value">$73-$77</span><span class="macro-source source-warn" title="富途主连代码 US.CLmain；当前账号返回期货行情权限不足">Futu US.CLmain · 权限不足</span></span><span class="macro-move flat">→</span></div>
+            <div class="macro-item"><span class="macro-code">Gold</span><span><span class="macro-label">避险需求</span><span class="macro-value">$3350-$3420</span><span class="macro-source source-warn" title="富途主连代码 US.GCmain；当前账号返回期货行情权限不足">Futu US.GCmain · 权限不足</span></span><span class="macro-move flat">→</span></div>
+            <div class="macro-item"><span class="macro-code">AI</span><span><span class="macro-label">AI 链风险偏好</span><span class="macro-value">-3% 至 +3%</span><span class="macro-source source-pending">情景联动 · 非富途行情</span></span><span class="macro-move mixed">分</span></div>
+            <div class="macro-item"><span class="macro-code">DRAM</span><span><span class="macro-label">存储股 Beta</span><span class="macro-value">-5% 至 +5%</span><span class="macro-source source-pending">情景联动 · 非富途行情</span></span><span class="macro-move mixed">分</span></div>
           </div>
           <div class="chips">
             <span class="chip teal">指数震荡</span>
@@ -997,14 +1026,14 @@
             <span class="node">7262</span><span class="arrow">→</span><span class="node">7238</span><span class="arrow">→</span><span class="node">7200</span><span class="arrow">→</span><span class="node">7150</span>
           </div>
           <div class="macro-board" aria-label="利空冲击宏观指标方向">
-            <div class="macro-item"><span class="macro-code">DXY</span><span><span class="macro-label">美元指数</span><span class="macro-value">104.0 → 105.5</span></span><span class="macro-move up">↑</span></div>
-            <div class="macro-item"><span class="macro-code">USDJPY</span><span><span class="macro-label">美元兑日元</span><span class="macro-value">148 → 151</span></span><span class="macro-move up">↑</span></div>
-            <div class="macro-item"><span class="macro-code">US10Y</span><span><span class="macro-label">10 年美债收益率</span><span class="macro-value">4.50% → 4.70%</span></span><span class="macro-move up">↑</span></div>
-            <div class="macro-item"><span class="macro-code">VIX</span><span><span class="macro-label">波动率</span><span class="macro-value">38.5 → 45+</span></span><span class="macro-move up">↑</span></div>
-            <div class="macro-item"><span class="macro-code">WTI</span><span><span class="macro-label">油价压力</span><span class="macro-value">$75 → $80</span></span><span class="macro-move up">↑</span></div>
-            <div class="macro-item"><span class="macro-code">Gold</span><span><span class="macro-label">避险需求</span><span class="macro-value">$3400 → $3500</span></span><span class="macro-move up">↑</span></div>
-            <div class="macro-item"><span class="macro-code">AI</span><span><span class="macro-label">AI 链风险偏好</span><span class="macro-value">-5% 至 -12%</span></span><span class="macro-move up">↓</span></div>
-            <div class="macro-item"><span class="macro-code">DRAM</span><span><span class="macro-label">存储股 Beta</span><span class="macro-value">-8% 至 -15%</span></span><span class="macro-move up">↓</span></div>
+            <div class="macro-item"><span class="macro-code">DXY</span><span><span class="macro-label">美元指数</span><span class="macro-value">104.0 → 105.5</span><span class="macro-source source-pending" title="OpenD 已连接；未在富途 US/FX 基础信息中确认 DXY 主代码">Futu 代码待确认</span></span><span class="macro-move up">↑</span></div>
+            <div class="macro-item"><span class="macro-code">USDJPY</span><span><span class="macro-label">美元兑日元</span><span class="macro-value">148 → 151</span><span class="macro-source source-pending" title="OpenD 已连接；FX 市场枚举返回空，USDJPY 富途代码待确认">Futu FX 待确认</span></span><span class="macro-move up">↑</span></div>
+            <div class="macro-item"><span class="macro-code">US10Y</span><span><span class="macro-label">10 年美债收益率</span><span class="macro-value">4.50% → 4.70%</span><span class="macro-source source-warn" title="富途基础信息确认代码 US..TNX；指数行情接口返回 US stock indices are not supported">Futu US..TNX · 接口限制</span></span><span class="macro-move up">↑</span></div>
+            <div class="macro-item"><span class="macro-code">VIX</span><span><span class="macro-label">波动率</span><span class="macro-value">38.5 → 45+</span><span class="macro-source source-warn" title="富途基础信息确认代码 US..VIX；指数行情接口返回 US stock indices are not supported">Futu US..VIX · 接口限制</span></span><span class="macro-move up">↑</span></div>
+            <div class="macro-item"><span class="macro-code">WTI</span><span><span class="macro-label">油价压力</span><span class="macro-value">$75 → $80</span><span class="macro-source source-warn" title="富途主连代码 US.CLmain；当前账号返回期货行情权限不足">Futu US.CLmain · 权限不足</span></span><span class="macro-move up">↑</span></div>
+            <div class="macro-item"><span class="macro-code">Gold</span><span><span class="macro-label">避险需求</span><span class="macro-value">$3400 → $3500</span><span class="macro-source source-warn" title="富途主连代码 US.GCmain；当前账号返回期货行情权限不足">Futu US.GCmain · 权限不足</span></span><span class="macro-move up">↑</span></div>
+            <div class="macro-item"><span class="macro-code">AI</span><span><span class="macro-label">AI 链风险偏好</span><span class="macro-value">-5% 至 -12%</span><span class="macro-source source-pending">情景联动 · 非富途行情</span></span><span class="macro-move up">↓</span></div>
+            <div class="macro-item"><span class="macro-code">DRAM</span><span><span class="macro-label">存储股 Beta</span><span class="macro-value">-8% 至 -15%</span><span class="macro-source source-pending">情景联动 · 非富途行情</span></span><span class="macro-move up">↓</span></div>
           </div>
           <div class="chips">
             <span class="chip red">收益率上行</span>
