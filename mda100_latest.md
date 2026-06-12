@@ -1,12 +1,12 @@
 ---
-title: mda100_20260612_232525
+title: mda100_20260613_061548
 date: 2026-06-12
 source: Futu OpenD
 market_data_marker: VERIFIED_FUTU_OPEND
 delivery_verification_marker: DOUBLE_VERIFIED_MDA100_DATA_INDEX_MATCH
 ---
 
-# mda100_20260612_232525
+# mda100_20260613_061548
 
 ## 第一模块：mda100指数
 
@@ -174,8 +174,8 @@ delivery_verification_marker: DOUBLE_VERIFIED_MDA100_DATA_INDEX_MATCH
 - 核心池数量：100
 - 可评分数量：98
 - 行情校验：VERIFIED_FUTU_OPEND
-- 生成时间：2026-06-12T23:25:25
-- 报告版本：16:00收盘版，16:00后收盘核验
+- 生成时间：2026-06-13T06:15:48
+- 报告版本：14:30盘中版，14:30任务或手动盘中快照
 
 
 ## 资料页：半导体前道与电子特气
