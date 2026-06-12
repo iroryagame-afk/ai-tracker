@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mda100_20260612_125044</title>
+  <title>mda100_20260612_132104</title>
   <style>
     :root {
       --ink:#101418; --muted:#667085; --paper:#eef2ff; --panel:#fff; --line:#d8dee7;
@@ -485,6 +485,20 @@
     .news-empty strong { color:#1e40af; }
     .self-media-note { display:flex; flex-wrap:wrap; gap:8px; align-items:center; border:1px solid #fed7aa; background:linear-gradient(135deg,#fff7ed 0%,#fff 100%); color:#344054; border-radius:10px; padding:10px 12px; margin:0 0 10px; }
     .self-media-note strong { color:#9a3412; }
+    .self-source-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:0 0 16px; }
+    .self-source-card { display:grid; gap:6px; text-decoration:none; border:1px solid #bfdbfe; background:linear-gradient(135deg,#eff6ff 0%,#fff 70%); border-radius:14px; padding:13px 14px; box-shadow:0 8px 18px rgba(30,64,175,.06); }
+    .self-source-card span { color:#1d4ed8; font-size:11px; font-weight:950; }
+    .self-source-card strong { color:#172033; font-size:15px; }
+    .self-source-card p { margin:0; color:#475569; font-size:12px; line-height:1.55; }
+    .self-sector-block { border:1px solid #fed7aa; border-radius:16px; background:linear-gradient(180deg,#fffaf5 0%,#fff 100%); margin:14px 0; overflow:hidden; box-shadow:0 10px 22px rgba(154,52,18,.05); }
+    .self-sector-head { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:12px 14px; background:#7c2d12; color:#fff; }
+    .self-sector-head h3 { margin:0; font-size:17px; }
+    .self-sector-head span { border-radius:999px; background:rgba(255,255,255,.16); padding:4px 9px; font-weight:950; font-size:12px; }
+    .self-sector-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; padding:12px; }
+    .self-record-card { display:grid; gap:7px; border:1px solid #e5e7eb; background:#fff; border-radius:12px; padding:11px; min-height:150px; }
+    .self-record-top { display:flex; justify-content:space-between; gap:8px; align-items:center; }
+    .self-record-card h4 { margin:0; font-size:14px; line-height:1.35; color:#172033; }
+    .self-record-card p { margin:0; color:#344054; font-size:12px; line-height:1.6; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
     .self-media-table { border-color:#fed7aa; border-radius:12px; overflow:hidden; box-shadow:0 7px 16px rgba(154,52,18,.05); background:#fffaf5; }
     .self-media-table table { min-width:0; table-layout:fixed; font-size:11px; }
     .self-media-table th { background:#7c2d12; padding:7px 8px; }
@@ -500,7 +514,7 @@
     .source-status { display:inline-flex; border-radius:999px; padding:3px 8px; color:#92400e; background:#fef3c7; border:1px solid #fde68a; font-weight:900; }
     .source-link { display:inline-flex; justify-content:center; border-radius:999px; padding:4px 9px; color:#1e40af; background:#dbeafe; border:1px solid #bfdbfe; text-decoration:none; font-weight:900; white-space:nowrap; }
     .source-link:hover { background:#bfdbfe; }
-    @media (max-width:960px) { .grid,.kpis,.summary-grid,.market-overview,.winrate-strip,.sector-watch-grid,.long-grid,.cards-container,.detail-list,.advice-actions,.material-page-lead,.material-layer-grid,.material-priority-list,.material-follow-grid,.material-detail-grid,.news-hero-card,.news-layout,.news-event-grid,.news-kpi-grid{grid-template-columns:1fr;} .shell{padding:12px;} .hero-head{display:block;} .report-stamp{grid-template-columns:1fr; align-items:start;} .stamp-time{font-size:22px;} .stamp-scope{justify-content:flex-start;} .stats-pill{margin-left:0;} .advice-action + .advice-action{border-left:1px solid #e5e7eb;border-top:0;} }
+    @media (max-width:960px) { .grid,.kpis,.summary-grid,.market-overview,.winrate-strip,.sector-watch-grid,.long-grid,.cards-container,.detail-list,.advice-actions,.material-page-lead,.material-layer-grid,.material-priority-list,.material-follow-grid,.material-detail-grid,.news-hero-card,.news-layout,.news-event-grid,.news-kpi-grid,.self-source-grid,.self-sector-grid{grid-template-columns:1fr;} .shell{padding:12px;} .hero-head{display:block;} .report-stamp{grid-template-columns:1fr; align-items:start;} .stamp-time{font-size:22px;} .stamp-scope{justify-content:flex-start;} .stats-pill{margin-left:0;} .advice-action + .advice-action{border-left:1px solid #e5e7eb;border-top:0;} }
     @page { size:A4 landscape; margin:10mm; }
     @media print { *{-webkit-print-color-adjust:exact; print-color-adjust:exact;} body{background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 52%,#f1f5f9 100%);} .shell{max-width:none; padding:12px;} .page-nav{display:none;} .report-page{display:block !important; break-before:page;} .report-page:first-of-type{break-before:auto;} .summary-grid{grid-template-columns:repeat(6,minmax(110px,1fr)) !important;} .kpis{grid-template-columns:repeat(4,minmax(120px,1fr)) !important;} .grid{grid-template-columns:1.1fr .9fr !important;} .sector-watch-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .long-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .cards-container{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .detail-list{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .hero,.sector-watch-card,.long-card,.stock-card,.detail-card{break-inside:avoid;} table{font-size:8px; min-width:0;} .card-controls{display:none;} }
   </style>
@@ -510,7 +524,7 @@
     <div class="hero">
       <div class="hero-head">
         <div>
-          <h1>mda100_20260612_125044</h1>
+          <h1>mda100_20260612_132104</h1>
           <div class="subtitle">mda100以核心100只AI科技股票等权编制，历史曲线自2026年首个交易日开始累计。行情标记：VERIFIED_FUTU_OPEND。</div>
           <div class="verify-strip">
             <span>二次确认</span>
@@ -519,13 +533,13 @@
             <span class="verify-detail" title="报告日期与指数日期一致:OK / 行情日期覆盖本次报告日:OK / 所有可用行情均已打 Futu 核验标记:OK / 指数涨跌幅与股票池等权涨跌一致:OK / 上涨数量一致:OK / 下跌数量一致:OK / 覆盖率一致:OK">生成与发布前已复核</span>
           </div>
         </div>
-        <div class="meta">Report 2026-06-11<br>Index 2026-06-11<br>Generated 2026-06-12T12:50:44</div>
+        <div class="meta">Report 2026-06-11<br>Index 2026-06-11<br>Generated 2026-06-12T13:21:04</div>
       </div>
       <div class="report-stamp" aria-label="报告生成时间和版本">
         <div class="stamp-badge">14:30盘中版</div>
         <div class="stamp-main">
           <div class="stamp-label">盘中观察生成时间</div>
-          <div class="stamp-time">6月12日 12:50:44</div>
+          <div class="stamp-time">6月12日 13:21:04</div>
           <div class="stamp-desc">用于15:00前交易决策，重点看盘中承接、封单、VWAP/分时均线和尾盘回落。</div>
         </div>
         <div class="stamp-scope">14:30任务或手动盘中快照</div>
@@ -4812,9 +4826,161 @@
       
     <div class="self-media-note">
       <strong>自媒体资料库</strong>
-      <span>这里放用户手动投喂的独立信息源。主页只展示概述；原文、抽取文本和归档路径放在详情页。</span>
+      <span>这里按板块整理用户手动投喂的独立信息源。主页只展示概述；原文、抽取文本和归档路径放在详情页。</span>
     </div>
-    <div class="table-wrap self-media-table"><table><thead><tr><th>归档时间</th><th>资料</th><th>来源</th><th>状态</th><th>概述</th><th>详情</th></tr></thead><tbody><tr><td><span class="source-time">2026-06-12T13:05:00</span></td><td><strong>CoPoS先进封装：玻璃芯基板、ABF-GCP与TGV/Cu互连</strong><div class="source-tags">CoPoS,先进封装,玻璃芯基板,ABF,TGV,台积电,NVIDIA,Feynman</div></td><td>用户粘贴/自媒体线索</td><td><span class="source-status">待核验</span></td><td>CoPoS 的重点不是“玻璃替代 ABF”，而是“玻璃芯基板 + 两侧 ABF-GCP 堆叠 + TGV/Cu 互连 + 芯片侧 RDL”的新型超大型封装架构。它更适合作为 2028 年以后先进封装材料和工艺路线的前瞻线索，当前不直接拉高短线评分。 - CoPoS 预计 2028 年下半年量产，可能对应 9.5 倍光罩尺寸以上超大型封装经济性提升。 - NVIDIA Feynman AI 芯片可能是早期采用者之一，但仍需后续公开资料和供应链验证。 - 玻璃有两个位置：临时玻璃载体，以及加工后切割成单颗玻璃芯基板的大...</td><td><a class="source-link" href="self_media/20260612_130500_copos_glass_core_abf_gcp.html" target="_blank" rel="noopener">查看详情</a></td></tr><tr><td><span class="source-time">2026-06-12T12:45:00</span></td><td><strong>半导体材料：国产替代与验证名单框架</strong><div class="source-tags">半导体材料,国产替代,验证名单,光刻胶,靶材,特气,湿电子化学品</div></td><td>用户粘贴/自媒体观点</td><td><span class="source-status">待核验</span></td><td>A股半导体材料的交易逻辑不能简单跟海外半导体估值周期绑定。海外跌的是拥挤估值和周期预期，A股材料涨的是国产替代率、进口涨价和晶圆厂验证名单。材料股真假要看一个核心标准：有没有进入晶圆厂/封装厂验证或量产名单。 - 海外半导体下跌更多来自估值、周期和利率预期，不等于A股材料国产替代逻辑失效。 - A股材料上涨的核心变量是替代率，和美股情绪不是同一套定价体系。 - 光刻胶、靶材、掩膜版、电子特气、湿电子化学品等国产替代空间仍大，但具体比例需要继续用行业报告和公司公告复核。 - 进口涨价会加快国产替代，尤其是海外电子材料...</td><td><a class="source-link" href="self_media/20260612_124500_semiconductor_material_validation.html" target="_blank" rel="noopener">查看详情</a></td></tr><tr><td><span class="source-time">2026-06-12T12:15:00</span></td><td><strong>AI整机柜半导体用片：硅片需求从GPU单点向PMIC/BMC/光通信扩散</strong><div class="source-tags">硅片,沪硅产业,AI服务器,PMIC,BMC,HBM,成熟制程,半导体材料</div></td><td>用户粘贴/自媒体线索</td><td><span class="source-status">已整理，具体测算数字需继续核验</span></td><td>这条线索的核心是：AI 对硅片的拉动不应只看 GPU 和 HBM，而要扩展到整机柜半导体用片。AI 服务器带来更高的硅面积需求，先进逻辑、HBM、PMIC、电源芯片、BMC、光通信配套芯片都会增加晶圆消耗。投资上，硅片涨价和紧缺方向成立，但不能写成“所有硅片一起涨”。优先级应是：先进 12 英寸硅片 &gt; HBM/逻辑用高端硅片 &gt; 8 英寸 BCD/PMIC产能 &gt; 普通小尺寸硅片。全球300mm等效出货接近1000万片/月、2027年前后突破1100万片/月、SUMCO给过AI服务器硅面积3.8倍对比等说法可作为...</td><td><a class="source-link" href="self_media/20260612_121500_ai_server_silicon_wafer_spread.html" target="_blank" rel="noopener">查看详情</a></td></tr><tr><td><span class="source-time">2026-06-12T12:05:00</span></td><td><strong>InP基本面：AI光互联、磷化铟晶片与铟资源映射</strong><div class="source-tags">InP,磷化铟,铟资源,AI光互联,光芯片,云南锗业,锡业股份,AXTI,LITE,COHR</div></td><td>用户粘贴/自媒体线索</td><td><span class="source-status">已整理，年报数据和海外采购承诺需继续核验</span></td><td>这条线索的核心不是泛半导体材料，而是 AI 数据中心从铜连接向光互联迁移后，主动光器件里的 InP 需求上升。InP 适合 1.3/1.55 微米光通信波段，可用于高速激光器、探测器、调制器和光子集成芯片。产业链上要先分两层：第一层是 InP 晶片/衬底，这是光芯片制造底座；第二层是高纯铟和铟资源。A 股当前最直接的是云南锗业，因其披露有磷化铟晶片相关业务。锡业股份、株冶集团、中金岭南更偏铟资源扩散，先放扩展核验。驰宏锌锗、有研新材只作为关键矿产/材料国产化扩散线索，不放 InP 主线前排。 - 云南锗业：进入半导...</td><td><a class="source-link" href="self_media/20260612_120500_inp_optical_interconnect_indium_chain.html" target="_blank" rel="noopener">查看详情</a></td></tr><tr><td><span class="source-time">2026-06-12T11:55:00</span></td><td><strong>NVIDIA推动PCB材料竞争上移：T-glass与HVLP4铜箔</strong><div class="source-tags">NVIDIA,HVLP4,T-glass,低DK电子布,ABF,CCL,铜箔,AI PCB</div></td><td>用户粘贴/英文资料翻译</td><td><span class="source-status">已整理，HVLP4吨数缺口需继续核验</span></td><td>这条资料的边际价值很高：它把AI PCB/封装瓶颈从“CCL涨价”继续上移到更底层的 T-glass/低DK电子布 和 HVLP4铜箔。核心变化不是简单涨价，而是 NVIDIA 及其大客户开始越过CCL厂，直接协调玻纤布和铜箔上游材料，甚至转向买方供料/寄售模式，提前锁定一年以上产能。mda100采用这个方向，但证据分层处理：T-glass/Nittobo集中度和直接谈判逻辑可信度较高；HVLP4的1500吨、2500吨缺口属于行业媒体和产业链线索，先作为跟踪指标，不直接当已证实财务弹性。 - 低DK/T-glas...</td><td><a class="source-link" href="self_media/20260612_115500_hvlp4_tglass_nvidia_pcb_materials.html" target="_blank" rel="noopener">查看详情</a></td></tr><tr><td><span class="source-time">2026-06-12T11:45:00</span></td><td><strong>AI PCB/封装五大紧缺物料：自媒体清单核验</strong><div class="source-tags">AI PCB,ABF,电子布,CCL,碳氢树脂,PCB钻针,高速铜箔,供需紧缺</div></td><td>用户粘贴/自媒体线索</td><td><span class="source-status">已整理，需持续公告与行情核验</span></td><td>这份清单的主方向是对的：AI芯片封装和AI服务器PCB继续向上时，真正容易卡住的不是泛PCB概念，而是 ABF/FC-BGA封装基板、低介电电子布、高频高速CCL材料、PCB微钻/硬质合金耗材和高速铜箔这些上游材料与加工耗材。但原文里不少“最缺、全球第一、英伟达认证、核心绑定、唯一”等表述证据强度不够，不能直接写成结论。mda100采用修正版：方向纳入涨价/供需页；公司按池内标的和待扩展标的分开；强客户绑定和精确缺口比例必须等公告、调研或权威产业资料二次确认。 - 放进“涨价行业评级”和“半导体材料/封装材料资料页...</td><td><a class="source-link" href="self_media/20260612_114500_ai_pcb_bottleneck_materials.html" target="_blank" rel="noopener">查看详情</a></td></tr><tr><td><span class="source-time">2026-06-12T11:30:35</span></td><td><strong>富信科技与中船特气：参考资料真假校验与模型打分</strong><div class="source-tags">富信科技,中船特气,光模块,电子特气,模型评分,真假校验</div></td><td>自媒体/截图观点</td><td><span class="source-status">待核验</span></td><td>一句话结论：富信科技的“国产替代、材料+技术+认证壁垒”是真的，但小作文把收入基数、需求爆发、全球份额和出口管制明显夸大；它更适合作为高估值观察线索，不应按“全球唯一垄断”给高分。中船特气的兑现度、份额和量价证据更清晰。</td><td><a class="source-link" href="self_media/20260612_113035_bab580f9.html" target="_blank" rel="noopener">查看详情</a></td></tr><tr><td><span class="source-time">2026-06-12T11:24:24</span></td><td><strong>索尔思光芯片行业专家交流纪要</strong><div class="source-tags">光芯片,索尔思,光通信,硅光,CPO,专家纪要</div></td><td>自媒体/专家交流纪要</td><td><span class="source-status">待核验</span></td><td>索尔思光芯⽚⾏业专家交流纪要 会议时间：2026年6⽉11⽇ 交流主题：⾼速EML/CW激光芯⽚、磷化铟衬底、CPO/NPO技术路线、供需价格及产能规划 ⼀、⾼速EML芯⽚：供需、价格、产品迭代 1.1200GEML • 量产进度：已正式量产，现阶段核⼼任务为外延⼯艺、封装良率爬坡 • 需求节奏：2026年全年以头部客⼾产能锁量、上游磷化铟衬底备货为主，实质规模化出货、订单交 付集中在2026Q4-2027全年 1.2100GEML • 供需缺⼝：2027年⾏业整体芯⽚供需缺⼝仍维持30%，...</td><td><a class="source-link" href="self_media/20260612_112424_9716819c.html" target="_blank" rel="noopener">查看详情</a></td></tr><tr><td><span class="source-time">2026-06-12T08:42:00</span></td><td><strong>谁是下一个？产业脉络传导：钨钼靶材、六氟化钨、钨钻针</strong><div class="source-tags">钨系耗材,六氟化钨,溅射靶材,PCB钻针,半导体材料</div></td><td>总府榕树</td><td><span class="source-status">线索待核验</span></td><td>这篇文章的核心价值不在于单点喊票，而是给出一套“中船特气式相似基因”的产业筛选方法：沿着供需传导、利润传导、产业地位传导和供应链瓶颈，寻找下一个可能从低关注度变成高弹性的电子料环节。 - 上游原料或关键金属存在供给约束，容易引发成本和利润迁移。 - 全球主要份额掌握在日系或海外供应商手里，国内突破后份额仍小。 - 下游先进封装、存储、晶圆制造或AI硬件扩产带来真实需求增量。 - 材料或耗材在制造过程中使用频繁，客户认证周期长，短期替代不容易。 - 存在远期技术替代路线，但替代节奏慢，短期不一定能缓解供需。 关注方向...</td><td><a class="source-link" href="self_media/20260612_083000_tungsten_material.html" target="_blank" rel="noopener">查看详情</a></td></tr><tr><td><span class="source-time">2026-06-11T20:45:00</span></td><td><strong>六氟化钨概念澄清：雅克/中钨/昊华/金宏</strong><div class="source-tags">六氟化钨,电子特气,澄清,持仓评分</div></td><td>微信群截图</td><td><span class="source-status">待核验</span></td><td>一句话结论：六氟化钨概念需要按真实业务暴露度重新打折；雅克科技直接否认相关业务，中钨高新只是上游钨粉影子，金宏气体现阶段无产能，昊华科技有真实业务但2025收入占比仅0.13%，必须核验2026产销。</td><td><a class="source-link" href="self_media/20260611_204500_wf6clarify.html" target="_blank" rel="noopener">查看详情</a></td></tr><tr><td><span class="source-time">2026-06-11T18:13:30</span></td><td><strong>供需失衡_细分环节打分排名_v1</strong><div class="source-tags">供需失衡,细分环节,涨价,瓶颈</div></td><td>自媒体/手动文档</td><td><span class="source-status">待核验</span></td><td>一句话结论：电子特气（核心 WF₆/光刻气）是本轮最极致的卡脖子环节，应为重仓主攻方向；光刻胶结构壁垒最高但属慢变量、宜试仓跟踪；MLCC 粉体与靶材为轻度失衡的观察清单；封装材料与湿电子化学品在环节口径下失衡不足，仅适合精选个股（华海诚科、格林达）。</td><td><a class="source-link" href="self_media/20260611_181330_3493ba86.html" target="_blank" rel="noopener">查看详情</a></td></tr></tbody></table></div>
+    <div class="self-source-grid">
+            <a class="self-source-card" href="https://stocks.matraceai.com/" target="_blank" rel="noopener">
+              <span>新闻资讯</span>
+              <strong>Matrace AI 股票新闻</strong>
+              <p>作为盘前/盘中新闻与题材扩散线索入口；进入模型前仍按公告、行情和成交验证。</p>
+            </a>
+            </div>
+    
+            <section class="self-sector-block">
+              <div class="self-sector-head">
+                <h3>半导体材料 / 电子料</h3>
+                <span>4 条</span>
+              </div>
+              <div class="self-sector-grid">
+                <article class="self-record-card">
+                  <div class="self-record-top">
+                    <span class="source-time">2026-06-12T12:45:00</span>
+                    <span class="source-status">待核验</span>
+                  </div>
+                  <h4>半导体材料：国产替代与验证名单框架</h4>
+                  <div class="source-tags">用户粘贴/自媒体观点 · 半导体材料,国产替代,验证名单,光刻胶,靶材,特气,湿电子化学品</div>
+                  <p>A股半导体材料的交易逻辑不能简单跟海外半导体估值周期绑定。海外跌的是拥挤估值和周期预期，A股材料涨的是国产替代率、进口涨价和晶圆厂验证名单。材料股真假要看一个核心标准：有没有进入晶圆厂/封装厂验证或量产名单。 - 海外半导体下跌更多来自估值、周期和利率预期，不等于A股材料国产替代逻辑失效。 - A股材料上涨的核心变量是替代率，和美股情绪不是同一套定价体系。 - 光刻胶、靶材、掩膜版、电子特气、湿电子化学品等国产替代空间仍大，但具体比例需要继续用行业报告和公司公告复核。 - 进口涨价会加快国产替代，尤其是海外电子材料...</p>
+                  <a class="source-link" href="self_media/20260612_124500_semiconductor_material_validation.html" target="_blank" rel="noopener">查看详情</a>
+                </article>
+                
+                <article class="self-record-card">
+                  <div class="self-record-top">
+                    <span class="source-time">2026-06-12T11:30:35</span>
+                    <span class="source-status">待核验</span>
+                  </div>
+                  <h4>富信科技与中船特气：参考资料真假校验与模型打分</h4>
+                  <div class="source-tags">自媒体/截图观点 · 富信科技,中船特气,光模块,电子特气,模型评分,真假校验</div>
+                  <p>一句话结论：富信科技的“国产替代、材料+技术+认证壁垒”是真的，但小作文把收入基数、需求爆发、全球份额和出口管制明显夸大；它更适合作为高估值观察线索，不应按“全球唯一垄断”给高分。中船特气的兑现度、份额和量价证据更清晰。</p>
+                  <a class="source-link" href="self_media/20260612_113035_bab580f9.html" target="_blank" rel="noopener">查看详情</a>
+                </article>
+                
+                <article class="self-record-card">
+                  <div class="self-record-top">
+                    <span class="source-time">2026-06-11T20:45:00</span>
+                    <span class="source-status">待核验</span>
+                  </div>
+                  <h4>六氟化钨概念澄清：雅克/中钨/昊华/金宏</h4>
+                  <div class="source-tags">微信群截图 · 六氟化钨,电子特气,澄清,持仓评分</div>
+                  <p>一句话结论：六氟化钨概念需要按真实业务暴露度重新打折；雅克科技直接否认相关业务，中钨高新只是上游钨粉影子，金宏气体现阶段无产能，昊华科技有真实业务但2025收入占比仅0.13%，必须核验2026产销。</p>
+                  <a class="source-link" href="self_media/20260611_204500_wf6clarify.html" target="_blank" rel="noopener">查看详情</a>
+                </article>
+                
+                <article class="self-record-card">
+                  <div class="self-record-top">
+                    <span class="source-time">2026-06-11T18:13:30</span>
+                    <span class="source-status">待核验</span>
+                  </div>
+                  <h4>供需失衡_细分环节打分排名_v1</h4>
+                  <div class="source-tags">自媒体/手动文档 · 供需失衡,细分环节,涨价,瓶颈</div>
+                  <p>一句话结论：电子特气（核心 WF₆/光刻气）是本轮最极致的卡脖子环节，应为重仓主攻方向；光刻胶结构壁垒最高但属慢变量、宜试仓跟踪；MLCC 粉体与靶材为轻度失衡的观察清单；封装材料与湿电子化学品在环节口径下失衡不足，仅适合精选个股（华海诚科、格林达）。</p>
+                  <a class="source-link" href="self_media/20260611_181330_3493ba86.html" target="_blank" rel="noopener">查看详情</a>
+                </article>
+                </div>
+            </section>
+            
+            <section class="self-sector-block">
+              <div class="self-sector-head">
+                <h3>PCB / CCL / 先进封装</h3>
+                <span>4 条</span>
+              </div>
+              <div class="self-sector-grid">
+                <article class="self-record-card">
+                  <div class="self-record-top">
+                    <span class="source-time">2026-06-12T13:05:00</span>
+                    <span class="source-status">待核验</span>
+                  </div>
+                  <h4>CoPoS先进封装：玻璃芯基板、ABF-GCP与TGV/Cu互连</h4>
+                  <div class="source-tags">用户粘贴/自媒体线索 · CoPoS,先进封装,玻璃芯基板,ABF,TGV,台积电,NVIDIA,Feynman</div>
+                  <p>CoPoS 的重点不是“玻璃替代 ABF”，而是“玻璃芯基板 + 两侧 ABF-GCP 堆叠 + TGV/Cu 互连 + 芯片侧 RDL”的新型超大型封装架构。它更适合作为 2028 年以后先进封装材料和工艺路线的前瞻线索，当前不直接拉高短线评分。 - CoPoS 预计 2028 年下半年量产，可能对应 9.5 倍光罩尺寸以上超大型封装经济性提升。 - NVIDIA Feynman AI 芯片可能是早期采用者之一，但仍需后续公开资料和供应链验证。 - 玻璃有两个位置：临时玻璃载体，以及加工后切割成单颗玻璃芯基板的大...</p>
+                  <a class="source-link" href="self_media/20260612_130500_copos_glass_core_abf_gcp.html" target="_blank" rel="noopener">查看详情</a>
+                </article>
+                
+                <article class="self-record-card">
+                  <div class="self-record-top">
+                    <span class="source-time">2026-06-12T11:55:00</span>
+                    <span class="source-status">已整理，HVLP4吨数缺口需继续核验</span>
+                  </div>
+                  <h4>NVIDIA推动PCB材料竞争上移：T-glass与HVLP4铜箔</h4>
+                  <div class="source-tags">用户粘贴/英文资料翻译 · NVIDIA,HVLP4,T-glass,低DK电子布,ABF,CCL,铜箔,AI PCB</div>
+                  <p>这条资料的边际价值很高：它把AI PCB/封装瓶颈从“CCL涨价”继续上移到更底层的 T-glass/低DK电子布 和 HVLP4铜箔。核心变化不是简单涨价，而是 NVIDIA 及其大客户开始越过CCL厂，直接协调玻纤布和铜箔上游材料，甚至转向买方供料/寄售模式，提前锁定一年以上产能。mda100采用这个方向，但证据分层处理：T-glass/Nittobo集中度和直接谈判逻辑可信度较高；HVLP4的1500吨、2500吨缺口属于行业媒体和产业链线索，先作为跟踪指标，不直接当已证实财务弹性。 - 低DK/T-glas...</p>
+                  <a class="source-link" href="self_media/20260612_115500_hvlp4_tglass_nvidia_pcb_materials.html" target="_blank" rel="noopener">查看详情</a>
+                </article>
+                
+                <article class="self-record-card">
+                  <div class="self-record-top">
+                    <span class="source-time">2026-06-12T11:45:00</span>
+                    <span class="source-status">已整理，需持续公告与行情核验</span>
+                  </div>
+                  <h4>AI PCB/封装五大紧缺物料：自媒体清单核验</h4>
+                  <div class="source-tags">用户粘贴/自媒体线索 · AI PCB,ABF,电子布,CCL,碳氢树脂,PCB钻针,高速铜箔,供需紧缺</div>
+                  <p>这份清单的主方向是对的：AI芯片封装和AI服务器PCB继续向上时，真正容易卡住的不是泛PCB概念，而是 ABF/FC-BGA封装基板、低介电电子布、高频高速CCL材料、PCB微钻/硬质合金耗材和高速铜箔这些上游材料与加工耗材。但原文里不少“最缺、全球第一、英伟达认证、核心绑定、唯一”等表述证据强度不够，不能直接写成结论。mda100采用修正版：方向纳入涨价/供需页；公司按池内标的和待扩展标的分开；强客户绑定和精确缺口比例必须等公告、调研或权威产业资料二次确认。 - 放进“涨价行业评级”和“半导体材料/封装材料资料页...</p>
+                  <a class="source-link" href="self_media/20260612_114500_ai_pcb_bottleneck_materials.html" target="_blank" rel="noopener">查看详情</a>
+                </article>
+                
+                <article class="self-record-card">
+                  <div class="self-record-top">
+                    <span class="source-time">2026-06-12T08:42:00</span>
+                    <span class="source-status">线索待核验</span>
+                  </div>
+                  <h4>谁是下一个？产业脉络传导：钨钼靶材、六氟化钨、钨钻针</h4>
+                  <div class="source-tags">总府榕树 · 钨系耗材,六氟化钨,溅射靶材,PCB钻针,半导体材料</div>
+                  <p>这篇文章的核心价值不在于单点喊票，而是给出一套“中船特气式相似基因”的产业筛选方法：沿着供需传导、利润传导、产业地位传导和供应链瓶颈，寻找下一个可能从低关注度变成高弹性的电子料环节。 - 上游原料或关键金属存在供给约束，容易引发成本和利润迁移。 - 全球主要份额掌握在日系或海外供应商手里，国内突破后份额仍小。 - 下游先进封装、存储、晶圆制造或AI硬件扩产带来真实需求增量。 - 材料或耗材在制造过程中使用频繁，客户认证周期长，短期替代不容易。 - 存在远期技术替代路线，但替代节奏慢，短期不一定能缓解供需。 关注方向...</p>
+                  <a class="source-link" href="self_media/20260612_083000_tungsten_material.html" target="_blank" rel="noopener">查看详情</a>
+                </article>
+                </div>
+            </section>
+            
+            <section class="self-sector-block">
+              <div class="self-sector-head">
+                <h3>光通信 / 光芯片</h3>
+                <span>3 条</span>
+              </div>
+              <div class="self-sector-grid">
+                <article class="self-record-card">
+                  <div class="self-record-top">
+                    <span class="source-time">2026-06-12T12:15:00</span>
+                    <span class="source-status">已整理，具体测算数字需继续核验</span>
+                  </div>
+                  <h4>AI整机柜半导体用片：硅片需求从GPU单点向PMIC/BMC/光通信扩散</h4>
+                  <div class="source-tags">用户粘贴/自媒体线索 · 硅片,沪硅产业,AI服务器,PMIC,BMC,HBM,成熟制程,半导体材料</div>
+                  <p>这条线索的核心是：AI 对硅片的拉动不应只看 GPU 和 HBM，而要扩展到整机柜半导体用片。AI 服务器带来更高的硅面积需求，先进逻辑、HBM、PMIC、电源芯片、BMC、光通信配套芯片都会增加晶圆消耗。投资上，硅片涨价和紧缺方向成立，但不能写成“所有硅片一起涨”。优先级应是：先进 12 英寸硅片 &gt; HBM/逻辑用高端硅片 &gt; 8 英寸 BCD/PMIC产能 &gt; 普通小尺寸硅片。全球300mm等效出货接近1000万片/月、2027年前后突破1100万片/月、SUMCO给过AI服务器硅面积3.8倍对比等说法可作为...</p>
+                  <a class="source-link" href="self_media/20260612_121500_ai_server_silicon_wafer_spread.html" target="_blank" rel="noopener">查看详情</a>
+                </article>
+                
+                <article class="self-record-card">
+                  <div class="self-record-top">
+                    <span class="source-time">2026-06-12T12:05:00</span>
+                    <span class="source-status">已整理，年报数据和海外采购承诺需继续核验</span>
+                  </div>
+                  <h4>InP基本面：AI光互联、磷化铟晶片与铟资源映射</h4>
+                  <div class="source-tags">用户粘贴/自媒体线索 · InP,磷化铟,铟资源,AI光互联,光芯片,云南锗业,锡业股份,AXTI,LITE,COHR</div>
+                  <p>这条线索的核心不是泛半导体材料，而是 AI 数据中心从铜连接向光互联迁移后，主动光器件里的 InP 需求上升。InP 适合 1.3/1.55 微米光通信波段，可用于高速激光器、探测器、调制器和光子集成芯片。产业链上要先分两层：第一层是 InP 晶片/衬底，这是光芯片制造底座；第二层是高纯铟和铟资源。A 股当前最直接的是云南锗业，因其披露有磷化铟晶片相关业务。锡业股份、株冶集团、中金岭南更偏铟资源扩散，先放扩展核验。驰宏锌锗、有研新材只作为关键矿产/材料国产化扩散线索，不放 InP 主线前排。 - 云南锗业：进入半导...</p>
+                  <a class="source-link" href="self_media/20260612_120500_inp_optical_interconnect_indium_chain.html" target="_blank" rel="noopener">查看详情</a>
+                </article>
+                
+                <article class="self-record-card">
+                  <div class="self-record-top">
+                    <span class="source-time">2026-06-12T11:24:24</span>
+                    <span class="source-status">待核验</span>
+                  </div>
+                  <h4>索尔思光芯片行业专家交流纪要</h4>
+                  <div class="source-tags">自媒体/专家交流纪要 · 光芯片,索尔思,光通信,硅光,CPO,专家纪要</div>
+                  <p>索尔思光芯⽚⾏业专家交流纪要 会议时间：2026年6⽉11⽇ 交流主题：⾼速EML/CW激光芯⽚、磷化铟衬底、CPO/NPO技术路线、供需价格及产能规划 ⼀、⾼速EML芯⽚：供需、价格、产品迭代 1.1200GEML • 量产进度：已正式量产，现阶段核⼼任务为外延⼯艺、封装良率爬坡 • 需求节奏：2026年全年以头部客⼾产能锁量、上游磷化铟衬底备货为主，实质规模化出货、订单交 付集中在2026Q4-2027全年 1.2100GEML • 供需缺⼝：2027年⾏业整体芯⽚供需缺⼝仍维持30%，...</p>
+                  <a class="source-link" href="self_media/20260612_112424_9716819c.html" target="_blank" rel="noopener">查看详情</a>
+                </article>
+                </div>
+            </section>
+            
     
     </section>
   </div>
