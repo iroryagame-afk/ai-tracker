@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mda100_20260611_182723</title>
+  <title>mda100_20260612_105224</title>
   <style>
     :root {
       --ink:#101418; --muted:#667085; --paper:#eef2ff; --panel:#fff; --line:#d8dee7;
@@ -325,6 +325,63 @@
     .semiconductor-material-current-table th:nth-child(4), .semiconductor-material-current-table td:nth-child(4) { width:7%; }
     .semiconductor-material-current-table th:nth-child(5), .semiconductor-material-current-table td:nth-child(5) { width:9%; }
     .semiconductor-material-current-table th:nth-child(6), .semiconductor-material-current-table td:nth-child(6) { width:49%; }
+    .material-page-lead { display:grid; grid-template-columns:minmax(260px,1.4fr) minmax(220px,.8fr); gap:14px; align-items:stretch; margin:8px 0 14px; }
+    .material-page-lead > div { border:1px solid #fed7aa; border-radius:14px; background:linear-gradient(135deg,#fff7ed 0%,#fff 72%); padding:16px; box-shadow:0 10px 22px rgba(154,52,18,.06); }
+    .material-kicker { display:inline-flex; border-radius:999px; padding:4px 10px; background:#ffedd5; border:1px solid #fed7aa; color:#9a3412; font-size:11px; font-weight:900; }
+    .material-page-lead h3 { margin:8px 0 6px; font-size:22px; }
+    .material-page-lead p { margin:0; color:#475569; line-height:1.65; }
+    .material-lead-stats { display:grid; grid-template-columns:1fr; gap:8px; }
+    .material-lead-stats span { display:flex; align-items:center; justify-content:space-between; border:1px solid #e5e7eb; border-radius:10px; padding:9px 10px; background:#fff; color:#475569; font-weight:800; }
+    .material-lead-stats b { color:#9a3412; font-size:24px; }
+    .material-priority-box { border:1px solid #bfdbfe; border-radius:14px; background:linear-gradient(135deg,#eff6ff 0%,#fff 70%); padding:12px; margin-bottom:14px; }
+    .material-priority-box h3 { margin:0 0 9px; color:#1e3a8a; }
+    .material-layer-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    .material-layer-card { border:1px solid #e5e7eb; border-radius:14px; background:#fff; overflow:hidden; box-shadow:0 8px 18px rgba(15,23,42,.04); }
+    .material-layer-card header { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; padding:13px 14px; border-bottom:1px solid #eef2f7; }
+    .material-layer-card header div { display:flex; gap:9px; align-items:center; }
+    .material-layer-card h3 { margin:0; font-size:17px; }
+    .material-layer-card header strong { border-radius:999px; padding:4px 9px; background:#f8fafc; color:#475569; font-size:11px; white-space:nowrap; }
+    .material-layer-index { display:inline-flex; width:30px; height:30px; align-items:center; justify-content:center; border-radius:9px; background:#fff7ed; color:#9a3412; font-weight:950; }
+    .material-layer-card p { margin:0; padding:11px 14px; color:#475569; line-height:1.55; min-height:58px; }
+    .material-tone-tight { border-color:#fecaca; background:linear-gradient(135deg,#fff1f2 0%,#fff 42%); }
+    .material-tone-tight .material-layer-index { background:#fee2e2; color:#991b1b; }
+    .material-tone-process { border-color:#bfdbfe; background:linear-gradient(135deg,#eff6ff 0%,#fff 42%); }
+    .material-tone-process .material-layer-index { background:#dbeafe; color:#1e40af; }
+    .material-tone-base { border-color:#bbf7d0; background:linear-gradient(135deg,#f0fdf4 0%,#fff 42%); }
+    .material-tone-base .material-layer-index { background:#dcfce7; color:#166534; }
+    .material-tone-package { border-color:#ddd6fe; background:linear-gradient(135deg,#f5f3ff 0%,#fff 42%); }
+    .material-tone-package .material-layer-index { background:#ede9fe; color:#5b21b6; }
+    .material-subsector-tags { display:flex; flex-wrap:wrap; gap:7px; padding:0 14px 12px; }
+    .material-subsector-tag { display:inline-flex; align-items:center; gap:5px; border-radius:999px; padding:5px 8px; border:1px solid #fed7aa; background:#fff7ed; color:#9a3412; text-decoration:none; font-weight:900; font-size:11px; }
+    .material-stock-list { display:grid; gap:7px; padding:0 14px 14px; }
+    .material-priority-list { grid-template-columns:repeat(2,minmax(0,1fr)); padding:0; }
+    .material-stock-row { display:grid; grid-template-columns:minmax(150px,1fr) auto; gap:7px 10px; align-items:center; border:1px solid #e5e7eb; background:#fbfcfe; border-radius:10px; padding:8px; }
+    .material-stock-main { display:flex; flex-wrap:wrap; gap:6px; align-items:center; min-width:0; }
+    .material-stock-main .stock-link { display:inline-flex; gap:5px; align-items:center; color:#172033; font-weight:900; text-decoration:none; }
+    .material-stock-meta { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:5px; align-items:center; }
+    .material-stock-note { grid-column:1/-1; color:#475569; font-size:11px; line-height:1.45; background:#fff; border-radius:7px; padding:5px 7px; }
+    .material-empty { border:1px dashed #cbd5e1; border-radius:10px; padding:12px; color:#64748b; background:#f8fafc; }
+    .material-method-note { display:flex; gap:10px; align-items:flex-start; border:1px solid #fed7aa; border-radius:12px; background:#fff7ed; padding:11px 12px; margin:8px 0 12px; }
+    .material-method-note strong { color:#9a3412; white-space:nowrap; }
+    .material-method-note span { color:#344054; line-height:1.55; }
+    .material-follow-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-bottom:14px; }
+    .material-follow-card { border:1px solid #fed7aa; border-radius:13px; background:#fffaf5; padding:12px; display:grid; gap:8px; }
+    .material-follow-card header { display:grid; gap:4px; }
+    .material-follow-card header span { color:#9a3412; font-size:11px; font-weight:900; }
+    .material-follow-card header strong { font-size:16px; color:#172033; }
+    .material-follow-card p { margin:0; color:#475569; line-height:1.55; }
+    .material-follow-row { display:grid; grid-template-columns:38px 1fr; gap:8px; border:1px solid #edf2f7; border-radius:8px; padding:6px 7px; background:#fff; }
+    .material-follow-row b { color:#9a3412; white-space:nowrap; }
+    .material-follow-row span { color:#344054; line-height:1.45; }
+    .material-follow-row.watch { background:#f8fafc; }
+    .material-detail-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+    .material-detail-card { border:1px solid #e5e7eb; border-radius:12px; background:#fff; overflow:hidden; }
+    .material-detail-card summary { cursor:pointer; display:flex; justify-content:space-between; gap:10px; align-items:center; padding:10px 12px; background:#fff7ed; color:#9a3412; font-weight:950; }
+    .material-detail-card summary small { color:#64748b; font-weight:800; }
+    .material-detail-body { display:grid; gap:8px; padding:10px 12px; }
+    .material-detail-body > div { display:grid; grid-template-columns:72px 1fr; gap:8px; align-items:start; }
+    .material-detail-body b { color:#9a3412; }
+    .material-detail-body span { color:#344054; line-height:1.55; }
     .surge-note { display:flex; flex-wrap:wrap; gap:8px; align-items:center; border:1px solid #fecaca; background:linear-gradient(135deg,#fff1f2 0%,#fff7ed 100%); color:#344054; border-radius:10px; padding:10px 12px; margin:10px 0; }
     .surge-note strong { color:#991b1b; }
     .intraday-surge-table { border-color:#fecaca; border-radius:12px; overflow:hidden; box-shadow:0 7px 16px rgba(185,28,28,.05); background:#fff7ed; }
@@ -384,17 +441,17 @@
     .source-status { display:inline-flex; border-radius:999px; padding:3px 8px; color:#92400e; background:#fef3c7; border:1px solid #fde68a; font-weight:900; }
     .source-link { display:inline-flex; justify-content:center; border-radius:999px; padding:4px 9px; color:#1e40af; background:#dbeafe; border:1px solid #bfdbfe; text-decoration:none; font-weight:900; white-space:nowrap; }
     .source-link:hover { background:#bfdbfe; }
-    @media (max-width:960px) { .grid,.kpis,.summary-grid,.market-overview,.winrate-strip,.sector-watch-grid,.long-grid,.cards-container,.detail-list,.advice-actions{grid-template-columns:1fr;} .shell{padding:12px;} .hero-head{display:block;} .report-stamp{grid-template-columns:1fr; align-items:start;} .stamp-time{font-size:22px;} .stamp-scope{justify-content:flex-start;} .stats-pill{margin-left:0;} .advice-action + .advice-action{border-left:1px solid #e5e7eb;border-top:0;} }
+    @media (max-width:960px) { .grid,.kpis,.summary-grid,.market-overview,.winrate-strip,.sector-watch-grid,.long-grid,.cards-container,.detail-list,.advice-actions,.material-page-lead,.material-layer-grid,.material-priority-list,.material-follow-grid,.material-detail-grid{grid-template-columns:1fr;} .shell{padding:12px;} .hero-head{display:block;} .report-stamp{grid-template-columns:1fr; align-items:start;} .stamp-time{font-size:22px;} .stamp-scope{justify-content:flex-start;} .stats-pill{margin-left:0;} .advice-action + .advice-action{border-left:1px solid #e5e7eb;border-top:0;} }
     @page { size:A4 landscape; margin:10mm; }
     @media print { *{-webkit-print-color-adjust:exact; print-color-adjust:exact;} body{background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 52%,#f1f5f9 100%);} .shell{max-width:none; padding:12px;} .page-nav{display:none;} .report-page{display:block !important; break-before:page;} .report-page:first-of-type{break-before:auto;} .summary-grid{grid-template-columns:repeat(6,minmax(110px,1fr)) !important;} .kpis{grid-template-columns:repeat(4,minmax(120px,1fr)) !important;} .grid{grid-template-columns:1.1fr .9fr !important;} .sector-watch-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .long-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .cards-container{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .detail-list{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .hero,.sector-watch-card,.long-card,.stock-card,.detail-card{break-inside:avoid;} table{font-size:8px; min-width:0;} .card-controls{display:none;} }
   </style>
 </head>
-<body class="report-close">
+<body class="report-intraday">
   <div class="shell">
     <div class="hero">
       <div class="hero-head">
         <div>
-          <h1>mda100_20260611_182723</h1>
+          <h1>mda100_20260612_105224</h1>
           <div class="subtitle">mda100以核心100只AI科技股票等权编制，历史曲线自2026年首个交易日开始累计。行情标记：VERIFIED_FUTU_OPEND。</div>
           <div class="verify-strip">
             <span>二次确认</span>
@@ -403,16 +460,16 @@
             <span class="verify-detail" title="报告日期与指数日期一致:OK / 行情日期覆盖本次报告日:OK / 所有可用行情均已打 Futu 核验标记:OK / 指数涨跌幅与股票池等权涨跌一致:OK / 上涨数量一致:OK / 下跌数量一致:OK / 覆盖率一致:OK">生成与发布前已复核</span>
           </div>
         </div>
-        <div class="meta">Report 2026-06-11<br>Index 2026-06-11<br>Generated 2026-06-11T18:27:23</div>
+        <div class="meta">Report 2026-06-11<br>Index 2026-06-11<br>Generated 2026-06-12T10:52:24</div>
       </div>
       <div class="report-stamp" aria-label="报告生成时间和版本">
-        <div class="stamp-badge">16:00收盘版</div>
+        <div class="stamp-badge">14:30盘中版</div>
         <div class="stamp-main">
-          <div class="stamp-label">收盘复盘生成时间</div>
-          <div class="stamp-time">6月11日 18:27:23</div>
-          <div class="stamp-desc">用于下一交易日计划，重点看收盘确认、均线位置、评分变化和隔夜风险闸门。</div>
+          <div class="stamp-label">盘中观察生成时间</div>
+          <div class="stamp-time">6月12日 10:52:24</div>
+          <div class="stamp-desc">用于15:00前交易决策，重点看盘中承接、封单、VWAP/分时均线和尾盘回落。</div>
         </div>
-        <div class="stamp-scope">16:00后收盘核验</div>
+        <div class="stamp-scope">14:30任务或手动盘中快照</div>
       </div>
       <div class="summary-grid">
         <div class="summary-card"><div class="label">6月11日 mda100点位</div><div class="value">2186.1</div></div>
@@ -463,7 +520,7 @@
       
         <div class="pool-action-block">
           <h4>打野池</h4>
-          <div class="table-wrap action-table"><table><thead><tr><th>股票</th><th>代码</th><th>6月10日评分</th><th>6月11日评分</th><th>变化</th><th>类型</th><th>未建仓 6月12日开盘后执行</th><th>已建仓 6月12日开盘后执行</th></tr></thead><tbody><tr><td><a class="stock-link" href="stocks/002428.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">云南锗业</span></a></td><td><code>002428</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="score-chip score-chip-5">5</span></td><td>+4</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或85.3-87.9</span></td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有为主；沿5日线83.5上行，不追高加仓</span></td></tr><tr><td><a class="stock-link" href="stocks/603306.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">华懋科技</span></a></td><td><code>603306</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="score-chip score-chip-5">5</span></td><td>+4</td><td>反弹买入趋势</td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">可小仓试探，优先96.5-103.2；站上5日线再加</span></td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">踩线拉回可加仓；跌破96.0收不回先减仓</span></td></tr><tr><td><a class="stock-link" href="stocks/603738.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">泰晶科技</span></a></td><td><code>603738</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="score-chip score-chip-5">5</span></td><td>+4</td><td>反弹观察趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">先观察，等踩线拉回或重新站上5日线</span></td><td><span class="op-badge op-hold">持有</span><span class="op-text">轻仓持有；站回5日线再加，防守45.8</span></td></tr><tr><td><a class="stock-link" href="stocks/300223.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">北京君正</span></a></td><td><code>300223</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="score-chip score-chip-5">5</span></td><td>+2</td><td>反弹观察趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">先观察，等踩线拉回或重新站上5日线</span></td><td><span class="op-badge op-hold">持有</span><span class="op-text">轻仓持有；站回5日线再加，防守141.5</span></td></tr><tr><td><a class="stock-link" href="stocks/688019.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">安集科技</span></a></td><td><code>688019</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="score-chip score-chip-5">5</span></td><td>+2</td><td>反弹买入趋势</td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">可小仓试探，优先222.2-229.0；站上5日线再加</span></td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">踩线拉回可加仓；跌破218.8收不回先减仓</span></td></tr><tr><td><a class="stock-link" href="stocks/688700.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">东威科技</span></a></td><td><code>688700</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="score-chip score-chip-5">5</span></td><td>+2</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或81.6-84.1</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">跌破10日线减到半仓；20日线82.9是趋势防守</span></td></tr><tr><td><a class="stock-link" href="stocks/300567.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">精测电子</span></a></td><td><code>300567</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="score-chip score-chip-3">3</span></td><td>+2</td><td>弱修复观察</td><td><span class="op-badge op-watch">观察</span><span class="op-text">先观察，不急于开仓，等5日线重新转强</span></td><td><span class="op-badge op-hold">持有</span><span class="op-text">可持有观察；跌破10日线189.5先降仓</span></td></tr><tr><td><a class="stock-link" href="stocks/002409.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">雅克科技</span></a></td><td><code>002409</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="score-chip score-chip-3">3</span></td><td>-2</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或132.1-137.5</span></td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有为主；沿5日线117.9上行，不追高加仓</span></td></tr><tr><td><a class="stock-link" href="stocks/301200.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">大族数控</span></a></td><td><code>301200</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="score-chip score-chip-1">1</span></td><td>-4</td><td>破位观望</td><td><span class="op-badge op-neutral">操作</span><span class="op-text">不买，等重新站回关键线</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">减仓或严格防守，观察260.3</span></td></tr><tr><td><a class="stock-link" href="stocks/301486.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">致尚科技</span></a></td><td><code>301486</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="score-chip score-chip-1">1</span></td><td>-4</td><td>破位观望</td><td><span class="op-badge op-neutral">操作</span><span class="op-text">不买，等重新站回关键线</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">减仓或严格防守，观察240.2</span></td></tr><tr><td><a class="stock-link" href="stocks/600584.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">长电科技</span></a></td><td><code>600584</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="score-chip score-chip-1">1</span></td><td>-3</td><td>破位观望</td><td><span class="op-badge op-neutral">操作</span><span class="op-text">不买，等重新站回关键线</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">减仓或严格防守，观察71.9</span></td></tr><tr><td><a class="stock-link" href="stocks/002156.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">通富微电</span></a></td><td><code>002156</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="score-chip score-chip-1">1</span></td><td>-2</td><td>破位观望</td><td><span class="op-badge op-neutral">操作</span><span class="op-text">不买，等重新站回关键线</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">减仓或严格防守，观察62.8</span></td></tr><tr><td><a class="stock-link" href="stocks/002185.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">华天科技</span></a></td><td><code>002185</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="score-chip score-chip-1">1</span></td><td>-2</td><td>破位观望</td><td><span class="op-badge op-neutral">操作</span><span class="op-text">不买，等重新站回关键线</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">减仓或严格防守，观察16.9</span></td></tr></tbody></table></div>
+          <div class="table-wrap action-table"><table><thead><tr><th>股票</th><th>代码</th><th>6月10日评分</th><th>6月11日评分</th><th>变化</th><th>类型</th><th>未建仓 6月12日开盘后执行</th><th>已建仓 6月12日开盘后执行</th></tr></thead><tbody><tr><td><a class="stock-link" href="stocks/002428.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">云南锗业</span></a></td><td><code>002428</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="score-chip score-chip-5">5</span></td><td>+4</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或85.3-87.9</span></td><td><span class="op-badge op-hold">持有</span><span class="op-text">持有为主；沿5日线83.5上行，不追高加仓</span></td></tr><tr><td><a class="stock-link" href="stocks/603306.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">华懋科技</span></a></td><td><code>603306</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="score-chip score-chip-5">5</span></td><td>+4</td><td>反弹买入趋势</td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">可小仓试探，优先96.5-103.2；站上5日线再加</span></td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">踩线拉回可加仓；跌破96.0收不回先减仓</span></td></tr><tr><td><a class="stock-link" href="stocks/603738.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">泰晶科技</span></a></td><td><code>603738</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="score-chip score-chip-5">5</span></td><td>+4</td><td>反弹观察趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">先观察，等踩线拉回或重新站上5日线</span></td><td><span class="op-badge op-hold">持有</span><span class="op-text">轻仓持有；站回5日线再加，防守45.8</span></td></tr><tr><td><a class="stock-link" href="stocks/300223.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">北京君正</span></a></td><td><code>300223</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="score-chip score-chip-5">5</span></td><td>+2</td><td>反弹观察趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">先观察，等踩线拉回或重新站上5日线</span></td><td><span class="op-badge op-hold">持有</span><span class="op-text">轻仓持有；站回5日线再加，防守141.5</span></td></tr><tr><td><a class="stock-link" href="stocks/688019.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">安集科技</span></a></td><td><code>688019</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="score-chip score-chip-5">5</span></td><td>+2</td><td>反弹买入趋势</td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">可小仓试探，优先222.2-229.0；站上5日线再加</span></td><td><span class="op-badge op-buy">买入/加仓</span><span class="op-text">踩线拉回可加仓；跌破218.8收不回先减仓</span></td></tr><tr><td><a class="stock-link" href="stocks/688700.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">东威科技</span></a></td><td><code>688700</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="score-chip score-chip-5">5</span></td><td>+2</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；等回踩5/10日线或81.6-84.1</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">跌破10日线减到半仓；20日线82.9是趋势防守</span></td></tr><tr><td><a class="stock-link" href="stocks/300567.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">精测电子</span></a></td><td><code>300567</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="score-chip score-chip-3">3</span></td><td>+2</td><td>弱修复观察</td><td><span class="op-badge op-watch">观察</span><span class="op-text">先观察，不急于开仓，等5日线重新转强</span></td><td><span class="op-badge op-hold">持有</span><span class="op-text">可持有观察；跌破10日线189.5先降仓</span></td></tr><tr><td><a class="stock-link" href="stocks/002409.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">雅克科技</span></a></td><td><code>002409</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="score-chip score-chip-2">2</span></td><td>-3</td><td>多头持仓趋势</td><td><span class="op-badge op-watch">观察</span><span class="op-text">不追新仓；先等概念退潮后能否守住5/10日线</span></td><td><span class="op-badge op-neutral">操作</span><span class="op-text">已有仓按纪律处理；跌破5日线117.9先减1/3，跌破10日线114.3降到半仓</span></td></tr><tr><td><a class="stock-link" href="stocks/301200.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">大族数控</span></a></td><td><code>301200</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="score-chip score-chip-1">1</span></td><td>-4</td><td>破位观望</td><td><span class="op-badge op-neutral">操作</span><span class="op-text">不买，等重新站回关键线</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">减仓或严格防守，观察260.3</span></td></tr><tr><td><a class="stock-link" href="stocks/301486.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">致尚科技</span></a></td><td><code>301486</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="score-chip score-chip-1">1</span></td><td>-4</td><td>破位观望</td><td><span class="op-badge op-neutral">操作</span><span class="op-text">不买，等重新站回关键线</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">减仓或严格防守，观察240.2</span></td></tr><tr><td><a class="stock-link" href="stocks/600584.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">长电科技</span></a></td><td><code>600584</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="score-chip score-chip-1">1</span></td><td>-3</td><td>破位观望</td><td><span class="op-badge op-neutral">操作</span><span class="op-text">不买，等重新站回关键线</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">减仓或严格防守，观察71.9</span></td></tr><tr><td><a class="stock-link" href="stocks/002156.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">通富微电</span></a></td><td><code>002156</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="score-chip score-chip-1">1</span></td><td>-2</td><td>破位观望</td><td><span class="op-badge op-neutral">操作</span><span class="op-text">不买，等重新站回关键线</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">减仓或严格防守，观察62.8</span></td></tr><tr><td><a class="stock-link" href="stocks/002185.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">华天科技</span></a></td><td><code>002185</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="score-chip score-chip-1">1</span></td><td>-2</td><td>破位观望</td><td><span class="op-badge op-neutral">操作</span><span class="op-text">不买，等重新站回关键线</span></td><td><span class="op-badge op-sell">减仓/卖出</span><span class="op-text">减仓或严格防守，观察16.9</span></td></tr></tbody></table></div>
         </div>
         
     </div>
@@ -2173,29 +2230,29 @@
     
         </article>
         
-        <article class="detail-card score-3 strategy-card-野" data-score="3" data-strategy="野" data-action="hold" data-search="雅克科技 002409 sz.002409 半导体材料 前驱体/电子材料 趋势观察 yakekeji 002409 sz002409 ticailiao tidianzicailiao ykkj 002409 sz002409 tcl tdzcl">
+        <article class="detail-card score-3 strategy-card-野" data-score="3" data-strategy="野" data-action="hold" data-search="中钨高新 000657 sz.000657 pcb耗材 pcb钻针/硬质合金刀具 趋势观察 影子受益 zhongwugaoxin 000657 sz000657 pcbcai pcbjin ziyi zwgx 000657 sz000657 pcbc pcbj zy">
           <div class="detail-main">
             <div class="mini-score">3</div>
             <div>
-              <h3 class="stock-title-line"><a class="stock-link" href="stocks/002409.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">雅克科技</span></a> <code>002409</code></h3>
-              <p>半导体材料 · 前驱体/电子材料</p>
+              <h3 class="stock-title-line"><a class="stock-link" href="stocks/000657.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">中钨高新</span></a> <code>000657</code></h3>
+              <p>PCB耗材 · PCB钻针/硬质合金刀具</p>
             </div>
           </div>
           <div class="detail-meta">
-            <span class="detail-ret detail-ret-limit-up">+10.0%</span>
+            <span class="detail-ret detail-ret-strong-up">+6.9%</span>
             <span>趋势观察</span>
             <span>多头持仓趋势</span>
             <span>极强曲线 / 20日线</span>
-            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag neutral">影子受益</span></span>
             <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；极强曲线；等</span>
             <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
           </div>
           
           <div class="detail-judgement">
             <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。 打野交易：更多依赖供需、涨价、技术图形或阶段性弹性。</span></div>
-            <div><b>位置</b><span>收盘134.8；5/10/20日线 117.9/114.3/115.7；主线看20日线，曲线强度为极强曲线，当前归为多头持仓趋势。</span></div>
-            <div><b>执行</b><span>未建仓：不追新仓，等回踩5/10日线或主支撑再说。 已建仓：收盘不破5日线117.9继续持有；跌破5日线先减1/3；跌破10日线114.3减到半仓；跌破20日线115.7卖出大部或退出。</span></div>
-            <div><b>验证</b><span>信号：瓶颈供给；均线多头；20日线向上；极强曲线；MACD金叉；放量转强；观察区：132.1-137.5；防守：112.2。</span></div>
+            <div><b>位置</b><span>收盘78.0；5/10/20日线 71.9/70.3/65.5；主线看20日线，曲线强度为极强曲线，当前归为多头持仓趋势。</span></div>
+            <div><b>执行</b><span>未建仓：不追新仓，等回踩5/10日线或主支撑再说。 已建仓：收盘不破5日线71.9继续持有；跌破5日线先减1/3；跌破10日线70.3减到半仓；跌破20日线65.5卖出大部或退出。</span></div>
+            <div><b>验证</b><span>信号：瓶颈供给；均线多头；20日线向上；极强曲线；放量转强；六氟化钨仅上游钨粉影子；观察区：76.4-79.5；防守：63.6。</span></div>
           </div>
     
         </article>
@@ -2470,33 +2527,6 @@
     
         </article>
         
-        <article class="detail-card score-3 strategy-card-野" data-score="3" data-strategy="野" data-action="hold" data-search="中钨高新 000657 sz.000657 pcb耗材 pcb钻针/硬质合金刀具 趋势观察 zhongwugaoxin 000657 sz000657 pcbcai pcbjin zwgx 000657 sz000657 pcbc pcbj">
-          <div class="detail-main">
-            <div class="mini-score">3</div>
-            <div>
-              <h3 class="stock-title-line"><a class="stock-link" href="stocks/000657.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">中钨高新</span></a> <code>000657</code></h3>
-              <p>PCB耗材 · PCB钻针/硬质合金刀具</p>
-            </div>
-          </div>
-          <div class="detail-meta">
-            <span class="detail-ret detail-ret-strong-up">+6.9%</span>
-            <span>趋势观察</span>
-            <span>多头持仓趋势</span>
-            <span>极强曲线 / 20日线</span>
-            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag muted">无标签</span></span>
-            <span class="detail-wide"><b>买点</b>瓶颈供给；均线多头；20日线向上；极强曲线；等</span>
-            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
-          </div>
-          
-          <div class="detail-judgement">
-            <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。 打野交易：更多依赖供需、涨价、技术图形或阶段性弹性。</span></div>
-            <div><b>位置</b><span>收盘78.0；5/10/20日线 71.9/70.3/65.5；主线看20日线，曲线强度为极强曲线，当前归为多头持仓趋势。</span></div>
-            <div><b>执行</b><span>未建仓：不追新仓，等回踩5/10日线或主支撑再说。 已建仓：收盘不破5日线71.9继续持有；跌破5日线先减1/3；跌破10日线70.3减到半仓；跌破20日线65.5卖出大部或退出。</span></div>
-            <div><b>验证</b><span>信号：瓶颈供给；均线多头；20日线向上；极强曲线；放量转强；观察区：76.4-79.5；防守：63.6。</span></div>
-          </div>
-    
-        </article>
-        
         <article class="detail-card score-3 strategy-card-野" data-score="3" data-strategy="野" data-action="hold" data-search="国际复材 301526 sz.301526 pcb玻纤布 玻璃纤维/电子布上游 趋势观察 guojifucai 301526 sz301526 pcbxian xianweidianzishang gjfc 301526 sz301526 pcbx xwdzs">
           <div class="detail-main">
             <div class="mini-score">3</div>
@@ -2628,6 +2658,33 @@
             <div><b>位置</b><span>收盘139.5；5/10/20日线 142.7/129.5/106.6；主线看30日线，曲线强度为强势曲线，当前归为多头持仓趋势。</span></div>
             <div><b>执行</b><span>未建仓：不追新仓，等回踩5/10日线或主支撑再说。 已建仓：收盘不破5日线142.7继续持有；跌破5日线先减1/3；跌破10日线129.5减到半仓；跌破20日线106.6卖出大部或退出。</span></div>
             <div><b>验证</b><span>信号：均线多头；20日线向上；强势曲线；多头趋势保护；观察区：等待回踩关键均线或放量确认后再定价；防守：103.4。</span></div>
+          </div>
+    
+        </article>
+        
+        <article class="detail-card score-low strategy-card-野" data-score="2" data-strategy="野" data-action="hold" data-search="雅克科技 002409 sz.002409 半导体材料 前驱体/电子材料 弱观察 澄清降权 yakekeji 002409 sz002409 ticailiao tidianzicailiao qing ykkj 002409 sz002409 tcl tdzcl q">
+          <div class="detail-main">
+            <div class="mini-score">2</div>
+            <div>
+              <h3 class="stock-title-line"><a class="stock-link" href="stocks/002409.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">雅克科技</span></a> <code>002409</code></h3>
+              <p>半导体材料 · 前驱体/电子材料</p>
+            </div>
+          </div>
+          <div class="detail-meta">
+            <span class="detail-ret detail-ret-limit-up">+10.0%</span>
+            <span>弱观察</span>
+            <span>多头持仓趋势</span>
+            <span>极强曲线 / 20日线</span>
+            <span class="detail-wide decision-tags"><b>标签</b><span class="decision-tag neutral">澄清降权</span></span>
+            <span class="detail-wide"><b>买点</b>均线多头；20日线向上；极强曲线；MACD金叉；等</span>
+            <span class="detail-wide detail-risk"><b>风险</b>短线偏离20日线过大；连续拉升后利好兑现/追高风险；等</span>
+          </div>
+          
+          <div class="detail-judgement">
+            <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。 打野交易：更多依赖供需、涨价、技术图形或阶段性弹性。</span></div>
+            <div><b>位置</b><span>收盘134.8；5/10/20日线 117.9/114.3/115.7；主线看20日线，曲线强度为极强曲线，当前归为多头持仓趋势。</span></div>
+            <div><b>执行</b><span>未建仓：不追新仓，等回踩5/10日线或主支撑再说。 已建仓：收盘不破5日线117.9继续持有；跌破5日线先减1/3；跌破10日线114.3减到半仓；跌破20日线115.7卖出大部或退出。</span></div>
+            <div><b>验证</b><span>信号：均线多头；20日线向上；极强曲线；MACD金叉；放量转强；六氟化钨澄清降权；观察区：132.1-137.5；防守：112.2。</span></div>
           </div>
     
         </article>
@@ -3364,316 +3421,629 @@
     </section>
     <section class="module report-page" data-page="material" id="material-page">
       <h2>资料页：半导体材料</h2>
-      <h3 class="subsection-title">涨价行业评级</h3>
-      <div class="table-wrap price-hike-table"><table><thead><tr><th>细分行业</th><th>细分说明</th><th>股票</th><th>代码</th><th>评分</th><th>6月11日涨跌</th><th>关键判断与操作</th></tr></thead><tbody><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><div class="subsector-cell"><strong>高纯石英材料</strong><span>扩散、刻蚀、清洗、光刻等前道环节的关键耗材，半导体级认证和供给弹性是核心。 核验：半导体级收入占比、海外替代、价格和供给紧张程度。</span></div></td><td><a class="stock-link" href="stocks/603688.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">石英股份</span></a></td><td><code>603688</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill positive-bg">3.9%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜强位置</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘76.2；5/10/20日线 72.3/68.2/69.9；主线20日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线72.3继续持有；跌破5日线先减1/3；跌破10日线68.2减到半仓；跌破20日线69.9卖出大部或退出。</span></div>
-        <div><b>防守</b><span>67.8</span></div>
+      
+      <div class="material-page-lead">
+        <div>
+          <span class="material-kicker">半导体材料阅读顺序</span>
+          <h3>供给瓶颈 → 制程耗材 → 封装基板</h3>
+          <p>主屏只放能截图的分层结论；细分方向用锚点和折叠详情承接，避免一张表把信息全压在一起。</p>
+        </div>
+        <div class="material-lead-stats">
+          <span><b>12</b>只材料标的</span>
+          <span><b>6</b>只4分以上</span>
+          <span><b>4</b>只必选池</span>
+        </div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><div class="subsector-cell"><strong>PCB / CCL / 铜箔</strong><span>AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。</span></div></td><td><a class="stock-link" href="stocks/002916.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">深南电路</span></a></td><td><code>002916</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill negative-bg">-1.8%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜强位置</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘376.2；5/10/20日线 379.6/386.3/375.0；主线30日线；观察区369.4-380.7。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线379.6继续持有；跌破5日线先减1/3；跌破10日线386.3减到半仓；跌破20日线375.0卖出大部或退出。</span></div>
-        <div><b>防守</b><span>363.8</span></div>
+      <div class="material-priority-box">
+        <h3>6月11日优先观察</h3>
+        <div class="material-stock-list material-priority-list">
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/002428.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">云南锗业</span></a>
+          <code>002428</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-5">5</span>
+          <span class="ret-pill positive-bg">10.0%</span>
+          <span class="op-badge op-buy">买入/加仓</span>
+        </div>
+        <div class="material-stock-note">持有为主；沿5日线83.5上行，不追高加仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><div class="subsector-cell"><strong>光纤供货难</strong><span>保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。</span></div></td><td><a class="stock-link" href="stocks/601869.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">长飞光纤</span></a></td><td><code>601869</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-2.2%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜较好位置</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘442.5；5/10/20日线 452.3/434.6/408.3；主线30日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线452.3继续持有；跌破5日线先减1/3；跌破10日线434.6减到半仓；跌破20日线408.3卖出大部或退出。</span></div>
-        <div><b>防守</b><span>396.1</span></div>
+    
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688019.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">安集科技</span></a>
+          <code>688019</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-5">5</span>
+          <span class="ret-pill positive-bg">6.5%</span>
+          <span class="op-badge op-buy">买入/加仓</span>
+        </div>
+        <div class="material-stock-note">可小仓试探，优先222.2-229.0；站上5日线再加</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><div class="subsector-cell"><strong>PCB / CCL / 铜箔</strong><span>AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。</span></div></td><td><a class="stock-link" href="stocks/002463.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">沪电股份</span></a></td><td><code>002463</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-2.8%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜较好位置</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘126.9；5/10/20日线 133.8/132.5/123.7；主线30日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线133.8继续持有；跌破5日线先减1/3；跌破10日线132.5减到半仓；跌破20日线123.7卖出大部或退出。</span></div>
-        <div><b>防守</b><span>120.0</span></div>
+    
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/603688.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">石英股份</span></a>
+          <code>603688</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-5">5</span>
+          <span class="ret-pill positive-bg">3.9%</span>
+          <span class="op-badge op-buy">买入/加仓</span>
+        </div>
+        <div class="material-stock-note">持有为主；沿5日线72.3上行，不追高加仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><div class="subsector-cell"><strong>MLCC上游</strong><span>AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。</span></div></td><td><a class="stock-link" href="stocks/300285.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">国瓷材料</span></a></td><td><code>300285</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill positive-bg">2.1%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜趋势跟踪</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘62.4；5/10/20日线 62.5/59.8/52.7；主线20日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线62.5继续持有；跌破5日线先减1/3；跌破10日线59.8减到半仓；跌破20日线52.7卖出大部或退出。</span></div>
-        <div><b>防守</b><span>51.1</span></div>
+    
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/603306.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">华懋科技</span></a>
+          <code>603306</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-5">5</span>
+          <span class="ret-pill positive-bg">3.4%</span>
+          <span class="op-badge op-buy">买入/加仓</span>
+        </div>
+        <div class="material-stock-note">可小仓试探，优先96.5-103.2；站上5日线再加</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><div class="subsector-cell"><strong>PCB / CCL / 铜箔</strong><span>AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。</span></div></td><td><a class="stock-link" href="stocks/600183.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">生益科技</span></a></td><td><code>600183</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill positive-bg">1.9%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜趋势跟踪</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘149.7；5/10/20日线 143.1/141.4/125.7；主线20日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线143.1继续持有；跌破5日线先减1/3；跌破10日线141.4减到半仓；跌破20日线125.7卖出大部或退出。</span></div>
-        <div><b>防守</b><span>122.0</span></div>
+    </div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><div class="subsector-cell"><strong>光纤供货难</strong><span>保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。</span></div></td><td><a class="stock-link" href="stocks/688143.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">长盈通</span></a></td><td><code>688143</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill positive-bg">0.7%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜趋势跟踪</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘192.7；5/10/20日线 187.1/179.9/159.9；主线20日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线187.1继续持有；跌破5日线先减1/3；跌破10日线179.9减到半仓；跌破20日线159.9卖出大部或退出。</span></div>
-        <div><b>防守</b><span>155.1</span></div>
+      <div class="material-layer-grid">
+        
+          <article class="material-layer-card material-tone-tight">
+            <header>
+              <div>
+                <span class="material-layer-index">01</span>
+                <h3>供给瓶颈层</h3>
+              </div>
+              <strong>3个方向</strong>
+            </header>
+            <p>优先看海外断供、客户认证、涨价传导和国产替代兑现，是材料页里最适合快速截图跟踪的一层。</p>
+            <div class="material-subsector-tags"><a class="material-subsector-tag" href="#material-detail-1-1">电子特气 / 六氟化钨<span class="score-chip score-chip-3">3</span></a><a class="material-subsector-tag" href="#material-detail-1-2">高纯石英材料<span class="score-chip score-chip-5">5</span></a><a class="material-subsector-tag" href="#material-detail-1-3">稀有金属锗 / 磷化铟 / 化合物半导体<span class="score-chip score-chip-5">5</span></a></div>
+            <div class="material-stock-list">
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/002428.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">云南锗业</span></a>
+          <code>002428</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-5">5</span>
+          <span class="ret-pill positive-bg">10.0%</span>
+          <span class="op-badge op-buy">买入/加仓</span>
+        </div>
+        <div class="material-stock-note">持有为主；沿5日线83.5上行，不追高加仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><div class="subsector-cell"><strong>光纤供货难</strong><span>保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。</span></div></td><td><a class="stock-link" href="stocks/600487.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">亨通光电</span></a></td><td><code>600487</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-4.2%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜趋势跟踪</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘102.4；5/10/20日线 101.2/93.1/82.4；主线20日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线101.2继续持有；跌破5日线先减1/3；跌破10日线93.1减到半仓；跌破20日线82.4卖出大部或退出。</span></div>
-        <div><b>防守</b><span>80.0</span></div>
+    
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/603688.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">石英股份</span></a>
+          <code>603688</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-5">5</span>
+          <span class="ret-pill positive-bg">3.9%</span>
+          <span class="op-badge op-buy">买入/加仓</span>
+        </div>
+        <div class="material-stock-note">持有为主；沿5日线72.3上行，不追高加仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><div class="subsector-cell"><strong>PCB / CCL / 铜箔</strong><span>AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。</span></div></td><td><a class="stock-link" href="stocks/688183.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">生益电子</span></a></td><td><code>688183</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-0.2%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>破位观望｜趋势跟踪</span></div>
-        <div><b>判断</b><span>趋势和买点较好，但更适合等价格落到舒服位置。</span></div>
-        <div><b>位置</b><span>收盘116.2；5/10/20日线 117.5/123.4/118.1；主线50日线；观察区112.8-116.2。</span></div>
-        <div><b>未建仓</b><span>不建议情绪化追高，优先等回踩观察区、缩量企稳或盘中承接明显后再动。</span></div>
-        <div><b>已建仓</b><span>已有仓位可持有观察，靠近压力位或放量滞涨时降低仓位。</span></div>
-        <div><b>防守</b><span>114.6</span></div>
+    
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688146.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">中船特气</span></a>
+          <code>688146</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-3">3</span>
+          <span class="ret-pill positive-bg">19.8%</span>
+          <span class="op-badge op-hold">持有</span>
+        </div>
+        <div class="material-stock-note">持有为主；沿5日线275.2上行，不追高加仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><div class="subsector-cell"><strong>电子特气 / 六氟化钨</strong><span>前道制程气体，覆盖沉积、刻蚀、清洗等环节，客户认证周期长。 核验：六氟化钨价格、客户导入、国产替代、产能释放。</span></div></td><td><a class="stock-link" href="stocks/688146.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">中船特气</span></a></td><td><code>688146</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">19.8%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜弱修复</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘349.8；5/10/20日线 275.2/231.4/186.4；主线20日线；观察区342.8-356.8。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线275.2继续持有；跌破5日线先减1/3；跌破10日线231.4减到半仓；跌破20日线186.4卖出大部或退出。</span></div>
-        <div><b>防守</b><span>180.8</span></div>
+    
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688268.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">华特气体</span></a>
+          <code>688268</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-2">2</span>
+          <span class="ret-pill positive-bg">20.0%</span>
+          <span class="op-badge op-watch">观察</span>
+        </div>
+        <div class="material-stock-note">弱势则降仓；跌破20日线174.3回避</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><div class="subsector-cell"><strong>光刻胶 / MO源</strong><span>光刻胶和MO源属于关键制程材料，弹性大，但需要用收入占比和客户验证区分真兑现。 核验：ArF/KrF光刻胶进展、MO源订单、半导体材料收入占比。</span></div></td><td><a class="stock-link" href="stocks/300346.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">南大光电</span></a></td><td><code>300346</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">8.1%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜弱修复</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘66.7；5/10/20日线 61.1/55.9/56.8；主线20日线；观察区65.4-68.0。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线61.1继续持有；跌破5日线先减1/3；跌破10日线55.9减到半仓；跌破20日线56.8卖出大部或退出。</span></div>
-        <div><b>防守</b><span>55.1</span></div>
+    </div>
+          </article>
+        
+          <article class="material-layer-card material-tone-process">
+            <header>
+              <div>
+                <span class="material-layer-index">02</span>
+                <h3>制程耗材层</h3>
+              </div>
+              <strong>4个方向</strong>
+            </header>
+            <p>跟随晶圆厂扩产、先进制程验证和国产替代节奏，弹性大，但需要确认收入占比和客户验证。</p>
+            <div class="material-subsector-tags"><a class="material-subsector-tag" href="#material-detail-2-1">光刻胶 / MO源<span class="score-chip score-chip-5">5</span></a><a class="material-subsector-tag" href="#material-detail-2-2">湿电子化学品<span class="score-chip score-chip-3">3</span></a><a class="material-subsector-tag" href="#material-detail-2-3">CMP抛光材料 / 功能湿化学品<span class="score-chip score-chip-5">5</span></a><a class="material-subsector-tag" href="#material-detail-2-4">SiC衬底材料<span class="score-chip score-chip-1">1</span></a></div>
+            <div class="material-stock-list">
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688019.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">安集科技</span></a>
+          <code>688019</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-5">5</span>
+          <span class="ret-pill positive-bg">6.5%</span>
+          <span class="op-badge op-buy">买入/加仓</span>
+        </div>
+        <div class="material-stock-note">可小仓试探，优先222.2-229.0；站上5日线再加</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><div class="subsector-cell"><strong>PCB / CCL / 铜箔</strong><span>AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。</span></div></td><td><a class="stock-link" href="stocks/603186.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">华正新材</span></a></td><td><code>603186</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">4.3%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜弱修复</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘170.4；5/10/20日线 148.6/135.9/126.9；主线20日线；观察区167.0-173.8。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线148.6继续持有；跌破5日线先减1/3；跌破10日线135.9减到半仓；跌破20日线126.9卖出大部或退出。</span></div>
-        <div><b>防守</b><span>123.1</span></div>
+    
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/603306.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">华懋科技</span></a>
+          <code>603306</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-5">5</span>
+          <span class="ret-pill positive-bg">3.4%</span>
+          <span class="op-badge op-buy">买入/加仓</span>
+        </div>
+        <div class="material-stock-note">可小仓试探，优先96.5-103.2；站上5日线再加</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><div class="subsector-cell"><strong>PCB / CCL / 铜箔</strong><span>AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。</span></div></td><td><a class="stock-link" href="stocks/300476.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">胜宏科技</span></a></td><td><code>300476</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill negative-bg">-1.4%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>破位观望｜弱修复</span></div>
-        <div><b>判断</b><span>趋势底色还在，但买点确认度不够。</span></div>
-        <div><b>位置</b><span>收盘325.5；5/10/20日线 330.4/343.2/351.4；主线50日线；观察区318.5-333.3。</span></div>
-        <div><b>未建仓</b><span>先放入观察，不急于开仓，等金叉、放量反包或重新站上短均线。</span></div>
-        <div><b>已建仓</b><span>已有仓位轻仓跟踪，跌破关键均线则先降仓。</span></div>
-        <div><b>防守</b><span>340.8</span></div>
+    
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688545.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">兴福电子</span></a>
+          <code>688545</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-3">3</span>
+          <span class="ret-pill positive-bg">20.0%</span>
+          <span class="op-badge op-hold">持有</span>
+        </div>
+        <div class="material-stock-note">持有为主；沿5日线88.2上行，不追高加仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><div class="subsector-cell"><strong>电子特气 / 六氟化钨</strong><span>前道制程气体，覆盖沉积、刻蚀、清洗等环节，客户认证周期长。 核验：六氟化钨价格、客户导入、国产替代、产能释放。</span></div></td><td><a class="stock-link" href="stocks/688268.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">华特气体</span></a></td><td><code>688268</code></td><td><span class="score-chip score-chip-2">2</span></td><td><span class="ret-pill positive-bg">20.0%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>弱修复观察｜破位偏弱</span></div>
-        <div><b>判断</b><span>当前技术位置不够主动。</span></div>
-        <div><b>位置</b><span>收盘228.8；5/10/20日线 197.7/180.6/174.3；主线50日线；观察区224.2-233.4。</span></div>
-        <div><b>未建仓</b><span>只做备选，除非出现明确右侧信号，否则不进入6月12日优先清单。</span></div>
-        <div><b>已建仓</b><span>已有仓位以防守为主，弱于关键均线则降低仓位。</span></div>
-        <div><b>防守</b><span>169.1</span></div>
+    
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/300346.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">南大光电</span></a>
+          <code>300346</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-3">3</span>
+          <span class="ret-pill positive-bg">8.1%</span>
+          <span class="op-badge op-hold">持有</span>
+        </div>
+        <div class="material-stock-note">持有为主；沿5日线61.1上行，不追高加仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="半导体关键材料中的细分方向，锗资源、红外材料和磷化铟链条具备资源周期与化合物半导体双重弹性。">半导体关键材料 / 锗-磷化铟</span></td><td><div class="subsector-cell"><strong>稀有金属锗 / 磷化铟 / 化合物半导体</strong><span>属于半导体关键材料里的细分方向，从大类电子料进一步落到锗资源、红外材料和磷化铟链条，兼具资源价格弹性和化合物半导体映射。 核验：锗价周期、出口管制、红外材料订单、磷化铟链条兑现和库存变化。</span></div></td><td><a class="stock-link" href="stocks/002428.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">云南锗业</span></a></td><td><code>002428</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill positive-bg">10.0%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜强位置</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘88.2；5/10/20日线 83.5/85.4/86.6；主线50日线；观察区85.3-87.9。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线83.5继续持有；跌破5日线先减1/3；跌破10日线85.4减到半仓；跌破20日线86.6卖出大部或退出。</span></div>
-        <div><b>防守</b><span>84.0</span></div>
+    
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688234.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">天岳先进</span></a>
+          <code>688234</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-1">1</span>
+          <span class="ret-pill positive-bg">0.7%</span>
+          <span class="op-badge op-sell">减仓/卖出</span>
+        </div>
+        <div class="material-stock-note">减仓或严格防守，观察139.9</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。">PCB / CCL / 铜箔</span></td><td><div class="subsector-cell"><strong>PCB / CCL / 铜箔</strong><span>AI服务器板、CCL和铜箔材料受益层数提升与涨价传导。</span></div></td><td><a class="stock-link" href="stocks/688603.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">天承科技</span></a></td><td><code>688603</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill negative-bg">-3.9%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>弱修复观察｜强位置</span></div>
-        <div><b>判断</b><span>多个买点共振，属于优先盯盘标的。</span></div>
-        <div><b>位置</b><span>收盘162.4；5/10/20日线 173.3/168.4/164.1；主线50日线；观察区161.7-166.6。</span></div>
-        <div><b>未建仓</b><span>若6月12日不大幅高开，可围绕观察区分批试探。</span></div>
-        <div><b>已建仓</b><span>已有仓位可继续跟踪，放量突破时再考虑加仓。</span></div>
-        <div><b>防守</b><span>159.2</span></div>
+    </div>
+          </article>
+        
+          <article class="material-layer-card material-tone-base">
+            <header>
+              <div>
+                <span class="material-layer-index">03</span>
+                <h3>基础材料层</h3>
+              </div>
+              <strong>1个方向</strong>
+            </header>
+            <p>更偏底层材料和中期国产替代，弹性可能不如小品种，但能帮助判断晶圆制造链条的真实景气。</p>
+            <div class="material-subsector-tags"><a class="material-subsector-tag" href="#material-detail-3-1">半导体硅片<span class="score-chip score-chip-3">3</span></a></div>
+            <div class="material-stock-list">
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688126.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">沪硅产业</span></a>
+          <code>688126</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-3">3</span>
+          <span class="ret-pill negative-bg">-0.5%</span>
+          <span class="op-badge op-hold">持有</span>
+        </div>
+        <div class="material-stock-note">继续持有；收盘不破5日线30.4不减仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><div class="subsector-cell"><strong>MLCC上游</strong><span>AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。</span></div></td><td><a class="stock-link" href="stocks/300408.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">三环集团</span></a></td><td><code>300408</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-0.3%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜较好位置</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘131.6；5/10/20日线 132.5/132.5/119.6；主线30日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线132.5继续持有；跌破5日线先减1/3；跌破10日线132.5减到半仓；跌破20日线119.6卖出大部或退出。</span></div>
-        <div><b>防守</b><span>116.0</span></div>
+    </div>
+          </article>
+        
+          <article class="material-layer-card material-tone-package">
+            <header>
+              <div>
+                <span class="material-layer-index">04</span>
+                <h3>封装基板层</h3>
+              </div>
+              <strong>1个方向</strong>
+            </header>
+            <p>看先进封装、AI基板和高端填料升级，和PCB/CCL涨价链条有交叉，但展示时单独拆出来。</p>
+            <div class="material-subsector-tags"><a class="material-subsector-tag" href="#material-detail-4-1">球形硅微粉 / 电子填料<span class="score-chip score-chip-4">4</span></a></div>
+            <div class="material-stock-list">
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688535.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">华海诚科</span></a>
+          <code>688535</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-4">4</span>
+          <span class="ret-pill positive-bg">4.2%</span>
+          <span class="op-badge op-hold">持有</span>
+        </div>
+        <div class="material-stock-note">持有为主；沿5日线118.8上行，不追高加仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><div class="subsector-cell"><strong>MLCC上游</strong><span>AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。</span></div></td><td><a class="stock-link" href="stocks/002859.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">洁美科技</span></a></td><td><code>002859</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-5.5%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜较好位置</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘78.0；5/10/20日线 83.2/82.2/70.6；主线50日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线83.2继续持有；跌破5日线先减1/3；跌破10日线82.2减到半仓；跌破20日线70.6卖出大部或退出。</span></div>
-        <div><b>防守</b><span>68.5</span></div>
+    
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688300.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">联瑞新材</span></a>
+          <code>688300</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-4">4</span>
+          <span class="ret-pill negative-bg">-1.4%</span>
+          <span class="op-badge op-hold">持有</span>
+        </div>
+        <div class="material-stock-note">继续持有；收盘不破5日线168.0不减仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><div class="subsector-cell"><strong>MLCC上游</strong><span>AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。</span></div></td><td><a class="stock-link" href="stocks/605376.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">博迁新材</span></a></td><td><code>605376</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-6.7%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜较好位置</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘181.0；5/10/20日线 183.3/184.3/165.9；主线30日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线183.3继续持有；跌破5日线先减1/3；跌破10日线184.3减到半仓；跌破20日线165.9卖出大部或退出。</span></div>
-        <div><b>防守</b><span>160.9</span></div>
+    </div>
+          </article>
+        
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><div class="subsector-cell"><strong>球形硅微粉 / 电子填料</strong><span>封装材料、覆铜板和先进封装相关填料，跟随AI封装和高端基板升级。 核验：高端填料占比、先进封装客户、毛利率和扩产节奏。</span></div></td><td><a class="stock-link" href="stocks/688300.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">联瑞新材</span></a></td><td><code>688300</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-1.4%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜趋势跟踪</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘177.7；5/10/20日线 168.0/169.9/152.1；主线20日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线168.0继续持有；跌破5日线先减1/3；跌破10日线169.9减到半仓；跌破20日线152.1卖出大部或退出。</span></div>
-        <div><b>防守</b><span>147.6</span></div>
+      <h3 class="subsection-title">后续电子料关注清单</h3>
+      
+      <div class="material-method-note">
+        <strong>筛选框架</strong>
+        <span>按“原料受限、海外供应集中、国产份额小、先进封装/存储扩产、耗材属性、远期替代较慢”六个共同基因找电子料，不把关键词错配当成直接受益。</span>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><div class="subsector-cell"><strong>光纤供货难</strong><span>保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。</span></div></td><td><a class="stock-link" href="stocks/603938.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">三孚股份</span></a></td><td><code>603938</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-1.7%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜趋势跟踪</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘59.0；5/10/20日线 55.7/50.4/48.4；主线30日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线55.7继续持有；跌破5日线先减1/3；跌破10日线50.4减到半仓；跌破20日线48.4卖出大部或退出。</span></div>
-        <div><b>防守</b><span>47.0</span></div>
+      <div class="material-follow-grid">
+          <article class="material-follow-card">
+            <header>
+              <span>钨系前道耗材</span>
+              <strong>六氟化钨 / 钨钼靶材</strong>
+            </header>
+            <p>原料端钨粉或钨钼资源紧、海外供应商份额高、客户认证慢，容易出现供需失衡和利润迁移。</p>
+            <div class="material-follow-row"><b>代表</b><span>中船特气、华特气体、江丰电子、阿石创、欧莱新材、有研粉材</span></div>
+            <div class="material-follow-row"><b>处理</b><span>中船/华特在核心池；靶材方向先放扩展观察</span></div>
+            <div class="material-follow-row watch"><b>核验</b><span>WF6价格、靶材订单、客户认证、日系供应链扰动和国产份额提升。</span></div>
+          </article>
+        
+          <article class="material-follow-card">
+            <header>
+              <span>PCB钨耗材</span>
+              <strong>钨钻针 / 硬质合金刀具</strong>
+            </header>
+            <p>和WF6同属钨资源映射，但落点在PCB高端钻针、刀具和耗材，不应混成六氟化钨直接受益。</p>
+            <div class="material-follow-row"><b>代表</b><span>鼎泰高科、中钨高新、欧科亿</span></div>
+            <div class="material-follow-row"><b>处理</b><span>鼎泰为高纯PCB耗材；中钨是钨粉/硬质合金上游影子</span></div>
+            <div class="material-follow-row watch"><b>核验</b><span>AI PCB层数提升、微孔加工、钻针消耗、钨粉价格和技术替代。</span></div>
+          </article>
+        
+          <article class="material-follow-card">
+            <header>
+              <span>高纯湿化学品</span>
+              <strong>湿电子化学品 / CMP材料</strong>
+            </header>
+            <p>晶圆厂扩产和国产替代带来的高纯品类渗透，关键在客户认证和高端产品占比。</p>
+            <div class="material-follow-row"><b>代表</b><span>兴福电子、安集科技</span></div>
+            <div class="material-follow-row"><b>处理</b><span>核心材料跟踪</span></div>
+            <div class="material-follow-row watch"><b>核验</b><span>高端品类占比、晶圆厂客户、产能利用率、价格传导和毛利率。</span></div>
+          </article>
+        
+          <article class="material-follow-card">
+            <header>
+              <span>光刻与前驱体</span>
+              <strong>光刻胶 / MO源 / 前驱体</strong>
+            </header>
+            <p>制程迭代对材料纯度和验证要求高，弹性强但也最需要看收入占比和真实客户进展。</p>
+            <div class="material-follow-row"><b>代表</b><span>南大光电、雅克科技、华懋科技</span></div>
+            <div class="material-follow-row"><b>处理</b><span>只按真实业务拆分，不按关键词加分</span></div>
+            <div class="material-follow-row watch"><b>核验</b><span>ArF/KrF进展、MO源订单、前驱体收入、客户验证和公告口径。</span></div>
+          </article>
+        
+          <article class="material-follow-card">
+            <header>
+              <span>封装填料</span>
+              <strong>球形硅微粉 / EMC / 高端填料</strong>
+            </header>
+            <p>AI封装、先进封装和高端基板升级带动材料规格提升，核心是高端填料和客户结构。</p>
+            <div class="material-follow-row"><b>代表</b><span>联瑞新材、华海诚科</span></div>
+            <div class="material-follow-row"><b>处理</b><span>核心材料跟踪</span></div>
+            <div class="material-follow-row watch"><b>核验</b><span>高端填料占比、先进封装客户、扩产节奏和毛利率。</span></div>
+          </article>
+        
+          <article class="material-follow-card">
+            <header>
+              <span>低位分支</span>
+              <strong>碲化铋 / 氮化铝等</strong>
+            </header>
+            <p>文章提到的潜在低位分支，先作为找标的方向，不急着纳入核心池。</p>
+            <div class="material-follow-row"><b>代表</b><span>待建立候选</span></div>
+            <div class="material-follow-row"><b>处理</b><span>资料跟踪，不参与评分</span></div>
+            <div class="material-follow-row watch"><b>核验</b><span>是否有A股纯标的、是否真实进入半导体客户、是否有供给缺口。</span></div>
+          </article>
+        </div>
+    
+      <h3 class="subsection-title">细分详情</h3>
+      <div class="material-detail-grid">
+        
+                  <details class="material-detail-card" id="material-detail-1-1">
+                    <summary>
+                      <span>电子特气 / 六氟化钨</span>
+                      <small>中船特气 688146、华特气体 688268</small>
+                    </summary>
+                    <div class="material-detail-body">
+                      <div><b>产业链作用</b><span>前道制程气体，覆盖沉积、刻蚀、清洗等环节，客户认证周期长。</span></div>
+                      <div><b>核验重点</b><span>六氟化钨价格、客户导入、国产替代、产能释放。</span></div>
+                      <div><b>6月11日跟踪</b><span>
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688146.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">中船特气</span></a>
+          <code>688146</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-3">3</span>
+          <span class="ret-pill positive-bg">19.8%</span>
+          <span class="op-badge op-hold">持有</span>
+        </div>
+        <div class="material-stock-note">持有为主；沿5日线275.2上行，不追高加仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="高纯石英、电子特气、光刻胶、湿电子化学品和电子填料关注供给约束与国产替代。">半导体关键材料</span></td><td><div class="subsector-cell"><strong>湿电子化学品</strong><span>清洗、蚀刻等环节用高纯化学品，受益晶圆厂扩产和国产替代。 核验：高端品类占比、客户认证、产能利用率、价格传导。</span></div></td><td><a class="stock-link" href="stocks/688545.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">兴福电子</span></a></td><td><code>688545</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">20.0%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜弱修复</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘104.5；5/10/20日线 88.2/83.4/83.5；主线20日线；观察区102.4-106.6。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线88.2继续持有；跌破5日线先减1/3；跌破10日线83.4减到半仓；跌破20日线83.5卖出大部或退出。</span></div>
-        <div><b>防守</b><span>81.0</span></div>
+    
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688268.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">华特气体</span></a>
+          <code>688268</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-2">2</span>
+          <span class="ret-pill positive-bg">20.0%</span>
+          <span class="op-badge op-watch">观察</span>
+        </div>
+        <div class="material-stock-note">弱势则降仓；跌破20日线174.3回避</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。">MLCC上游</span></td><td><div class="subsector-cell"><strong>MLCC上游</strong><span>AI服务器带动高端MLCC用量，瓷粉、电子陶瓷和制程材料弹性更直接。</span></div></td><td><a class="stock-link" href="stocks/000636.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">风华高科</span></a></td><td><code>000636</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">7.5%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜弱修复</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘64.3；5/10/20日线 60.1/59.2/48.1；主线20日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线60.1继续持有；跌破5日线先减1/3；跌破10日线59.2减到半仓；跌破20日线48.1卖出大部或退出。</span></div>
-        <div><b>防守</b><span>46.7</span></div>
+    </span></div>
+                    </div>
+                  </details>
+                
+                  <details class="material-detail-card" id="material-detail-1-2">
+                    <summary>
+                      <span>高纯石英材料</span>
+                      <small>石英股份 603688</small>
+                    </summary>
+                    <div class="material-detail-body">
+                      <div><b>产业链作用</b><span>扩散、刻蚀、清洗、光刻等前道环节的关键耗材，半导体级认证和供给弹性是核心。</span></div>
+                      <div><b>核验重点</b><span>半导体级收入占比、海外替代、价格和供给紧张程度。</span></div>
+                      <div><b>6月11日跟踪</b><span>
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/603688.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">石英股份</span></a>
+          <code>603688</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-5">5</span>
+          <span class="ret-pill positive-bg">3.9%</span>
+          <span class="op-badge op-buy">买入/加仓</span>
+        </div>
+        <div class="material-stock-note">持有为主；沿5日线72.3上行，不追高加仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill" title="保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。">光纤供货难</span></td><td><div class="subsector-cell"><strong>光纤供货难</strong><span>保偏光纤、光纤光缆和上游材料供给紧，重点看订单和交付。</span></div></td><td><a class="stock-link" href="stocks/600498.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">烽火通信</span></a></td><td><code>600498</code></td><td><span class="score-chip score-chip-2">2</span></td><td><span class="ret-pill positive-bg">9.5%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>弱修复观察｜破位偏弱</span></div>
-        <div><b>判断</b><span>当前技术位置不够主动。</span></div>
-        <div><b>位置</b><span>收盘61.0；5/10/20日线 57.3/54.0/54.1；主线50日线；观察区59.8-62.2。</span></div>
-        <div><b>未建仓</b><span>只做备选，除非出现明确右侧信号，否则不进入6月12日优先清单。</span></div>
-        <div><b>已建仓</b><span>已有仓位以防守为主，弱于关键均线则降低仓位。</span></div>
-        <div><b>防守</b><span>52.5</span></div>
+    </span></div>
+                    </div>
+                  </details>
+                
+                  <details class="material-detail-card" id="material-detail-1-3">
+                    <summary>
+                      <span>稀有金属锗 / 磷化铟 / 化合物半导体</span>
+                      <small>云南锗业 002428</small>
+                    </summary>
+                    <div class="material-detail-body">
+                      <div><b>产业链作用</b><span>属于半导体关键材料里的细分方向，从大类电子料进一步落到锗资源、红外材料和磷化铟链条，兼具资源价格弹性和化合物半导体映射。</span></div>
+                      <div><b>核验重点</b><span>锗价周期、出口管制、红外材料订单、磷化铟链条兑现和库存变化。</span></div>
+                      <div><b>6月11日跟踪</b><span>
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/002428.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">云南锗业</span></a>
+          <code>002428</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-5">5</span>
+          <span class="ret-pill positive-bg">10.0%</span>
+          <span class="op-badge op-buy">买入/加仓</span>
+        </div>
+        <div class="material-stock-note">持有为主；沿5日线83.5上行，不追高加仓</div>
       </div>
-    </td></tr></tbody></table></div>
-      <h3 class="subsection-title">半导体材料当日评分与操作</h3>
-      <div class="table-wrap semiconductor-material-current-table"><table><thead><tr><th>细分方向</th><th>股票</th><th>代码</th><th>评分</th><th>6月11日涨跌</th><th>关键判断与操作</th></tr></thead><tbody><tr><td><span class="industry-pill">SiC衬底材料</span></td><td><a class="stock-link" href="stocks/688234.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">天岳先进</span></a></td><td><code>688234</code></td><td><span class="score-chip score-chip-1">1</span></td><td><span class="ret-pill positive-bg">0.7%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>破位观望｜回避/无数据</span></div>
-        <div><b>判断</b><span>当前技术位置不够主动。</span></div>
-        <div><b>位置</b><span>收盘125.9；5/10/20日线 128.1/133.4/144.3；主线50日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>只做备选，除非出现明确右侧信号，否则不进入6月12日优先清单。</span></div>
-        <div><b>已建仓</b><span>已有仓位以防守为主，弱于关键均线则降低仓位。</span></div>
-        <div><b>防守</b><span>139.9</span></div>
+    </span></div>
+                    </div>
+                  </details>
+                
+                  <details class="material-detail-card" id="material-detail-2-1">
+                    <summary>
+                      <span>光刻胶 / MO源</span>
+                      <small>南大光电 300346、华懋科技 603306</small>
+                    </summary>
+                    <div class="material-detail-body">
+                      <div><b>产业链作用</b><span>光刻胶和MO源属于关键制程材料，弹性大，但需要用收入占比和客户验证区分真兑现。</span></div>
+                      <div><b>核验重点</b><span>ArF/KrF光刻胶进展、MO源订单、半导体材料收入占比。</span></div>
+                      <div><b>6月11日跟踪</b><span>
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/603306.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">华懋科技</span></a>
+          <code>603306</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-5">5</span>
+          <span class="ret-pill positive-bg">3.4%</span>
+          <span class="op-badge op-buy">买入/加仓</span>
+        </div>
+        <div class="material-stock-note">可小仓试探，优先96.5-103.2；站上5日线再加</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill">光刻胶 / MO源</span></td><td><a class="stock-link" href="stocks/603306.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">华懋科技</span></a></td><td><code>603306</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill positive-bg">3.4%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>反弹买入趋势｜强位置</span></div>
-        <div><b>判断</b><span>已经出现支撑确认或假破位修复，更接近可执行买点。</span></div>
-        <div><b>位置</b><span>收盘102.7；5/10/20日线 98.3/101.6/106.8；主线50日线；观察区96.5-103.2。</span></div>
-        <div><b>未建仓</b><span>可围绕观察区小仓试探，站上5日线98.3再加。</span></div>
-        <div><b>已建仓</b><span>不破支撑可加仓；跌回支撑线下方且收不回则减仓，防守位参考96.0。</span></div>
-        <div><b>防守</b><span>96.0</span></div>
+    
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/300346.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">南大光电</span></a>
+          <code>300346</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-3">3</span>
+          <span class="ret-pill positive-bg">8.1%</span>
+          <span class="op-badge op-hold">持有</span>
+        </div>
+        <div class="material-stock-note">持有为主；沿5日线61.1上行，不追高加仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill">光刻胶 / MO源</span></td><td><a class="stock-link" href="stocks/300346.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">南大光电</span></a></td><td><code>300346</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">8.1%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜弱修复</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘66.7；5/10/20日线 61.1/55.9/56.8；主线20日线；观察区65.4-68.0。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线61.1继续持有；跌破5日线先减1/3；跌破10日线55.9减到半仓；跌破20日线56.8卖出大部或退出。</span></div>
-        <div><b>防守</b><span>55.1</span></div>
+    </span></div>
+                    </div>
+                  </details>
+                
+                  <details class="material-detail-card" id="material-detail-2-2">
+                    <summary>
+                      <span>湿电子化学品</span>
+                      <small>兴福电子 688545</small>
+                    </summary>
+                    <div class="material-detail-body">
+                      <div><b>产业链作用</b><span>清洗、蚀刻等环节用高纯化学品，受益晶圆厂扩产和国产替代。</span></div>
+                      <div><b>核验重点</b><span>高端品类占比、客户认证、产能利用率、价格传导。</span></div>
+                      <div><b>6月11日跟踪</b><span>
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688545.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">兴福电子</span></a>
+          <code>688545</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-3">3</span>
+          <span class="ret-pill positive-bg">20.0%</span>
+          <span class="op-badge op-hold">持有</span>
+        </div>
+        <div class="material-stock-note">持有为主；沿5日线88.2上行，不追高加仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill">湿电子化学品</span></td><td><a class="stock-link" href="stocks/688545.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">兴福电子</span></a></td><td><code>688545</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">20.0%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜弱修复</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘104.5；5/10/20日线 88.2/83.4/83.5；主线20日线；观察区102.4-106.6。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线88.2继续持有；跌破5日线先减1/3；跌破10日线83.4减到半仓；跌破20日线83.5卖出大部或退出。</span></div>
-        <div><b>防守</b><span>81.0</span></div>
+    </span></div>
+                    </div>
+                  </details>
+                
+                  <details class="material-detail-card" id="material-detail-2-3">
+                    <summary>
+                      <span>CMP抛光材料 / 功能湿化学品</span>
+                      <small>安集科技 688019</small>
+                    </summary>
+                    <div class="material-detail-body">
+                      <div><b>产业链作用</b><span>CMP抛光液和功能性湿电子化学品，处在晶圆制造良率和表面处理的关键耗材位置。</span></div>
+                      <div><b>核验重点</b><span>先进制程导入、客户认证、产品结构升级、毛利率和国产替代份额。</span></div>
+                      <div><b>6月11日跟踪</b><span>
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688019.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">安集科技</span></a>
+          <code>688019</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-5">5</span>
+          <span class="ret-pill positive-bg">6.5%</span>
+          <span class="op-badge op-buy">买入/加仓</span>
+        </div>
+        <div class="material-stock-note">可小仓试探，优先222.2-229.0；站上5日线再加</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill">球形硅微粉 / 电子填料</span></td><td><a class="stock-link" href="stocks/688535.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">华海诚科</span></a></td><td><code>688535</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill positive-bg">4.2%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜较好位置</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘131.2；5/10/20日线 118.8/117.5/126.4；主线30日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线118.8继续持有；跌破5日线先减1/3；跌破10日线117.5减到半仓；跌破20日线126.4卖出大部或退出。</span></div>
-        <div><b>防守</b><span>122.6</span></div>
+    </span></div>
+                    </div>
+                  </details>
+                
+                  <details class="material-detail-card" id="material-detail-2-4">
+                    <summary>
+                      <span>SiC衬底材料</span>
+                      <small>天岳先进 688234</small>
+                    </summary>
+                    <div class="material-detail-body">
+                      <div><b>产业链作用</b><span>碳化硅衬底材料，属于化合物半导体材料，但不与锗资源链条混在一起。</span></div>
+                      <div><b>核验重点</b><span>导电型/半绝缘衬底订单、价格、良率和下游功率/射频需求。</span></div>
+                      <div><b>6月11日跟踪</b><span>
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688234.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">天岳先进</span></a>
+          <code>688234</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-1">1</span>
+          <span class="ret-pill positive-bg">0.7%</span>
+          <span class="op-badge op-sell">减仓/卖出</span>
+        </div>
+        <div class="material-stock-note">减仓或严格防守，观察139.9</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill">球形硅微粉 / 电子填料</span></td><td><a class="stock-link" href="stocks/688300.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">联瑞新材</span></a></td><td><code>688300</code></td><td><span class="score-chip score-chip-4">4</span></td><td><span class="ret-pill negative-bg">-1.4%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜趋势跟踪</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘177.7；5/10/20日线 168.0/169.9/152.1；主线20日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线168.0继续持有；跌破5日线先减1/3；跌破10日线169.9减到半仓；跌破20日线152.1卖出大部或退出。</span></div>
-        <div><b>防守</b><span>147.6</span></div>
+    </span></div>
+                    </div>
+                  </details>
+                
+                  <details class="material-detail-card" id="material-detail-3-1">
+                    <summary>
+                      <span>半导体硅片</span>
+                      <small>沪硅产业 688126</small>
+                    </summary>
+                    <div class="material-detail-body">
+                      <div><b>产业链作用</b><span>晶圆制造的基础材料，供应稳定性和尺寸/良率升级决定下游扩产承接能力。</span></div>
+                      <div><b>核验重点</b><span>12英寸硅片出货、客户结构、价格周期、稼动率和国产替代节奏。</span></div>
+                      <div><b>6月11日跟踪</b><span>
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688126.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">沪硅产业</span></a>
+          <code>688126</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-3">3</span>
+          <span class="ret-pill negative-bg">-0.5%</span>
+          <span class="op-badge op-hold">持有</span>
+        </div>
+        <div class="material-stock-note">继续持有；收盘不破5日线30.4不减仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill">电子特气 / 六氟化钨</span></td><td><a class="stock-link" href="stocks/688146.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">中船特气</span></a></td><td><code>688146</code></td><td><span class="score-chip score-chip-3">3</span></td><td><span class="ret-pill positive-bg">19.8%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜弱修复</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘349.8；5/10/20日线 275.2/231.4/186.4；主线20日线；观察区342.8-356.8。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线275.2继续持有；跌破5日线先减1/3；跌破10日线231.4减到半仓；跌破20日线186.4卖出大部或退出。</span></div>
-        <div><b>防守</b><span>180.8</span></div>
+    </span></div>
+                    </div>
+                  </details>
+                
+                  <details class="material-detail-card" id="material-detail-4-1">
+                    <summary>
+                      <span>球形硅微粉 / 电子填料</span>
+                      <small>联瑞新材 688300、华海诚科 688535</small>
+                    </summary>
+                    <div class="material-detail-body">
+                      <div><b>产业链作用</b><span>封装材料、覆铜板和先进封装相关填料，跟随AI封装和高端基板升级。</span></div>
+                      <div><b>核验重点</b><span>高端填料占比、先进封装客户、毛利率和扩产节奏。</span></div>
+                      <div><b>6月11日跟踪</b><span>
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688535.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">华海诚科</span></a>
+          <code>688535</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-4">4</span>
+          <span class="ret-pill positive-bg">4.2%</span>
+          <span class="op-badge op-hold">持有</span>
+        </div>
+        <div class="material-stock-note">持有为主；沿5日线118.8上行，不追高加仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill">电子特气 / 六氟化钨</span></td><td><a class="stock-link" href="stocks/688268.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">华特气体</span></a></td><td><code>688268</code></td><td><span class="score-chip score-chip-2">2</span></td><td><span class="ret-pill positive-bg">20.0%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>弱修复观察｜破位偏弱</span></div>
-        <div><b>判断</b><span>当前技术位置不够主动。</span></div>
-        <div><b>位置</b><span>收盘228.8；5/10/20日线 197.7/180.6/174.3；主线50日线；观察区224.2-233.4。</span></div>
-        <div><b>未建仓</b><span>只做备选，除非出现明确右侧信号，否则不进入6月12日优先清单。</span></div>
-        <div><b>已建仓</b><span>已有仓位以防守为主，弱于关键均线则降低仓位。</span></div>
-        <div><b>防守</b><span>169.1</span></div>
+    
+      <div class="material-stock-row">
+        <div class="material-stock-main">
+          <a class="stock-link" href="stocks/688300.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">联瑞新材</span></a>
+          <code>688300</code>
+        </div>
+        <div class="material-stock-meta">
+          <span class="score-chip score-chip-4">4</span>
+          <span class="ret-pill negative-bg">-1.4%</span>
+          <span class="op-badge op-hold">持有</span>
+        </div>
+        <div class="material-stock-note">继续持有；收盘不破5日线168.0不减仓</div>
       </div>
-    </td></tr><tr><td><span class="industry-pill">稀有金属锗 / 磷化铟 / 化合物半导体</span></td><td><a class="stock-link" href="stocks/002428.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-野">野</span><span class="stock-name-text">云南锗业</span></a></td><td><code>002428</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill positive-bg">10.0%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜强位置</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘88.2；5/10/20日线 83.5/85.4/86.6；主线50日线；观察区85.3-87.9。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线83.5继续持有；跌破5日线先减1/3；跌破10日线85.4减到半仓；跌破20日线86.6卖出大部或退出。</span></div>
-        <div><b>防守</b><span>84.0</span></div>
+    </span></div>
+                    </div>
+                  </details>
+                
       </div>
-    </td></tr><tr><td><span class="industry-pill">高纯石英材料</span></td><td><a class="stock-link" href="stocks/603688.html" target="_blank" rel="noopener"><span class="strategy-pill strategy-必">必</span><span class="stock-name-text">石英股份</span></a></td><td><code>603688</code></td><td><span class="score-chip score-chip-5">5</span></td><td><span class="ret-pill positive-bg">3.9%</span></td><td>
-      <div class="judgement-cell">
-        <div><b>状态</b><span>多头持仓趋势｜强位置</span></div>
-        <div><b>判断</b><span>趋势质量较好，更像持仓票，而不是新开仓追价点。</span></div>
-        <div><b>位置</b><span>收盘76.2；5/10/20日线 72.3/68.2/69.9；主线20日线；观察区等待回踩关键均线或放量确认后再定价。</span></div>
-        <div><b>未建仓</b><span>不追新仓，等回踩5/10日线或主支撑再说。</span></div>
-        <div><b>已建仓</b><span>收盘不破5日线72.3继续持有；跌破5日线先减1/3；跌破10日线68.2减到半仓；跌破20日线69.9卖出大部或退出。</span></div>
-        <div><b>防守</b><span>67.8</span></div>
-      </div>
-    </td></tr></tbody></table></div>
+    
     </section>
     <section class="module report-page" data-page="must" id="must-page">
       <h2>资料页：必选池介绍</h2>
@@ -3692,7 +4062,7 @@
       <strong>自媒体资料库</strong>
       <span>这里放用户手动投喂的独立信息源。主页只展示概述；原文、抽取文本和归档路径放在详情页。</span>
     </div>
-    <div class="table-wrap self-media-table"><table><thead><tr><th>归档时间</th><th>资料</th><th>来源</th><th>状态</th><th>概述</th><th>详情</th></tr></thead><tbody><tr><td><span class="source-time">2026-06-11T18:13:30</span></td><td><strong>供需失衡_细分环节打分排名_v1</strong><div class="source-tags">供需失衡,细分环节,涨价,瓶颈</div></td><td>自媒体/手动文档</td><td><span class="source-status">待核验</span></td><td>一句话结论：电子特气（核心 WF₆/光刻气）是本轮最极致的卡脖子环节，应为重仓主攻方向；光刻胶结构壁垒最高但属慢变量、宜试仓跟踪；MLCC 粉体与靶材为轻度失衡的观察清单；封装材料与湿电子化学品在环节口径下失衡不足，仅适合精选个股（华海诚科、格林达）。</td><td><a class="source-link" href="self_media/20260611_181330_3493ba86.html" target="_blank" rel="noopener">查看详情</a></td></tr></tbody></table></div>
+    <div class="table-wrap self-media-table"><table><thead><tr><th>归档时间</th><th>资料</th><th>来源</th><th>状态</th><th>概述</th><th>详情</th></tr></thead><tbody><tr><td><span class="source-time">2026-06-12T08:42:00</span></td><td><strong>谁是下一个？产业脉络传导：钨钼靶材、六氟化钨、钨钻针</strong><div class="source-tags">钨系耗材,六氟化钨,溅射靶材,PCB钻针,半导体材料</div></td><td>总府榕树</td><td><span class="source-status">线索待核验</span></td><td>这篇文章的核心价值不在于单点喊票，而是给出一套“中船特气式相似基因”的产业筛选方法：沿着供需传导、利润传导、产业地位传导和供应链瓶颈，寻找下一个可能从低关注度变成高弹性的电子料环节。 - 上游原料或关键金属存在供给约束，容易引发成本和利润迁移。 - 全球主要份额掌握在日系或海外供应商手里，国内突破后份额仍小。 - 下游先进封装、存储、晶圆制造或AI硬件扩产带来真实需求增量。 - 材料或耗材在制造过程中使用频繁，客户认证周期长，短期替代不容易。 - 存在远期技术替代路线，但替代节奏慢，短期不一定能缓解供需。 关注方向...</td><td><a class="source-link" href="self_media/20260612_083000_tungsten_material.html" target="_blank" rel="noopener">查看详情</a></td></tr><tr><td><span class="source-time">2026-06-11T20:45:00</span></td><td><strong>六氟化钨概念澄清：雅克/中钨/昊华/金宏</strong><div class="source-tags">六氟化钨,电子特气,澄清,持仓评分</div></td><td>微信群截图</td><td><span class="source-status">待核验</span></td><td>一句话结论：六氟化钨概念需要按真实业务暴露度重新打折；雅克科技直接否认相关业务，中钨高新只是上游钨粉影子，金宏气体现阶段无产能，昊华科技有真实业务但2025收入占比仅0.13%，必须核验2026产销。</td><td><a class="source-link" href="self_media/20260611_204500_wf6clarify.html" target="_blank" rel="noopener">查看详情</a></td></tr><tr><td><span class="source-time">2026-06-11T18:13:30</span></td><td><strong>供需失衡_细分环节打分排名_v1</strong><div class="source-tags">供需失衡,细分环节,涨价,瓶颈</div></td><td>自媒体/手动文档</td><td><span class="source-status">待核验</span></td><td>一句话结论：电子特气（核心 WF₆/光刻气）是本轮最极致的卡脖子环节，应为重仓主攻方向；光刻胶结构壁垒最高但属慢变量、宜试仓跟踪；MLCC 粉体与靶材为轻度失衡的观察清单；封装材料与湿电子化学品在环节口径下失衡不足，仅适合精选个股（华海诚科、格林达）。</td><td><a class="source-link" href="self_media/20260611_181330_3493ba86.html" target="_blank" rel="noopener">查看详情</a></td></tr></tbody></table></div>
     
     </section>
   </div>
