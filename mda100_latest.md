@@ -1,12 +1,12 @@
 ---
-title: mda100_20260612_132104
+title: mda100_20260612_165311
 date: 2026-06-11
 source: Futu OpenD
 market_data_marker: VERIFIED_FUTU_OPEND
 delivery_verification_marker: DOUBLE_VERIFIED_MDA100_DATA_INDEX_MATCH
 ---
 
-# mda100_20260612_132104
+# mda100_20260612_165311
 
 ## 第一模块：mda100指数
 
@@ -195,8 +195,8 @@ delivery_verification_marker: DOUBLE_VERIFIED_MDA100_DATA_INDEX_MATCH
 - 核心池数量：100
 - 可评分数量：98
 - 行情校验：VERIFIED_FUTU_OPEND
-- 生成时间：2026-06-12T13:21:04
-- 报告版本：14:30盘中版，14:30任务或手动盘中快照
+- 生成时间：2026-06-12T16:53:11
+- 报告版本：16:00收盘版，16:00后收盘核验
 
 
 ## 资料页：半导体材料
