@@ -5,14 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>中际旭创_300308_mda100资料页</title>
   <style>
-    :root { --ink:#101418; --muted:#667085; --line:#d8dee7; --head:#172033; --red:#b42318; --green:#0f766e; }
+    :root { --bg:#f4f4f1; --surface:#fff; --border:#e5e5e1; --ink:#101418; --muted:#667085; --line:#d8dee7; --head:#172033; --primary:#1c3db8; --red:#b42318; --green:#0f766e; }
     * { box-sizing:border-box; }
-    body { margin:0; background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 48%,#fff7ed 100%); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; font-size:14px; line-height:1.65; }
-    .shell { max-width:1180px; margin:0 auto; padding:22px; }
-    .hero { background:#fff; border:1px solid #e2e8f0; border-top:6px solid #991b1b; border-radius:16px; padding:24px; box-shadow:0 12px 28px rgba(15,23,42,.10); }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; font-size:14px; line-height:1.65; }
+
+    .site-nav { height:56px; position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:18px; padding:0 max(18px,calc((100vw - 1500px)/2)); background:rgba(255,255,255,.94); border-bottom:1px solid var(--border,#e5e7eb); backdrop-filter:blur(14px); }
+    .site-logo { display:inline-flex; align-items:center; gap:9px; color:var(--ink,#111827); text-decoration:none; font-weight:950; letter-spacing:-.01em; }
+    .site-logo-mark { width:30px; height:30px; display:inline-flex; align-items:center; justify-content:center; border-radius:9px; background:#1c3db8; color:#fff; font-family:Georgia,serif; font-size:21px; line-height:1; }
+    .site-links { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+    .site-links a { display:inline-flex; align-items:center; min-height:34px; border-radius:999px; padding:0 12px; color:#334155; text-decoration:none; font-size:13px; font-weight:900; border:1px solid transparent; }
+    .site-links a:hover { border-color:#bfdbfe; background:#eff6ff; color:#1c3db8; }
+    .site-links a[aria-current="page"] { background:#111827; color:#fff; border-color:#111827; }
+    @media (max-width:720px) { .site-nav { position:static; height:auto; padding:10px 14px; align-items:flex-start; flex-direction:column; } .site-links a { min-height:32px; font-size:12px; } }
+
+    .shell { max-width:1180px; margin:0 auto; padding:24px 22px 42px; }
+    .hero { background:#fff; border:1px solid var(--border); border-radius:18px; padding:24px; box-shadow:0 14px 32px rgba(15,23,42,.06); }
     .topbar { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; margin-bottom:14px; }
     .back { display:inline-flex; border:1px solid #dbe3ef; background:#f8fafc; color:#1e3a8a; border-radius:999px; padding:8px 12px; text-decoration:none; font-weight:850; }
-    h1 { margin:0; font-size:32px; line-height:1.15; }
+    h1 { margin:0; font-size:34px; line-height:1.15; letter-spacing:-.01em; font-family:Georgia,"Times New Roman","Noto Serif SC",serif; }
     .code { margin-top:6px; color:#667085; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:15px; }
     .summary { margin:14px 0 0; color:#344054; font-size:15px; max-width:980px; }
     .meta-strip { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
@@ -28,6 +38,13 @@
     .strategy-必 { color:#991b1b; background:#fee2e2; border-color:#fecaca; }
     .strategy-野 { color:#1e40af; background:#dbeafe; border-color:#bfdbfe; }
     .strategy-pill.tag-link { text-decoration:none; }
+    .recap-info-card { margin-top:16px; background:#fff; border:1px solid var(--border); border-radius:16px; overflow:hidden; }
+    .recap-info-title { padding:12px 14px; border-bottom:1px solid var(--border); font-weight:950; color:#172033; }
+    .recap-info-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .recap-info-item { min-height:74px; padding:12px 14px; border-right:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .recap-info-item span { display:block; color:#667085; font-size:12px; font-weight:850; margin-bottom:6px; }
+    .recap-info-item strong { display:flex; flex-wrap:wrap; gap:6px; align-items:center; font-size:16px; color:#172033; }
+    .recap-chip { display:inline-flex; align-items:center; border-radius:999px; padding:4px 9px; font-size:12px; font-weight:900; text-decoration:none; border:1px solid #fed7aa; background:#fff7ed; color:#9a3412; }
     .grid { display:grid; grid-template-columns:1.15fr .85fr; gap:16px; margin-top:16px; }
     .panel { background:#fff; border:1px solid #e2e8f0; border-radius:14px; padding:16px; box-shadow:0 8px 18px rgba(15,23,42,.05); }
     h2 { margin:0 0 10px; font-size:18px; border-bottom:1px solid #e5e7eb; padding-bottom:8px; }
@@ -67,10 +84,19 @@
     .detail-judgement span { color:#344054; }
     .verify { margin-top:14px; color:#475467; font-size:12px; }
     .verify code { color:#14532d; background:#dcfce7; }
-    @media (max-width:900px) { .grid{grid-template-columns:1fr;} .topbar{display:block;} h1{font-size:26px;} }
+    @media (max-width:900px) { .grid,.recap-info-grid{grid-template-columns:1fr;} .topbar{display:block;} h1{font-size:26px;} }
   </style>
 </head>
 <body>
+  
+  <nav class="site-nav" aria-label="站点导航">
+    <a class="site-logo" href="../index.html"><span class="site-logo-mark">m</span><span>mda AI Tracker</span></a>
+    <div class="site-links">
+      <a href="../index.html" aria-current="page">mda100 A股科技链</a>
+      <a href="../mdus100.html">mdus100 美股AI科技链</a>
+    </div>
+  </nav>
+
   <main class="shell">
     <section class="hero">
       <div class="topbar">
@@ -78,7 +104,7 @@
           <h1>中际旭创</h1>
           <div class="code">300308 · SZ.300308</div>
         </div>
-        <a class="back" href="javascript:history.back()">返回报告</a>
+        <a class="back" href="../index.html#details">返回报告</a>
       </div>
       <div class="meta-strip">
         <a class="strategy-pill strategy-必 tag-link" href="../tags/t_5b-F.html" title="查看必标签下的股票">必</a>
@@ -87,7 +113,11 @@
         <span class="pill">6月12日评分 <span class="score-chip score-chip-5">5</span></span>
       </div>
       <p class="summary">中际旭创 属于 光通信 / 高速光模块/CPO。高速光模块核心标的 在 mda100 中当前按“必”处理：AI/机器人核心物理链的瓶颈供应商，优先作为核心观察。 它的主要观察点是：高速光模块 重要性说明：高速光模块 核验重点：继续用公告、财报、订单/客户、毛利率、供需变化和关键均线位置交叉核验。</p>
-      <div class="verify">生成时间 2026-06-12T18:21:08；行情标记 <code>VERIFIED_FUTU_OPEND</code>；发布校验 <code>DOUBLE_VERIFIED_MDA100_DATA_INDEX_MATCH</code></div>
+      <div class="verify">生成时间 2026-06-12T23:25:25；行情标记 <code>VERIFIED_FUTU_OPEND</code>；发布校验 <code>DOUBLE_VERIFIED_MDA100_DATA_INDEX_MATCH</code></div>
+      <section class="recap-info-card" aria-label="个股资料摘要">
+        <div class="recap-info-title">个股资料摘要</div>
+        <div class="recap-info-grid"><div class="recap-info-item"><span>股票代码</span><strong><code>300308</code></strong></div><div class="recap-info-item"><span>类型</span><strong><a class="strategy-pill strategy-必 tag-link" href="../tags/t_5b-F.html" title="查看必标签下的股票">必</a></strong></div><div class="recap-info-item"><span>细分赛道</span><strong><a class="recap-chip tag-link" href="../tags/t_6auY6YCf5YWJ5qih5Z2XL0NQTw.html">高速光模块/CPO</a></strong></div><div class="recap-info-item"><span>核心标签</span><strong><a class="recap-chip tag-link" href="../tags/t_5pyq5omT5qCH562-.html">未打标签</a></strong></div><div class="recap-info-item"><span>6月12日评分</span><strong><span class="score-chip score-chip-5">5</span></strong></div><div class="recap-info-item"><span>6月12日涨跌</span><strong><span class="ret-pill neutral-bg">0.0%</span></strong></div><div class="recap-info-item"><span>技术状态</span><strong>重点候选</strong></div><div class="recap-info-item"><span>6月15日操作</span><strong><span class="op-badge op-neutral">强候选</span></strong></div></div>
+      </section>
     </section>
     <div class="grid">
       <section class="panel">

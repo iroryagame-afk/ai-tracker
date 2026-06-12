@@ -5,15 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>标签：光子</title>
   <style>
-    body { margin:0; background:#f6f8fb; color:#111827; font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; }
+    :root { --bg:#f4f4f1; --surface:#fff; --border:#e5e5e1; --ink:#101418; --primary:#1c3db8; }
+    body { margin:0; background:var(--bg); color:#111827; font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; }
+
+    .site-nav { height:56px; position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:18px; padding:0 max(18px,calc((100vw - 1500px)/2)); background:rgba(255,255,255,.94); border-bottom:1px solid var(--border,#e5e7eb); backdrop-filter:blur(14px); }
+    .site-logo { display:inline-flex; align-items:center; gap:9px; color:var(--ink,#111827); text-decoration:none; font-weight:950; letter-spacing:-.01em; }
+    .site-logo-mark { width:30px; height:30px; display:inline-flex; align-items:center; justify-content:center; border-radius:9px; background:#1c3db8; color:#fff; font-family:Georgia,serif; font-size:21px; line-height:1; }
+    .site-links { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+    .site-links a { display:inline-flex; align-items:center; min-height:34px; border-radius:999px; padding:0 12px; color:#334155; text-decoration:none; font-size:13px; font-weight:900; border:1px solid transparent; }
+    .site-links a:hover { border-color:#bfdbfe; background:#eff6ff; color:#1c3db8; }
+    .site-links a[aria-current="page"] { background:#111827; color:#fff; border-color:#111827; }
+    @media (max-width:720px) { .site-nav { position:static; height:auto; padding:10px 14px; align-items:flex-start; flex-direction:column; } .site-links a { min-height:32px; font-size:12px; } }
+
     .shell { max-width:1180px; margin:0 auto; padding:24px; }
-    .hero { background:linear-gradient(135deg,#172033 0%,#1e3a8a 100%); color:#fff; border-radius:20px; padding:24px; box-shadow:0 16px 34px rgba(15,23,42,.18); }
-    h1 { margin:0; font-size:34px; }
-    .subtitle { margin-top:8px; color:#dbeafe; }
+    .hero { background:#fff; color:#111827; border:1px solid var(--border); border-radius:18px; padding:24px; box-shadow:0 14px 32px rgba(15,23,42,.06); }
+    h1 { margin:0; font-size:34px; font-family:Georgia,"Times New Roman","Noto Serif SC",serif; letter-spacing:-.01em; }
+    .subtitle { margin-top:8px; color:#64748b; }
     .nav { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
     .nav a,.related-tag { display:inline-flex; border-radius:999px; padding:7px 11px; text-decoration:none; font-weight:900; }
-    .nav a { color:#dbeafe; border:1px solid rgba(219,234,254,.55); }
-    .nav a:hover { background:rgba(255,255,255,.12); }
+    .nav a { color:#1e40af; border:1px solid #bfdbfe; background:#eff6ff; }
+    .nav a:hover { background:#dbeafe; }
     .kpis { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:16px 0; }
     .kpi { background:#fff; border:1px solid #dbe3ef; border-radius:14px; padding:14px; }
     .kpi span { display:block; color:#64748b; font-weight:850; }
@@ -47,10 +58,19 @@
   </style>
 </head>
 <body>
+  
+  <nav class="site-nav" aria-label="站点导航">
+    <a class="site-logo" href="../index.html"><span class="site-logo-mark">m</span><span>mda AI Tracker</span></a>
+    <div class="site-links">
+      <a href="../index.html" aria-current="page">mda100 A股科技链</a>
+      <a href="../mdus100.html">mdus100 美股AI科技链</a>
+    </div>
+  </nav>
+
   <main class="shell">
     <section class="hero">
       <h1>标签：光子</h1>
-      <div class="subtitle">统一标签页，汇总 A 股 mda100 与美股 mdus100 中归属该标签的股票。生成时间：2026-06-12T18:21:08</div>
+      <div class="subtitle">统一标签页，汇总 A 股 mda100 与美股 mdus100 中归属该标签的股票。生成时间：2026-06-12T23:25:25</div>
       <nav class="nav">
         <a href="../index.html">mda100 A股科技链</a>
         <a href="../mdus100.html">mdus100 美股AI科技链</a>
