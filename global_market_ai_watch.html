@@ -1,0 +1,1498 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>港股 / 美股 AI 科技链观察</title>
+  <style>
+    :root {
+      --ink:#101418; --muted:#64748b; --paper:#f5f7fb; --panel:#ffffff; --line:#d8dee8;
+      --red:#991b1b; --red-bg:#fee2e2; --blue:#1e40af; --blue-bg:#dbeafe; --green:#0f766e;
+      --amber:#92400e; --soft:#eef2f7;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; line-height:1.55; letter-spacing:0; font-size:15px; }
+    .shell { max-width:1480px; margin:0 auto; padding:22px; }
+    header { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:16px; }
+    h1 { margin:0; font-size:28px; line-height:1.2; }
+    h2 { margin:0 0 12px; font-size:20px; }
+    h3 { margin:0; font-size:16px; }
+    p { margin:6px 0 0; color:var(--muted); }
+    code { background:#eef2f7; padding:2px 5px; border-radius:5px; color:#334155; }
+    .stamp { text-align:right; color:var(--muted); font-size:13px; }
+    .site-links { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .site-links a { display:inline-flex; align-items:center; min-height:34px; border:1px solid #bfdbfe; background:#eff6ff; color:#1e40af; border-radius:999px; padding:7px 12px; text-decoration:none; font-size:12px; font-weight:900; }
+    .site-links a:hover { background:#dbeafe; border-color:#93c5fd; }
+    .toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:14px 0 18px; }
+    .segmented { display:inline-flex; border:1px solid var(--line); background:var(--panel); border-radius:8px; overflow:hidden; }
+    .segmented button { border:0; background:transparent; padding:9px 13px; font-weight:800; color:#475569; cursor:pointer; }
+    .segmented button.active { background:#111827; color:white; }
+    .check { display:inline-flex; align-items:center; gap:6px; min-height:38px; padding:8px 10px; border:1px solid var(--line); background:var(--panel); border-radius:8px; font-weight:800; color:#334155; }
+    .search { min-height:38px; width:min(360px, 100%); border:1px solid var(--line); border-radius:8px; padding:8px 10px; font:inherit; }
+    .summary-panel { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; margin-bottom:16px; }
+    .summary-panel h2 { margin-bottom:4px; }
+    .summary-stats { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:10px; margin-top:14px; }
+    .summary-stats div, .metric-grid div { background:var(--soft); border:1px solid #e2e8f0; border-radius:8px; padding:9px; }
+    .summary-stats span, .metric-grid span, .score-box span { display:block; color:var(--muted); font-size:12px; font-weight:800; }
+    .summary-stats strong { display:block; margin-top:2px; font-size:18px; }
+    .policy-strip { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .policy-strip span { background:#ecfeff; color:#155e75; border:1px solid #a5f3fc; border-radius:999px; padding:5px 9px; font-size:12px; font-weight:800; }
+    .cards { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px; }
+    .stock-card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:14px; display:flex; flex-direction:column; gap:10px; min-height:300px; }
+    .score-hot { border-top:4px solid #ef4444; }
+    .score-watch { border-top:4px solid #0f766e; }
+    .score-cool { border-top:4px solid #64748b; }
+    .score-empty { border-top:4px solid #cbd5e1; }
+    .card-head { display:flex; justify-content:space-between; gap:12px; }
+    .card-head h3 { display:flex; align-items:center; flex-wrap:wrap; gap:7px; }
+    .score-box { min-width:70px; text-align:center; border:1px solid var(--line); border-radius:8px; padding:8px; background:#fbfdff; }
+    .score-box strong { display:block; font-size:20px; }
+    .pill { display:inline-flex; align-items:center; justify-content:center; min-width:30px; border-radius:999px; padding:3px 8px; font-size:12px; font-weight:900; }
+    .pill.must { color:var(--red); background:var(--red-bg); border:1px solid #fecaca; }
+    .pill.wild { color:var(--blue); background:var(--blue-bg); border:1px solid #bfdbfe; }
+    .metric-grid { display:grid; grid-template-columns:repeat(6, minmax(0,1fr)); gap:7px; }
+    .metric-grid strong { display:block; font-size:16px; margin-top:2px; }
+    .trade-line { display:flex; flex-wrap:wrap; gap:7px; }
+    .trade-line span { background:#f8fafc; border:1px solid #e2e8f0; border-radius:999px; padding:4px 8px; color:#334155; font-size:12px; font-weight:800; }
+    .judgement { color:#111827; font-weight:900; }
+    .reason, .risk, .note { font-size:13px; }
+    .risk strong { color:var(--amber); }
+    .table-section, .interface-section { margin-top:18px; background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:16px; }
+    .table-wrap { overflow:auto; border:1px solid var(--line); border-radius:8px; background:white; }
+    table { width:100%; border-collapse:collapse; min-width:880px; }
+    th, td { padding:10px 12px; border-bottom:1px solid #edf2f7; text-align:left; vertical-align:top; }
+    th { background:#172033; color:white; font-size:12px; }
+    .interface-grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; margin-bottom:14px; }
+    .interface-card { background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:13px; }
+    .schema { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; color:#334155; overflow-wrap:anywhere; }
+    .url-cell { max-width:420px; overflow-wrap:anywhere; }
+    [hidden] { display:none !important; }
+    @media (max-width:1100px) { .cards { grid-template-columns:repeat(2, minmax(0,1fr)); } .summary-stats { grid-template-columns:repeat(2, minmax(0,1fr)); } }
+    @media (max-width:760px) { .shell { padding:14px; } header { display:block; } .stamp { text-align:left; margin-top:8px; } .cards, .interface-grid { grid-template-columns:1fr; } .metric-grid { grid-template-columns:repeat(3, minmax(0,1fr)); } h1 { font-size:23px; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <h1>港股 / 美股 AI 科技链观察</h1>
+        <p>基于 mda100 的必选 / 打野框架扩展；美股只做图形技术曲线分析。</p>
+        <div class="site-links" aria-label="跨页面入口">
+          <a href="index.html">A股 mda100</a>
+          <a href="global_market_ai_watch.html">港股入口</a>
+          <a href="us_market_technical_watch.html">美股纯技术页</a>
+        </div>
+      </div>
+      <div class="stamp">生成时间<br>2026-06-12T16:25:03</div>
+    </header>
+
+    <div class="toolbar">
+      <div class="segmented" aria-label="市场切换">
+        <button type="button" class="active" data-market-button="HK">港股</button>
+        <button type="button" data-market-button="US">美股</button>
+      </div>
+      <label class="check"><input type="checkbox" value="必" checked> 必选</label>
+      <label class="check"><input type="checkbox" value="野" checked> 打野</label>
+      <input class="search" id="searchBox" placeholder="搜索代码、公司、方向">
+      <a class="check" href="#interfaces">信息接口</a>
+    </div>
+
+    
+    <section class="summary-panel" data-market-panel="HK">
+      <div>
+        <h2>港股 AI 科技链观察</h2>
+        <p>沿用 A 股模型的必选 / 打野分层，短期节奏由技术曲线决定。</p>
+      </div>
+      <div class="summary-stats">
+        <div><span>必选</span><strong>6</strong></div>
+        <div><span>打野</span><strong>6</strong></div>
+        <div><span>已评分</span><strong>0</strong></div>
+        <div><span>当前第一</span><strong>等待行情输入</strong></div>
+      </div>
+      <div class="policy-strip">
+        <span>评分：技术曲线 55% + 产业纯度 20% + 确定性 15% + 弹性 10%</span>
+        <span>RSS 和人工备注可作为旁路信息展示，但页面排序仍以结构评分和技术曲线为主。</span>
+      </div>
+    </section>
+    
+    
+    <section class="summary-panel" data-market-panel="US">
+      <div>
+        <h2>美股纯技术曲线观察</h2>
+        <p>按要求剔除情绪面，不使用新闻热度、社媒讨论或主观催化做排序。</p>
+      </div>
+      <div class="summary-stats">
+        <div><span>必选</span><strong>10</strong></div>
+        <div><span>打野</span><strong>10</strong></div>
+        <div><span>已评分</span><strong>0</strong></div>
+        <div><span>当前第一</span><strong>等待行情输入</strong></div>
+      </div>
+      <div class="policy-strip">
+        <span>评分：技术曲线 100%</span>
+        <span>RSS 仅作为预留信息接口展示，不进入美股评分。</span>
+      </div>
+    </section>
+    
+
+    <section class="cards" id="cards">
+      
+        <article class="stock-card score-empty" data-market="HK" data-pool="必" data-search="腾讯控股 00700 AI应用/云/游戏">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>腾讯控股</span> <code>00700</code></h3>
+              <p>港股互联网AI核心 · AI应用分发、云、游戏与广告生态</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>5</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>5</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">港股AI应用与现金流核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="HK" data-pool="必" data-search="阿里巴巴-W 09988 AI云/电商">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>阿里巴巴-W</span> <code>09988</code></h3>
+              <p>港股AI云核心 · 通义与云基础设施、电商现金流底座</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>5</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>4</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">港股AI云核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="HK" data-pool="必" data-search="中芯国际 00981 半导体制造">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>中芯国际</span> <code>00981</code></h3>
+              <p>港股半导体制造 · 中国晶圆代工底座</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>5</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>4</strong></div>
+            <div><span>风险</span><strong>4</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">港股半导体制造核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="HK" data-pool="必" data-search="华虹半导体 01347 特色工艺制造">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>华虹半导体</span> <code>01347</code></h3>
+              <p>港股半导体制造 · 功率/模拟/特色工艺晶圆代工</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>4</strong></div>
+            <div><span>风险</span><strong>4</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">特色工艺制造核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="HK" data-pool="必" data-search="小米集团-W 01810 AI终端/智能汽车">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>小米集团-W</span> <code>01810</code></h3>
+              <p>港股AI终端 · 手机IoT汽车三端入口</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>5</strong></div>
+            <div><span>确定性</span><strong>4</strong></div>
+            <div><span>风险</span><strong>4</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">AI终端与汽车弹性核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="HK" data-pool="必" data-search="舜宇光学科技 02382 光学/机器人视觉">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>舜宇光学科技</span> <code>02382</code></h3>
+              <p>港股精密光学 · 手机车载与机器视觉光学链</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>4</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">光学硬件核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="HK" data-pool="野" data-search="美团-W 03690 本地生活AI应用">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>美团-W</span> <code>03690</code></h3>
+              <p>港股互联网弹性 · 本地生活平台与AI效率改善</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>4</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">平台弹性仓</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="HK" data-pool="野" data-search="京东集团-SW 09618 电商/物流AI">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>京东集团-SW</span> <code>09618</code></h3>
+              <p>港股互联网弹性 · 供应链与物流自动化</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>3</strong></div>
+            <div><span>确定性</span><strong>4</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">低估值修复弹性</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="HK" data-pool="野" data-search="理想汽车-W 02015 智能汽车">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>理想汽车-W</span> <code>02015</code></h3>
+              <p>港股智能车 · 新能源车与智能座舱</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>5</strong></div>
+            <div><span>确定性</span><strong>3</strong></div>
+            <div><span>风险</span><strong>4</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">汽车弹性仓</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="HK" data-pool="野" data-search="小鹏汽车-W 09868 智能驾驶">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>小鹏汽车-W</span> <code>09868</code></h3>
+              <p>港股智能车 · 智能驾驶与新能源车平台</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>5</strong></div>
+            <div><span>确定性</span><strong>3</strong></div>
+            <div><span>风险</span><strong>5</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">高波动打野</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="HK" data-pool="野" data-search="比亚迪电子 00285 AI终端制造">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>比亚迪电子</span> <code>00285</code></h3>
+              <p>港股电子制造 · 消费电子与AI终端制造</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>3</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>4</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">终端制造弹性</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="HK" data-pool="野" data-search="快手-W 01024 短视频AI应用">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>快手-W</span> <code>01024</code></h3>
+              <p>港股互联网弹性 · 内容推荐与AI广告</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>3</strong></div>
+            <div><span>弹性</span><strong>5</strong></div>
+            <div><span>确定性</span><strong>3</strong></div>
+            <div><span>风险</span><strong>4</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">高弹性交易型</p>
+        </article>
+        
+      
+        <article class="stock-card score-empty" data-market="US" data-pool="必" data-search="NVIDIA NVDA AI加速器">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>NVIDIA</span> <code>NVDA</code></h3>
+              <p>GPU/AI算力核心 · AI训练推理芯片与CUDA生态</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>5</strong></div>
+            <div><span>弹性</span><strong>5</strong></div>
+            <div><span>确定性</span><strong>5</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">美股AI硬件龙一</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="必" data-search="Microsoft MSFT AI云/软件">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>Microsoft</span> <code>MSFT</code></h3>
+              <p>AI云平台核心 · Azure与Copilot软件生态</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>5</strong></div>
+            <div><span>弹性</span><strong>3</strong></div>
+            <div><span>确定性</span><strong>5</strong></div>
+            <div><span>风险</span><strong>2</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">美股AI平台核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="必" data-search="Alphabet GOOGL AI模型/广告云">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>Alphabet</span> <code>GOOGL</code></h3>
+              <p>AI平台核心 · 模型、搜索、广告与云</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>5</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>5</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">AI模型与广告核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="必" data-search="Amazon AMZN AI云/电商">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>Amazon</span> <code>AMZN</code></h3>
+              <p>AWS云核心 · AWS与电商现金流底座</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>5</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>5</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">AI云核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="必" data-search="Meta Platforms META AI应用/广告">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>Meta Platforms</span> <code>META</code></h3>
+              <p>AI应用核心 · 广告推荐、模型和社交分发</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>5</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>5</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">AI应用与广告核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="必" data-search="Broadcom AVGO AI ASIC/网络芯片">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>Broadcom</span> <code>AVGO</code></h3>
+              <p>AI半导体核心 · 定制ASIC、网络芯片与VMware</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>5</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>5</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">AI ASIC核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="必" data-search="TSMC TSM 先进制程">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>TSMC</span> <code>TSM</code></h3>
+              <p>半导体制造核心 · 先进制程代工与先进封装</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>5</strong></div>
+            <div><span>弹性</span><strong>3</strong></div>
+            <div><span>确定性</span><strong>5</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">全球先进制造核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="必" data-search="ASML ASML 光刻设备">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>ASML</span> <code>ASML</code></h3>
+              <p>半导体设备核心 · EUV/DUV光刻设备</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>5</strong></div>
+            <div><span>弹性</span><strong>3</strong></div>
+            <div><span>确定性</span><strong>5</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">全球设备核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="必" data-search="AMD AMD AI加速器/CPU">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>AMD</span> <code>AMD</code></h3>
+              <p>AI芯片核心 · AI GPU、CPU与数据中心芯片</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>5</strong></div>
+            <div><span>确定性</span><strong>4</strong></div>
+            <div><span>风险</span><strong>4</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">AI芯片弹性核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="必" data-search="Oracle ORCL AI云/数据库">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill must">必</span><span>Oracle</span> <code>ORCL</code></h3>
+              <p>AI云软件核心 · 数据库与AI云基础设施</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>4</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">AI云基础设施核心</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="野" data-search="Arista Networks ANET AI网络设备">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>Arista Networks</span> <code>ANET</code></h3>
+              <p>AI网络弹性 · 数据中心交换机与网络系统</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>4</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">AI网络弹性</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="野" data-search="CrowdStrike CRWD AI安全软件">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>CrowdStrike</span> <code>CRWD</code></h3>
+              <p>安全软件弹性 · 端点安全与AI安全运营</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>4</strong></div>
+            <div><span>风险</span><strong>4</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">软件趋势股</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="野" data-search="Palantir PLTR AI软件">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>Palantir</span> <code>PLTR</code></h3>
+              <p>AI软件弹性 · AIP与政府/企业数据智能</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>5</strong></div>
+            <div><span>确定性</span><strong>3</strong></div>
+            <div><span>风险</span><strong>5</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">高估值高弹性</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="野" data-search="Arm Holdings ARM 芯片IP">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>Arm Holdings</span> <code>ARM</code></h3>
+              <p>半导体IP弹性 · CPU IP与端侧AI生态</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>5</strong></div>
+            <div><span>确定性</span><strong>3</strong></div>
+            <div><span>风险</span><strong>5</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">高估值弹性</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="野" data-search="Marvell Technology MRVL AI互联/ASIC">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>Marvell Technology</span> <code>MRVL</code></h3>
+              <p>AI半导体弹性 · 光互联、交换、定制芯片</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>5</strong></div>
+            <div><span>确定性</span><strong>3</strong></div>
+            <div><span>风险</span><strong>4</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">AI互联弹性</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="野" data-search="Micron Technology MU HBM/存储">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>Micron Technology</span> <code>MU</code></h3>
+              <p>AI存储弹性 · DRAM/HBM与存储周期</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>5</strong></div>
+            <div><span>确定性</span><strong>3</strong></div>
+            <div><span>风险</span><strong>4</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">存储周期弹性</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="野" data-search="Super Micro Computer SMCI AI服务器">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>Super Micro Computer</span> <code>SMCI</code></h3>
+              <p>AI服务器弹性 · AI服务器整机与液冷</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>5</strong></div>
+            <div><span>确定性</span><strong>3</strong></div>
+            <div><span>风险</span><strong>5</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">高波动服务器弹性</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="野" data-search="Tesla TSLA 自动驾驶/机器人">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>Tesla</span> <code>TSLA</code></h3>
+              <p>自动驾驶弹性 · FSD、机器人与智能车平台</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>4</strong></div>
+            <div><span>弹性</span><strong>5</strong></div>
+            <div><span>确定性</span><strong>3</strong></div>
+            <div><span>风险</span><strong>5</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">事件驱动高波动</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="野" data-search="Dell Technologies DELL AI服务器">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>Dell Technologies</span> <code>DELL</code></h3>
+              <p>AI服务器弹性 · 企业服务器与AI服务器</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>3</strong></div>
+            <div><span>弹性</span><strong>4</strong></div>
+            <div><span>确定性</span><strong>4</strong></div>
+            <div><span>风险</span><strong>3</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">服务器弹性</p>
+        </article>
+        
+
+        <article class="stock-card score-empty" data-market="US" data-pool="野" data-search="AppLovin APP AI广告应用">
+          <div class="card-head">
+            <div>
+              <h3><span class="pill wild">野</span><span>AppLovin</span> <code>APP</code></h3>
+              <p>AI应用弹性 · AI广告投放与应用变现</p>
+            </div>
+            <div class="score-box"><strong>NA</strong><span>综合分</span></div>
+          </div>
+          <div class="metric-grid">
+            <div><span>技术</span><strong>NA</strong></div>
+            <div><span>纯度</span><strong>3</strong></div>
+            <div><span>弹性</span><strong>5</strong></div>
+            <div><span>确定性</span><strong>3</strong></div>
+            <div><span>风险</span><strong>5</strong></div>
+            <div><span>RSS</span><strong>0</strong></div>
+          </div>
+          <div class="trade-line">
+            <span>待输入</span>
+            <span>输入 close/MA 后计算</span>
+            <span>收盘 待输入</span>
+            <span>涨跌 -%</span>
+          </div>
+          <p class="judgement">等待手动行情</p>
+          <p class="reason"><strong>信号：</strong>暂无可评分技术数据</p>
+          <p class="risk"><strong>风险：</strong>不做主动操作判断</p>
+          <p class="note">高弹性应用股</p>
+        </article>
+        
+    </section>
+
+    
+        <section class="table-section" data-market-panel="HK">
+          <h2>必选池 · 港股 AI 科技链观察</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>股票</th><th>代码</th><th>方向</th><th>综合分</th><th>技术状态</th><th>定位</th></tr></thead>
+              <tbody>
+            <tr>
+              <td><span class="pill must">必</span> 腾讯控股</td>
+              <td><code>00700</code></td>
+              <td>AI应用/云/游戏</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>港股AI应用与现金流核心</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill must">必</span> 阿里巴巴-W</td>
+              <td><code>09988</code></td>
+              <td>AI云/电商</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>港股AI云核心</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill must">必</span> 中芯国际</td>
+              <td><code>00981</code></td>
+              <td>半导体制造</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>港股半导体制造核心</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill must">必</span> 华虹半导体</td>
+              <td><code>01347</code></td>
+              <td>特色工艺制造</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>特色工艺制造核心</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill must">必</span> 小米集团-W</td>
+              <td><code>01810</code></td>
+              <td>AI终端/智能汽车</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>AI终端与汽车弹性核心</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill must">必</span> 舜宇光学科技</td>
+              <td><code>02382</code></td>
+              <td>光学/机器人视觉</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>光学硬件核心</td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+        </section>
+        
+
+        <section class="table-section" data-market-panel="HK">
+          <h2>打野池 · 港股 AI 科技链观察</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>股票</th><th>代码</th><th>方向</th><th>综合分</th><th>技术状态</th><th>定位</th></tr></thead>
+              <tbody>
+            <tr>
+              <td><span class="pill wild">野</span> 美团-W</td>
+              <td><code>03690</code></td>
+              <td>本地生活AI应用</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>平台弹性仓</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill wild">野</span> 京东集团-SW</td>
+              <td><code>09618</code></td>
+              <td>电商/物流AI</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>低估值修复弹性</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill wild">野</span> 理想汽车-W</td>
+              <td><code>02015</code></td>
+              <td>智能汽车</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>汽车弹性仓</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill wild">野</span> 小鹏汽车-W</td>
+              <td><code>09868</code></td>
+              <td>智能驾驶</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>高波动打野</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill wild">野</span> 比亚迪电子</td>
+              <td><code>00285</code></td>
+              <td>AI终端制造</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>终端制造弹性</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill wild">野</span> 快手-W</td>
+              <td><code>01024</code></td>
+              <td>短视频AI应用</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>高弹性交易型</td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+        </section>
+        
+    
+        <section class="table-section" data-market-panel="US">
+          <h2>必选池 · 美股纯技术曲线观察</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>股票</th><th>代码</th><th>方向</th><th>综合分</th><th>技术状态</th><th>定位</th></tr></thead>
+              <tbody>
+            <tr>
+              <td><span class="pill must">必</span> NVIDIA</td>
+              <td><code>NVDA</code></td>
+              <td>AI加速器</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>美股AI硬件龙一</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill must">必</span> Microsoft</td>
+              <td><code>MSFT</code></td>
+              <td>AI云/软件</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>美股AI平台核心</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill must">必</span> Alphabet</td>
+              <td><code>GOOGL</code></td>
+              <td>AI模型/广告云</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>AI模型与广告核心</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill must">必</span> Amazon</td>
+              <td><code>AMZN</code></td>
+              <td>AI云/电商</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>AI云核心</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill must">必</span> Meta Platforms</td>
+              <td><code>META</code></td>
+              <td>AI应用/广告</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>AI应用与广告核心</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill must">必</span> Broadcom</td>
+              <td><code>AVGO</code></td>
+              <td>AI ASIC/网络芯片</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>AI ASIC核心</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill must">必</span> TSMC</td>
+              <td><code>TSM</code></td>
+              <td>先进制程</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>全球先进制造核心</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill must">必</span> ASML</td>
+              <td><code>ASML</code></td>
+              <td>光刻设备</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>全球设备核心</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill must">必</span> AMD</td>
+              <td><code>AMD</code></td>
+              <td>AI加速器/CPU</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>AI芯片弹性核心</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill must">必</span> Oracle</td>
+              <td><code>ORCL</code></td>
+              <td>AI云/数据库</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>AI云基础设施核心</td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+        </section>
+        
+
+        <section class="table-section" data-market-panel="US">
+          <h2>打野池 · 美股纯技术曲线观察</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>股票</th><th>代码</th><th>方向</th><th>综合分</th><th>技术状态</th><th>定位</th></tr></thead>
+              <tbody>
+            <tr>
+              <td><span class="pill wild">野</span> Arista Networks</td>
+              <td><code>ANET</code></td>
+              <td>AI网络设备</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>AI网络弹性</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill wild">野</span> CrowdStrike</td>
+              <td><code>CRWD</code></td>
+              <td>AI安全软件</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>软件趋势股</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill wild">野</span> Palantir</td>
+              <td><code>PLTR</code></td>
+              <td>AI软件</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>高估值高弹性</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill wild">野</span> Arm Holdings</td>
+              <td><code>ARM</code></td>
+              <td>芯片IP</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>高估值弹性</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill wild">野</span> Marvell Technology</td>
+              <td><code>MRVL</code></td>
+              <td>AI互联/ASIC</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>AI互联弹性</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill wild">野</span> Micron Technology</td>
+              <td><code>MU</code></td>
+              <td>HBM/存储</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>存储周期弹性</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill wild">野</span> Super Micro Computer</td>
+              <td><code>SMCI</code></td>
+              <td>AI服务器</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>高波动服务器弹性</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill wild">野</span> Tesla</td>
+              <td><code>TSLA</code></td>
+              <td>自动驾驶/机器人</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>事件驱动高波动</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill wild">野</span> Dell Technologies</td>
+              <td><code>DELL</code></td>
+              <td>AI服务器</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>服务器弹性</td>
+            </tr>
+            
+            <tr>
+              <td><span class="pill wild">野</span> AppLovin</td>
+              <td><code>APP</code></td>
+              <td>AI广告应用</td>
+              <td>NA</td>
+              <td>待输入</td>
+              <td>高弹性应用股</td>
+            </tr>
+            </tbody>
+            </table>
+          </div>
+        </section>
+        
+    
+    <section class="interface-section" id="interfaces">
+      <h2>信息接口</h2>
+      <div class="interface-grid">
+        <div class="interface-card">
+          <h3>手动行情输入</h3>
+          <p>编辑 <code>config/global_market_manual_inputs.csv</code> 后重新运行生成脚本，即可更新技术曲线评分。</p>
+          <p class="schema">market,ticker,date,close,ret1_pct,ma5,ma10,ma20,ma30,ma50,volume_ratio,rsi14,macd_signal,manual_note,updated_at</p>
+        </div>
+        <div class="interface-card">
+          <h3>RSS 订阅输入</h3>
+          <p>编辑 <code>config/global_market_rss_sources.csv</code>。美股 RSS 仅展示，不进入评分。</p>
+          <p class="schema">market,ticker,source_name,url,enabled,notes</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>市场</th><th>代码</th><th>来源</th><th>URL</th><th>状态</th><th>备注</th></tr></thead>
+          <tbody>
+        <tr>
+          <td>HK</td>
+          <td><code>00700</code></td>
+          <td>manual-placeholder</td>
+          <td class="url-cell">待填写</td>
+          <td>未启用</td>
+          <td>填入RSS地址后页面会显示为预留信息源；当前不自动计分</td>
+        </tr>
+        
+        <tr>
+          <td>HK</td>
+          <td><code>09988</code></td>
+          <td>manual-placeholder</td>
+          <td class="url-cell">待填写</td>
+          <td>未启用</td>
+          <td>填入RSS地址后页面会显示为预留信息源；当前不自动计分</td>
+        </tr>
+        
+        <tr>
+          <td>US</td>
+          <td><code>NVDA</code></td>
+          <td>manual-placeholder</td>
+          <td class="url-cell">待填写</td>
+          <td>未启用</td>
+          <td>美股页面只做技术曲线分析；RSS仅作为旁路信息展示</td>
+        </tr>
+        
+        <tr>
+          <td>US</td>
+          <td><code>MSFT</code></td>
+          <td>manual-placeholder</td>
+          <td class="url-cell">待填写</td>
+          <td>未启用</td>
+          <td>美股页面只做技术曲线分析；RSS仅作为旁路信息展示</td>
+        </tr>
+        </tbody>
+        </table>
+      </div>
+    </section>
+    
+  </main>
+
+  <script>
+    const buttons = Array.from(document.querySelectorAll('[data-market-button]'));
+    const cards = Array.from(document.querySelectorAll('.stock-card'));
+    const panels = Array.from(document.querySelectorAll('[data-market-panel]'));
+    const searchBox = document.getElementById('searchBox');
+    const params = new URLSearchParams(window.location.search);
+    let activeMarket = (params.get('market') || 'HK').toUpperCase() === 'US' ? 'US' : 'HK';
+
+    function selectedPools() {
+      return Array.from(document.querySelectorAll('.check input[type="checkbox"]:checked')).map(item => item.value);
+    }
+
+    function applyFilters() {
+      const pools = selectedPools();
+      const query = (searchBox.value || '').trim().toLowerCase();
+      buttons.forEach(button => button.classList.toggle('active', button.dataset.marketButton === activeMarket));
+      panels.forEach(panel => panel.hidden = panel.dataset.marketPanel !== activeMarket);
+      cards.forEach(card => {
+        const inMarket = card.dataset.market === activeMarket;
+        const inPool = pools.includes(card.dataset.pool);
+        const inSearch = !query || card.dataset.search.toLowerCase().includes(query);
+        card.hidden = !(inMarket && inPool && inSearch);
+      });
+    }
+
+    buttons.forEach(button => button.addEventListener('click', () => {
+      activeMarket = button.dataset.marketButton;
+      const url = new URL(window.location.href);
+      url.searchParams.set('market', activeMarket);
+      window.history.replaceState(null, '', url);
+      applyFilters();
+    }));
+    document.querySelectorAll('.check input[type="checkbox"]').forEach(input => input.addEventListener('change', applyFilters));
+    searchBox.addEventListener('input', applyFilters);
+    applyFilters();
+  </script>
+</body>
+</html>

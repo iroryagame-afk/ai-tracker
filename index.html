@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mda100_20260612_132104</title>
+  <title>mda100_20260612_162542</title>
   <style>
     :root {
       --ink:#101418; --muted:#667085; --paper:#eef2ff; --panel:#fff; --line:#d8dee7;
@@ -29,6 +29,9 @@
     .nav-tab { border:1px solid #dbe3ef; background:#f8fafc; color:#344054; border-radius:999px; padding:8px 13px; font-size:13px; font-weight:850; cursor:pointer; transition:all .18s ease; }
     .nav-tab:hover { border-color:#9db4ff; color:#1e40af; background:#eef2ff; }
     .nav-tab.active { border-color:#172033; background:#172033; color:#fff; box-shadow:0 8px 18px rgba(23,32,51,.18); }
+    .cross-market-links { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .cross-market-links a { display:inline-flex; align-items:center; min-height:34px; border:1px solid #bfdbfe; background:#eff6ff; color:#1e40af; border-radius:999px; padding:7px 12px; text-decoration:none; font-size:12px; font-weight:900; }
+    .cross-market-links a:hover { background:#dbeafe; border-color:#93c5fd; }
     .meta { color:var(--muted); font-size:12px; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
     .report-stamp { display:grid; grid-template-columns:auto minmax(220px,1fr) auto; gap:14px; align-items:center; margin:0 0 18px; padding:14px 16px; border-radius:14px; border:1px solid #dbeafe; background:linear-gradient(135deg,#eff6ff 0%,#fff 100%); box-shadow:0 8px 18px rgba(30,64,175,.08); }
     .stamp-badge { display:inline-flex; align-items:center; justify-content:center; border-radius:999px; padding:8px 13px; font-size:14px; font-weight:950; white-space:nowrap; background:#3730a3; color:#fff; box-shadow:0 6px 14px rgba(55,48,163,.20); }
@@ -519,13 +522,17 @@
     @media print { *{-webkit-print-color-adjust:exact; print-color-adjust:exact;} body{background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 52%,#f1f5f9 100%);} .shell{max-width:none; padding:12px;} .page-nav{display:none;} .report-page{display:block !important; break-before:page;} .report-page:first-of-type{break-before:auto;} .summary-grid{grid-template-columns:repeat(6,minmax(110px,1fr)) !important;} .kpis{grid-template-columns:repeat(4,minmax(120px,1fr)) !important;} .grid{grid-template-columns:1.1fr .9fr !important;} .sector-watch-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .long-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .cards-container{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .detail-list{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .hero,.sector-watch-card,.long-card,.stock-card,.detail-card{break-inside:avoid;} table{font-size:8px; min-width:0;} .card-controls{display:none;} }
   </style>
 </head>
-<body class="report-intraday">
+<body class="report-close">
   <div class="shell">
     <div class="hero">
       <div class="hero-head">
         <div>
-          <h1>mda100_20260612_132104</h1>
+          <h1>mda100_20260612_162542</h1>
           <div class="subtitle">mda100以核心100只AI科技股票等权编制，历史曲线自2026年首个交易日开始累计。行情标记：VERIFIED_FUTU_OPEND。</div>
+          <div class="cross-market-links" aria-label="跨市场入口">
+            <a href="global_market_ai_watch.html">港股 AI 科技链</a>
+            <a href="global_market_ai_watch.html?market=US">美股纯技术页</a>
+          </div>
           <div class="verify-strip">
             <span>二次确认</span>
             <code>DOUBLE_VERIFIED_MDA100_DATA_INDEX_MATCH</code>
@@ -533,16 +540,16 @@
             <span class="verify-detail" title="报告日期与指数日期一致:OK / 行情日期覆盖本次报告日:OK / 所有可用行情均已打 Futu 核验标记:OK / 指数涨跌幅与股票池等权涨跌一致:OK / 上涨数量一致:OK / 下跌数量一致:OK / 覆盖率一致:OK">生成与发布前已复核</span>
           </div>
         </div>
-        <div class="meta">Report 2026-06-11<br>Index 2026-06-11<br>Generated 2026-06-12T13:21:04</div>
+        <div class="meta">Report 2026-06-11<br>Index 2026-06-11<br>Generated 2026-06-12T16:25:42</div>
       </div>
       <div class="report-stamp" aria-label="报告生成时间和版本">
-        <div class="stamp-badge">14:30盘中版</div>
+        <div class="stamp-badge">16:00收盘版</div>
         <div class="stamp-main">
-          <div class="stamp-label">盘中观察生成时间</div>
-          <div class="stamp-time">6月12日 13:21:04</div>
-          <div class="stamp-desc">用于15:00前交易决策，重点看盘中承接、封单、VWAP/分时均线和尾盘回落。</div>
+          <div class="stamp-label">收盘复盘生成时间</div>
+          <div class="stamp-time">6月12日 16:25:42</div>
+          <div class="stamp-desc">用于下一交易日计划，重点看收盘确认、均线位置、评分变化和隔夜风险闸门。</div>
         </div>
-        <div class="stamp-scope">14:30任务或手动盘中快照</div>
+        <div class="stamp-scope">16:00后收盘核验</div>
       </div>
       <div class="summary-grid">
         <div class="summary-card"><div class="label">6月11日 mda100点位</div><div class="value">2186.1</div></div>
@@ -4979,25 +4986,6 @@
                   <a class="source-link" href="self_media/20260612_112424_9716819c.html" target="_blank" rel="noopener">查看详情</a>
                 </article>
                 </div>
-            </section>
-            
-            <section class="self-sector-block">
-              <div class="self-sector-head">
-                <h3>陶瓷材料 / 氮化铝基板</h3>
-                <span>1 条</span>
-              </div>
-              <div class="self-sector-grid">
-                <article class="self-record-card">
-                  <div class="self-record-top">
-                    <span class="source-time">2026-06-12T14:01:00</span>
-                    <span class="source-status">待核验，量产与客户验证需跟踪</span>
-                  </div>
-                  <h4>氮化铝AlN：粉体与陶瓷基板国产替代拆解</h4>
-                  <div class="source-tags">用户粘贴/自媒体线索 · AlN,氮化铝,陶瓷基板,电子级粉体,中瓷电子,国瓷材料,旭光电子,金博股份,AI光模块</div>
-                  <p>日本出口管制与AI算力高功率散热需求，正在把氮化铝AlN粉体和陶瓷基板推到国产替代风口。方向成立，但不能把“规划产能”和“高端电子级可用产出”等同。粉体端关注旭光电子、国瓷材料、金博股份的高纯电子级粉体量产验证；基板/器件端更偏确定性，重点跟踪中瓷电子在800G/1.6T光模块陶瓷外壳/基板、半导体陶瓷部件中的份额与订单兑现。投资排序暂按基板/器件端 &gt; 粉体端处理，后续看毛利率、新材料收入占比和客户验证进展。</p>
-                  <a class="source-link" href="self_media/20260612_140100_aln_powder_substrate_localization.html" target="_blank" rel="noopener">查看详情</a>
-                </article>
-              </div>
             </section>
             
     
