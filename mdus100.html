@@ -8,7 +8,7 @@
     :root { --bg:#f4f4f1; --surface:#fff; --border:#e5e5e1; --ink:#101418; --primary:#1c3db8; --red:#b91c1c; --green:#15803d; }
     body { margin:0; background:var(--bg); color:#111827; font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; }
 
-    .site-nav { height:56px; position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:18px; padding:0 max(18px,calc((100vw - 1280px)/2)); background:rgba(255,255,255,.94); border-bottom:1px solid var(--border,#e5e7eb); backdrop-filter:blur(14px); }
+    .site-nav { height:56px; position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:18px; padding:0 max(18px,calc((100vw - 1500px)/2)); background:rgba(255,255,255,.94); border-bottom:1px solid var(--border,#e5e7eb); backdrop-filter:blur(14px); }
     .site-logo { display:inline-flex; align-items:center; gap:9px; color:var(--ink,#111827); text-decoration:none; font-weight:950; letter-spacing:-.01em; }
     .site-logo-mark { width:30px; height:30px; display:inline-flex; align-items:center; justify-content:center; border-radius:9px; background:#1c3db8; color:#fff; font-family:Georgia,serif; font-size:21px; line-height:1; }
     .site-links { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
@@ -17,9 +17,9 @@
     .site-links a[aria-current="page"] { background:#111827; color:#fff; border-color:#111827; }
     @media (max-width:720px) { .site-nav { position:static; height:auto; padding:10px 14px; align-items:flex-start; flex-direction:column; } .site-links a { min-height:32px; font-size:12px; } }
 
-    .shell { max-width:1280px; margin:0 auto; padding:28px; }
-    .hero { border-radius:18px; padding:26px; background:#fff; color:#111827; border:1px solid var(--border); box-shadow:0 14px 32px rgba(15,23,42,.06); }
-    h1 { margin:0; font-size:38px; font-family:Georgia,"Times New Roman","Noto Serif SC",serif; letter-spacing:-.01em; }
+    .shell { max-width:1500px; margin:0 auto; padding:18px; font-size:13px; }
+    .hero { border-radius:18px; padding:22px; background:#fff; color:#111827; border:1px solid var(--border); box-shadow:0 14px 32px rgba(15,23,42,.06); }
+    h1 { margin:0; font-size:34px; font-family:Georgia,"Times New Roman","Noto Serif SC",serif; letter-spacing:-.01em; }
     .subtitle { margin-top:10px; color:#64748b; line-height:1.7; }
     .verify { margin-top:14px; display:inline-flex; align-items:center; gap:9px; border-radius:14px; padding:10px 12px; color:#14532d; background:#ecfdf5; border:1px solid #86efac; font-weight:950; }
     .nav { margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; }
@@ -28,10 +28,12 @@
     .kpis { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:12px; margin:18px 0; }
     .kpi { background:#fff; border:1px solid #dbe3ef; border-radius:14px; padding:14px; }
     .kpi span { display:block; color:#64748b; font-weight:800; }
-    .kpi strong { display:block; font-size:28px; margin-top:6px; }
+    .kpi strong { display:block; font-size:24px; margin-top:6px; }
     .red { color:var(--red); } .green { color:var(--green); }
-    .section-title { margin:28px 0 12px; font-size:22px; }
+    .section-title { margin:20px 0 12px; font-size:21px; }
     .sector-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    .commentary-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    .subhead { padding:12px 14px; font-weight:950; color:#172033; background:#f8fafc; border-bottom:1px solid #e5e7eb; }
     .sector-card { background:#fff; border:1px solid #dbe3ef; border-radius:18px; padding:16px; box-shadow:0 10px 24px rgba(15,23,42,.05); }
     .sector-head { display:flex; justify-content:space-between; gap:12px; align-items:center; }
     .sector-head h3 { margin:0; font-size:18px; }
@@ -56,8 +58,10 @@
     .axis-label, .index-svg text { fill:#64748b; font-size:14px; font-weight:800; }
     .table-scroll { overflow-x:auto; }
     table { width:100%; border-collapse:collapse; }
-    th { background:#172033; color:#fff; text-align:left; padding:12px; }
-    td { border-top:1px solid #e5e7eb; padding:12px; vertical-align:top; line-height:1.55; }
+    th { background:#172033; color:#fff; text-align:left; padding:9px; }
+    td { border-top:1px solid #e5e7eb; padding:9px; vertical-align:top; line-height:1.48; }
+    .compact-table { table-layout:fixed; min-width:0; font-size:12px; }
+    .compact-table th,.compact-table td { padding:8px; }
     code { background:#eef2f7; border-radius:6px; padding:3px 7px; font-weight:900; }
     .strategy { display:inline-flex; align-items:center; justify-content:center; min-width:32px; height:32px; border-radius:999px; font-weight:950; }
     .strategy-必 { background:#fee2e2; color:#b91c1c; border:1px solid #fecaca; }
@@ -67,6 +71,7 @@
     .sector-pill { background:#fff7ed; color:#9a3412; border:1px solid #fed7aa; }
     .rank-label { background:#ecfeff; color:#0f766e; border:1px solid #99f6e4; }
     .chain-pill { background:#f8fafc; color:#475569; border:1px solid #cbd5e1; }
+    .tag-row { display:flex; flex-wrap:wrap; gap:5px; align-items:center; }
     .groups { display:flex; flex-wrap:wrap; gap:6px; }
     .group-tag { border-radius:999px; padding:4px 9px; background:#eff6ff; border:1px solid #bfdbfe; color:#1d4ed8; font-weight:850; font-size:12px; }
     .muted { color:#94a3b8; }
@@ -85,11 +90,57 @@
     .action.sell { color:#9a3412; background:#ffedd5; border:1px solid #fed7aa; }
     .action.hold { color:#1d4ed8; background:#dbeafe; border:1px solid #bfdbfe; }
     .action.watch { color:#475569; background:#e2e8f0; border:1px solid #cbd5e1; }
+    .move-label { display:inline-flex; align-items:center; justify-content:center; min-width:36px; height:28px; border-radius:999px; font-weight:950; }
+    .move-label.涨 { color:#991b1b; background:#fee2e2; border:1px solid #fecaca; }
+    .move-label.跌 { color:#166534; background:#dcfce7; border:1px solid #bbf7d0; }
     .signal-line { display:flex; flex-wrap:wrap; gap:6px; }
     .signal-line span { display:inline-flex; border-radius:999px; padding:4px 8px; color:#334155; background:#f8fafc; border:1px solid #e2e8f0; font-size:12px; font-weight:850; }
     .text-note { display:block; color:#475569; margin-top:6px; line-height:1.55; }
     .empty { padding:22px; text-align:center; color:#64748b; font-weight:900; }
-    @media (max-width:960px) { .shell { padding:14px; } .kpis, .sector-grid { grid-template-columns:1fr; } table { font-size:13px; } }
+    .research-link-card { border-color:#bfdbfe; background:linear-gradient(135deg,#f8fbff,#fff7ed); }
+    .research-link-body { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:16px; align-items:center; }
+    .research-link-body strong { display:block; color:#0f172a; font-size:18px; margin-bottom:6px; }
+    .research-link-body p { margin:0; color:#475569; line-height:1.65; }
+    .research-link-button { display:inline-flex; align-items:center; justify-content:center; min-height:38px; padding:0 16px; border-radius:999px; border:1px solid #bfdbfe; background:#eff6ff; color:#1d4ed8; font-weight:950; text-decoration:none; white-space:nowrap; }
+    .report-nav { position:sticky; top:56px; z-index:40; display:flex; flex-wrap:wrap; gap:10px; margin:14px 0; padding:10px; border:1px solid #dbe3ef; border-radius:16px; background:rgba(255,255,255,.93); backdrop-filter:blur(14px); }
+    .report-tab { appearance:none; border:1px solid #cbd5e1; border-radius:999px; background:#fff; color:#334155; min-height:34px; padding:0 13px; font-weight:950; cursor:pointer; }
+    .report-tab.active { background:#172033; color:#fff; border-color:#172033; box-shadow:0 8px 18px rgba(15,23,42,.14); }
+    .report-page { display:none; }
+    .report-page.active { display:block; }
+    .move-tabs { padding:12px; }
+    .move-tabs > input { position:absolute; opacity:0; pointer-events:none; }
+    .move-tab-labels { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px; }
+    .move-tab-labels label { display:inline-flex; align-items:center; gap:8px; min-height:34px; padding:0 13px; border:1px solid #d7dee9; border-radius:999px; background:#fff; color:#334155; font-weight:950; cursor:pointer; }
+    .move-tab-labels span { display:inline-flex; align-items:center; justify-content:center; min-width:24px; height:22px; padding:0 7px; border-radius:999px; background:#eef2f7; color:#475569; font-size:11px; }
+    #moveTabUp:checked ~ .move-tab-labels .move-tab-up { background:#fff1f2; color:#991b1b; border-color:#fecaca; box-shadow:0 6px 14px rgba(153,27,27,.08); }
+    #moveTabUp:checked ~ .move-tab-labels .move-tab-up span { background:#fee2e2; color:#991b1b; }
+    #moveTabDown:checked ~ .move-tab-labels .move-tab-down { background:#f0fdf4; color:#166534; border-color:#bbf7d0; box-shadow:0 6px 14px rgba(22,101,52,.08); }
+    #moveTabDown:checked ~ .move-tab-labels .move-tab-down span { background:#dcfce7; color:#166534; }
+    .move-tab-panel { display:none; }
+    #moveTabUp:checked ~ .move-up-panel { display:block; }
+    #moveTabDown:checked ~ .move-down-panel { display:block; }
+    .move-table th:nth-child(1),.move-table td:nth-child(1) { width:6%; }
+    .move-table th:nth-child(2),.move-table td:nth-child(2) { width:6%; }
+    .move-table th:nth-child(3),.move-table td:nth-child(3) { width:17%; }
+    .move-table th:nth-child(4),.move-table td:nth-child(4) { width:10%; }
+    .move-table th:nth-child(5),.move-table td:nth-child(5) { width:7%; }
+    .move-table th:nth-child(6),.move-table td:nth-child(6) { width:34%; }
+    .move-table th:nth-child(7),.move-table td:nth-child(7) { width:20%; }
+    .detail-table { table-layout:fixed; min-width:0; font-size:11px; }
+    .detail-table th:nth-child(1),.detail-table td:nth-child(1) { width:4%; }
+    .detail-table th:nth-child(2),.detail-table td:nth-child(2) { width:5%; }
+    .detail-table th:nth-child(3),.detail-table td:nth-child(3) { width:6%; }
+    .detail-table th:nth-child(4),.detail-table td:nth-child(4) { width:12%; }
+    .detail-table th:nth-child(5),.detail-table td:nth-child(5) { width:10%; }
+    .detail-table th:nth-child(6),.detail-table td:nth-child(6) { width:5%; }
+    .detail-table th:nth-child(7),.detail-table td:nth-child(7) { width:7%; }
+    .detail-table th:nth-child(8),.detail-table td:nth-child(8) { width:8%; }
+    .detail-table th:nth-child(9),.detail-table td:nth-child(9) { width:13%; }
+    .detail-table th:nth-child(10),.detail-table td:nth-child(10) { width:12%; }
+    .detail-table th:nth-child(11),.detail-table td:nth-child(11) { width:12%; }
+    .detail-table th:nth-child(12),.detail-table td:nth-child(12) { width:18%; }
+    .detail-table th:nth-child(13),.detail-table td:nth-child(13) { width:10%; }
+    @media (max-width:960px) { .shell { padding:14px; } .kpis, .sector-grid, .commentary-grid { grid-template-columns:1fr; } table { font-size:13px; } }
   </style>
 </head>
 <body>
@@ -110,18 +161,37 @@
       <div class="nav">
         <a href="index.html">mda100 A股科技链</a>
         <a href="mdus100.html" aria-current="page">mdus100 美股AI科技链</a>
+        <a href="self_media/20260613_121500_nasdaq100_ai_infra_supply_chain_elasticity.html">纳指100换血研究</a>
       </div>
     </section>
-    <section class="kpis">
-      <div class="kpi"><span>2026-06-12 mdus100点位</span><strong>2108.1</strong></div>
-      <div class="kpi"><span>指数涨跌</span><strong class="red">1.1%</strong></div>
-      <div class="kpi"><span>上涨/下跌</span><strong>27/15</strong></div>
-      <div class="kpi"><span>行情覆盖</span><strong>42/49</strong></div>
-      <div class="kpi"><span>4分以上</span><strong>21</strong></div>
-      <div class="kpi"><span>平均评分</span><strong>3.1</strong></div>
-    </section>
-    <h2 class="section-title">第一模块：mdus100指数曲线</h2>
-    <section class="card chart-card">
+    <nav class="report-nav" aria-label="mdus100页面导航">
+      <button class="report-tab active" data-page="overview">总览</button>
+      <button class="report-tab" data-page="moves">涨跌点评</button>
+      <button class="report-tab" data-page="recommend">推荐与回测</button>
+      <button class="report-tab" data-page="sectors">赛道地图</button>
+      <button class="report-tab" data-page="details">候选明细</button>
+    </nav>
+    <section id="overview" class="report-page active">
+      <section class="kpis">
+        <div class="kpi"><span>2026-06-12 mdus100点位</span><strong>2108.1</strong></div>
+        <div class="kpi"><span>指数涨跌</span><strong class="red">1.1%</strong></div>
+        <div class="kpi"><span>上涨/下跌</span><strong>27/15</strong></div>
+        <div class="kpi"><span>行情覆盖</span><strong>42/49</strong></div>
+        <div class="kpi"><span>4分以上</span><strong>22</strong></div>
+        <div class="kpi"><span>平均评分</span><strong>3.2</strong></div>
+      </section>
+      <section class="card research-link-card">
+        <div class="subhead">研究沉淀：纳指100换血</div>
+        <div class="research-link-body">
+          <div>
+            <strong>AI基建、太空与供应链弹性下沉</strong>
+            <p>把 Astera Labs、CoreWeave、Nebius、Rocket Lab、Teradyne 放回 AI 供应链框架，按确定性、弹性、兑现速度和风险评估下一轮交易线索。</p>
+          </div>
+          <a class="research-link-button" href="self_media/20260613_121500_nasdaq100_ai_infra_supply_chain_elasticity.html">打开文章</a>
+        </div>
+      </section>
+      <h2 class="section-title">第一模块：mdus100指数曲线</h2>
+      <section class="card chart-card">
       <svg class="index-svg" viewBox="0 0 920 260" role="img" aria-label="mdus100指数曲线">
         <line x1="36" y1="234" x2="884" y2="234" class="axis"/>
         <text x="36" y="26" class="axis-label">2354.3</text>
@@ -131,28 +201,215 @@
         <text x="36.0" y="255" text-anchor="middle">02-04</text><text x="321.8" y="255" text-anchor="middle">03-19</text><text x="607.7" y="255" text-anchor="middle">05-01</text><text x="884.0" y="255" text-anchor="middle">06-12</text>
       </svg>
     </section>
-    <h2 class="section-title">第二模块：上一期推荐表现</h2>
-    <section class="card table-scroll">
-      <table>
-        <thead><tr><th>标的</th><th>上次评分</th><th>最新表现</th><th>最新评分</th><th>最新建议</th></tr></thead>
-        <tbody><tr><td colspan="5" class="empty">暂无上一交易日推荐记录，本次4/5分推荐会写入历史，下一次刷新后展示胜负。</td></tr></tbody>
-      </table>
     </section>
-    <div class="subtitle">表现口径：上一交易日4/5分推荐，按下一次可核验收盘价相对推荐日收盘价计算；从本次开始记录。</div>
-    <h2 class="section-title">第三模块：2026-06-12推荐打分</h2>
-    <section class="card table-scroll">
-      <table>
-        <thead><tr><th>类</th><th>标的</th><th>评分</th><th>当日涨跌</th><th>赛道</th><th>产业位置</th><th>操作</th><th>买点依据</th></tr></thead>
-        <tbody>
+    <section id="moves" class="report-page">
+      <h2 class="section-title">第二模块：2026-06-12今日表现点评</h2>
+      
+      <section class="card move-tabs">
+        <input id="moveTabUp" name="moveTab" type="radio" checked>
+        <input id="moveTabDown" name="moveTab" type="radio">
+        <div class="move-tab-labels">
+          <label class="move-tab-up" for="moveTabUp">涨幅 / 低开高走 <span>8</span></label>
+          <label class="move-tab-down" for="moveTabDown">跌幅 / 高开低走 <span>8</span></label>
+        </div>
+        <div class="move-tab-panel move-up-panel table-scroll">
+          <table class="compact-table move-table">
+            <thead><tr><th>方向</th><th>类</th><th>标的</th><th>涨跌</th><th>评分</th><th>技术判断 / 标签</th><th>操作</th></tr></thead>
+            <tbody>
+            <tr>
+              <td><span class="move-label 涨">涨</span></td>
+              <td><a class="strategy strategy-必 tag-link" href="tags/t_5b-F.html">必</a></td>
+              <td><strong>Arm Holdings</strong><br><code>ARM</code></td>
+              <td><span class="pct up">11.3%</span></td>
+              <td><span class="score score-5">5</span></td>
+              <td><strong>多头趋势，在10日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/cpu-ip.html">CPU IP</a><a class="chain-pill tag-link" href="tags/t_55Sf5oCB.html">生态</a></div><span class="muted">多头趋势，在10日线之上；站上5日线；站上10日线；站上20日线；20/50日趋势向上</span></td>
+              <td><span class="action hold">持有</span><span class="text-note">趋势强但短线偏离偏大，已有持仓优先拿住，未建仓等回踩。</span></td>
+            </tr>
+            
+            <tr>
+              <td><span class="move-label 涨">涨</span></td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><strong>AXT Inc</strong><br><code>AXTI</code></td>
+              <td><span class="pct up">10.0%</span></td>
+              <td><span class="score score-4">4</span></td>
+              <td><strong>中期支撑，站上50日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/inp.html">InP</a><a class="chain-pill tag-link" href="tags/t_R2FBc-ihrOW6lQ.html">GaAs衬底</a></div><span class="muted">站上5日线；站上10日线；站回10日线；站回50日线；20日线下</span></td>
+              <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
+            </tr>
+            
+            <tr>
+              <td><span class="move-label 涨">涨</span></td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><strong>Intel</strong><br><code>INTC</code></td>
+              <td><span class="pct up">6.5%</span></td>
+              <td><span class="score score-4">4</span></td>
+              <td><strong>趋势修复，站上20日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/cpu.html">CPU</a><a class="chain-pill tag-link" href="tags/t_5Luj5bel.html">代工</a><a class="chain-pill tag-link" href="tags/t_QUnliqDpgJ8.html">AI加速</a></div><span class="muted">5日金叉10日；站上20日线，趋势修复；站上5日线；站上10日线；站上20日线</span></td>
+              <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
+            </tr>
+            
+            <tr>
+              <td><span class="move-label 涨">涨</span></td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><strong>Viavi Solutions</strong><br><code>VIAV</code></td>
+              <td><span class="pct up">6.4%</span></td>
+              <td><span class="score score-4">4</span></td>
+              <td><strong>趋势修复，站上20日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5YWJ6YCa5L-h5rWL6K-V5Luq5Zmo.html">光通信测试仪器</a></div><span class="muted">站上20日线，趋势修复；站上5日线；站上10日线；站上20日线；20/50日趋势向上</span></td>
+              <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
+            </tr>
+            
+            <tr>
+              <td><span class="move-label 涨">涨</span></td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><strong>Western Digital</strong><br><code>WDC</code></td>
+              <td><span class="pct up">6.4%</span></td>
+              <td><span class="score score-4">4</span></td>
+              <td><strong>多头趋势，在10日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/nand.html">NAND</a><a class="chain-pill tag-link" href="tags/t_SERE5a2Y5YKo.html">HDD存储</a></div><span class="muted">多头趋势，在10日线之上；站上5日线；站上10日线；站上20日线；20/50日趋势向上</span></td>
+              <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
+            </tr>
+            
+            <tr>
+              <td><span class="move-label 涨">涨</span></td>
+              <td><a class="strategy strategy-必 tag-link" href="tags/t_5b-F.html">必</a></td>
+              <td><strong>Coherent</strong><br><code>COHR</code></td>
+              <td><span class="pct up">5.9%</span></td>
+              <td><span class="score score-5">5</span></td>
+              <td><strong>趋势修复，站上20日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5r-A5YWJ.html">激光</a><a class="chain-pill tag-link" href="tags/t_5YWJ572R57uc.html">光网络</a><a class="chain-pill tag-link" href="tags/t_5p2Q5paZ5bmz5Y-w.html">材料平台</a></div><span class="muted">站上20日线，趋势修复；站上5日线；站上20日线；20/50日趋势向上；站回5日线</span></td>
+              <td><span class="action buy">买入/加仓</span><span class="text-note">技术和产业位置共振，可小仓试探；若站稳5/10日线再加。</span></td>
+            </tr>
+            
+            <tr>
+              <td><span class="move-label 涨">涨</span></td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><strong>IREN Ltd</strong><br><code>IREN</code></td>
+              <td><span class="pct up">5.4%</span></td>
+              <td><span class="score score-4">4</span></td>
+              <td><strong>多头趋势，在10日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_55-_5LyB.html">矿企</a><a class="chain-pill tag-link" href="tags/t_QUnmlbDmja7kuK3lv4M.html">AI数据中心</a></div><span class="muted">多头趋势，在10日线之上；站上5日线；站上10日线；站上20日线；20/50日趋势向上</span></td>
+              <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
+            </tr>
+            
+            <tr>
+              <td><span class="move-label 涨">涨</span></td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><strong>Navitas Semiconductor</strong><br><code>NVTS</code></td>
+              <td><span class="pct up">5.3%</span></td>
+              <td><span class="score score-2">2</span></td>
+              <td><strong>中期支撑，站上50日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_R2FO5Yqf546H6Iqv54mH.html">GaN功率芯片</a></div><span class="muted">站上5日线；站回5日线；20日线下；弱修复观察</span></td>
+              <td><span class="action sell">减仓/回避</span><span class="text-note">未建仓不追，已有仓位按关键均线防守。</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="move-tab-panel move-down-panel table-scroll">
+          <table class="compact-table move-table">
+            <thead><tr><th>方向</th><th>类</th><th>标的</th><th>涨跌</th><th>评分</th><th>技术判断 / 标签</th><th>操作</th></tr></thead>
+            <tbody>
+            <tr>
+              <td><span class="move-label 跌">跌</span></td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><strong>AST SpaceMobile</strong><br><code>ASTS</code></td>
+              <td><span class="pct down">-15.5%</span></td>
+              <td><span class="score score-2">2</span></td>
+              <td><strong>均线下方，等待修复</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5Y2r5pif55u06L-e5omL5py6.html">卫星直连手机</a></div><span class="muted">20日线下；50日线下</span></td>
+              <td><span class="action sell">减仓/回避</span><span class="text-note">未建仓不追，已有仓位按关键均线防守。</span></td>
+            </tr>
+            
+            <tr>
+              <td><span class="move-label 跌">跌</span></td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><strong>Red Cat Holdings</strong><br><code>RCAT</code></td>
+              <td><span class="pct down">-6.9%</span></td>
+              <td><span class="score score-1">1</span></td>
+              <td><strong>均线下方，等待修复</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5bCP5Z6L5peg5Lq65py6.html">小型无人机</a><a class="chain-pill tag-link" href="tags/t_5Zu96Ziy.html">国防</a></div><span class="muted">20日线下；50日线下</span></td>
+              <td><span class="action sell">减仓/回避</span><span class="text-note">未建仓不追，已有仓位按关键均线防守。</span></td>
+            </tr>
+            
+            <tr>
+              <td><span class="move-label 跌">跌</span></td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><strong>Cerebras Systems</strong><br><code>CBRS</code></td>
+              <td><span class="pct down">-5.5%</span></td>
+              <td><span class="score score-2">2</span></td>
+              <td><strong>均线下方，等待修复</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_QUnmmbblnIbnuqfns7vnu58.html">AI晶圆级系统</a></div><span class="muted">20日线下</span></td>
+              <td><span class="action sell">减仓/回避</span><span class="text-note">未建仓不追，已有仓位按关键均线防守。</span></td>
+            </tr>
+            
+            <tr>
+              <td><span class="move-label 跌">跌</span></td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><strong>Wolfspeed</strong><br><code>WOLF</code></td>
+              <td><span class="pct down">-5.3%</span></td>
+              <td><span class="score score-1">1</span></td>
+              <td><strong>中期支撑，站上50日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_U2lD5p2Q5paZ.html">SiC材料</a><a class="chain-pill tag-link" href="tags/t_5Zmo5Lu2.html">器件</a></div><span class="muted">靠近50日线；20日线下</span></td>
+              <td><span class="action sell">减仓/回避</span><span class="text-note">未建仓不追，已有仓位按关键均线防守。</span></td>
+            </tr>
+            
+            <tr>
+              <td><span class="move-label 跌">跌</span></td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><strong>Ondas</strong><br><code>ONDS</code></td>
+              <td><span class="pct down">-5.1%</span></td>
+              <td><span class="score score-1">1</span></td>
+              <td><strong>均线下方，等待修复</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5peg5Lq657O757uf.html">无人系统</a><a class="chain-pill tag-link" href="tags/t_572R57uc.html">网络</a></div><span class="muted">20日线下；50日线下</span></td>
+              <td><span class="action sell">减仓/回避</span><span class="text-note">未建仓不追，已有仓位按关键均线防守。</span></td>
+            </tr>
+            
+            <tr>
+              <td><span class="move-label 跌">跌</span></td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><strong>Snowflake</strong><br><code>SNOW</code></td>
+              <td><span class="pct down">-3.2%</span></td>
+              <td><span class="score score-4">4</span></td>
+              <td><strong>趋势修复，站上20日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5pWw5o2u5bmz5Y-w.html">数据平台</a></div><span class="muted">站上20日线，趋势修复；站上20日线；20/50日趋势向上</span></td>
+              <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
+            </tr>
+            
+            <tr>
+              <td><span class="move-label 跌">跌</span></td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><strong>Palantir</strong><br><code>PLTR</code></td>
+              <td><span class="pct down">-2.4%</span></td>
+              <td><span class="score score-2">2</span></td>
+              <td><strong>均线下方，等待修复</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_QUnlupTnlKg.html">AI应用</a><a class="chain-pill tag-link" href="tags/t_5Zu96Ziy6L2v5Lu2.html">国防软件</a></div><span class="muted">20日线下；50日线下</span></td>
+              <td><span class="action sell">减仓/回避</span><span class="text-note">未建仓不追，已有仓位按关键均线防守。</span></td>
+            </tr>
+            
+            <tr>
+              <td><span class="move-label 跌">跌</span></td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><strong>Applied Optoelectronics</strong><br><code>AAOI</code></td>
+              <td><span class="pct down">-2.2%</span></td>
+              <td><span class="score score-2">2</span></td>
+              <td><strong>中期支撑，站上50日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_6auY6YCf5pS25Y-R5Zmo.html">高速收发器</a><a class="chain-pill tag-link" href="tags/t_5r-A5YWJ57uE5Lu2.html">激光组件</a></div><span class="muted">靠近50日线；20日线下</span></td>
+              <td><span class="action sell">减仓/回避</span><span class="text-note">未建仓不追，已有仓位按关键均线防守。</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    
+    </section>
+    <section id="recommend" class="report-page">
+      <h2 class="section-title">第三模块：上一期推荐表现</h2>
+      <section class="card table-scroll">
+        <table class="compact-table">
+          <thead><tr><th>标的</th><th>上次评分</th><th>最新表现</th><th>最新评分</th><th>最新建议</th></tr></thead>
+          <tbody><tr><td colspan="5" class="empty">暂无上一交易日推荐记录，本次4/5分推荐会写入历史，下一次刷新后展示胜负。</td></tr></tbody>
+        </table>
+      </section>
+      <div class="subtitle">表现口径：上一交易日4/5分推荐，按下一次可核验收盘价相对推荐日收盘价计算；从本次开始记录。</div>
+      <h2 class="section-title">2026-06-15推荐与操作</h2>
+      <section class="card table-scroll">
+        <table class="compact-table">
+          <thead><tr><th>类</th><th>标的</th><th>评分</th><th>当日涨跌</th><th>赛道</th><th>技术位置</th><th>操作</th><th>推荐理由</th></tr></thead>
+          <tbody>
         <tr>
           <td><a class="strategy strategy-必 tag-link" href="tags/t_5b-F.html">必</a></td>
           <td><strong>Arm Holdings</strong><br><code>ARM</code></td>
           <td><span class="score score-5">5</span></td>
           <td><span class="pct up">11.3%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_QUnnrpflipvoiq_niYc.html">AI算力芯片</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_Q1BVIElQL-eUn-aAgQ.html">CPU IP/生态</a></td>
+          <td><strong>多头趋势，在10日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/cpu-ip.html">CPU IP</a><a class="chain-pill tag-link" href="tags/t_55Sf5oCB.html">生态</a></div></td>
           <td><span class="action hold">持有</span><span class="text-note">趋势强但短线偏离偏大，已有持仓优先拿住，未建仓等回踩。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span><span>短线偏离20日线过大</span></div></td>
+          <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span></div><span class="text-note">趋势很强但短线偏离较大。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。已有仓位以持有为主；未建仓不追高，等回踩5/10日线或成交量降温后再考虑。</span></td>
         </tr>
         
         <tr>
@@ -161,9 +418,9 @@
           <td><span class="score score-5">5</span></td>
           <td><span class="pct up">5.9%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_5YWJ5LqS6IGUIC8gSW5Q.html">光互联 / InP</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_5r-A5YWJL-WFiee9kee7nC_mnZDmlpnlubPlj7A.html">激光/光网络/材料平台</a></td>
+          <td><strong>趋势修复，站上20日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5r-A5YWJ.html">激光</a><a class="chain-pill tag-link" href="tags/t_5YWJ572R57uc.html">光网络</a><a class="chain-pill tag-link" href="tags/t_5p2Q5paZ5bmz5Y-w.html">材料平台</a></div></td>
           <td><span class="action buy">买入/加仓</span><span class="text-note">技术和产业位置共振，可小仓试探；若站稳5/10日线再加。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回5日线</span><span>站回10日线</span><span>站回20日线</span></div></td>
+          <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回5日线</span><span>站回10日线</span></div><span class="text-note">下个交易日可作为优先候选。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上5日线；站上20日线；20/50日趋势向上。未建仓先看回踩不破或放量延续，观察区 372.2-386.7；已有仓位沿5/10日线持有，跌破关键支撑 379.0 先降仓。</span></td>
         </tr>
         
         <tr>
@@ -172,9 +429,9 @@
           <td><span class="score score-5">5</span></td>
           <td><span class="pct up">4.7%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_QUnnrpflipvoiq_niYc.html">AI算力芯片</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_R1BVL0NQVeW8guaehOiuoeeulw.html">GPU/CPU异构计算</a></td>
+          <td><strong>多头趋势，在10日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/gpu.html">GPU</a><a class="chain-pill tag-link" href="tags/t_Q1BV5byC5p6E6K6h566X.html">CPU异构计算</a></div></td>
           <td><span class="action buy">买入/加仓</span><span class="text-note">技术和产业位置共振，可小仓试探；若站稳5/10日线再加。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span></div></td>
+          <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span></div><span class="text-note">下个交易日可作为优先候选。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓先看回踩不破或放量延续，观察区 483.7-498.2；已有仓位沿5/10日线持有，跌破关键支撑 482.0 先降仓。</span></td>
         </tr>
         
         <tr>
@@ -183,9 +440,9 @@
           <td><span class="score score-5">5</span></td>
           <td><span class="pct up">3.6%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_5YWJ5LqS6IGUIC8gSW5Q.html">光互联 / InP</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_SW5Q5r-A5YWJ5ZmoL0VNTC9PQ1M.html">InP激光器/EML/OCS</a></td>
+          <td><strong>多头趋势，在10日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_SW5Q5r-A5YWJ5Zmo.html">InP激光器</a><a class="chain-pill tag-link" href="tags/eml.html">EML</a><a class="chain-pill tag-link" href="tags/ocs.html">OCS</a></div></td>
           <td><span class="action buy">买入/加仓</span><span class="text-note">技术和产业位置共振，可小仓试探；若站稳5/10日线再加。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span><span>站回20日线</span></div></td>
+          <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span></div><span class="text-note">下个交易日可作为优先候选。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓先看回踩不破或放量延续，观察区 876.3-906.2；已有仓位沿5/10日线持有，跌破关键支撑 905.8 先降仓。</span></td>
         </tr>
         
         <tr>
@@ -194,9 +451,20 @@
           <td><span class="score score-5">5</span></td>
           <td><span class="pct up">1.9%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_55S15rqQIC8gODAwVg.html">电源 / 800V</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_6auY5a-G5bqm55S15rqQ5qih5Z2X.html">高密度电源模块</a></td>
+          <td><strong>多头趋势，在10日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_6auY5a-G5bqm55S15rqQ5qih5Z2X.html">高密度电源模块</a></div></td>
           <td><span class="action buy">买入/加仓</span><span class="text-note">技术和产业位置共振，可小仓试探；若站稳5/10日线再加。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span><span>靠近20日线</span></div></td>
+          <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span></div><span class="text-note">下个交易日可作为优先候选。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓先看回踩不破或放量延续，观察区 287.2-300.5；已有仓位沿5/10日线持有，跌破关键支撑 296.4 先降仓。</span></td>
+        </tr>
+        
+        <tr>
+          <td><a class="strategy strategy-必 tag-link" href="tags/t_5b-F.html">必</a></td>
+          <td><strong>Dell Technologies</strong><br><code>DELL</code></td>
+          <td><span class="score score-5">5</span></td>
+          <td><span class="pct up">1.1%</span></td>
+          <td><a class="sector-pill tag-link" href="tags/t_QUnmnI3liqHlmaggLyDmlbDmja7kuK3lv4M.html">AI服务器 / 数据中心</a></td>
+          <td><strong>趋势修复，站上20日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_QUnmnI3liqHlmag.html">AI服务器</a><a class="chain-pill tag-link" href="tags/oem.html">OEM</a></div></td>
+          <td><span class="action buy">买入/加仓</span><span class="text-note">技术和产业位置共振，可小仓试探；若站稳5/10日线再加。</span></td>
+          <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div><span class="text-note">下个交易日可作为优先候选。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上5日线；站上20日线；20/50日趋势向上。未建仓先看回踩不破或放量延续，观察区 387.9-407.8；已有仓位沿5/10日线持有，跌破关键支撑 346.6 先降仓。</span></td>
         </tr>
         
         <tr>
@@ -205,9 +473,9 @@
           <td><span class="score score-5">5</span></td>
           <td><span class="pct up">0.8%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_5pm25ZyG5Yi26YCgIC8g5p2Q5paZ.html">晶圆制造 / 材料</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_5oiQ54afL-eJueiJsuW3peiJug.html">成熟/特色工艺</a></td>
+          <td><strong>多头趋势，在10日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5oiQ54af.html">成熟</a><a class="chain-pill tag-link" href="tags/t_54m56Imy5bel6Im6.html">特色工艺</a></div></td>
           <td><span class="action buy">买入/加仓</span><span class="text-note">技术和产业位置共振，可小仓试探；若站稳5/10日线再加。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>靠近20日线</span></div></td>
+          <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>靠近20日线</span></div><span class="text-note">下个交易日可作为优先候选。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓先看回踩不破或放量延续，观察区 77.9-80.0；已有仓位沿5/10日线持有，跌破关键支撑 78.8 先降仓。</span></td>
         </tr>
         
         <tr>
@@ -216,9 +484,9 @@
           <td><span class="score score-5">5</span></td>
           <td><span class="pct down">-0.4%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_QUnnrpflipvoiq_niYc.html">AI算力芯片</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_QVNJQy9EU1Av5LqS6IGU6Iqv54mH.html">ASIC/DSP/互联芯片</a></td>
+          <td><strong>多头趋势，在10日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/asic.html">ASIC</a><a class="chain-pill tag-link" href="tags/dsp.html">DSP</a><a class="chain-pill tag-link" href="tags/t_5LqS6IGU6Iqv54mH.html">互联芯片</a></div></td>
           <td><span class="action hold">持有</span><span class="text-note">趋势强但短线偏离偏大，已有持仓优先拿住，未建仓等回踩。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>短线偏离20日线过大</span></div></td>
+          <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>短线偏离20日线过大</span></div><span class="text-note">趋势很强但短线偏离较大。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。已有仓位以持有为主；未建仓不追高，等回踩5/10日线或成交量降温后再考虑。</span></td>
         </tr>
         
         <tr>
@@ -227,9 +495,9 @@
           <td><span class="score score-5">5</span></td>
           <td><span class="pct down">-1.4%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_5a2Y5YKoIC8gSEJN.html">存储 / HBM</a></td>
-          <td><a class="chain-pill tag-link" href="tags/dram-hbm.html">DRAM/HBM</a></td>
+          <td><strong>多头趋势，在10日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/dram.html">DRAM</a><a class="chain-pill tag-link" href="tags/hbm.html">HBM</a></div></td>
           <td><span class="action buy">买入/加仓</span><span class="text-note">技术和产业位置共振，可小仓试探；若站稳5/10日线再加。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+          <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div><span class="text-note">下个交易日可作为优先候选。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓先看回踩不破或放量延续，观察区 950.9-979.4；已有仓位沿5/10日线持有，跌破关键支撑 893.1 先降仓。</span></td>
         </tr>
         
         <tr>
@@ -238,9 +506,9 @@
           <td><span class="score score-4">4</span></td>
           <td><span class="pct up">10.0%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_5YWJ5LqS6IGUIC8gSW5Q.html">光互联 / InP</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_SW5QL0dhQXPooazlupU.html">InP/GaAs衬底</a></td>
+          <td><strong>中期支撑，站上50日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/inp.html">InP</a><a class="chain-pill tag-link" href="tags/t_R2FBc-ihrOW6lQ.html">GaAs衬底</a></div></td>
           <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站回10日线</span><span>站回50日线</span><span>20日线下</span></div></td>
+          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站回10日线</span><span>站回50日线</span><span>20日线下</span></div><span class="text-note">适合观察低吸。理由：中期支撑，站上50日线，站上5日线；站上10日线；站回10日线；站回50日线。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 107.3。</span></td>
         </tr>
         
         <tr>
@@ -249,9 +517,9 @@
           <td><span class="score score-4">4</span></td>
           <td><span class="pct up">6.5%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_QUnnrpflipvoiq_niYc.html">AI算力芯片</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_Q1BVL-S7o-W3pS9BSeWKoOmAnw.html">CPU/代工/AI加速</a></td>
+          <td><strong>趋势修复，站上20日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/cpu.html">CPU</a><a class="chain-pill tag-link" href="tags/t_5Luj5bel.html">代工</a><a class="chain-pill tag-link" href="tags/t_QUnliqDpgJ8.html">AI加速</a></div></td>
           <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+          <td><div class="signal-line"><span>5日金叉10日</span><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div><span class="text-note">适合观察低吸。理由：趋势修复，站上20日线，5日金叉10日；站上20日线，趋势修复；站上5日线；站上10日线。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 113.7。</span></td>
         </tr>
         
         <tr>
@@ -260,9 +528,9 @@
           <td><span class="score score-4">4</span></td>
           <td><span class="pct up">6.4%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_5YWJ5LqS6IGUIC8gSW5Q.html">光互联 / InP</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_5YWJ6YCa5L-h5rWL6K-V5Luq5Zmo.html">光通信测试仪器</a></td>
+          <td><strong>趋势修复，站上20日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5YWJ6YCa5L-h5rWL6K-V5Luq5Zmo.html">光通信测试仪器</a></div></td>
           <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+          <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div><span class="text-note">适合观察低吸。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上5日线；站上10日线；站上20日线。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 50.0。</span></td>
         </tr>
         
         <tr>
@@ -271,9 +539,9 @@
           <td><span class="score score-4">4</span></td>
           <td><span class="pct up">6.4%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_5a2Y5YKoIC8gSEJN.html">存储 / HBM</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_TkFORC9IRETlrZjlgqg.html">NAND/HDD存储</a></td>
+          <td><strong>多头趋势，在10日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/nand.html">NAND</a><a class="chain-pill tag-link" href="tags/t_SERE5a2Y5YKo.html">HDD存储</a></div></td>
           <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span></div></td>
+          <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span></div><span class="text-note">适合观察低吸。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 518.0。</span></td>
         </tr>
         
         <tr>
@@ -282,9 +550,9 @@
           <td><span class="score score-4">4</span></td>
           <td><span class="pct up">5.4%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_QUnmnI3liqHlmaggLyDmlbDmja7kuK3lv4M.html">AI服务器 / 数据中心</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_55-_5LyBL0FJ5pWw5o2u5Lit5b-D.html">矿企/AI数据中心</a></td>
+          <td><strong>多头趋势，在10日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_55-_5LyB.html">矿企</a><a class="chain-pill tag-link" href="tags/t_QUnmlbDmja7kuK3lv4M.html">AI数据中心</a></div></td>
           <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回20日线</span><span>靠近20日线</span></div></td>
+          <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回20日线</span></div><span class="text-note">适合观察低吸。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 58.4。</span></td>
         </tr>
         
         <tr>
@@ -293,9 +561,9 @@
           <td><span class="score score-4">4</span></td>
           <td><span class="pct up">5.2%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_5a2Y5YKoIC8gSEJN.html">存储 / HBM</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_TkFORC_pl6rlrZg.html">NAND/闪存</a></td>
+          <td><strong>多头趋势，在5日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/nand.html">NAND</a><a class="chain-pill tag-link" href="tags/t_6Zeq5a2Y.html">闪存</a></div></td>
           <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>短线偏离20日线过大</span></div></td>
+          <td><div class="signal-line"><span>5日金叉10日</span><span>多头趋势，在5日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div><span class="text-note">适合观察低吸。理由：多头趋势，在5日线之上，5日金叉10日；站上5日线；站上10日线；站上20日线。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 1623.8。</span></td>
         </tr>
         
         <tr>
@@ -304,9 +572,9 @@
           <td><span class="score score-4">4</span></td>
           <td><span class="pct up">4.3%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_55S15rqQIC8gODAwVg.html">电源 / 800V</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_TU9TRkVUL-WKn-eOh-WNiuWvvOS9kw.html">MOSFET/功率半导体</a></td>
+          <td><strong>趋势修复，站上20日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/mosfet.html">MOSFET</a><a class="chain-pill tag-link" href="tags/t_5Yqf546H5Y2K5a-85L2T.html">功率半导体</a></div></td>
           <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回20日线</span><span>靠近20日线</span></div></td>
+          <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回20日线</span><span>靠近20日线</span></div><span class="text-note">适合观察低吸。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上5日线；站上20日线；20/50日趋势向上。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 44.2。</span></td>
         </tr>
         
         <tr>
@@ -315,20 +583,9 @@
           <td><span class="score score-4">4</span></td>
           <td><span class="pct up">1.8%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_5pm25ZyG5Yi26YCgIC8g5p2Q5paZ.html">晶圆制造 / 材料</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_5qih5oufL-eUtea6kC_lsITpopHku6Plt6U.html">模拟/电源/射频代工</a></td>
+          <td><strong>趋势修复，站上20日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5qih5ouf.html">模拟</a><a class="chain-pill tag-link" href="tags/t_55S15rqQ.html">电源</a><a class="chain-pill tag-link" href="tags/t_5bCE6aKR5Luj5bel.html">射频代工</a></div></td>
           <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回20日线</span><span>靠近20日线</span></div></td>
-        </tr>
-        
-        <tr>
-          <td><a class="strategy strategy-必 tag-link" href="tags/t_5b-F.html">必</a></td>
-          <td><strong>Dell Technologies</strong><br><code>DELL</code></td>
-          <td><span class="score score-4">4</span></td>
-          <td><span class="pct up">1.1%</span></td>
-          <td><a class="sector-pill tag-link" href="tags/t_QUnmnI3liqHlmaggLyDmlbDmja7kuK3lv4M.html">AI服务器 / 数据中心</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_QUnmnI3liqHlmagvT0VN.html">AI服务器/OEM</a></td>
-          <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+          <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回20日线</span></div><span class="text-note">适合观察低吸。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上5日线；站上10日线；站上20日线。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 260.7。</span></td>
         </tr>
         
         <tr>
@@ -337,9 +594,9 @@
           <td><span class="score score-4">4</span></td>
           <td><span class="pct up">1.0%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_5omp5bGV6KeC5a-f.html">扩展观察</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_5Lqk5piT5bmz5Y-w.html">交易平台</a></td>
+          <td><strong>多头趋势，在5日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5Lqk5piT5bmz5Y-w.html">交易平台</a></div></td>
           <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+          <td><div class="signal-line"><span>5日金叉10日</span><span>多头趋势，在5日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div><span class="text-note">适合观察低吸。理由：多头趋势，在5日线之上，5日金叉10日；站上5日线；站上10日线；站上20日线。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 82.8。</span></td>
         </tr>
         
         <tr>
@@ -348,9 +605,9 @@
           <td><span class="score score-4">4</span></td>
           <td><span class="pct up">0.8%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_55S15rqQIC8gODAwVg.html">电源 / 800V</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_55S15rqQ566h55CGL-mrmOWOi-iKr-eJhw.html">电源管理/高压芯片</a></td>
+          <td><strong>趋势修复，站上20日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_55S15rqQ566h55CG.html">电源管理</a><a class="chain-pill tag-link" href="tags/t_6auY5Y6L6Iqv54mH.html">高压芯片</a></div></td>
           <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>靠近20日线</span></div></td>
+          <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>靠近20日线</span></div><span class="text-note">适合观察低吸。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上5日线；站上20日线；20/50日趋势向上。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 77.8。</span></td>
         </tr>
         
         <tr>
@@ -359,9 +616,9 @@
           <td><span class="score score-4">4</span></td>
           <td><span class="pct up">0.0%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_5LqR5LiOQUnova_ku7Y.html">云与AI软件</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_572R57uc5a6J5YWo.html">网络安全</a></td>
+          <td><strong>多头趋势，在10日线之上</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_572R57uc5a6J5YWo.html">网络安全</a></div></td>
           <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+          <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div><span class="text-note">适合观察低吸。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 265.7。</span></td>
         </tr>
         
         <tr>
@@ -370,16 +627,29 @@
           <td><span class="score score-4">4</span></td>
           <td><span class="pct down">-1.3%</span></td>
           <td><a class="sector-pill tag-link" href="tags/t_5LqR5LiOQUnova_ku7Y.html">云与AI软件</a></td>
-          <td><a class="chain-pill tag-link" href="tags/t_57uI56uv5a6J5YWo.html">终端安全</a></td>
+          <td><strong>趋势修复，站上20日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_57uI56uv5a6J5YWo.html">终端安全</a></div></td>
           <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
-          <td><div class="signal-line"><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>靠近20日线</span></div></td>
+          <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>靠近20日线</span></div><span class="text-note">适合观察低吸。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上5日线；站上20日线；20/50日趋势向上。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 676.3。</span></td>
+        </tr>
+        
+        <tr>
+          <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+          <td><strong>Snowflake</strong><br><code>SNOW</code></td>
+          <td><span class="score score-4">4</span></td>
+          <td><span class="pct down">-3.2%</span></td>
+          <td><a class="sector-pill tag-link" href="tags/t_5LqR5LiOQUnova_ku7Y.html">云与AI软件</a></td>
+          <td><strong>趋势修复，站上20日线</strong><br><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5pWw5o2u5bmz5Y-w.html">数据平台</a></div></td>
+          <td><span class="action watch">观察低吸</span><span class="text-note">产业位置较好，等待回踩5/10/20日线或缩量确认。</span></td>
+          <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上20日线</span><span>20/50日趋势向上</span></div><span class="text-note">适合观察低吸。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上20日线；20/50日趋势向上。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 215.1。</span></td>
         </tr>
         </tbody>
-      </table>
+        </table>
+      </section>
     </section>
-    <h2 class="section-title">第四模块：垂直细分赛道</h2>
-    <section class="sector-grid">
-      
+    <section id="sectors" class="report-page">
+      <h2 class="section-title">第四模块：垂直细分赛道</h2>
+      <section class="sector-grid">
+        
           <article class="sector-card">
             <div class="sector-head">
               <h3><a class="sector-title-tag tag-link" href="tags/t_QUnnrpflipvoiq_niYc.html">AI算力芯片</a></h3>
@@ -426,7 +696,7 @@
             </div>
             <p>AI服务器整机、机柜交付和电力资产决定算力能不能落地；整机龙头确定性较高，矿企转型更多看弹性。</p>
             <div class="sector-lines">
-              <div><b>核心必看</b><div><a class="stock-chip 必 tag-link" href="tags/t_5pyN5Yqh5Zmo6b6Z5LiA.html"><code>DELL</code><span class="score score-4">4</span>服务器龙一</a></div></div>
+              <div><b>核心必看</b><div><a class="stock-chip 必 tag-link" href="tags/t_5pyN5Yqh5Zmo6b6Z5LiA.html"><code>DELL</code><span class="score score-5">5</span>服务器龙一</a></div></div>
               <div><b>打野弹性</b><div><a class="stock-chip 野 tag-link" href="tags/t_566X5Yqb55S15Yqb.html"><code>IREN</code><span class="score score-4">4</span>算力电力</a></div></div>
               
             </div>
@@ -440,7 +710,7 @@
             <p>云平台和企业AI软件是需求入口，适合作为AI应用兑现观察；但多数不是物理瓶颈，评分要和硬件链分开。</p>
             <div class="sector-lines">
               <div><b>核心必看</b><div><a class="stock-chip 必 tag-link" href="tags/t_6b6Z5LiA.html"><code>MSFT</code><span class="score score-2">2</span>龙一</a><a class="stock-chip 必 tag-link" href="tags/t_6b6Z5LqM.html"><code>ORCL</code><span class="score score-2">2</span>龙二</a></div></div>
-              <div><b>打野弹性</b><div><a class="stock-chip 野 tag-link" href="tags/t_5a6J5YWo.html"><code>CRWD</code><span class="score score-4">4</span>安全</a><a class="stock-chip 野 tag-link" href="tags/t_5a6J5YWo.html"><code>PANW</code><span class="score score-4">4</span>安全</a><a class="stock-chip 野 tag-link" href="tags/t_5LyB5LiaQUk.html"><code>IBM</code><span class="score score-3">3</span>企业AI</a><a class="stock-chip 野 tag-link" href="tags/t_5pWw5o2u5LqR.html"><code>SNOW</code><span class="score score-3">3</span>数据云</a><a class="stock-chip 野 tag-link" href="tags/t_5LyB5LiaQUk.html"><code>CRM</code><span class="score score-2">2</span>企业AI</a><a class="stock-chip 野 tag-link" href="tags/t_6L-Q57u05pWw5o2u.html"><code>DDOG</code><span class="score score-2">2</span>运维数据</a></div></div>
+              <div><b>打野弹性</b><div><a class="stock-chip 野 tag-link" href="tags/t_5a6J5YWo.html"><code>CRWD</code><span class="score score-4">4</span>安全</a><a class="stock-chip 野 tag-link" href="tags/t_5a6J5YWo.html"><code>PANW</code><span class="score score-4">4</span>安全</a><a class="stock-chip 野 tag-link" href="tags/t_5pWw5o2u5LqR.html"><code>SNOW</code><span class="score score-4">4</span>数据云</a><a class="stock-chip 野 tag-link" href="tags/t_5LyB5LiaQUk.html"><code>IBM</code><span class="score score-3">3</span>企业AI</a><a class="stock-chip 野 tag-link" href="tags/t_5LyB5LiaQUk.html"><code>CRM</code><span class="score score-2">2</span>企业AI</a><a class="stock-chip 野 tag-link" href="tags/t_6L-Q57u05pWw5o2u.html"><code>DDOG</code><span class="score score-2">2</span>运维数据</a></div></div>
               
             </div>
           </article>
@@ -479,7 +749,7 @@
             <p>卫星通信、无人机和军工AI属于事件驱动和订单弹性，更多按打野处理。</p>
             <div class="sector-lines">
               <div><b>核心必看</b><div><span class="muted">暂无</span></div></div>
-              <div><b>打野弹性</b><div><a class="stock-chip 野 tag-link" href="tags/t_5Y2r5pif6YCa5L-h.html"><code>ASTS</code><span class="score score-2">2</span>卫星通信</a><a class="stock-chip 野 tag-link" href="tags/t_5p2Q5paZ.html"><code>ELMT</code><span class="score score-2">2</span>材料</a><a class="stock-chip 野 tag-link" href="tags/t_5peg5Lq657O757uf.html"><code>ONDS</code><span class="score score-1">1</span>无人系统</a><a class="stock-chip 野 tag-link" href="tags/t_5peg5Lq65py6.html"><code>RCAT</code><span class="score score-1">1</span>无人机</a></div></div>
+              <div><b>打野弹性</b><div><a class="stock-chip 野 tag-link" href="tags/t_5p2Q5paZ.html"><code>ELMT</code><span class="score score-3">3</span>材料</a><a class="stock-chip 野 tag-link" href="tags/t_5Y2r5pif6YCa5L-h.html"><code>ASTS</code><span class="score score-2">2</span>卫星通信</a><a class="stock-chip 野 tag-link" href="tags/t_5peg5Lq657O757uf.html"><code>ONDS</code><span class="score score-1">1</span>无人系统</a><a class="stock-chip 野 tag-link" href="tags/t_5peg5Lq65py6.html"><code>RCAT</code><span class="score score-1">1</span>无人机</a></div></div>
               
             </div>
           </article>
@@ -510,20 +780,22 @@
             </div>
           </article>
         
+      </section>
+      <h2 class="section-title">龙一龙二 / 打野地图</h2>
+      <section class="card table-scroll">
+        <table class="compact-table">
+          <thead><tr><th>赛道</th><th>核心必看</th><th>打野弹性</th><th>判断口径</th></tr></thead>
+          <tbody><tr><td><a class="sector-pill tag-link" href="tags/t_QUnnrpflipvoiq_niYc.html">AI算力芯片</a></td><td>AMD 龙二、ARM 核心IP、MRVL 龙二、NVDA 龙一</td><td>INTC 反转、CBRS 高弹性、QCOM 端侧AI</td><td>先看GPU/ASIC/互联/IP这些决定AI训练与推理供给的核心层；龙头确定性高，弹性更多在二线和ASIC互联。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_5YWJ5LqS6IGUIC8gSW5Q.html">光互联 / InP</a></td><td>COHR 龙二、LITE 龙一</td><td>AXTI 高beta、VIAV 测试、AAOI 高弹性、NOK 设备</td><td>AI集群带宽继续上行，光模块、InP激光器、OCS和硅光测试是物理瓶颈之一，优先看被大客户锁产能的供应商。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_5a2Y5YKoIC8gSEJN.html">存储 / HBM</a></td><td>MU 龙一</td><td>SNDK 周期弹性、WDC 周期弹性</td><td>HBM和高端DRAM是AI服务器的硬约束；NAND和硬盘更多看周期弹性，不等同于HBM卡点。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_QUnmnI3liqHlmaggLyDmlbDmja7kuK3lv4M.html">AI服务器 / 数据中心</a></td><td>DELL 服务器龙一</td><td>IREN 算力电力</td><td>AI服务器整机、机柜交付和电力资产决定算力能不能落地；整机龙头确定性较高，矿企转型更多看弹性。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_5LqR5LiOQUnova_ku7Y.html">云与AI软件</a></td><td>MSFT 龙一、ORCL 龙二</td><td>CRWD 安全、PANW 安全、SNOW 数据云、IBM 企业AI</td><td>云平台和企业AI软件是需求入口，适合作为AI应用兑现观察；但多数不是物理瓶颈，评分要和硬件链分开。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_55S15rqQIC8gODAwVg.html">电源 / 800V</a></td><td>VICR 龙一</td><td>AOSL 功率器件、POWI 电源芯片、NVTS GaN高弹性、VIVO 题材</td><td>机柜功率密度上升带来电源模块、GaN/SiC和高压架构机会；该方向弹性强，但商业兑现差异大。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_5pm25ZyG5Yi26YCgIC8g5p2Q5paZ.html">晶圆制造 / 材料</a></td><td>GFS 特色代工</td><td>TSEM 特色代工、SLOIF 材料</td><td>先进制程、特色工艺、SOI和化合物材料决定供给爬坡，重点看客户认证和产能利用率。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_5Yab5belIC8g56m65aSp.html">军工 / 空天</a></td><td>暂无</td><td>ELMT 材料、ASTS 卫星通信、ONDS 无人系统、RCAT 无人机</td><td>卫星通信、无人机和军工AI属于事件驱动和订单弹性，更多按打野处理。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_5omp5bGV6KeC5a-f.html">扩展观察</a></td><td>暂无</td><td>HOOD 金融科技</td><td>暂时不在AI物理主线核心层，保留为风格或题材观察。</td></tr></tbody>
+        </table>
+      </section>
     </section>
-    <h2 class="section-title">龙一龙二 / 打野地图</h2>
-    <section class="card table-scroll">
-      <table>
-        <thead><tr><th>赛道</th><th>核心必看</th><th>打野弹性</th><th>判断口径</th></tr></thead>
-        <tbody><tr><td><a class="sector-pill tag-link" href="tags/t_QUnnrpflipvoiq_niYc.html">AI算力芯片</a></td><td>AMD 龙二、ARM 核心IP、MRVL 龙二、NVDA 龙一</td><td>INTC 反转、CBRS 高弹性、QCOM 端侧AI</td><td>先看GPU/ASIC/互联/IP这些决定AI训练与推理供给的核心层；龙头确定性高，弹性更多在二线和ASIC互联。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_5YWJ5LqS6IGUIC8gSW5Q.html">光互联 / InP</a></td><td>COHR 龙二、LITE 龙一</td><td>AXTI 高beta、VIAV 测试、AAOI 高弹性、NOK 设备</td><td>AI集群带宽继续上行，光模块、InP激光器、OCS和硅光测试是物理瓶颈之一，优先看被大客户锁产能的供应商。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_5a2Y5YKoIC8gSEJN.html">存储 / HBM</a></td><td>MU 龙一</td><td>SNDK 周期弹性、WDC 周期弹性</td><td>HBM和高端DRAM是AI服务器的硬约束；NAND和硬盘更多看周期弹性，不等同于HBM卡点。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_QUnmnI3liqHlmaggLyDmlbDmja7kuK3lv4M.html">AI服务器 / 数据中心</a></td><td>DELL 服务器龙一</td><td>IREN 算力电力</td><td>AI服务器整机、机柜交付和电力资产决定算力能不能落地；整机龙头确定性较高，矿企转型更多看弹性。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_5LqR5LiOQUnova_ku7Y.html">云与AI软件</a></td><td>MSFT 龙一、ORCL 龙二</td><td>CRWD 安全、PANW 安全、IBM 企业AI、SNOW 数据云</td><td>云平台和企业AI软件是需求入口，适合作为AI应用兑现观察；但多数不是物理瓶颈，评分要和硬件链分开。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_55S15rqQIC8gODAwVg.html">电源 / 800V</a></td><td>VICR 龙一</td><td>AOSL 功率器件、POWI 电源芯片、NVTS GaN高弹性、VIVO 题材</td><td>机柜功率密度上升带来电源模块、GaN/SiC和高压架构机会；该方向弹性强，但商业兑现差异大。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_5pm25ZyG5Yi26YCgIC8g5p2Q5paZ.html">晶圆制造 / 材料</a></td><td>GFS 特色代工</td><td>TSEM 特色代工、SLOIF 材料</td><td>先进制程、特色工艺、SOI和化合物材料决定供给爬坡，重点看客户认证和产能利用率。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_5Yab5belIC8g56m65aSp.html">军工 / 空天</a></td><td>暂无</td><td>ASTS 卫星通信、ELMT 材料、ONDS 无人系统、RCAT 无人机</td><td>卫星通信、无人机和军工AI属于事件驱动和订单弹性，更多按打野处理。</td></tr><tr><td><a class="sector-pill tag-link" href="tags/t_5omp5bGV6KeC5a-f.html">扩展观察</a></td><td>暂无</td><td>HOOD 金融科技</td><td>暂时不在AI物理主线核心层，保留为风格或题材观察。</td></tr></tbody>
-      </table>
-    </section>
-    <h2 class="section-title">候选明细</h2>
-    <section class="card">
-      <div class="table-scroll">
-      <table>
-        <thead><tr><th>#</th><th>类</th><th>代码</th><th>名称</th><th>赛道</th><th>评分</th><th>涨跌</th><th>操作</th><th>位置</th><th>信号</th><th>判断/风险</th><th>富途分组</th></tr></thead>
-        <tbody>
+    <section id="details" class="report-page">
+      <h2 class="section-title">候选明细</h2>
+      <section class="card">
+        <div class="table-scroll">
+        <table class="detail-table">
+          <thead><tr><th>#</th><th>类</th><th>代码</th><th>名称</th><th>赛道</th><th>评分</th><th>涨跌</th><th>操作</th><th>产业位置</th><th>技术位置</th><th>信号</th><th>判断/风险</th><th>富途分组</th></tr></thead>
+          <tbody>
             <tr>
               <td>1</td>
               <td><a class="strategy strategy-必 tag-link" href="tags/t_5b-F.html">必</a></td>
@@ -533,9 +805,10 @@
               <td><span class="score score-5">5</span></td>
               <td><span class="pct up">4.7%</span></td>
               <td><span class="action buy">买入/加仓</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_R1BVL0NQVeW8guaehOiuoeeulw.html">GPU/CPU异构计算</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span></div></td>
-              <td>MI系列承接GPU第二供给，CPU和GPU组合有数据中心弹性。<br><span class="muted">风险：生态和软件栈弱于龙一。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/gpu.html">GPU</a><a class="chain-pill tag-link" href="tags/t_Q1BV5byC5p6E6K6h566X.html">CPU异构计算</a></div></td>
+              <td><strong>多头趋势，在10日线之上</strong></td>
+              <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+              <td>MI系列承接GPU第二供给，CPU和GPU组合有数据中心弹性。<br><span class="muted">下个交易日可作为优先候选。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓先看回踩不破或放量延续，观察区 483.7-498.2；已有仓位沿5/10日线持有，跌破关键支撑 482.0 先降仓。</span><br><span class="muted">风险：生态和软件栈弱于龙一。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_6Iqv.html">芯</a></div></td>
             </tr>
             
@@ -548,9 +821,10 @@
               <td><span class="score score-5">5</span></td>
               <td><span class="pct up">11.3%</span></td>
               <td><span class="action hold">持有</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_Q1BVIElQL-eUn-aAgQ.html">CPU IP/生态</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span></div></td>
-              <td>AI端侧和数据中心CPU生态底层IP，轻资产确定性强。<br><span class="muted">风险：估值敏感。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/cpu-ip.html">CPU IP</a><a class="chain-pill tag-link" href="tags/t_55Sf5oCB.html">生态</a></div></td>
+              <td><strong>多头趋势，在10日线之上</strong></td>
+              <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+              <td>AI端侧和数据中心CPU生态底层IP，轻资产确定性强。<br><span class="muted">趋势很强但短线偏离较大。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。已有仓位以持有为主；未建仓不追高，等回踩5/10日线或成交量降温后再考虑。</span><br><span class="muted">风险：估值敏感。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_6Iqv.html">芯</a></div></td>
             </tr>
             
@@ -563,9 +837,10 @@
               <td><span class="score score-5">5</span></td>
               <td><span class="pct down">-0.4%</span></td>
               <td><span class="action hold">持有</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_QVNJQy9EU1Av5LqS6IGU6Iqv54mH.html">ASIC/DSP/互联芯片</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>短线偏离20日线过大</span></div></td>
-              <td>AI ASIC、光模块DSP和高速互联底座，靠近定制芯片和光互联卡点。<br><span class="muted">风险：大客户节奏波动。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/asic.html">ASIC</a><a class="chain-pill tag-link" href="tags/dsp.html">DSP</a><a class="chain-pill tag-link" href="tags/t_5LqS6IGU6Iqv54mH.html">互联芯片</a></div></td>
+              <td><strong>多头趋势，在10日线之上</strong></td>
+              <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+              <td>AI ASIC、光模块DSP和高速互联底座，靠近定制芯片和光互联卡点。<br><span class="muted">趋势很强但短线偏离较大。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。已有仓位以持有为主；未建仓不追高，等回踩5/10日线或成交量降温后再考虑。</span><br><span class="muted">风险：大客户节奏波动。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a><a class="group-tag tag-link" href="tags/t_5YWJ.html">光</a><a class="group-tag tag-link" href="tags/t_6Iqv.html">芯</a></div></td>
             </tr>
             
@@ -578,9 +853,10 @@
               <td><span class="score score-2">2</span></td>
               <td><span class="pct up">0.2%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_R1BVL-WKoOmAn-iuoeeul-W5s-WPsA.html">GPU/加速计算平台</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/gpu.html">GPU</a><a class="chain-pill tag-link" href="tags/t_5Yqg6YCf6K6h566X5bmz5Y-w.html">加速计算平台</a></div></td>
+              <td><strong>均线下方，等待修复</strong></td>
               <td><div class="signal-line"><span>靠近50日线</span><span>20日线下</span><span>50日线下</span></div></td>
-              <td>AI训练和推理硬件平台核心，仍是全球AI资本开支的定价锚。<br><span class="muted">风险：估值和出口限制。</span></td>
+              <td>AI训练和推理硬件平台核心，仍是全球AI资本开支的定价锚。<br><span class="muted">暂不主动买入。理由：均线下方，等待修复，靠近50日线；20日线下；50日线下。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：估值和出口限制。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a><a class="group-tag tag-link" href="tags/t_6Iqv.html">芯</a></div></td>
             </tr>
             
@@ -593,9 +869,10 @@
               <td><span class="score score-4">4</span></td>
               <td><span class="pct up">6.5%</span></td>
               <td><span class="action watch">观察低吸</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_Q1BVL-S7o-W3pS9BSeWKoOmAnw.html">CPU/代工/AI加速</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
-              <td>若代工和服务器CPU修复，有反转弹性。<br><span class="muted">风险：执行和资本开支压力。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/cpu.html">CPU</a><a class="chain-pill tag-link" href="tags/t_5Luj5bel.html">代工</a><a class="chain-pill tag-link" href="tags/t_QUnliqDpgJ8.html">AI加速</a></div></td>
+              <td><strong>趋势修复，站上20日线</strong></td>
+              <td><div class="signal-line"><span>5日金叉10日</span><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span></div></td>
+              <td>若代工和服务器CPU修复，有反转弹性。<br><span class="muted">适合观察低吸。理由：趋势修复，站上20日线，5日金叉10日；站上20日线，趋势修复；站上5日线；站上10日线。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 113.7。</span><br><span class="muted">风险：执行和资本开支压力。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a><a class="group-tag tag-link" href="tags/t_6Iqv.html">芯</a></div></td>
             </tr>
             
@@ -608,9 +885,10 @@
               <td><span class="score score-2">2</span></td>
               <td><span class="pct down">-5.5%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_QUnmmbblnIbnuqfns7vnu58.html">AI晶圆级系统</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_QUnmmbblnIbnuqfns7vnu58.html">AI晶圆级系统</a></div></td>
+              <td><strong>均线下方，等待修复</strong></td>
               <td><div class="signal-line"><span>20日线下</span></div></td>
-              <td>Cerebras代表非GPU架构弹性，适合观察替代路线。<br><span class="muted">风险：商业化和流动性需要核验。</span></td>
+              <td>Cerebras代表非GPU架构弹性，适合观察替代路线。<br><span class="muted">暂不主动买入。理由：均线下方，等待修复，20日线下。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：商业化和流动性需要核验。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_6Iqv.html">芯</a></div></td>
             </tr>
             
@@ -623,9 +901,10 @@
               <td><span class="score score-2">2</span></td>
               <td><span class="pct up">4.3%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5omL5py6L-i-uee8mEFJ6Iqv54mH.html">手机/边缘AI芯片</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5omL5py6.html">手机</a><a class="chain-pill tag-link" href="tags/t_6L6557yYQUnoiq_niYc.html">边缘AI芯片</a></div></td>
+              <td><strong>中期支撑，站上50日线</strong></td>
               <td><div class="signal-line"><span>站上5日线</span><span>站回5日线</span><span>20日线下</span><span>弱修复观察</span></div></td>
-              <td>端侧AI入口，但不是数据中心瓶颈。<br><span class="muted">风险：手机周期和竞争。</span></td>
+              <td>端侧AI入口，但不是数据中心瓶颈。<br><span class="muted">暂不主动买入。理由：中期支撑，站上50日线，站上5日线；站回5日线；20日线下；弱修复观察。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：手机周期和竞争。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_6Iqv.html">芯</a></div></td>
             </tr>
             
@@ -638,9 +917,10 @@
               <td><span class="score score-5">5</span></td>
               <td><span class="pct up">5.9%</span></td>
               <td><span class="action buy">买入/加仓</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5r-A5YWJL-WFiee9kee7nC_mnZDmlpnlubPlj7A.html">激光/光网络/材料平台</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回5日线</span><span>站回10日线</span></div></td>
-              <td>激光器、光网络和材料平台更综合，受益AI光互联扩容。<br><span class="muted">风险：业务较宽，纯度低于LITE。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5r-A5YWJ.html">激光</a><a class="chain-pill tag-link" href="tags/t_5YWJ572R57uc.html">光网络</a><a class="chain-pill tag-link" href="tags/t_5p2Q5paZ5bmz5Y-w.html">材料平台</a></div></td>
+              <td><strong>趋势修复，站上20日线</strong></td>
+              <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回5日线</span></div></td>
+              <td>激光器、光网络和材料平台更综合，受益AI光互联扩容。<br><span class="muted">下个交易日可作为优先候选。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上5日线；站上20日线；20/50日趋势向上。未建仓先看回踩不破或放量延续，观察区 372.2-386.7；已有仓位沿5/10日线持有，跌破关键支撑 379.0 先降仓。</span><br><span class="muted">风险：业务较宽，纯度低于LITE。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_5YWJ.html">光</a></div></td>
             </tr>
             
@@ -653,9 +933,10 @@
               <td><span class="score score-5">5</span></td>
               <td><span class="pct up">3.6%</span></td>
               <td><span class="action buy">买入/加仓</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_SW5Q5r-A5YWJ5ZmoL0VNTC9PQ1M.html">InP激光器/EML/OCS</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span></div></td>
-              <td>NVIDIA链条重点供应商之一，InP主动光器件和OCS受益于AI带宽升级。<br><span class="muted">风险：客户集中和扩产节奏。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_SW5Q5r-A5YWJ5Zmo.html">InP激光器</a><a class="chain-pill tag-link" href="tags/eml.html">EML</a><a class="chain-pill tag-link" href="tags/ocs.html">OCS</a></div></td>
+              <td><strong>多头趋势，在10日线之上</strong></td>
+              <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+              <td>NVIDIA链条重点供应商之一，InP主动光器件和OCS受益于AI带宽升级。<br><span class="muted">下个交易日可作为优先候选。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓先看回踩不破或放量延续，观察区 876.3-906.2；已有仓位沿5/10日线持有，跌破关键支撑 905.8 先降仓。</span><br><span class="muted">风险：客户集中和扩产节奏。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_5YWJ.html">光</a></div></td>
             </tr>
             
@@ -668,9 +949,10 @@
               <td><span class="score score-4">4</span></td>
               <td><span class="pct up">10.0%</span></td>
               <td><span class="action watch">观察低吸</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_SW5QL0dhQXPooazlupU.html">InP/GaAs衬底</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/inp.html">InP</a><a class="chain-pill tag-link" href="tags/t_R2FBc-ihrOW6lQ.html">GaAs衬底</a></div></td>
+              <td><strong>中期支撑，站上50日线</strong></td>
               <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站回10日线</span><span>站回50日线</span><span>20日线下</span></div></td>
-              <td>最贴近InP衬底涨价和扩产线索，但出口许可和产能兑现风险高。<br><span class="muted">风险：政策和出货节奏。</span></td>
+              <td>最贴近InP衬底涨价和扩产线索，但出口许可和产能兑现风险高。<br><span class="muted">适合观察低吸。理由：中期支撑，站上50日线，站上5日线；站上10日线；站回10日线；站回50日线。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 107.3。</span><br><span class="muted">风险：政策和出货节奏。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_5YWJ.html">光</a></div></td>
             </tr>
             
@@ -683,9 +965,10 @@
               <td><span class="score score-4">4</span></td>
               <td><span class="pct up">6.4%</span></td>
               <td><span class="action watch">观察低吸</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5YWJ6YCa5L-h5rWL6K-V5Luq5Zmo.html">光通信测试仪器</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
-              <td>带宽升级带来测试需求，属于工具链弹性。<br><span class="muted">风险：订单节奏。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5YWJ6YCa5L-h5rWL6K-V5Luq5Zmo.html">光通信测试仪器</a></div></td>
+              <td><strong>趋势修复，站上20日线</strong></td>
+              <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+              <td>带宽升级带来测试需求，属于工具链弹性。<br><span class="muted">适合观察低吸。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上5日线；站上10日线；站上20日线。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 50.0。</span><br><span class="muted">风险：订单节奏。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_5YWJ.html">光</a></div></td>
             </tr>
             
@@ -698,9 +981,10 @@
               <td><span class="score score-2">2</span></td>
               <td><span class="pct down">-2.2%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_6auY6YCf5pS25Y-R5ZmoL-a_gOWFiee7hOS7tg.html">高速收发器/激光组件</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_6auY6YCf5pS25Y-R5Zmo.html">高速收发器</a><a class="chain-pill tag-link" href="tags/t_5r-A5YWJ57uE5Lu2.html">激光组件</a></div></td>
+              <td><strong>中期支撑，站上50日线</strong></td>
               <td><div class="signal-line"><span>靠近50日线</span><span>20日线下</span></div></td>
-              <td>光模块beta强，适合看订单弹性。<br><span class="muted">风险：盈利波动和上游涨价压力。</span></td>
+              <td>光模块beta强，适合看订单弹性。<br><span class="muted">暂不主动买入。理由：中期支撑，站上50日线，靠近50日线；20日线下。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：盈利波动和上游涨价压力。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a><a class="group-tag tag-link" href="tags/t_5YWJ.html">光</a></div></td>
             </tr>
             
@@ -713,9 +997,10 @@
               <td><span class="score score-2">2</span></td>
               <td><span class="pct up">5.0%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5YWJ6YCa5L-hL-e9kee7nOiuvuWkhw.html">光通信/网络设备</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5YWJ6YCa5L-h.html">光通信</a><a class="chain-pill tag-link" href="tags/t_572R57uc6K6-5aSH.html">网络设备</a></div></td>
+              <td><strong>中期支撑，站上50日线</strong></td>
               <td><div class="signal-line"><span>站上5日线</span><span>靠近20日线</span><span>20日线下</span><span>弱修复观察</span></div></td>
-              <td>网络设备广义受益，纯度不如器件和材料。<br><span class="muted">风险：运营商资本开支。</span></td>
+              <td>网络设备广义受益，纯度不如器件和材料。<br><span class="muted">暂不主动买入。理由：中期支撑，站上50日线，站上5日线；靠近20日线；20日线下；弱修复观察。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：运营商资本开支。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a><a class="group-tag tag-link" href="tags/t_5YWJ.html">光</a></div></td>
             </tr>
             
@@ -728,9 +1013,10 @@
               <td><span class="score score-0">0</span></td>
               <td><span class="pct neutral">--</span></td>
               <td><span class="action watch">工具</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5YWJ5a2QL-WNiuWvvOS9k0VURg.html">光子/半导体ETF</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5YWJ5a2Q.html">光子</a><a class="chain-pill tag-link" href="tags/t_5Y2K5a-85L2TRVRG.html">半导体ETF</a></div></td>
+              <td><strong>ETF工具，不参与个股技术评分</strong></td>
               <td><div class="signal-line"><span>ETF工具</span></div></td>
-              <td>作为主题表达工具，不做个股判断。<br><span class="muted">风险：ETF波动。</span></td>
+              <td>作为主题表达工具，不做个股判断。<br><span class="muted">ETF只做板块方向表达，不参与个股买卖优先级。</span><br><span class="muted">风险：ETF波动。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_5YWJ.html">光</a></div></td>
             </tr>
             
@@ -743,9 +1029,10 @@
               <td><span class="score score-0">0</span></td>
               <td><span class="pct neutral">--</span></td>
               <td><span class="action watch">工具</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5YWJ5a2QRVRG.html">光子ETF</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5YWJ5a2QRVRG.html">光子ETF</a></div></td>
+              <td><strong>ETF工具，不参与个股技术评分</strong></td>
               <td><div class="signal-line"><span>ETF工具</span></div></td>
-              <td>作为主题表达工具，不做个股判断。<br><span class="muted">风险：ETF波动。</span></td>
+              <td>作为主题表达工具，不做个股判断。<br><span class="muted">ETF只做板块方向表达，不参与个股买卖优先级。</span><br><span class="muted">风险：ETF波动。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_5YWJ.html">光</a></div></td>
             </tr>
             
@@ -758,9 +1045,10 @@
               <td><span class="score score-5">5</span></td>
               <td><span class="pct down">-1.4%</span></td>
               <td><span class="action buy">买入/加仓</span></td>
-              <td><a class="chain-pill tag-link" href="tags/dram-hbm.html">DRAM/HBM</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
-              <td>美股HBM/DRAM核心，AI服务器存储扩容的直接受益方。<br><span class="muted">风险：周期和capex。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/dram.html">DRAM</a><a class="chain-pill tag-link" href="tags/hbm.html">HBM</a></div></td>
+              <td><strong>多头趋势，在10日线之上</strong></td>
+              <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+              <td>美股HBM/DRAM核心，AI服务器存储扩容的直接受益方。<br><span class="muted">下个交易日可作为优先候选。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓先看回踩不破或放量延续，观察区 950.9-979.4；已有仓位沿5/10日线持有，跌破关键支撑 893.1 先降仓。</span><br><span class="muted">风险：周期和capex。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a><a class="group-tag tag-link" href="tags/t_5a2Y.html">存</a><a class="group-tag tag-link" href="tags/t_54m5.html">特</a></div></td>
             </tr>
             
@@ -773,9 +1061,10 @@
               <td><span class="score score-4">4</span></td>
               <td><span class="pct up">5.2%</span></td>
               <td><span class="action watch">观察低吸</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_TkFORC_pl6rlrZg.html">NAND/闪存</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>短线偏离20日线过大</span></div></td>
-              <td>NAND价格弹性，适合周期交易。<br><span class="muted">风险：供给恢复。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/nand.html">NAND</a><a class="chain-pill tag-link" href="tags/t_6Zeq5a2Y.html">闪存</a></div></td>
+              <td><strong>多头趋势，在5日线之上</strong></td>
+              <td><div class="signal-line"><span>5日金叉10日</span><span>多头趋势，在5日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span></div></td>
+              <td>NAND价格弹性，适合周期交易。<br><span class="muted">适合观察低吸。理由：多头趋势，在5日线之上，5日金叉10日；站上5日线；站上10日线；站上20日线。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 1623.8。</span><br><span class="muted">风险：供给恢复。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a><a class="group-tag tag-link" href="tags/t_5a2Y.html">存</a></div></td>
             </tr>
             
@@ -788,9 +1077,10 @@
               <td><span class="score score-4">4</span></td>
               <td><span class="pct up">6.4%</span></td>
               <td><span class="action watch">观察低吸</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_TkFORC9IRETlrZjlgqg.html">NAND/HDD存储</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span></div></td>
-              <td>存储周期和AI数据存储弹性，但不等于HBM瓶颈。<br><span class="muted">风险：价格周期。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/nand.html">NAND</a><a class="chain-pill tag-link" href="tags/t_SERE5a2Y5YKo.html">HDD存储</a></div></td>
+              <td><strong>多头趋势，在10日线之上</strong></td>
+              <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+              <td>存储周期和AI数据存储弹性，但不等于HBM瓶颈。<br><span class="muted">适合观察低吸。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 518.0。</span><br><span class="muted">风险：价格周期。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_5a2Y.html">存</a></div></td>
             </tr>
             
@@ -800,12 +1090,13 @@
               <td><code>DELL</code></td>
               <td><strong>Dell Technologies</strong></td>
               <td><a class="sector-pill tag-link" href="tags/t_QUnmnI3liqHlmaggLyDmlbDmja7kuK3lv4M.html">AI服务器 / 数据中心</a></td>
-              <td><span class="score score-4">4</span></td>
+              <td><span class="score score-5">5</span></td>
               <td><span class="pct up">1.1%</span></td>
-              <td><span class="action watch">观察低吸</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_QUnmnI3liqHlmagvT0VN.html">AI服务器/OEM</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
-              <td>AI服务器整机交付和企业客户入口，受益GPU集群落地。<br><span class="muted">风险：利润率、库存和订单节奏。</span></td>
+              <td><span class="action buy">买入/加仓</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_QUnmnI3liqHlmag.html">AI服务器</a><a class="chain-pill tag-link" href="tags/oem.html">OEM</a></div></td>
+              <td><strong>趋势修复，站上20日线</strong></td>
+              <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+              <td>AI服务器整机交付和企业客户入口，受益GPU集群落地。<br><span class="muted">下个交易日可作为优先候选。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上5日线；站上20日线；20/50日趋势向上。未建仓先看回踩不破或放量延续，观察区 387.9-407.8；已有仓位沿5/10日线持有，跌破关键支撑 346.6 先降仓。</span><br><span class="muted">风险：利润率、库存和订单节奏。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_54m5.html">特</a></div></td>
             </tr>
             
@@ -818,9 +1109,10 @@
               <td><span class="score score-4">4</span></td>
               <td><span class="pct up">5.4%</span></td>
               <td><span class="action watch">观察低吸</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_55-_5LyBL0FJ5pWw5o2u5Lit5b-D.html">矿企/AI数据中心</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回20日线</span></div></td>
-              <td>矿企转AI算力和电力资产弹性。<br><span class="muted">风险：电价、融资和GPU交付。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_55-_5LyB.html">矿企</a><a class="chain-pill tag-link" href="tags/t_QUnmlbDmja7kuK3lv4M.html">AI数据中心</a></div></td>
+              <td><strong>多头趋势，在10日线之上</strong></td>
+              <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+              <td>矿企转AI算力和电力资产弹性。<br><span class="muted">适合观察低吸。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 58.4。</span><br><span class="muted">风险：电价、融资和GPU交付。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a></div></td>
             </tr>
             
@@ -833,9 +1125,10 @@
               <td><span class="score score-2">2</span></td>
               <td><span class="pct up">0.1%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5LqRL0FJ5bmz5Y-w.html">云/AI平台</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5LqR.html">云</a><a class="chain-pill tag-link" href="tags/t_QUnlubPlj7A.html">AI平台</a></div></td>
+              <td><strong>均线下方，等待修复</strong></td>
               <td><div class="signal-line"><span>20日线下</span><span>50日线下</span></div></td>
-              <td>Azure和Copilot是AI应用与算力需求入口。<br><span class="muted">风险：资本开支回报率。</span></td>
+              <td>Azure和Copilot是AI应用与算力需求入口。<br><span class="muted">暂不主动买入。理由：均线下方，等待修复，20日线下；50日线下。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：资本开支回报率。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_6L2v.html">软</a></div></td>
             </tr>
             
@@ -848,9 +1141,10 @@
               <td><span class="score score-2">2</span></td>
               <td><span class="pct up">0.0%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5LqR5Z-656GA6K6-5pa9.html">云基础设施</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5LqR5Z-656GA6K6-5pa9.html">云基础设施</a></div></td>
+              <td><strong>均线下方，等待修复</strong></td>
               <td><div class="signal-line"><span>靠近50日线</span><span>20日线下</span><span>50日线下</span></div></td>
-              <td>OCI承接AI算力需求，订单和GPU集群交付是核心变量。<br><span class="muted">风险：债务和交付能力。</span></td>
+              <td>OCI承接AI算力需求，订单和GPU集群交付是核心变量。<br><span class="muted">暂不主动买入。理由：均线下方，等待修复，靠近50日线；20日线下；50日线下。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：债务和交付能力。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_54m5.html">特</a><a class="group-tag tag-link" href="tags/t_6L2v.html">软</a></div></td>
             </tr>
             
@@ -863,9 +1157,10 @@
               <td><span class="score score-4">4</span></td>
               <td><span class="pct down">-1.3%</span></td>
               <td><span class="action watch">观察低吸</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_57uI56uv5a6J5YWo.html">终端安全</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>靠近20日线</span></div></td>
-              <td>安全预算和AI安全需求。<br><span class="muted">风险：事件风险和估值。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_57uI56uv5a6J5YWo.html">终端安全</a></div></td>
+              <td><strong>趋势修复，站上20日线</strong></td>
+              <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>靠近20日线</span></div></td>
+              <td>安全预算和AI安全需求。<br><span class="muted">适合观察低吸。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上5日线；站上20日线；20/50日趋势向上。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 676.3。</span><br><span class="muted">风险：事件风险和估值。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_6L2v.html">软</a></div></td>
             </tr>
             
@@ -878,14 +1173,31 @@
               <td><span class="score score-4">4</span></td>
               <td><span class="pct up">0.0%</span></td>
               <td><span class="action watch">观察低吸</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_572R57uc5a6J5YWo.html">网络安全</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
-              <td>AI时代安全预算受益，但非AI主链。<br><span class="muted">风险：平台化转型节奏。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_572R57uc5a6J5YWo.html">网络安全</a></div></td>
+              <td><strong>多头趋势，在10日线之上</strong></td>
+              <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+              <td>AI时代安全预算受益，但非AI主链。<br><span class="muted">适合观察低吸。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 265.7。</span><br><span class="muted">风险：平台化转型节奏。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_6L2v.html">软</a></div></td>
             </tr>
             
             <tr>
               <td>25</td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><code>SNOW</code></td>
+              <td><strong>Snowflake</strong></td>
+              <td><a class="sector-pill tag-link" href="tags/t_5LqR5LiOQUnova_ku7Y.html">云与AI软件</a></td>
+              <td><span class="score score-4">4</span></td>
+              <td><span class="pct down">-3.2%</span></td>
+              <td><span class="action watch">观察低吸</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5pWw5o2u5bmz5Y-w.html">数据平台</a></div></td>
+              <td><strong>趋势修复，站上20日线</strong></td>
+              <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+              <td>AI应用的数据底座，更多看消费复苏和产品化。<br><span class="muted">适合观察低吸。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上20日线；20/50日趋势向上。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 215.1。</span><br><span class="muted">风险：增长放缓。</span></td>
+              <td><div class="groups"><a class="group-tag tag-link" href="tags/t_54m5.html">特</a><a class="group-tag tag-link" href="tags/t_6L2v.html">软</a></div></td>
+            </tr>
+            
+            <tr>
+              <td>26</td>
               <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
               <td><code>IBM</code></td>
               <td><strong>IBM Corp</strong></td>
@@ -893,25 +1205,11 @@
               <td><span class="score score-3">3</span></td>
               <td><span class="pct down">-0.9%</span></td>
               <td><span class="action hold">持有观察</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5re35ZCI5LqRL-WSqOivog.html">混合云/咨询</a></td>
-              <td><div class="signal-line"><span>站上20日线</span><span>20/50日趋势向上</span><span>靠近20日线</span></div></td>
-              <td>企业AI交付和大型客户基础。<br><span class="muted">风险：成长性不足。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5re35ZCI5LqR.html">混合云</a><a class="chain-pill tag-link" href="tags/t_5ZKo6K-i.html">咨询</a></div></td>
+              <td><strong>趋势修复，站上20日线</strong></td>
+              <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上20日线</span><span>20/50日趋势向上</span><span>靠近20日线</span></div></td>
+              <td>企业AI交付和大型客户基础。<br><span class="muted">以持有观察为主。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上20日线；20/50日趋势向上；靠近20日线。未建仓不急追，等站稳10/20日线或出现5日金叉10日后再提高优先级。</span><br><span class="muted">风险：成长性不足。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_54m5.html">特</a></div></td>
-            </tr>
-            
-            <tr>
-              <td>26</td>
-              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
-              <td><code>SNOW</code></td>
-              <td><strong>Snowflake</strong></td>
-              <td><a class="sector-pill tag-link" href="tags/t_5LqR5LiOQUnova_ku7Y.html">云与AI软件</a></td>
-              <td><span class="score score-3">3</span></td>
-              <td><span class="pct down">-3.2%</span></td>
-              <td><span class="action hold">持有观察</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5pWw5o2u5bmz5Y-w.html">数据平台</a></td>
-              <td><div class="signal-line"><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
-              <td>AI应用的数据底座，更多看消费复苏和产品化。<br><span class="muted">风险：增长放缓。</span></td>
-              <td><div class="groups"><a class="group-tag tag-link" href="tags/t_54m5.html">特</a><a class="group-tag tag-link" href="tags/t_6L2v.html">软</a></div></td>
             </tr>
             
             <tr>
@@ -923,9 +1221,10 @@
               <td><span class="score score-2">2</span></td>
               <td><span class="pct down">-0.3%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/crm-agent.html">CRM/Agent</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/crm.html">CRM</a><a class="chain-pill tag-link" href="tags/agent.html">Agent</a></div></td>
+              <td><strong>均线下方，等待修复</strong></td>
               <td><div class="signal-line"><span>20日线下</span><span>50日线下</span></div></td>
-              <td>AI Agent应用扩散观察。<br><span class="muted">风险：传统业务增速。</span></td>
+              <td>AI Agent应用扩散观察。<br><span class="muted">暂不主动买入。理由：均线下方，等待修复，20日线下；50日线下。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：传统业务增速。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_6L2v.html">软</a></div></td>
             </tr>
             
@@ -938,9 +1237,10 @@
               <td><span class="score score-2">2</span></td>
               <td><span class="pct down">-1.9%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5Y-v6KeC5rWL5oCnL-S6keebkeaOpw.html">可观测性/云监控</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5Y-v6KeC5rWL5oCn.html">可观测性</a><a class="chain-pill tag-link" href="tags/t_5LqR55uR5o6n.html">云监控</a></div></td>
+              <td><strong>中期支撑，站上50日线</strong></td>
               <td><div class="signal-line"><span>靠近20日线</span><span>20日线下</span></div></td>
-              <td>AI和云负载增加带来监控需求。<br><span class="muted">风险：云优化周期。</span></td>
+              <td>AI和云负载增加带来监控需求。<br><span class="muted">暂不主动买入。理由：中期支撑，站上50日线，靠近20日线；20日线下。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：云优化周期。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_6L2v.html">软</a></div></td>
             </tr>
             
@@ -953,9 +1253,10 @@
               <td><span class="score score-2">2</span></td>
               <td><span class="pct down">-0.9%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5bel5L2c5rWBQUk.html">工作流AI</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5bel5L2c5rWBQUk.html">工作流AI</a></div></td>
+              <td><strong>中期支撑，站上50日线</strong></td>
               <td><div class="signal-line"><span>靠近50日线</span><span>20日线下</span></div></td>
-              <td>企业AI落地观察。<br><span class="muted">风险：估值和增长兑现。</span></td>
+              <td>企业AI落地观察。<br><span class="muted">暂不主动买入。理由：中期支撑，站上50日线，靠近50日线；20日线下。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：估值和增长兑现。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_54m5.html">特</a><a class="group-tag tag-link" href="tags/t_6L2v.html">软</a></div></td>
             </tr>
             
@@ -968,9 +1269,10 @@
               <td><span class="score score-2">2</span></td>
               <td><span class="pct down">-2.4%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_QUnlupTnlKgv5Zu96Ziy6L2v5Lu2.html">AI应用/国防软件</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_QUnlupTnlKg.html">AI应用</a><a class="chain-pill tag-link" href="tags/t_5Zu96Ziy6L2v5Lu2.html">国防软件</a></div></td>
+              <td><strong>均线下方，等待修复</strong></td>
               <td><div class="signal-line"><span>20日线下</span><span>50日线下</span></div></td>
-              <td>AI软件商业化弹性强，但估值和情绪占比高。<br><span class="muted">风险：估值过热。</span></td>
+              <td>AI软件商业化弹性强，但估值和情绪占比高。<br><span class="muted">暂不主动买入。理由：均线下方，等待修复，20日线下；50日线下。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：估值过热。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a><a class="group-tag tag-link" href="tags/t_5Yab.html">军</a><a class="group-tag tag-link" href="tags/t_54m5.html">特</a></div></td>
             </tr>
             
@@ -983,9 +1285,10 @@
               <td><span class="score score-1">1</span></td>
               <td><span class="pct up">0.2%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_SFIv6LSi5Yqh6L2v5Lu2.html">HR/财务软件</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/hr.html">HR</a><a class="chain-pill tag-link" href="tags/t_6LSi5Yqh6L2v5Lu2.html">财务软件</a></div></td>
+              <td><strong>中期支撑，站上50日线</strong></td>
               <td><div class="signal-line"><span>靠近50日线</span><span>20日线下</span></div></td>
-              <td>企业软件AI功能观察，不是核心瓶颈。<br><span class="muted">风险：预算周期。</span></td>
+              <td>企业软件AI功能观察，不是核心瓶颈。<br><span class="muted">暂不主动买入。理由：中期支撑，站上50日线，靠近50日线；20日线下。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：预算周期。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_6L2v.html">软</a></div></td>
             </tr>
             
@@ -998,9 +1301,10 @@
               <td><span class="score score-5">5</span></td>
               <td><span class="pct up">1.9%</span></td>
               <td><span class="action buy">买入/加仓</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_6auY5a-G5bqm55S15rqQ5qih5Z2X.html">高密度电源模块</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回10日线</span></div></td>
-              <td>AI机柜功率密度上升的关键电源模块供应商之一。<br><span class="muted">风险：客户集中和替代方案。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_6auY5a-G5bqm55S15rqQ5qih5Z2X.html">高密度电源模块</a></div></td>
+              <td><strong>多头趋势，在10日线之上</strong></td>
+              <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+              <td>AI机柜功率密度上升的关键电源模块供应商之一。<br><span class="muted">下个交易日可作为优先候选。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓先看回踩不破或放量延续，观察区 287.2-300.5；已有仓位沿5/10日线持有，跌破关键支撑 296.4 先降仓。</span><br><span class="muted">风险：客户集中和替代方案。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/800v.html">800v</a></div></td>
             </tr>
             
@@ -1013,9 +1317,10 @@
               <td><span class="score score-4">4</span></td>
               <td><span class="pct up">4.3%</span></td>
               <td><span class="action watch">观察低吸</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_TU9TRkVUL-WKn-eOh-WNiuWvvOS9kw.html">MOSFET/功率半导体</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回20日线</span><span>靠近20日线</span></div></td>
-              <td>功率器件弹性，AI纯度需验证。<br><span class="muted">风险：周期和价格。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/mosfet.html">MOSFET</a><a class="chain-pill tag-link" href="tags/t_5Yqf546H5Y2K5a-85L2T.html">功率半导体</a></div></td>
+              <td><strong>趋势修复，站上20日线</strong></td>
+              <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回20日线</span></div></td>
+              <td>功率器件弹性，AI纯度需验证。<br><span class="muted">适合观察低吸。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上5日线；站上20日线；20/50日趋势向上。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 44.2。</span><br><span class="muted">风险：周期和价格。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/800v.html">800v</a></div></td>
             </tr>
             
@@ -1028,9 +1333,10 @@
               <td><span class="score score-4">4</span></td>
               <td><span class="pct up">0.8%</span></td>
               <td><span class="action watch">观察低吸</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_55S15rqQ566h55CGL-mrmOWOi-iKr-eJhw.html">电源管理/高压芯片</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>靠近20日线</span></div></td>
-              <td>数据中心电源链弹性，需看AI收入占比。<br><span class="muted">风险：传统业务拖累。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_55S15rqQ566h55CG.html">电源管理</a><a class="chain-pill tag-link" href="tags/t_6auY5Y6L6Iqv54mH.html">高压芯片</a></div></td>
+              <td><strong>趋势修复，站上20日线</strong></td>
+              <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>靠近20日线</span></div></td>
+              <td>数据中心电源链弹性，需看AI收入占比。<br><span class="muted">适合观察低吸。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上5日线；站上20日线；20/50日趋势向上。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 77.8。</span><br><span class="muted">风险：传统业务拖累。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/800v.html">800v</a></div></td>
             </tr>
             
@@ -1043,9 +1349,10 @@
               <td><span class="score score-2">2</span></td>
               <td><span class="pct up">5.3%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_R2FO5Yqf546H6Iqv54mH.html">GaN功率芯片</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_R2FO5Yqf546H6Iqv54mH.html">GaN功率芯片</a></div></td>
+              <td><strong>中期支撑，站上50日线</strong></td>
               <td><div class="signal-line"><span>站上5日线</span><span>站回5日线</span><span>20日线下</span><span>弱修复观察</span></div></td>
-              <td>GaN故事弹性强，适合打野。<br><span class="muted">风险：亏损和导入节奏。</span></td>
+              <td>GaN故事弹性强，适合打野。<br><span class="muted">暂不主动买入。理由：中期支撑，站上50日线，站上5日线；站回5日线；20日线下；弱修复观察。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：亏损和导入节奏。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/800v.html">800v</a></div></td>
             </tr>
             
@@ -1058,9 +1365,10 @@
               <td><span class="score score-1">1</span></td>
               <td><span class="pct up">0.4%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_55S15YqbL-aVsOaNruS4reW_gw.html">电力/数据中心</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_55S15Yqb.html">电力</a><a class="chain-pill tag-link" href="tags/t_5pWw5o2u5Lit5b-D.html">数据中心</a></div></td>
+              <td><strong>中期支撑，站上50日线</strong></td>
               <td><div class="signal-line"><span>站上5日线</span><span>20日线下</span><span>弱修复观察</span></div></td>
-              <td>更偏题材和资产弹性，需谨慎。<br><span class="muted">风险：流动性和基本面。</span></td>
+              <td>更偏题材和资产弹性，需谨慎。<br><span class="muted">暂不主动买入。理由：中期支撑，站上50日线，站上5日线；20日线下；弱修复观察。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：流动性和基本面。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/800v.html">800v</a></div></td>
             </tr>
             
@@ -1073,9 +1381,10 @@
               <td><span class="score score-1">1</span></td>
               <td><span class="pct down">-5.3%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_U2lD5p2Q5paZL-WZqOS7tg.html">SiC材料/器件</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_U2lD5p2Q5paZ.html">SiC材料</a><a class="chain-pill tag-link" href="tags/t_5Zmo5Lu2.html">器件</a></div></td>
+              <td><strong>中期支撑，站上50日线</strong></td>
               <td><div class="signal-line"><span>靠近50日线</span><span>20日线下</span></div></td>
-              <td>SiC供需反转观察，但和AI电源不是一条纯主线。<br><span class="muted">风险：资产负债表。</span></td>
+              <td>SiC供需反转观察，但和AI电源不是一条纯主线。<br><span class="muted">暂不主动买入。理由：中期支撑，站上50日线，靠近50日线；20日线下。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：资产负债表。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/800v.html">800v</a></div></td>
             </tr>
             
@@ -1088,9 +1397,10 @@
               <td><span class="score score-5">5</span></td>
               <td><span class="pct up">0.8%</span></td>
               <td><span class="action buy">买入/加仓</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5oiQ54afL-eJueiJsuW3peiJug.html">成熟/特色工艺</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>靠近20日线</span></div></td>
-              <td>AI配套芯片、射频和电源管理外溢会用到特色工艺。<br><span class="muted">风险：先进制程缺位。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5oiQ54af.html">成熟</a><a class="chain-pill tag-link" href="tags/t_54m56Imy5bel6Im6.html">特色工艺</a></div></td>
+              <td><strong>多头趋势，在10日线之上</strong></td>
+              <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+              <td>AI配套芯片、射频和电源管理外溢会用到特色工艺。<br><span class="muted">下个交易日可作为优先候选。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；20/50日趋势向上。未建仓先看回踩不破或放量延续，观察区 77.9-80.0；已有仓位沿5/10日线持有，跌破关键支撑 78.8 先降仓。</span><br><span class="muted">风险：先进制程缺位。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_5YWJ.html">光</a><a class="group-tag tag-link" href="tags/t_6Iqv.html">芯</a></div></td>
             </tr>
             
@@ -1103,9 +1413,10 @@
               <td><span class="score score-4">4</span></td>
               <td><span class="pct up">1.8%</span></td>
               <td><span class="action watch">观察低吸</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5qih5oufL-eUtea6kC_lsITpopHku6Plt6U.html">模拟/电源/射频代工</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span><span>站回20日线</span></div></td>
-              <td>PMIC和特色工艺弹性，需看稼动率。<br><span class="muted">风险：周期。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5qih5ouf.html">模拟</a><a class="chain-pill tag-link" href="tags/t_55S15rqQ.html">电源</a><a class="chain-pill tag-link" href="tags/t_5bCE6aKR5Luj5bel.html">射频代工</a></div></td>
+              <td><strong>趋势修复，站上20日线</strong></td>
+              <td><div class="signal-line"><span>站上20日线，趋势修复</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
+              <td>PMIC和特色工艺弹性，需看稼动率。<br><span class="muted">适合观察低吸。理由：趋势修复，站上20日线，站上20日线，趋势修复；站上5日线；站上10日线；站上20日线。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 260.7。</span><br><span class="muted">风险：周期。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_5YWJ.html">光</a></div></td>
             </tr>
             
@@ -1118,14 +1429,31 @@
               <td><span class="score score-0">0</span></td>
               <td><span class="pct neutral">--</span></td>
               <td><span class="action watch">观察</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_U09J5p2Q5paZ.html">SOI材料</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_U09J5p2Q5paZ.html">SOI材料</a></div></td>
+              <td><strong>K线不足，等待数据补齐</strong></td>
               <td><div class="signal-line"><span>数据不足</span></div></td>
-              <td>SOI材料平台，适合材料国产替代和射频/功率链观察。<br><span class="muted">风险：交易流动性。</span></td>
+              <td>SOI材料平台，适合材料国产替代和射频/功率链观察。<br><span class="muted">K线不足，暂不主动推荐。</span><br><span class="muted">风险：交易流动性。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_5YWJ.html">光</a></div></td>
             </tr>
             
             <tr>
               <td>41</td>
+              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
+              <td><code>ELMT</code></td>
+              <td><strong>Elmet Group</strong></td>
+              <td><a class="sector-pill tag-link" href="tags/t_5Yab5belIC8g56m65aSp.html">军工 / 空天</a></td>
+              <td><span class="score score-3">3</span></td>
+              <td><span class="pct up">5.2%</span></td>
+              <td><span class="action hold">持有观察</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_6ZKo6ZK85p2Q5paZ.html">钨钼材料</a></div></td>
+              <td><strong>多头趋势，在10日线之上</strong></td>
+              <td><div class="signal-line"><span>多头趋势，在10日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>短线偏离20日线过大</span></div></td>
+              <td>军工材料线索，AI链弱。<br><span class="muted">以持有观察为主。理由：多头趋势，在10日线之上，站上5日线；站上10日线；站上20日线；短线偏离20日线过大。未建仓不急追，等站稳10/20日线或出现5日金叉10日后再提高优先级。</span><br><span class="muted">风险：需求验证。</span></td>
+              <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a><a class="group-tag tag-link" href="tags/t_5Yab.html">军</a></div></td>
+            </tr>
+            
+            <tr>
+              <td>42</td>
               <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
               <td><code>ASTS</code></td>
               <td><strong>AST SpaceMobile</strong></td>
@@ -1133,25 +1461,11 @@
               <td><span class="score score-2">2</span></td>
               <td><span class="pct down">-15.5%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5Y2r5pif55u06L-e5omL5py6.html">卫星直连手机</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5Y2r5pif55u06L-e5omL5py6.html">卫星直连手机</a></div></td>
+              <td><strong>均线下方，等待修复</strong></td>
               <td><div class="signal-line"><span>20日线下</span><span>50日线下</span></div></td>
-              <td>事件驱动和空间通信弹性，非AI物理链核心。<br><span class="muted">风险：融资和发射进度。</span></td>
+              <td>事件驱动和空间通信弹性，非AI物理链核心。<br><span class="muted">暂不主动买入。理由：均线下方，等待修复，20日线下；50日线下。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：融资和发射进度。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a></div></td>
-            </tr>
-            
-            <tr>
-              <td>42</td>
-              <td><a class="strategy strategy-野 tag-link" href="tags/t_6YeO.html">野</a></td>
-              <td><code>ELMT</code></td>
-              <td><strong>Elmet Group</strong></td>
-              <td><a class="sector-pill tag-link" href="tags/t_5Yab5belIC8g56m65aSp.html">军工 / 空天</a></td>
-              <td><span class="score score-2">2</span></td>
-              <td><span class="pct up">5.2%</span></td>
-              <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_6ZKo6ZK85p2Q5paZ.html">钨钼材料</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>短线偏离20日线过大</span></div></td>
-              <td>军工材料线索，AI链弱。<br><span class="muted">风险：需求验证。</span></td>
-              <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a><a class="group-tag tag-link" href="tags/t_5Yab.html">军</a></div></td>
             </tr>
             
             <tr>
@@ -1163,9 +1477,10 @@
               <td><span class="score score-1">1</span></td>
               <td><span class="pct down">-5.1%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5peg5Lq657O757ufL-e9kee7nA.html">无人系统/网络</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5peg5Lq657O757uf.html">无人系统</a><a class="chain-pill tag-link" href="tags/t_572R57uc.html">网络</a></div></td>
+              <td><strong>均线下方，等待修复</strong></td>
               <td><div class="signal-line"><span>20日线下</span><span>50日线下</span></div></td>
-              <td>军工和无人系统弹性。<br><span class="muted">风险：商业化。</span></td>
+              <td>军工和无人系统弹性。<br><span class="muted">暂不主动买入。理由：均线下方，等待修复，20日线下；50日线下。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：商业化。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_5Yab.html">军</a></div></td>
             </tr>
             
@@ -1178,9 +1493,10 @@
               <td><span class="score score-1">1</span></td>
               <td><span class="pct down">-6.9%</span></td>
               <td><span class="action sell">减仓/回避</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5bCP5Z6L5peg5Lq65py6L-WbvemYsg.html">小型无人机/国防</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5bCP5Z6L5peg5Lq65py6.html">小型无人机</a><a class="chain-pill tag-link" href="tags/t_5Zu96Ziy.html">国防</a></div></td>
+              <td><strong>均线下方，等待修复</strong></td>
               <td><div class="signal-line"><span>20日线下</span><span>50日线下</span></div></td>
-              <td>订单驱动，适合军工打野。<br><span class="muted">风险：订单兑现。</span></td>
+              <td>订单驱动，适合军工打野。<br><span class="muted">暂不主动买入。理由：均线下方，等待修复，20日线下；50日线下。已有仓位按5/10/20日线纪律处理，重新站回关键均线后再评估。</span><br><span class="muted">风险：订单兑现。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_5Yab.html">军</a></div></td>
             </tr>
             
@@ -1193,9 +1509,10 @@
               <td><span class="score score-0">0</span></td>
               <td><span class="pct neutral">--</span></td>
               <td><span class="action watch">工具</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5a2Y5YKoRVRG.html">存储ETF</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5a2Y5YKoRVRG.html">存储ETF</a></div></td>
+              <td><strong>ETF工具，不参与个股技术评分</strong></td>
               <td><div class="signal-line"><span>ETF工具</span></div></td>
-              <td>存储方向工具，不做个股判断。<br><span class="muted">风险：ETF波动。</span></td>
+              <td>存储方向工具，不做个股判断。<br><span class="muted">ETF只做板块方向表达，不参与个股买卖优先级。</span><br><span class="muted">风险：ETF波动。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a><a class="group-tag tag-link" href="tags/t_5a2Y.html">存</a></div></td>
             </tr>
             
@@ -1208,9 +1525,10 @@
               <td><span class="score score-0">0</span></td>
               <td><span class="pct neutral">--</span></td>
               <td><span class="action watch">工具</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5Y2K5a-85L2TRVRG.html">半导体ETF</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5Y2K5a-85L2TRVRG.html">半导体ETF</a></div></td>
+              <td><strong>ETF工具，不参与个股技术评分</strong></td>
               <td><div class="signal-line"><span>ETF工具</span></div></td>
-              <td>半导体方向工具，不做个股判断。<br><span class="muted">风险：ETF波动。</span></td>
+              <td>半导体方向工具，不做个股判断。<br><span class="muted">ETF只做板块方向表达，不参与个股买卖优先级。</span><br><span class="muted">风险：ETF波动。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_6Iqv.html">芯</a></div></td>
             </tr>
             
@@ -1223,9 +1541,10 @@
               <td><span class="score score-0">0</span></td>
               <td><span class="pct neutral">--</span></td>
               <td><span class="action watch">工具</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5Y2K5a-85L2TM-WAjUVURg.html">半导体3倍ETF</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5Y2K5a-85L2TM-WAjUVURg.html">半导体3倍ETF</a></div></td>
+              <td><strong>ETF工具，不参与个股技术评分</strong></td>
               <td><div class="signal-line"><span>ETF工具</span></div></td>
-              <td>只适合短线工具，不进入个股研究排名。<br><span class="muted">风险：杠杆损耗。</span></td>
+              <td>只适合短线工具，不进入个股研究排名。<br><span class="muted">ETF只做板块方向表达，不参与个股买卖优先级。</span><br><span class="muted">风险：杠杆损耗。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a></div></td>
             </tr>
             
@@ -1238,9 +1557,10 @@
               <td><span class="score score-0">0</span></td>
               <td><span class="pct neutral">--</span></td>
               <td><span class="action watch">工具</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5Y2K5a-85L2TRVRG.html">半导体ETF</a></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5Y2K5a-85L2TRVRG.html">半导体ETF</a></div></td>
+              <td><strong>ETF工具，不参与个股技术评分</strong></td>
               <td><div class="signal-line"><span>ETF工具</span></div></td>
-              <td>半导体方向工具，不做个股判断。<br><span class="muted">风险：ETF波动。</span></td>
+              <td>半导体方向工具，不做个股判断。<br><span class="muted">ETF只做板块方向表达，不参与个股买卖优先级。</span><br><span class="muted">风险：ETF波动。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/favorites.html">Favorites</a><a class="group-tag tag-link" href="tags/t_6Iqv.html">芯</a></div></td>
             </tr>
             
@@ -1253,15 +1573,29 @@
               <td><span class="score score-4">4</span></td>
               <td><span class="pct up">1.0%</span></td>
               <td><span class="action watch">观察低吸</span></td>
-              <td><a class="chain-pill tag-link" href="tags/t_5Lqk5piT5bmz5Y-w.html">交易平台</a></td>
-              <td><div class="signal-line"><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span><span>20/50日趋势向上</span></div></td>
-              <td>不属于AI科技链核心，只保留观察。<br><span class="muted">风险：非AI主线。</span></td>
+              <td><div class="tag-row"><a class="chain-pill tag-link" href="tags/t_5Lqk5piT5bmz5Y-w.html">交易平台</a></div></td>
+              <td><strong>多头趋势，在5日线之上</strong></td>
+              <td><div class="signal-line"><span>5日金叉10日</span><span>多头趋势，在5日线之上</span><span>站上5日线</span><span>站上10日线</span><span>站上20日线</span></div></td>
+              <td>不属于AI科技链核心，只保留观察。<br><span class="muted">适合观察低吸。理由：多头趋势，在5日线之上，5日金叉10日；站上5日线；站上10日线；站上20日线。未建仓等回踩5/10/20日线不破或重新站上5日线；已有仓位守支撑 82.8。</span><br><span class="muted">风险：非AI主线。</span></td>
               <td><div class="groups"><a class="group-tag tag-link" href="tags/t_54m5.html">特</a></div></td>
             </tr>
             </tbody>
-      </table>
-      </div>
+        </table>
+        </div>
+      </section>
     </section>
   </main>
+  <script>
+    const reportTabs = Array.from(document.querySelectorAll('.report-tab'));
+    const reportPages = Array.from(document.querySelectorAll('.report-page'));
+    function activateReportPage(page) {
+      reportTabs.forEach(tab => tab.classList.toggle('active', tab.dataset.page === page));
+      reportPages.forEach(section => section.classList.toggle('active', section.id === page));
+      if (location.hash.replace('#', '') !== page) history.replaceState(null, '', '#' + page);
+    }
+    reportTabs.forEach(tab => tab.addEventListener('click', () => activateReportPage(tab.dataset.page)));
+    const initialPage = location.hash.replace('#', '');
+    if (initialPage && document.getElementById(initialPage)) activateReportPage(initialPage);
+  </script>
 </body>
 </html>
