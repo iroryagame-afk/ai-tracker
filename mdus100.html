@@ -102,6 +102,18 @@
     .research-link-body strong { display:block; color:#0f172a; font-size:18px; margin-bottom:6px; }
     .research-link-body p { margin:0; color:#475569; line-height:1.65; }
     .research-link-button { display:inline-flex; align-items:center; justify-content:center; min-height:38px; padding:0 16px; border-radius:999px; border:1px solid #bfdbfe; background:#eff6ff; color:#1d4ed8; font-weight:950; text-decoration:none; white-space:nowrap; }
+    .recommend-split { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin:14px 0 18px; }
+    .recommend-card { border-radius:18px; background:#fff; border:1px solid #fed7aa; overflow:hidden; box-shadow:0 10px 24px rgba(154,52,18,.06); }
+    .recommend-card .subhead { background:#fff7ed; color:#7c2d12; border-bottom-color:#fed7aa; display:flex; align-items:center; justify-content:space-between; gap:10px; }
+    .recommend-card .subhead span { color:#9a3412; font-size:12px; background:#ffedd5; border:1px solid #fed7aa; border-radius:999px; padding:3px 9px; }
+    .recommend-mini { min-width:720px; font-size:12px; }
+    .recommend-mini th { background:#8b2c13; }
+    .recommend-mini td { padding:8px; }
+    .recommend-mini .reason { color:#475569; line-height:1.55; }
+    .risk-note { margin:14px 0; border-radius:16px; padding:12px 14px; border:1px solid #fecaca; background:#fff1f2; color:#7f1d1d; font-weight:900; line-height:1.65; }
+    .risk-table { border:1px solid #fecaca; border-radius:16px; overflow:hidden; box-shadow:0 10px 24px rgba(153,27,27,.06); }
+    .risk-table th { background:#a31818; }
+    .risk-table td:first-child { color:#991b1b; font-weight:950; }
     .report-nav { position:sticky; top:56px; z-index:40; display:flex; flex-wrap:wrap; gap:10px; margin:14px 0; padding:10px; border:1px solid #dbe3ef; border-radius:16px; background:rgba(255,255,255,.93); backdrop-filter:blur(14px); }
     .report-tab { appearance:none; border:1px solid #cbd5e1; border-radius:999px; background:#fff; color:#334155; min-height:34px; padding:0 13px; font-weight:950; cursor:pointer; }
     .report-tab.active { background:#172033; color:#fff; border-color:#172033; box-shadow:0 8px 18px rgba(15,23,42,.14); }
@@ -140,7 +152,7 @@
     .detail-table th:nth-child(11),.detail-table td:nth-child(11) { width:12%; }
     .detail-table th:nth-child(12),.detail-table td:nth-child(12) { width:18%; }
     .detail-table th:nth-child(13),.detail-table td:nth-child(13) { width:10%; }
-    @media (max-width:960px) { .shell { padding:14px; } .kpis, .sector-grid, .commentary-grid { grid-template-columns:1fr; } table { font-size:13px; } }
+    @media (max-width:960px) { .shell { padding:14px; } .kpis, .sector-grid, .commentary-grid, .recommend-split { grid-template-columns:1fr; } table { font-size:13px; } }
   </style>
 </head>
 <body>
@@ -396,7 +408,56 @@
         </table>
       </section>
       <div class="subtitle">表现口径：上一交易日4/5分推荐，按下一次可核验收盘价相对推荐日收盘价计算；从本次开始记录。</div>
-      <h2 class="section-title">2026-06-15推荐与操作</h2>
+      <h2 class="section-title">6月15日开盘风控闸门</h2>
+      <div class="risk-note">6月15日执行口径：5分只是收盘后的候选资格，次日开盘先看隔夜美股、股指期货、离岸人民币和个股承接；触发风控时，优先降低新仓强度。</div>
+      <section class="risk-table table-scroll">
+        <table>
+          <thead><tr><th>风控项</th><th>触发条件</th><th>执行动作</th></tr></thead>
+          <tbody>
+            <tr><td>隔夜AI链风险</td><td>纳指&lt;-1.0%、SOX&lt;-1.5%，或美股AI核心股普遍大跌</td><td>新仓降一档；已有仓位按5/10日线纪律处理。</td></tr>
+            <tr><td>外盘传导风险</td><td>A50、恒科或离岸人民币早盘明显走弱</td><td>不开盘即追，至少观察前30分钟承接。</td></tr>
+            <tr><td>个股竞价风险</td><td>低开超过2.5%，或开盘15分钟跌破5日线/昨日收盘且无承接</td><td>先等修复；重新站回分时均线或5日线再考虑。</td></tr>
+            <tr><td>高位兑现风险</td><td>连续拉升后叠加利好、小作文或高开回落</td><td>不追高；强股只等回踩关键均线。</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <h2 class="section-title">2026-06-15推荐概览</h2>
+      <section class="recommend-split">
+        <article class="recommend-card table-scroll">
+          <div class="subhead">必选池 <span>产业核心，先看趋势纪律</span></div>
+          <table class="recommend-mini">
+            <thead><tr><th>标的</th><th>评分</th><th>操作</th><th>关键理由</th></tr></thead>
+            <tbody>
+              <tr><td><strong>ARM</strong><br><code>ARM</code></td><td><span class="score score-5">5</span></td><td><span class="action hold">持有</span></td><td class="reason">CPU IP生态核心，已大涨且偏离均线，已有仓位拿住，未建仓等5/10日线回踩。</td></tr>
+              <tr><td><strong>Coherent</strong><br><code>COHR</code></td><td><span class="score score-5">5</span></td><td><span class="action buy">买入/加仓</span></td><td class="reason">光互联/InP综合平台，站回20日线并修复趋势，观察区 372.2-386.7。</td></tr>
+              <tr><td><strong>AMD</strong><br><code>AMD</code></td><td><span class="score score-5">5</span></td><td><span class="action buy">买入/加仓</span></td><td class="reason">GPU第二供给，5/10/20日线上方，多头趋势成立，观察区 483.7-498.2。</td></tr>
+              <tr><td><strong>Lumentum</strong><br><code>LITE</code></td><td><span class="score score-5">5</span></td><td><span class="action buy">买入/加仓</span></td><td class="reason">InP激光器/EML/OCS核心，趋势在10日线上方，回踩不破优先。</td></tr>
+              <tr><td><strong>Vicor</strong><br><code>VICR</code></td><td><span class="score score-5">5</span></td><td><span class="action buy">买入/加仓</span></td><td class="reason">高密度电源模块，AI机柜功率密度提升受益，观察区 287.2-300.5。</td></tr>
+              <tr><td><strong>Dell</strong><br><code>DELL</code></td><td><span class="score score-5">5</span></td><td><span class="action buy">买入/加仓</span></td><td class="reason">AI服务器/OEM核心，站上20日线修复，回踩不破再加。</td></tr>
+              <tr><td><strong>GlobalFoundries</strong><br><code>GFS</code></td><td><span class="score score-5">5</span></td><td><span class="action buy">买入/加仓</span></td><td class="reason">特色工艺代工，站上5/10/20日线，AI配套芯片外溢受益。</td></tr>
+              <tr><td><strong>Marvell</strong><br><code>MRVL</code></td><td><span class="score score-5">5</span></td><td><span class="action hold">持有</span></td><td class="reason">ASIC/DSP/互联芯片核心，短线偏离20日线过大，不追高。</td></tr>
+              <tr><td><strong>Micron</strong><br><code>MU</code></td><td><span class="score score-5">5</span></td><td><span class="action buy">买入/加仓</span></td><td class="reason">HBM/DRAM核心，趋势仍在10日线上方，观察区 950.9-979.4。</td></tr>
+            </tbody>
+          </table>
+        </article>
+        <article class="recommend-card table-scroll">
+          <div class="subhead">打野池 <span>弹性优先，低吸不追高</span></div>
+          <table class="recommend-mini">
+            <thead><tr><th>标的</th><th>评分</th><th>操作</th><th>关键理由</th></tr></thead>
+            <tbody>
+              <tr><td><strong>AXT</strong><br><code>AXTI</code></td><td><span class="score score-4">4</span></td><td><span class="action watch">观察低吸</span></td><td class="reason">InP/GaAs衬底高beta，站回10/50日线，但涨幅大，等缩量回踩。</td></tr>
+              <tr><td><strong>Intel</strong><br><code>INTC</code></td><td><span class="score score-4">4</span></td><td><span class="action watch">观察低吸</span></td><td class="reason">5日金叉10日，站上20日线，反转逻辑要等回踩确认。</td></tr>
+              <tr><td><strong>Viavi</strong><br><code>VIAV</code></td><td><span class="score score-4">4</span></td><td><span class="action watch">观察低吸</span></td><td class="reason">光通信测试工具链，站上20日线修复，支撑参考 50.0。</td></tr>
+              <tr><td><strong>Western Digital</strong><br><code>WDC</code></td><td><span class="score score-4">4</span></td><td><span class="action watch">观察低吸</span></td><td class="reason">存储周期弹性，5/10/20日线多头，适合回踩低吸。</td></tr>
+              <tr><td><strong>IREN</strong><br><code>IREN</code></td><td><span class="score score-4">4</span></td><td><span class="action watch">观察低吸</span></td><td class="reason">算力电力资产，趋势强但波动大，守5/10日线。</td></tr>
+              <tr><td><strong>SanDisk</strong><br><code>SNDK</code></td><td><span class="score score-4">4</span></td><td><span class="action watch">观察低吸</span></td><td class="reason">NAND周期弹性，5日金叉10日，回踩不破再看。</td></tr>
+              <tr><td><strong>AOSL</strong><br><code>AOSL</code></td><td><span class="score score-4">4</span></td><td><span class="action watch">观察低吸</span></td><td class="reason">功率半导体弹性，站上20日线修复，AI纯度需继续验证。</td></tr>
+              <tr><td><strong>CRWD / SNOW / PANW</strong></td><td><span class="score score-4">4</span></td><td><span class="action watch">观察低吸</span></td><td class="reason">软件侧趋势修复或多头延续，不是物理瓶颈，按弹性仓位处理。</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+      <h2 class="section-title">2026-06-15推荐明细</h2>
       <section class="card table-scroll">
         <table class="compact-table">
           <thead><tr><th>类</th><th>标的</th><th>评分</th><th>当日涨跌</th><th>赛道</th><th>技术位置</th><th>操作</th><th>推荐理由</th></tr></thead>
