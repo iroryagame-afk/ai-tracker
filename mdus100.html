@@ -198,15 +198,19 @@
       </svg>
     </section>
       
-      <h2 class="section-title">2026-06-15开盘风控闸门</h2>
+      <h2 class="section-title">2026-06-15美股开盘执行口径</h2>
       <section class="card table-scroll risk-table">
+        <div class="callout">
+          美股常规开盘为美东 9:30；北京时间夏令时 21:30、冬令时 22:30。开盘前看 NQ/ES、QQQ/SPY、SOXX/SOXL、VIX 和利率，开盘后用前 15-30 分钟 opening range 与 VWAP 判断承接，不照搬 A 股外盘传导口径。
+        </div>
         <table class="compact-table">
-          <thead><tr><th>风控项</th><th>触发条件</th><th>执行动作</th></tr></thead>
+          <thead><tr><th>时间窗口</th><th>观察重点</th><th>执行动作</th></tr></thead>
           <tbody>
-            <tr><td>隔夜AI链风险</td><td>纳指&lt;-1.0%、SOX&lt;-1.5%，或美股AI核心股普遍大跌</td><td>新仓降一档；已有仓位按5/10日线纪律处理。</td></tr>
-            <tr><td>外盘传导风险</td><td>A50、恒科或离岸人民币早盘明显走弱</td><td>不开盘即追，至少观察前30分钟承接。</td></tr>
-            <tr><td>个股竞价风险</td><td>低开超过2.5%，或开盘15分钟跌破5日线/昨日收盘且无承接</td><td>先等修复；重新站回分时均线或5日线再考虑。</td></tr>
-            <tr><td>高位兑现风险</td><td>连续拉升后叠加利好、小作文或高开回落</td><td>不追高；强股只等回踩关键均线。</td></tr>
+            <tr><td>开盘前 5-30 分钟</td><td>NQ 是否强于 ES；QQQ/SPY 盘前是否同步；SOXX/SOXL 是否配合；VIX/10Y 是否上冲。</td><td>只定情景和仓位，不盲挂市价追单。</td></tr>
+            <tr><td>开盘 0-15 分钟</td><td>QQQ/SPY 是否站上昨收、盘前高点或 VWAP；个股是否守住昨收/5日线。</td><td>建立 opening range；除非计划内低吸，不追第一根直线拉升。</td></tr>
+            <tr><td>开盘 15-30 分钟</td><td>QQQ/SPY 与 NQ 同向站上 opening range 上沿或 VWAP；SOXX 同步。</td><td>4/5分候选可小仓试探，优先买回踩承接，不买冲高失速。</td></tr>
+            <tr><td>开盘 30-60 分钟</td><td>指数和个股都守住 opening range / VWAP；量能未明显衰竭。</td><td>才进入主执行窗口；已有仓位按5/10日线纪律持有或加减。</td></tr>
+            <tr><td>降级条件</td><td>QQQ/SPY 冲高回落、NQ 弱于 ES、VIX或利率上行、个股跌破 opening range 低点。</td><td>新仓降一档或暂停；强股只等回踩关键均线。</td></tr>
           </tbody>
         </table>
       </section>
