@@ -1,0 +1,50 @@
+code,ticker,name,stock_type,groups,sector,strategy,rank_label,chain_position,score,thesis,risk
+US.VIVO,VIVO,VivoPower,STOCK,800v,电源 / 800V,野,题材,电力/数据中心,1,更偏题材和资产弹性，需谨慎。,流动性和基本面。
+US.VICR,VICR,Vicor,STOCK,800v,电源 / 800V,必,龙一,高密度电源模块,5,AI机柜功率密度上升的关键电源模块供应商之一。,客户集中和替代方案。
+US.AOSL,AOSL,Alpha & Omega Semiconductor,STOCK,800v,电源 / 800V,野,功率器件,MOSFET/功率半导体,4,功率器件弹性，AI纯度需验证。,周期和价格。
+US.POWI,POWI,Power Integrations,STOCK,800v,电源 / 800V,野,电源芯片,电源管理/高压芯片,4,数据中心电源链弹性，需看AI收入占比。,传统业务拖累。
+US.WOLF,WOLF,Wolfspeed,STOCK,800v,电源 / 800V,野,SiC反转,SiC材料/器件,1,SiC供需反转观察，但和AI电源不是一条纯主线。,资产负债表。
+US.NVTS,NVTS,Navitas Semiconductor,STOCK,800v,电源 / 800V,野,GaN高弹性,GaN功率芯片,2,GaN故事弹性强，适合打野。,亏损和导入节奏。
+US.MU,MU,Micron Technology,STOCK,Favorites;存;特,存储 / HBM,必,龙一,DRAM/HBM,5,美股HBM/DRAM核心，AI服务器存储扩容的直接受益方。,周期和capex。
+US.MRVL,MRVL,Marvell Technology,STOCK,Favorites;光;芯,AI算力芯片,必,龙二,ASIC/DSP/互联芯片,5,AI ASIC、光模块DSP和高速互联底座，靠近定制芯片和光互联卡点。,大客户节奏波动。
+US.NVDA,NVDA,NVIDIA,STOCK,Favorites;芯,AI算力芯片,必,龙一,GPU/加速计算平台,2,AI训练和推理硬件平台核心，仍是全球AI资本开支的定价锚。,估值和出口限制。
+US.SOXX,SOXX,iShares Semiconductor ETF,ETF,Favorites;芯,ETF工具,工具,ETF,半导体ETF,0,半导体方向工具，不做个股判断。,ETF波动。
+US.IREN,IREN,IREN Ltd,STOCK,Favorites,AI服务器 / 数据中心,野,算力电力,矿企/AI数据中心,4,矿企转AI算力和电力资产弹性。,电价、融资和GPU交付。
+US.ASTS,ASTS,AST SpaceMobile,STOCK,Favorites,军工 / 空天,野,卫星通信,卫星直连手机,2,事件驱动和空间通信弹性，非AI物理链核心。,融资和发射进度。
+US.NOK,NOK,Nokia Oyj,STOCK,Favorites;光,光互联 / InP,野,设备,光通信/网络设备,2,网络设备广义受益，纯度不如器件和材料。,运营商资本开支。
+US.SNDK,SNDK,SanDisk,STOCK,Favorites;存,存储 / HBM,野,周期弹性,NAND/闪存,4,NAND价格弹性，适合周期交易。,供给恢复。
+US.DRAM,DRAM,Roundhill Memory ETF,ETF,Favorites;存,ETF工具,工具,ETF,存储ETF,0,存储方向工具，不做个股判断。,ETF波动。
+US.AAOI,AAOI,Applied Optoelectronics,STOCK,Favorites;光,光互联 / InP,野,高弹性,高速收发器/激光组件,2,光模块beta强，适合看订单弹性。,盈利波动和上游涨价压力。
+US.INTC,INTC,Intel,STOCK,Favorites;芯,AI算力芯片,野,反转,CPU/代工/AI加速,4,若代工和服务器CPU修复，有反转弹性。,执行和资本开支压力。
+US.SOXL,SOXL,Direxion Daily Semiconductor Bull 3x Shares ETF,ETF,Favorites,ETF工具,工具,杠杆ETF,半导体3倍ETF,0,只适合短线工具，不进入个股研究排名。,杠杆损耗。
+US.PLTR,PLTR,Palantir,STOCK,Favorites;军;特,云与AI软件,野,高弹性,AI应用/国防软件,2,AI软件商业化弹性强，但估值和情绪占比高。,估值过热。
+US.ELMT,ELMT,Elmet Group,STOCK,Favorites;军,军工 / 空天,野,材料,钨钼材料,2,军工材料线索，AI链弱。,需求验证。
+US.LITE,LITE,Lumentum,STOCK,光,光互联 / InP,必,龙一,InP激光器/EML/OCS,5,NVIDIA链条重点供应商之一，InP主动光器件和OCS受益于AI带宽升级。,客户集中和扩产节奏。
+US.VIAV,VIAV,Viavi Solutions,STOCK,光,光互联 / InP,野,测试,光通信测试仪器,4,带宽升级带来测试需求，属于工具链弹性。,订单节奏。
+US.COHR,COHR,Coherent,STOCK,光,光互联 / InP,必,龙二,激光/光网络/材料平台,5,激光器、光网络和材料平台更综合，受益AI光互联扩容。,业务较宽，纯度低于LITE。
+US.FOTO,FOTO,Tuttle Capital Pure Play Photonics ETF,ETF,光,光互联 / InP,工具,ETF,光子ETF,0,作为主题表达工具，不做个股判断。,ETF波动。
+US.GFS,GFS,GlobalFoundries,STOCK,光;芯,晶圆制造 / 材料,必,特色代工,成熟/特色工艺,5,AI配套芯片、射频和电源管理外溢会用到特色工艺。,先进制程缺位。
+US.AXTI,AXTI,AXT Inc,STOCK,光,光互联 / InP,野,高beta,InP/GaAs衬底,4,最贴近InP衬底涨价和扩产线索，但出口许可和产能兑现风险高。,政策和出货节奏。
+US.EUV,EUV,Corgi Lithography & Semiconductor Photonics ETF,ETF,光,光互联 / InP,工具,ETF,光子/半导体ETF,0,作为主题表达工具，不做个股判断。,ETF波动。
+US.SLOIF,SLOIF,SOITEC S.A.,STOCK,光,晶圆制造 / 材料,野,材料,SOI材料,0,SOI材料平台，适合材料国产替代和射频/功率链观察。,交易流动性。
+US.TSEM,TSEM,Tower Semiconductor,STOCK,光,晶圆制造 / 材料,野,特色代工,模拟/电源/射频代工,4,PMIC和特色工艺弹性，需看稼动率。,周期。
+US.RCAT,RCAT,Red Cat Holdings,STOCK,军,军工 / 空天,野,无人机,小型无人机/国防,1,订单驱动，适合军工打野。,订单兑现。
+US.ONDS,ONDS,Ondas,STOCK,军,军工 / 空天,野,无人系统,无人系统/网络,1,军工和无人系统弹性。,商业化。
+US.WDC,WDC,Western Digital,STOCK,存,存储 / HBM,野,周期弹性,NAND/HDD存储,4,存储周期和AI数据存储弹性，但不等于HBM瓶颈。,价格周期。
+US.HOOD,HOOD,Robinhood,STOCK,特,扩展观察,野,金融科技,交易平台,4,不属于AI科技链核心，只保留观察。,非AI主线。
+US.IBM,IBM,IBM Corp,STOCK,特,云与AI软件,野,企业AI,混合云/咨询,3,企业AI交付和大型客户基础。,成长性不足。
+US.DELL,DELL,Dell Technologies,STOCK,特,AI服务器 / 数据中心,必,服务器龙一,AI服务器/OEM,4,AI服务器整机交付和企业客户入口，受益GPU集群落地。,利润率、库存和订单节奏。
+US.ORCL,ORCL,Oracle,STOCK,特;软,云与AI软件,必,龙二,云基础设施,2,OCI承接AI算力需求，订单和GPU集群交付是核心变量。,债务和交付能力。
+US.SNOW,SNOW,Snowflake,STOCK,特;软,云与AI软件,野,数据云,数据平台,3,AI应用的数据底座，更多看消费复苏和产品化。,增长放缓。
+US.NOW,NOW,ServiceNow,STOCK,特;软,云与AI软件,野,企业AI,工作流AI,2,企业AI落地观察。,估值和增长兑现。
+US.AMD,AMD,Advanced Micro Devices,STOCK,芯,AI算力芯片,必,龙二,GPU/CPU异构计算,5,MI系列承接GPU第二供给，CPU和GPU组合有数据中心弹性。,生态和软件栈弱于龙一。
+US.SMH,SMH,VanEck Semiconductor ETF,ETF,芯,ETF工具,工具,ETF,半导体ETF,0,半导体方向工具，不做个股判断。,ETF波动。
+US.CBRS,CBRS,Cerebras Systems,STOCK,芯,AI算力芯片,野,高弹性,AI晶圆级系统,2,Cerebras代表非GPU架构弹性，适合观察替代路线。,商业化和流动性需要核验。
+US.QCOM,QCOM,Qualcomm,STOCK,芯,AI算力芯片,野,端侧AI,手机/边缘AI芯片,2,端侧AI入口，但不是数据中心瓶颈。,手机周期和竞争。
+US.ARM,ARM,Arm Holdings,STOCK,芯,AI算力芯片,必,核心IP,CPU IP/生态,5,AI端侧和数据中心CPU生态底层IP，轻资产确定性强。,估值敏感。
+US.MSFT,MSFT,Microsoft,STOCK,软,云与AI软件,必,龙一,云/AI平台,2,Azure和Copilot是AI应用与算力需求入口。,资本开支回报率。
+US.PANW,PANW,Palo Alto Networks,STOCK,软,云与AI软件,野,安全,网络安全,4,AI时代安全预算受益，但非AI主链。,平台化转型节奏。
+US.CRWD,CRWD,CrowdStrike,STOCK,软,云与AI软件,野,安全,终端安全,4,安全预算和AI安全需求。,事件风险和估值。
+US.WDAY,WDAY,Workday,STOCK,软,云与AI软件,野,企业软件,HR/财务软件,1,企业软件AI功能观察，不是核心瓶颈。,预算周期。
+US.CRM,CRM,Salesforce,STOCK,软,云与AI软件,野,企业AI,CRM/Agent,2,AI Agent应用扩散观察。,传统业务增速。
+US.DDOG,DDOG,Datadog,STOCK,软,云与AI软件,野,运维数据,可观测性/云监控,2,AI和云负载增加带来监控需求。,云优化周期。
