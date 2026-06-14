@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mda100_20260614_002327</title>
+  <title>mda100_20260614_093811</title>
   <style>
     :root {
       --bg:#f4f4f1; --surface:#fff; --border:#e5e5e1; --ink:#101418; --muted:#667085; --paper:#eef2ff; --panel:#fff; --line:#d8dee7;
@@ -56,6 +56,23 @@
     .verify-strip code { background:#dcfce7; color:#14532d; }
     .verify-strip .verify-detail { color:#475467; font-weight:650; }
     .module { background:var(--panel); border:1px solid var(--line); margin:14px 0; padding:18px; }
+    .capex-chain-module { border-color:#c7d2fe; background:linear-gradient(135deg,#ffffff 0%,#f8fbff 100%); box-shadow:0 14px 28px rgba(30,64,175,.06); }
+    .capex-chain-head { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; margin-bottom:12px; }
+    .capex-chain-head h2 { margin:0; border:0; padding:0; font-size:20px; }
+    .capex-chain-head p { margin:5px 0 0; color:#475569; line-height:1.6; }
+    .capex-chain-head span { flex:0 0 auto; border-radius:999px; padding:6px 11px; background:#dbeafe; color:#1e40af; font-weight:950; }
+    .capex-stage-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+    .capex-stage { position:relative; min-height:242px; border:1px solid #dbe3ef; border-radius:15px; padding:13px; background:#fff; box-shadow:0 9px 20px rgba(15,23,42,.05); }
+    .capex-stage-num { display:inline-flex; width:25px; height:25px; align-items:center; justify-content:center; border-radius:999px; background:#172033; color:#fff; font-weight:950; font-size:12px; }
+    .capex-stage h3 { margin:8px 0 6px; font-size:15px; line-height:1.35; color:#172033; }
+    .capex-stage p { margin:0 0 9px; color:#475569; line-height:1.55; }
+    .capex-stocks { display:flex; flex-wrap:wrap; gap:6px; }
+    .capex-stock { display:inline-grid; grid-template-columns:auto auto; gap:2px 6px; align-items:center; border:1px solid #dbe3ef; background:#f8fafc; border-radius:10px; padding:5px 7px; color:#172033; text-decoration:none; }
+    .capex-stock strong { font-size:12px; line-height:1.2; }
+    .capex-stock code { font-size:10px; padding:0 4px; }
+    .capex-stock span { grid-column:1 / -1; color:#64748b; font-size:10px; line-height:1.2; }
+    .capex-watch { display:grid; grid-template-columns:62px 1fr; gap:7px; margin-top:10px; padding-top:9px; border-top:1px solid #eef2f7; color:#475569; font-size:11px; line-height:1.45; }
+    .capex-watch strong { color:#1e40af; }
     .report-page { display:none; }
     .report-page.active { display:block; }
     #review { background:linear-gradient(180deg,#ffffff 0%,#fbfdff 48%,#f8fafc 100%); border-top:4px solid #38bdf8; }
@@ -66,6 +83,7 @@
     #wild-page { border-top:4px solid #475569; }
     #self-media-page { border-top:4px solid #7c2d12; }
     .module h2 { margin:0 0 14px; font-size:18px; border-bottom:1px solid var(--line); padding-bottom:8px; }
+    .capex-chain-head h2 { margin:0; border:0; padding:0; font-size:20px; }
     .subsection-title { margin:18px 0 8px; font-size:15px; line-height:1.35; color:#172033; }
     .subsection-title:first-of-type { margin-top:4px; }
     .grid { display:grid; grid-template-columns:1.1fr .9fr; gap:16px; }
@@ -603,7 +621,7 @@
     .gas-signal-card strong { color:#1e40af; font-size:11px; }
     .gas-signal-card h4 { margin:0; color:#172033; font-size:13px; line-height:1.35; }
     .gas-signal-card p { margin:0; color:#475569; font-size:11px; line-height:1.5; }
-    @media (max-width:960px) { .grid,.kpis,.summary-grid,.market-overview,.winrate-strip,.sector-watch-grid,.long-grid,.cards-container,.detail-list,.advice-actions,.material-page-lead,.material-layer-grid,.material-priority-list,.material-follow-grid,.material-detail-grid,.news-hero-card,.news-layout,.news-event-grid,.news-kpi-grid,.self-source-grid,.self-sector-grid,.frontend-leader-grid,.gas-war-grid,.gas-signal-grid{grid-template-columns:1fr;} .shell{padding:12px;} .hero-head{display:block;} .report-stamp{grid-template-columns:1fr; align-items:start;} .stamp-time{font-size:22px;} .stamp-scope{justify-content:flex-start;} .stats-pill{margin-left:0;} .advice-action + .advice-action{border-left:1px solid #e5e7eb;border-top:0;} }
+    @media (max-width:960px) { .grid,.kpis,.summary-grid,.market-overview,.winrate-strip,.sector-watch-grid,.long-grid,.cards-container,.detail-list,.advice-actions,.material-page-lead,.material-layer-grid,.material-priority-list,.material-follow-grid,.material-detail-grid,.news-hero-card,.news-layout,.news-event-grid,.news-kpi-grid,.self-source-grid,.self-sector-grid,.frontend-leader-grid,.gas-war-grid,.gas-signal-grid,.capex-stage-grid{grid-template-columns:1fr;} .shell{padding:12px;} .hero-head{display:block;} .report-stamp{grid-template-columns:1fr; align-items:start;} .stamp-time{font-size:22px;} .stamp-scope{justify-content:flex-start;} .stats-pill{margin-left:0;} .advice-action + .advice-action{border-left:1px solid #e5e7eb;border-top:0;} .capex-chain-head{display:block;} }
     @page { size:A4 landscape; margin:10mm; }
     @media print { *{-webkit-print-color-adjust:exact; print-color-adjust:exact;} body{background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 52%,#f1f5f9 100%);} .shell{max-width:none; padding:12px;} .page-nav{display:none;} .report-page{display:block !important; break-before:page;} .report-page:first-of-type{break-before:auto;} .summary-grid{grid-template-columns:repeat(6,minmax(110px,1fr)) !important;} .kpis{grid-template-columns:repeat(4,minmax(120px,1fr)) !important;} .grid{grid-template-columns:1.1fr .9fr !important;} .sector-watch-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .long-grid{grid-template-columns:repeat(2,minmax(300px,1fr)) !important;} .cards-container{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .detail-list{grid-template-columns:repeat(2,minmax(320px,1fr)) !important;} .hero,.sector-watch-card,.long-card,.stock-card,.detail-card{break-inside:avoid;} table{font-size:8px; min-width:0;} .card-controls{display:none;} }
   </style>
@@ -622,7 +640,7 @@
     <div class="hero">
       <div class="hero-head">
         <div>
-          <h1>mda100_20260614_002327</h1>
+          <h1>mda100_20260614_093811</h1>
           <div class="subtitle">mda100以核心100只AI科技股票等权编制，历史曲线自2026年首个交易日开始累计。行情标记：VERIFIED_FUTU_OPEND。</div>
           <div class="verify-strip">
             <span>二次确认</span>
@@ -631,13 +649,13 @@
             <span class="verify-detail" title="报告日期与指数日期一致:OK / 行情日期覆盖本次报告日:OK / 所有可用行情均已打 Futu 核验标记:OK / 指数涨跌幅与股票池等权涨跌一致:OK / 上涨数量一致:OK / 下跌数量一致:OK / 覆盖率一致:OK">生成与发布前已复核</span>
           </div>
         </div>
-        <div class="meta">Report 2026-06-12<br>Index 2026-06-12<br>Generated 2026-06-14T00:23:27</div>
+        <div class="meta">Report 2026-06-12<br>Index 2026-06-12<br>Generated 2026-06-14T09:38:11</div>
       </div>
       <div class="report-stamp" aria-label="报告生成时间和版本">
         <div class="stamp-badge">16:00收盘版</div>
         <div class="stamp-main">
           <div class="stamp-label">收盘复盘生成时间</div>
-          <div class="stamp-time">6月14日 00:23:27</div>
+          <div class="stamp-time">6月14日 09:38:11</div>
           <div class="stamp-desc">用于下一交易日计划，重点看收盘确认、均线位置、评分变化和隔夜风险闸门。</div>
         </div>
         <div class="stamp-scope">16:00后收盘核验</div>
@@ -663,6 +681,66 @@
         <a class="nav-tab" href="#self-media" data-page-target="self-media">自媒体信息源</a>
       </nav>
     </div>
+    
+      <section class="module capex-chain-module" id="ai-capex-chain">
+        <div class="capex-chain-head">
+          <div>
+            <h2>AI Capex 产业链逻辑图</h2>
+            <p>美股重估从芯片扩散到设备、封装、光互联和AI基建；A股按同一条链寻找国产对标和瓶颈涨价环节。</p>
+          </div>
+          <span>mda100 对标</span>
+        </div>
+        <div class="capex-stage-grid">
+            <article class="capex-stage">
+              <div class="capex-stage-num">1</div>
+              <h3>1. 晶圆制造设备 / WFE</h3>
+              <p>对标 ASML / AMAT / LRCX：先进制程扩产的底座，国产化率分层明显，刻蚀、薄膜、清洗、CMP先突破。</p>
+              <div class="capex-stocks"><a class="capex-stock" href="stocks/002371.html" target="_blank" rel="noopener"><strong>北方华创</strong><code>002371</code><span>平台型设备</span></a><a class="capex-stock" href="stocks/688012.html" target="_blank" rel="noopener"><strong>中微公司</strong><code>688012</code><span>刻蚀/MOCVD</span></a><a class="capex-stock" href="stocks/688072.html" target="_blank" rel="noopener"><strong>拓荆科技</strong><code>688072</code><span>PECVD/ALD</span></a><a class="capex-stock" href="stocks/688120.html" target="_blank" rel="noopener"><strong>华海清科</strong><code>688120</code><span>CMP/清洗</span></a><a class="capex-stock" href="stocks/688082.html" target="_blank" rel="noopener"><strong>盛美上海</strong><code>688082</code><span>清洗/电镀</span></a><a class="capex-stock" href="stocks/300567.html" target="_blank" rel="noopener"><strong>精测电子</strong><code>300567</code><span>量测检测</span></a></div>
+              <div class="capex-watch"><strong>观察重点</strong><span>重点看国产化率低、验证进度明确、晶圆厂扩产拉动的设备订单。</span></div>
+            </article>
+            
+            <article class="capex-stage">
+              <div class="capex-stage-num">2</div>
+              <h3>2. 先进封装 / HBM / 测试</h3>
+              <p>对标 AMKR / TER / KLAC / FORM：Chiplet、HBM、先进封装提升测试和封装材料重要性。</p>
+              <div class="capex-stocks"><a class="capex-stock" href="stocks/600584.html" target="_blank" rel="noopener"><strong>长电科技</strong><code>600584</code><span>封测</span></a><a class="capex-stock" href="stocks/002156.html" target="_blank" rel="noopener"><strong>通富微电</strong><code>002156</code><span>封测</span></a><a class="capex-stock" href="stocks/002185.html" target="_blank" rel="noopener"><strong>华天科技</strong><code>002185</code><span>封测</span></a><a class="capex-stock" href="stocks/000021.html" target="_blank" rel="noopener"><strong>深科技</strong><code>000021</code><span>存储封测</span></a><a class="capex-stock" href="stocks/688300.html" target="_blank" rel="noopener"><strong>联瑞新材</strong><code>688300</code><span>球硅填料</span></a><a class="capex-stock" href="stocks/002436.html" target="_blank" rel="noopener"><strong>兴森科技</strong><code>002436</code><span>IC载板</span></a></div>
+              <div class="capex-watch"><strong>观察重点</strong><span>封测看稼动率和先进封装订单，材料看认证周期和扩产节奏。</span></div>
+            </article>
+            
+            <article class="capex-stage">
+              <div class="capex-stage-num">3</div>
+              <h3>3. AI芯片 / 存储 / 制造</h3>
+              <p>对标 NVDA / AMD / AVGO / MRVL：A股更多是国产算力、晶圆代工、存储和上游配套映射。</p>
+              <div class="capex-stocks"><a class="capex-stock" href="stocks/688256.html" target="_blank" rel="noopener"><strong>寒武纪</strong><code>688256</code><span>AI芯片</span></a><a class="capex-stock" href="stocks/688041.html" target="_blank" rel="noopener"><strong>海光信息</strong><code>688041</code><span>CPU/GPU</span></a><a class="capex-stock" href="stocks/688981.html" target="_blank" rel="noopener"><strong>中芯国际</strong><code>688981</code><span>晶圆制造</span></a><a class="capex-stock" href="stocks/688347.html" target="_blank" rel="noopener"><strong>华虹公司</strong><code>688347</code><span>特色工艺</span></a><a class="capex-stock" href="stocks/603986.html" target="_blank" rel="noopener"><strong>兆易创新</strong><code>603986</code><span>存储/MCU</span></a><a class="capex-stock" href="stocks/688525.html" target="_blank" rel="noopener"><strong>佰维存储</strong><code>688525</code><span>存储模组</span></a><a class="capex-stock" href="stocks/301308.html" target="_blank" rel="noopener"><strong>江波龙</strong><code>301308</code><span>存储模组</span></a></div>
+              <div class="capex-watch"><strong>观察重点</strong><span>核心看国产替代和客户放量，弹性看存储周期、长鑫链和技术位置。</span></div>
+            </article>
+            
+            <article class="capex-stage">
+              <div class="capex-stage-num">4</div>
+              <h3>4. 光通信 / AI互联瓶颈</h3>
+              <p>对标 COHR / LITE / AAOI / CIEN：GPU集群越大，光模块、光器件、光纤和CPO设备越关键。</p>
+              <div class="capex-stocks"><a class="capex-stock" href="stocks/300308.html" target="_blank" rel="noopener"><strong>中际旭创</strong><code>300308</code><span>高速光模块</span></a><a class="capex-stock" href="stocks/300502.html" target="_blank" rel="noopener"><strong>新易盛</strong><code>300502</code><span>高速光模块</span></a><a class="capex-stock" href="stocks/300394.html" target="_blank" rel="noopener"><strong>天孚通信</strong><code>300394</code><span>光器件</span></a><a class="capex-stock" href="stocks/002281.html" target="_blank" rel="noopener"><strong>光迅科技</strong><code>002281</code><span>光芯片/器件</span></a><a class="capex-stock" href="stocks/688205.html" target="_blank" rel="noopener"><strong>德科立</strong><code>688205</code><span>光放大器</span></a><a class="capex-stock" href="stocks/601869.html" target="_blank" rel="noopener"><strong>长飞光纤</strong><code>601869</code><span>光纤光缆</span></a><a class="capex-stock" href="stocks/300757.html" target="_blank" rel="noopener"><strong>罗博特科</strong><code>300757</code><span>CPO设备</span></a></div>
+              <div class="capex-watch"><strong>观察重点</strong><span>重点看800G/1.6T、CPO/NPO、InP主动器件和海外大客户订单。</span></div>
+            </article>
+            
+            <article class="capex-stage">
+              <div class="capex-stage-num">5</div>
+              <h3>5. PCB / CCL / 铜箔 / 钻针</h3>
+              <p>AI服务器和Rubin正交背板推升高层板、M9材料、低DK电子布和HVLP铜箔需求。</p>
+              <div class="capex-stocks"><a class="capex-stock" href="stocks/002463.html" target="_blank" rel="noopener"><strong>沪电股份</strong><code>002463</code><span>高速PCB</span></a><a class="capex-stock" href="stocks/300476.html" target="_blank" rel="noopener"><strong>胜宏科技</strong><code>300476</code><span>AI服务器板</span></a><a class="capex-stock" href="stocks/002916.html" target="_blank" rel="noopener"><strong>深南电路</strong><code>002916</code><span>PCB/载板</span></a><a class="capex-stock" href="stocks/600183.html" target="_blank" rel="noopener"><strong>生益科技</strong><code>600183</code><span>CCL</span></a><a class="capex-stock" href="stocks/688183.html" target="_blank" rel="noopener"><strong>生益电子</strong><code>688183</code><span>PCB</span></a><a class="capex-stock" href="stocks/603186.html" target="_blank" rel="noopener"><strong>华正新材</strong><code>603186</code><span>CCL/铜箔板</span></a><a class="capex-stock" href="stocks/000657.html" target="_blank" rel="noopener"><strong>中钨高新</strong><code>000657</code><span>PCB钻针</span></a><a class="capex-stock" href="stocks/301377.html" target="_blank" rel="noopener"><strong>鼎泰高科</strong><code>301377</code><span>PCB钻针</span></a><a class="capex-stock" href="stocks/301200.html" target="_blank" rel="noopener"><strong>大族数控</strong><code>301200</code><span>激光钻孔</span></a></div>
+              <div class="capex-watch"><strong>观察重点</strong><span>当前A股最接近“瓶颈涨价”的链条，评分应更重视供需、涨价和技术位置。</span></div>
+            </article>
+            
+            <article class="capex-stage">
+              <div class="capex-stage-num">6</div>
+              <h3>6. AI服务器 / 电源散热 / 数据中心</h3>
+              <p>对标 SMCI / VRT：算力最终落到服务器、机柜、电源、散热和数据中心交付。</p>
+              <div class="capex-stocks"><a class="capex-stock" href="stocks/601138.html" target="_blank" rel="noopener"><strong>工业富联</strong><code>601138</code><span>AI服务器</span></a><a class="capex-stock" href="stocks/000977.html" target="_blank" rel="noopener"><strong>浪潮信息</strong><code>000977</code><span>服务器</span></a><span class="capex-stock no-link"><strong>沃尔核材</strong><code>002130</code><span>高速线缆</span></span><a class="capex-stock" href="stocks/688019.html" target="_blank" rel="noopener"><strong>安集科技</strong><code>688019</code><span>材料平台</span></a><a class="capex-stock" href="stocks/688017.html" target="_blank" rel="noopener"><strong>绿的谐波</strong><code>688017</code><span>机器人核心零部件</span></a></div>
+              <div class="capex-watch"><strong>观察重点</strong><span>服务器看订单兑现和利润率，电源散热看机柜功率升级，机器人作为AI终端扩散跟踪。</span></div>
+            </article>
+            </div>
+      </section>
+    
     <section class="module report-page active" data-page="operations" id="recommendations">
       <h2>6月12日收盘后操作说明（下一交易日6月15日执行）</h2>
       <h3 class="subsection-title">6月15日开盘风控闸门</h3>
