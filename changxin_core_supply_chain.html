@@ -36,6 +36,9 @@
     .hot { color:#991b1b; background:#fff1f2; border-color:#fecdd3; }
     .cool { color:#475569; background:#f1f5f9; border-color:#e2e8f0; }
     .ok { color:#065f46; background:#ecfdf5; border-color:#a7f3d0; }
+    .buy { color:#991b1b; background:#fff1f2; border-color:#fecdd3; }
+    .hold { color:#1e40af; background:#eff6ff; border-color:#bfdbfe; }
+    .sell { color:#7c2d12; background:#fff7ed; border-color:#fed7aa; }
     .table-wrap { width:100%; overflow-x:auto; }
     ol { margin:8px 0 0 22px; padding:0; }
     li { margin:6px 0; }
@@ -62,15 +65,42 @@
     <section>
       <div class="meta">
         <div class="card"><b>数据日期</b><strong>2026-06-17</strong></div>
-        <div class="card"><b>刷新时间</b><strong>15:33 CST</strong></div>
+        <div class="card"><b>刷新时间</b><strong>18:06 CST</strong></div>
         <div class="card"><b>核心数量</b><strong>8 只</strong></div>
-        <div class="card"><b>本轮变化</b><strong>无新增/移除</strong></div>
+        <div class="card"><b>行情核验</b><strong>Futu OpenD</strong></div>
       </div>
     </section>
 
     <section class="warn">
       <h2>技术核验说明</h2>
-      <p>本轮未完成 2026-06-17 收盘 Futu OpenD 实时核验；临时参考最近一次已落盘的 Futu 文件 <code>outputs/daily_review/futu_daily_review_20260616_203347.json</code>。点位、K线、均线和支撑压力不使用网络搜索替代，下一轮应以 Futu OpenD 重新核验。</p>
+      <p>本轮已完成 2026-06-17 盘后 Futu OpenD 日 K 核验，标记 <code>VERIFIED_FUTU_OPEND</code>。点位、K线、均线、乖离率和支撑压力均来自本机 OpenD，不使用网络搜索替代技术判断。</p>
+    </section>
+
+    <section>
+      <h2>盘后操作结论</h2>
+      <p>6/17 收盘后没有“直接追买”档，长鑫核心链整体已经明显升温；主要动作是持有、持有不追，新增买点等回踩或横盘消化后再看。</p>
+      <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>股票</th>
+            <th>收盘状态</th>
+            <th>操作</th>
+            <th>评价</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><b>兆易创新</b> <code>603986</code></td><td>涨停，20日乖离 +18.23%</td><td><span class="pill sell">持有不追</span></td><td>产业协同强，但短线温度过高；已有仓位用5/10日线保护，新仓等回踩。</td></tr>
+          <tr><td><b>北方华创</b> <code>002371</code></td><td>收 704.22，20日乖离 +9.46%</td><td><span class="pill hold">持有</span></td><td>设备龙一仍是核心，但盘后位置偏热；回踩10/20日线附近再考虑加。</td></tr>
+          <tr><td><b>中微公司</b> <code>688012</code></td><td>收 351.00，20日乖离 +16.60%</td><td><span class="pill sell">持有不追</span></td><td>趋势强但已经过热；不卖强势仓，但不做追高买入。</td></tr>
+          <tr><td><b>拓荆科技</b> <code>688072</code></td><td>收 740.00，20日乖离 +15.55%</td><td><span class="pill sell">持有不追</span></td><td>薄膜设备弹性强，短线拉升过快；等缩量回踩或横盘消化。</td></tr>
+          <tr><td><b>华海清科</b> <code>688120</code></td><td>收 222.31，20日乖离 +16.50%</td><td><span class="pill sell">持有不追</span></td><td>CMP设备核心，技术温度偏高；持仓可拿，新增不追。</td></tr>
+          <tr><td><b>雅克科技</b> <code>002409</code></td><td>收 147.92，20日乖离 +22.55%</td><td><span class="pill sell">持有不追/降权</span></td><td>乖离最高，且前期 WF6 逻辑有澄清降权；有仓位更适合保护利润。</td></tr>
+          <tr><td><b>安集科技</b> <code>688019</code></td><td>收 245.62，20日乖离 +8.37%</td><td><span class="pill hold">持有</span></td><td>材料核心，温度只是偏热；相比涨停股更健康，但仍等回踩买更舒服。</td></tr>
+          <tr><td><b>深科技</b> <code>000021</code></td><td>收 42.91，20日乖离 +9.80%</td><td><span class="pill hold">持有</span></td><td>封测配套弹性尚可，位置偏热；继续跟踪，不追新仓。</td></tr>
+        </tbody>
+      </table>
+      </div>
     </section>
 
     <section>
@@ -102,7 +132,7 @@
 
     <section>
       <h2>核心股票热度和乖离率</h2>
-      <p>本段使用最近一次已落盘的 Futu OpenD 文件 <code>outputs/daily_review/futu_daily_review_20260616_203347.json</code>，不是 2026-06-17 实时核验。热度用量比和换手热度辅助判断，温度用 20 日线乖离率观察。</p>
+      <p>本段使用 2026-06-17 盘后 Futu OpenD 日 K。热度用量比和换手率辅助判断，温度用 20 日线乖离率观察。</p>
       <div class="table-wrap">
       <table>
         <thead>
@@ -113,20 +143,21 @@
             <th>当日涨跌</th>
             <th>20日乖离率</th>
             <th>量比</th>
-            <th>换手热度</th>
+            <th>换手率</th>
             <th>热度判断</th>
             <th>温度判断</th>
+            <th>操作</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td><code>603986</code></td><td><b>兆易创新</b></td><td>532.76</td><td>+2.85%</td><td>+9.04%</td><td>0.82</td><td>0.89</td><td><span class="pill watch">温和</span></td><td><span class="pill ok">趋势健康</span></td></tr>
-          <tr><td><code>002371</code></td><td><b>北方华创</b></td><td>672.19</td><td>-1.47%</td><td>+4.87%</td><td>0.63</td><td>0.65</td><td><span class="pill cool">偏冷</span></td><td><span class="pill ok">贴线健康</span></td></tr>
-          <tr><td><code>688012</code></td><td><b>中微公司</b></td><td>319.00</td><td>-0.31%</td><td>+6.36%</td><td>0.63</td><td>0.66</td><td><span class="pill cool">偏冷</span></td><td><span class="pill ok">趋势健康</span></td></tr>
-          <tr><td><code>688072</code></td><td><b>拓荆科技</b></td><td>655.80</td><td>-2.07%</td><td>+3.25%</td><td>0.79</td><td>0.81</td><td><span class="pill watch">温和</span></td><td><span class="pill ok">贴线健康</span></td></tr>
-          <tr><td><code>688120</code></td><td><b>华海清科</b></td><td>201.18</td><td>+0.93%</td><td>+5.69%</td><td>0.94</td><td>0.97</td><td><span class="pill watch">温和偏强</span></td><td><span class="pill ok">趋势健康</span></td></tr>
-          <tr><td><code>002409</code></td><td><b>雅克科技</b></td><td>137.76</td><td>-0.77%</td><td>+15.45%</td><td>1.07</td><td>1.21</td><td><span class="pill hot">活跃</span></td><td><span class="pill down">偏过热</span></td></tr>
-          <tr><td><code>688019</code></td><td><b>安集科技</b></td><td>232.88</td><td>-0.34%</td><td>+2.68%</td><td>1.02</td><td>1.02</td><td><span class="pill hot">活跃</span></td><td><span class="pill ok">贴线健康</span></td></tr>
-          <tr><td><code>000021</code></td><td><b>深科技</b></td><td>40.77</td><td>+3.29%</td><td>+5.03%</td><td>0.83</td><td>0.85</td><td><span class="pill watch">温和</span></td><td><span class="pill ok">趋势健康</span></td></tr>
+          <tr><td><code>603986</code></td><td><b>兆易创新</b></td><td>586.04</td><td>+10.00%</td><td>+18.23%</td><td>1.47</td><td>0.09%</td><td><span class="pill hot">活跃</span></td><td><span class="pill down">过热</span></td><td><span class="pill sell">持有不追</span></td></tr>
+          <tr><td><code>002371</code></td><td><b>北方华创</b></td><td>704.22</td><td>+4.77%</td><td>+9.46%</td><td>0.97</td><td>0.02%</td><td><span class="pill watch">温和</span></td><td><span class="pill down">偏热</span></td><td><span class="pill hold">持有</span></td></tr>
+          <tr><td><code>688012</code></td><td><b>中微公司</b></td><td>351.00</td><td>+10.03%</td><td>+16.60%</td><td>1.09</td><td>0.03%</td><td><span class="pill hot">活跃</span></td><td><span class="pill down">过热</span></td><td><span class="pill sell">持有不追</span></td></tr>
+          <tr><td><code>688072</code></td><td><b>拓荆科技</b></td><td>740.00</td><td>+12.84%</td><td>+15.55%</td><td>1.08</td><td>0.04%</td><td><span class="pill hot">活跃</span></td><td><span class="pill down">过热</span></td><td><span class="pill sell">持有不追</span></td></tr>
+          <tr><td><code>688120</code></td><td><b>华海清科</b></td><td>222.31</td><td>+10.50%</td><td>+16.50%</td><td>1.24</td><td>0.04%</td><td><span class="pill hot">活跃</span></td><td><span class="pill down">过热</span></td><td><span class="pill sell">持有不追</span></td></tr>
+          <tr><td><code>002409</code></td><td><b>雅克科技</b></td><td>147.92</td><td>+7.38%</td><td>+22.55%</td><td>0.80</td><td>0.12%</td><td><span class="pill watch">温和</span></td><td><span class="pill down">过热</span></td><td><span class="pill sell">持有不追/降权</span></td></tr>
+          <tr><td><code>688019</code></td><td><b>安集科技</b></td><td>245.62</td><td>+5.47%</td><td>+8.37%</td><td>1.03</td><td>0.05%</td><td><span class="pill watch">温和</span></td><td><span class="pill down">偏热</span></td><td><span class="pill hold">持有</span></td></tr>
+          <tr><td><code>000021</code></td><td><b>深科技</b></td><td>42.91</td><td>+5.25%</td><td>+9.80%</td><td>1.17</td><td>0.11%</td><td><span class="pill hot">活跃</span></td><td><span class="pill down">偏热</span></td><td><span class="pill hold">持有</span></td></tr>
         </tbody>
       </table>
       </div>
