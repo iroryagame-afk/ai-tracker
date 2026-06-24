@@ -142,6 +142,24 @@
     .candidate-table .stock strong { font-size:15px; }
     .candidate-table .vertical-badge { white-space:normal; line-height:1.35; }
     .candidate-table .subtle { line-height:1.52; }
+    .full-score-table { min-width:1180px; font-size:12px; }
+    .full-score-table th,.full-score-table td { padding:8px 7px; font-size:12px; line-height:1.42; }
+    .full-score-table .stock strong { font-size:13px; margin-bottom:2px; }
+    .full-score-table code { font-size:11px; padding:1px 5px; }
+    .full-score-table .score { width:28px; height:28px; border-radius:8px; font-size:13px; }
+    .full-score-table .score100 { width:44px; min-width:44px; max-width:44px; height:28px; border-radius:8px; font-size:13px; }
+    .full-score-table .pill { padding:4px 8px; font-size:12px; }
+    .full-score-table .bias-badge { display:inline; white-space:normal; word-break:keep-all; overflow-wrap:normal; padding:4px 7px; font-size:12px; line-height:1.42; border-radius:10px; }
+    .full-score-table .subtle { margin-top:3px; font-size:11px; line-height:1.35; }
+    .full-score-table th:nth-child(1),.full-score-table td:nth-child(1) { width:3%; min-width:40px; text-align:center; }
+    .full-score-table th:nth-child(2),.full-score-table td:nth-child(2) { width:8%; min-width:92px; }
+    .full-score-table th:nth-child(3),.full-score-table td:nth-child(3) { width:13%; min-width:132px; }
+    .full-score-table th:nth-child(4),.full-score-table td:nth-child(4) { width:5%; min-width:54px; text-align:center; }
+    .full-score-table th:nth-child(5),.full-score-table td:nth-child(5) { width:6%; min-width:66px; text-align:center; }
+    .full-score-table th:nth-child(6),.full-score-table td:nth-child(6) { width:6%; min-width:66px; text-align:center; }
+    .full-score-table th:nth-child(7),.full-score-table td:nth-child(7) { width:9%; min-width:96px; }
+    .full-score-table th:nth-child(8),.full-score-table td:nth-child(8) { width:30%; min-width:320px; }
+    .full-score-table th:nth-child(9),.full-score-table td:nth-child(9) { width:20%; min-width:220px; }
     @media (max-width: 980px) {
       .top { padding:26px 20px; }
       .top h1 { font-size:32px; }
@@ -324,7 +342,7 @@
         <div class="filter-count" id="candidateCount">显示 0 / 0</div>
       </div>
       <div class="candidate-table-wrap">
-        <table class="candidate-table">
+        <table class="candidate-table full-score-table">
           <thead>
             <tr><th>股票</th><th>池子</th><th>细分垂类</th><th>交易层级</th><th>技术分</th><th>最终分</th><th>S标记</th><th>反人性</th><th>当日涨跌</th><th>资讯排雷/关键新闻</th><th>技术位置</th><th>次日操作</th><th>核心理由</th></tr>
           </thead>
