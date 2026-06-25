@@ -6,49 +6,49 @@
   <title>md50 A股智能投研服务</title>
   <style>
     :root {
-      --ink:#121826; --muted:#617089; --line:#dfe6f1; --navy:#152033;
+      --ink:#121826; --muted:#607089; --line:#dfe7f2; --navy:#152033;
       --blue:#2457d6; --red:#b42318; --green:#087443; --orange:#9a3412;
-      --bg:#f4f7fb; --soft:#fffaf5; --card:#ffffff;
+      --bg:#f5f7fb; --soft:#fffaf5; --card:#ffffff; --row:#f8fafc;
     }
     * { box-sizing:border-box; }
-    body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"PingFang SC","Microsoft YaHei",sans-serif; }
-    .top { background:linear-gradient(135deg,#101827,#223b78); color:white; padding:34px 42px 28px; border-bottom-left-radius:28px; border-bottom-right-radius:28px; }
-    .top h1 { margin:0 0 10px; font-size:42px; letter-spacing:0; }
-    .top p { margin:0; color:#dbe7ff; font-size:18px; line-height:1.7; max-width:1180px; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"PingFang SC","Microsoft YaHei",sans-serif; font-size:15px; }
+    .top { background:linear-gradient(135deg,#101827,#223b78); color:white; padding:30px 36px 26px; border-bottom-left-radius:24px; border-bottom-right-radius:24px; }
+    .top h1 { margin:0 0 8px; font-size:38px; letter-spacing:0; }
+    .top p { margin:0; color:#dbe7ff; font-size:17px; line-height:1.65; max-width:1180px; }
     .nav { display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
     .nav a { color:white; text-decoration:none; border:1px solid rgba(255,255,255,.35); border-radius:999px; padding:10px 18px; font-weight:750; }
     .verify { margin-top:22px; display:inline-flex; align-items:center; gap:10px; padding:11px 16px; border-radius:14px; background:#dcfce7; color:#14532d; font-weight:800; }
-    .wrap { width:min(1540px, calc(100vw - 36px)); margin:24px auto 56px; }
-    .kpis { display:grid; grid-template-columns:repeat(6, minmax(130px,1fr)); gap:14px; margin-bottom:18px; }
-    .kpi { background:white; border:1px solid var(--line); border-radius:16px; padding:16px 18px; box-shadow:0 10px 30px rgba(30,48,80,.05); }
+    .wrap { width:min(1800px, calc(100vw - 28px)); margin:20px auto 52px; }
+    .kpis { display:grid; grid-template-columns:repeat(6, minmax(118px,1fr)); gap:12px; margin-bottom:16px; }
+    .kpi { background:white; border:1px solid var(--line); border-radius:12px; padding:14px 16px; box-shadow:0 8px 24px rgba(30,48,80,.04); }
     .kpi span { display:block; color:var(--muted); font-weight:700; margin-bottom:8px; }
-    .kpi strong { font-size:28px; }
-    section { background:white; border:1px solid var(--line); border-radius:18px; padding:24px; margin:18px 0; box-shadow:0 12px 34px rgba(30,48,80,.045); }
-    h2 { font-size:28px; margin:0 0 16px; }
+    .kpi strong { font-size:26px; }
+    section { background:white; border:1px solid var(--line); border-radius:14px; padding:20px; margin:16px 0; box-shadow:0 10px 28px rgba(30,48,80,.04); }
+    h2 { font-size:26px; margin:0 0 14px; }
     h3 { margin:0 0 8px; font-size:20px; }
     .lead { color:#354258; line-height:1.8; margin:0 0 18px; }
-    .setup-grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; }
-    .setup-card { border:1px solid #fecaca; background:#fff7f7; border-radius:16px; padding:18px; }
+    .setup-grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px; }
+    .setup-card { border:1px solid #fecaca; background:#fff7f7; border-radius:12px; padding:16px; }
     .setup-card p { color:#334155; line-height:1.7; margin:8px 0; }
-    table { width:100%; max-width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border:1px solid var(--line); border-radius:16px; }
-    th { background:var(--navy); color:white; text-align:left; font-size:14px; padding:13px 14px; white-space:nowrap; }
-    td { border-top:1px solid #e8edf5; padding:12px 14px; vertical-align:top; font-size:14px; line-height:1.55; overflow-wrap:anywhere; word-break:break-word; }
-    tr:nth-child(even) td { background:#f8fafc; }
-    .stock strong { display:block; font-size:16px; margin-bottom:4px; }
-    code { display:inline-block; background:#edf2f7; border-radius:6px; padding:2px 7px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-weight:800; white-space:nowrap; word-break:keep-all; overflow-wrap:normal; }
+    table { width:100%; max-width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border:1px solid var(--line); border-radius:12px; }
+    th { background:var(--navy); color:white; text-align:left; font-size:13px; padding:11px 12px; white-space:nowrap; }
+    td { border-top:1px solid #e8edf5; padding:11px 12px; vertical-align:top; font-size:13px; line-height:1.5; overflow-wrap:anywhere; word-break:break-word; }
+    tr:nth-child(even) td { background:var(--row); }
+    .stock strong { display:block; font-size:15px; margin-bottom:4px; }
+    code { display:inline-block; background:#edf2f7; border-radius:6px; padding:2px 6px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-weight:800; white-space:nowrap; word-break:keep-all; overflow-wrap:normal; }
     .score { display:inline-grid; place-items:center; width:36px; height:36px; border-radius:10px; font-weight:900; }
     .score-5 { background:#fee2e2; color:#b91c1c; border:1px solid #fecaca; }
     .score-4 { background:#dbeafe; color:#1d4ed8; border:1px solid #bfdbfe; }
     .score-3 { background:#ccfbf1; color:#0f766e; border:1px solid #99f6e4; }
     .score-2 { background:#fef3c7; color:#a16207; border:1px solid #fde68a; }
     .score-1,.score-0 { background:#eef2f7; color:#475569; border:1px solid #cbd5e1; }
-    .score100 { display:inline-flex; flex:0 0 52px; align-items:center; justify-content:center; width:52px; min-width:52px; max-width:52px; height:34px; padding:0; box-sizing:border-box; border-radius:10px; font-size:15px; font-weight:950; line-height:1; white-space:nowrap; word-break:keep-all; overflow-wrap:normal; font-variant-numeric:tabular-nums; }
+    .score100 { display:inline-flex; flex:0 0 50px; align-items:center; justify-content:center; width:50px; min-width:50px; max-width:50px; height:32px; padding:0; box-sizing:border-box; border-radius:9px; font-size:14px; font-weight:950; line-height:1; white-space:nowrap; word-break:keep-all; overflow-wrap:normal; font-variant-numeric:tabular-nums; }
     .score100.elite { background:#fee2e2; color:#b91c1c; border:1px solid #fecaca; box-shadow:0 8px 22px rgba(185,28,28,.12); }
     .score100.strong { background:#dbeafe; color:#1d4ed8; border:1px solid #bfdbfe; }
     .score100.good { background:#ccfbf1; color:#0f766e; border:1px solid #99f6e4; }
     .score100.mid { background:#fef3c7; color:#a16207; border:1px solid #fde68a; }
     .score100.low,.score100.weak { background:#eef2f7; color:#475569; border:1px solid #cbd5e1; }
-    .pill,.action,.mini-tag,.s-tag { display:inline-flex; align-items:center; border-radius:999px; padding:5px 10px; font-weight:850; white-space:nowrap; }
+    .pill,.action,.mini-tag,.s-tag { display:inline-flex; align-items:center; border-radius:999px; padding:4px 9px; font-weight:850; white-space:nowrap; }
     .pill.up { background:#ffe4e6; color:#a2161a; border:1px solid #fecdd3; }
     .pill.down { background:#dcfce7; color:#166534; border:1px solid #bbf7d0; }
     .pill.muted { background:#eef2f7; color:#64748b; }
@@ -61,7 +61,7 @@
     .pool-badge { display:inline-grid; place-items:center; width:34px; height:34px; border-radius:999px; font-weight:950; }
     .pool-badge.core { background:#fee2e2; color:#b91c1c; border:1px solid #fecaca; }
     .pool-badge.wild { background:#dbeafe; color:#1d4ed8; border:1px solid #bfdbfe; }
-    .vertical-badge { display:inline-flex; align-items:center; border-radius:999px; padding:5px 10px; background:#ecfeff; color:#155e75; border:1px solid #a5f3fc; font-weight:900; white-space:nowrap; }
+    .vertical-badge { display:inline-flex; align-items:center; max-width:100%; border-radius:999px; padding:5px 10px; background:#ecfeff; color:#155e75; border:1px solid #a5f3fc; font-weight:900; white-space:normal; line-height:1.35; }
     .structure-tags,.buy-signals { display:flex; flex-wrap:wrap; gap:6px; margin-top:7px; }
     .structure-badge,.structure-bonus,.bias-badge { display:inline-flex; align-items:center; border-radius:999px; padding:4px 9px; font-size:12px; font-weight:900; line-height:1.25; }
     .structure-badge.edge { background:#ecfeff; color:#155e75; border:1px solid #a5f3fc; }
@@ -80,6 +80,8 @@
     .model-chip.stage-risk { background:#ffedd5; color:#c2410c; border:1px solid #fed7aa; }
     .model-chip.stage-neutral { background:#eef2f7; color:#475569; border:1px solid #cbd5e1; }
     .subtle { color:#52627a; margin-top:6px; }
+    .cell-main { font-weight:750; color:#1f2937; }
+    .compact-text { display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden; }
     .muted-text { color:#94a3b8; }
     .two-col { display:grid; grid-template-columns:1.05fr .95fr; gap:18px; }
     .workflow { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
@@ -90,14 +92,14 @@
     .pool-focus-title { display:flex; align-items:baseline; gap:12px; margin-bottom:8px; }
     .pool-focus-title h3 { margin:0; }
     .pool-focus-title p { margin:0; color:#64748b; font-weight:750; }
-    .buy-focus-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:12px 0 22px; }
-    .buy-card { position:relative; border:2px solid #fecaca; background:linear-gradient(180deg,#fff7f7,#fffaf5); border-radius:18px; padding:18px; box-shadow:0 16px 38px rgba(185,28,28,.10); }
+    .buy-focus-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,520px)); gap:14px; margin:12px 0 22px; align-items:start; }
+    .buy-card { position:relative; border:1px solid #fecaca; background:linear-gradient(180deg,#fff8f8,#fffdf9); border-radius:14px; padding:16px; box-shadow:0 10px 24px rgba(185,28,28,.08); }
     .buy-rank { position:absolute; right:16px; top:14px; color:#be123c; font-size:14px; font-weight:950; background:#ffe4e6; border:1px solid #fecdd3; border-radius:999px; padding:4px 9px; }
     .buy-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; padding-right:52px; }
-    .buy-head h3 { margin:0 0 7px; font-size:24px; }
+    .buy-head h3 { margin:0 0 7px; font-size:22px; }
     .buy-vertical { margin:12px 0 4px; }
     .buy-line { display:flex; align-items:center; gap:10px; margin:14px 0 12px; font-weight:850; color:#334155; }
-    .buy-card p { margin:8px 0; color:#334155; line-height:1.65; }
+    .buy-card p { margin:7px 0; color:#334155; line-height:1.55; }
     .empty-focus { border:1px dashed #cbd5e1; background:#f8fafc; color:#64748b; border-radius:14px; padding:18px; margin:12px 0 22px; }
     .trade-tier { display:inline-flex; align-items:center; border-radius:999px; padding:5px 10px; font-weight:900; white-space:nowrap; }
     .trade-tier.focus { background:#dc2626; color:white; box-shadow:0 8px 18px rgba(220,38,38,.22); }
@@ -129,29 +131,29 @@
     .filter-check.watch { border-color:#cbd5e1; background:#f8fafc; color:#334155; }
     .filter-check.sell { border-color:#fed7aa; background:#fff7ed; color:#c2410c; }
     .filter-count { margin-left:auto; height:42px; display:inline-flex; align-items:center; border-radius:999px; padding:0 15px; background:#eef2f7; color:#334155; font-weight:900; }
-    .candidate-table-wrap { width:100%; max-width:100%; overflow-x:auto; }
+    .candidate-table-wrap { width:100%; max-width:100%; overflow-x:auto; border-radius:12px; }
     .candidate-table-wrap table { margin:0; }
-    .candidate-table { table-layout:fixed; width:100%; min-width:1480px; font-size:12px; }
-    .candidate-table th,.candidate-table td { padding:10px 6px; overflow-wrap:anywhere; word-break:break-word; }
+    .candidate-table { table-layout:fixed; width:100%; min-width:2120px; font-size:12px; }
+    .candidate-table th,.candidate-table td { padding:9px 9px; overflow-wrap:anywhere; word-break:break-word; }
     .candidate-table th { white-space:normal; line-height:1.35; }
-    .candidate-table th:nth-child(1),.candidate-table td:nth-child(1) { width:6%; }
-    .candidate-table th:nth-child(2),.candidate-table td:nth-child(2) { width:3%; text-align:center; }
-    .candidate-table th:nth-child(3),.candidate-table td:nth-child(3) { width:15%; }
-    .candidate-table th:nth-child(4),.candidate-table td:nth-child(4) { width:5%; }
+    .candidate-table th:nth-child(1),.candidate-table td:nth-child(1) { width:120px; }
+    .candidate-table th:nth-child(2),.candidate-table td:nth-child(2) { width:58px; text-align:center; }
+    .candidate-table th:nth-child(3),.candidate-table td:nth-child(3) { width:300px; }
+    .candidate-table th:nth-child(4),.candidate-table td:nth-child(4) { width:112px; }
     .candidate-table th:nth-child(5),.candidate-table td:nth-child(5),
-    .candidate-table th:nth-child(6),.candidate-table td:nth-child(6) { width:4%; min-width:58px; text-align:center; white-space:nowrap; overflow-wrap:normal; word-break:keep-all; }
-    .candidate-table th:nth-child(7),.candidate-table td:nth-child(7) { width:3.5%; min-width:46px; text-align:center; white-space:nowrap; overflow-wrap:normal; word-break:keep-all; }
-    .candidate-table th:nth-child(8),.candidate-table td:nth-child(8) { width:5%; min-width:76px; white-space:nowrap; overflow-wrap:normal; word-break:keep-all; }
-    .candidate-table th:nth-child(9),.candidate-table td:nth-child(9) { width:4.5%; min-width:72px; white-space:nowrap; overflow-wrap:normal; word-break:keep-all; }
-    .candidate-table .news-cell { width:14%; }
-    .candidate-table .tech-cell { width:11%; }
-    .candidate-table .next-action-cell { width:12%; }
-    .candidate-table .reason-cell { width:15%; font-size:13px; line-height:1.58; color:#263448; }
-    .candidate-table .stock strong { font-size:15px; }
+    .candidate-table th:nth-child(6),.candidate-table td:nth-child(6) { width:74px; text-align:center; white-space:nowrap; overflow-wrap:normal; word-break:keep-all; }
+    .candidate-table th:nth-child(7),.candidate-table td:nth-child(7) { width:68px; text-align:center; white-space:nowrap; overflow-wrap:normal; word-break:keep-all; }
+    .candidate-table th:nth-child(8),.candidate-table td:nth-child(8) { width:104px; white-space:nowrap; overflow-wrap:normal; word-break:keep-all; }
+    .candidate-table th:nth-child(9),.candidate-table td:nth-child(9) { width:82px; white-space:nowrap; overflow-wrap:normal; word-break:keep-all; }
+    .candidate-table .news-cell { width:270px; }
+    .candidate-table .tech-cell { width:280px; }
+    .candidate-table .next-action-cell { width:260px; }
+    .candidate-table .reason-cell { width:340px; font-size:13px; line-height:1.55; color:#263448; }
+    .candidate-table .stock strong { font-size:14px; }
     .candidate-table .vertical-badge { white-space:normal; line-height:1.35; }
-    .candidate-table .subtle { line-height:1.52; }
-    .full-score-table { table-layout:fixed; width:100%; min-width:1280px; font-size:12px; }
-    .full-score-table th,.full-score-table td { padding:8px 7px; font-size:12px; line-height:1.42; overflow-wrap:anywhere; word-break:break-word; }
+    .candidate-table .subtle { line-height:1.46; }
+    .full-score-table { table-layout:fixed; width:100%; min-width:1460px; font-size:12px; }
+    .full-score-table th,.full-score-table td { padding:8px 8px; font-size:12px; line-height:1.42; overflow-wrap:anywhere; word-break:break-word; }
     .full-score-table th { white-space:normal; }
     .full-score-table .stock strong { font-size:13px; margin-bottom:2px; }
     .full-score-table code { font-size:11px; padding:1px 5px; }
@@ -160,28 +162,28 @@
     .full-score-table .pill { padding:4px 8px; font-size:12px; }
     .full-score-table .bias-badge { display:inline-block; max-width:100%; white-space:normal; word-break:break-word; overflow-wrap:anywhere; padding:4px 7px; font-size:12px; line-height:1.42; border-radius:10px; }
     .full-score-table .subtle { margin-top:3px; font-size:11px; line-height:1.35; }
-    .full-score-table th:nth-child(1),.full-score-table td:nth-child(1) { width:3%; min-width:40px; text-align:center; }
-    .full-score-table th:nth-child(2),.full-score-table td:nth-child(2) { width:8%; min-width:92px; }
-    .full-score-table th:nth-child(3),.full-score-table td:nth-child(3) { width:13%; min-width:132px; }
-    .full-score-table th:nth-child(4),.full-score-table td:nth-child(4) { width:5%; min-width:54px; text-align:center; }
-    .full-score-table th:nth-child(5),.full-score-table td:nth-child(5) { width:6%; min-width:66px; text-align:center; }
-    .full-score-table th:nth-child(6),.full-score-table td:nth-child(6) { width:6%; min-width:66px; text-align:center; }
-    .full-score-table th:nth-child(7),.full-score-table td:nth-child(7) { width:9%; min-width:96px; }
-    .full-score-table th:nth-child(8),.full-score-table td:nth-child(8) { width:30%; min-width:320px; }
-    .full-score-table th:nth-child(9),.full-score-table td:nth-child(9) { width:20%; min-width:220px; }
+    .full-score-table th:nth-child(1),.full-score-table td:nth-child(1) { width:48px; text-align:center; }
+    .full-score-table th:nth-child(2),.full-score-table td:nth-child(2) { width:118px; }
+    .full-score-table th:nth-child(3),.full-score-table td:nth-child(3) { width:190px; }
+    .full-score-table th:nth-child(4),.full-score-table td:nth-child(4) { width:70px; text-align:center; }
+    .full-score-table th:nth-child(5),.full-score-table td:nth-child(5) { width:86px; text-align:center; }
+    .full-score-table th:nth-child(6),.full-score-table td:nth-child(6) { width:80px; text-align:center; }
+    .full-score-table th:nth-child(7),.full-score-table td:nth-child(7) { width:190px; }
+    .full-score-table th:nth-child(8),.full-score-table td:nth-child(8) { width:430px; }
+    .full-score-table th:nth-child(9),.full-score-table td:nth-child(9) { width:260px; }
     .holding-snapshot { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 16px; color:#52627a; font-weight:800; }
     .holding-snapshot span { display:inline-flex; align-items:center; border:1px solid #dbeafe; background:#eff6ff; color:#1d4ed8; border-radius:999px; padding:5px 10px; }
-    .holding-table { table-layout:fixed; width:100%; min-width:1260px; font-size:13px; }
+    .holding-table { table-layout:fixed; width:100%; min-width:1520px; font-size:13px; }
     .holding-table th,.holding-table td { padding:10px 10px; font-size:13px; line-height:1.48; overflow-wrap:anywhere; word-break:break-word; }
     .holding-table th { white-space:normal; }
     .holding-table .stock strong { font-size:15px; }
     .holding-table .subtle { font-size:12px; line-height:1.42; }
-    .holding-table th:nth-child(1),.holding-table td:nth-child(1) { width:14%; min-width:150px; }
-    .holding-table th:nth-child(2),.holding-table td:nth-child(2) { width:10%; min-width:110px; text-align:center; }
-    .holding-table th:nth-child(3),.holding-table td:nth-child(3) { width:8%; min-width:90px; text-align:center; }
-    .holding-table th:nth-child(4),.holding-table td:nth-child(4) { width:29%; min-width:300px; }
-    .holding-table th:nth-child(5),.holding-table td:nth-child(5) { width:22%; min-width:250px; }
-    .holding-table th:nth-child(6),.holding-table td:nth-child(6) { width:17%; min-width:190px; }
+    .holding-table th:nth-child(1),.holding-table td:nth-child(1) { width:170px; }
+    .holding-table th:nth-child(2),.holding-table td:nth-child(2) { width:120px; text-align:center; }
+    .holding-table th:nth-child(3),.holding-table td:nth-child(3) { width:96px; text-align:center; }
+    .holding-table th:nth-child(4),.holding-table td:nth-child(4) { width:420px; }
+    .holding-table th:nth-child(5),.holding-table td:nth-child(5) { width:360px; }
+    .holding-table th:nth-child(6),.holding-table td:nth-child(6) { width:354px; }
     @media (max-width: 980px) {
       .top { padding:26px 20px; }
       .top h1 { font-size:32px; }
@@ -193,6 +195,10 @@
       table { display:block; overflow-x:auto; }
       .candidate-table-wrap { overflow-x:auto; }
       .candidate-table { min-width:1180px; }
+      .candidate-table th:nth-child(1),.candidate-table td:nth-child(1) { width:104px; }
+      .candidate-table th:nth-child(3),.candidate-table td:nth-child(3) { width:220px; }
+      .candidate-table .news-cell,.candidate-table .tech-cell,.candidate-table .next-action-cell { width:220px; }
+      .candidate-table .reason-cell { width:260px; }
       .full-score-table { min-width:1120px; }
       .holding-table { min-width:1120px; }
     }
@@ -269,7 +275,7 @@
               <p><strong>防守位：</strong>337.7</p>
               <p><strong>资讯：</strong>利好 +0.6；技术突破/国产替代等3条利好；技术突破/国产替代</p>
               <p><strong>反人性：</strong>非反人性</p>
-              <p class="subtle"><strong>理由：</strong>涨价/供货紧张；瓶颈供给；回踩20日线附近；回踩30日线附近；回踩50日线附近；站回5日/EMA5，短线修复；站回10日/EMA10，短线确认；站回20日/EMA20，趋势修复；关键线底部反转观察；踩上50日线并拉回；30日线辅助买点；50日线假破位修复</p>
+              <p class="subtle compact-text"><strong>理由：</strong>涨价/供货紧张；瓶颈供给；回踩20日线附近；回踩30日线附近；回踩50日线附近；站回5日/EMA5，短线修复；站回10日/EMA10，短线确认；站回20日/EMA20，趋势修复；关键线底部反转观察；踩上50日线并拉回；30日线辅助买点；50日线假破位修复</p>
             </article>
             </div>
     </div>
@@ -311,11 +317,11 @@
           <thead>
             <tr><th>股票</th><th>池子</th><th>细分垂类</th><th>交易层级</th><th>技术分</th><th>最终分</th><th>S标记</th><th>反人性</th><th>当日涨跌</th><th>资讯排雷/关键新闻</th><th>技术位置</th><th>次日操作</th><th>核心理由</th></tr>
           </thead>
-          <tbody id="candidateRows"><tr class="focus-row" data-score="100" data-special="0" data-pool="wild" data-action="buy" data-search="胜宏科技 300476 shenghongkeji shkj 打野池 pcb制造 / 高速pcb/ai服务器板 反弹买入趋势 全球优势:ai服务器pcb；供给瓶颈:高层高速pcb 贴线 涨价；瓶颈；修5；确10；趋20；底反；支撑确认；假破修复；近20；近30；近50；强候选 非反人性 利好 +0.6；技术突破/国产替代等3条利好；技术突破/国产替代"><td class="stock"><strong>胜宏科技</strong><code>300476</code></td><td><span class="pool-badge wild" title="打野池">野</span></td><td><span class="vertical-badge">PCB制造 / 高速PCB/AI服务器板</span><div class="structure-tags"><span class="structure-badge edge">全球优势 · AI服务器PCB</span><span class="structure-badge bottleneck">供给瓶颈 · 高层高速PCB</span><span class="structure-bonus">结构加权 +0.8</span></div></td><td><span class="trade-tier focus">建议买入</span></td><td><span class="score100 elite">100</span></td><td><span class="score100 elite">100</span></td><td><span class="muted-text">-</span></td><td><span class="anti muted">非反人性</span></td><td><span class="pill up">2.0%</span></td><td class="news-cell">利好 +0.6；技术突破/国产替代等3条利好；技术突破/国产替代<div class="subtle">利好：胜宏科技回应压价：已量产高端PCB价格稳定 新产品遵循市场化定价原则；胜宏科技：6月23日组织现场参观活动，国联民生证券、幻方私募基金等多家机构参与</div></td><td class="tech-cell"><strong>反弹买入趋势</strong><div class="buy-signals"><span class="bias-badge near" title="20EMA乖离0%-5%，贴线健康，适合看承接和低吸确认。">20乖 +0.4% · 贴线</span><div class="overlay-badges"><span class="model-chip stage-good">二阶段推进 · 斜率4.19%</span><span class="model-chip stage-risk">A6弱 2/5</span><span class="model-chip stage-risk">RS偏弱 · 5%</span><span class="model-chip stage-neutral">EMA55深回踩观察 · ATR10 0.04</span></div></div><div class="subtle"><span class="mini-tag">涨价</span><span class="mini-tag">瓶颈</span><span class="mini-tag">修5</span><span class="mini-tag">确10</span><span class="mini-tag">趋20</span></div></td><td class="next-action-cell"><span class="action buy">买入</span><div class="subtle">围绕 342.90-353.35 小仓试探；站稳5/10日线再加，防守参考 349.9。</div></td><td class="reason-cell">涨价/供货紧张；瓶颈供给；回踩20日线附近；回踩30日线附近；回踩50日线附近；站回5日/EMA5，短线修复；站回10日/EMA10，短线确认；站回20日/EMA20，趋势修复；关键线底部反转观察；踩上50日线并拉回；30日线辅助买点；50日线假破位修复</td></tr>
-<tr data-score="93" data-special="0" data-pool="wild" data-action="watch" data-search="深南电路 002916 shennandianlu sndl 打野池 pcb封装基板 / pcb/封装基板 多头持仓趋势 全球优势:pcb/封装基板；供给瓶颈:abf/封装基板 健康 涨价；瓶颈；修5；底反；持仓趋势；强趋势不等20；强候选 非反人性 中性 -0.1；多空交织：1条利好 vs 1条利空；涨价/供给紧"><td class="stock"><strong>深南电路</strong><code>002916</code></td><td><span class="pool-badge wild" title="打野池">野</span></td><td><span class="vertical-badge">PCB封装基板 / PCB/封装基板</span><div class="structure-tags"><span class="structure-badge edge">全球优势 · PCB/封装基板</span><span class="structure-badge bottleneck">供给瓶颈 · ABF/封装基板</span><span class="structure-bonus">结构加权 +0.8</span></div></td><td><span class="trade-tier watch">观察低吸</span></td><td><span class="score100 elite">95</span></td><td><span class="score100 strong">93</span></td><td><span class="muted-text">-</span></td><td><span class="anti muted">非反人性</span></td><td><span class="pill up">5.3%</span></td><td class="news-cell">中性 -0.1；多空交织：1条利好 vs 1条利空；涨价/供给紧<div class="subtle">中航光电：与深南电路在HDI印制板、PCBA等方面有深度合作；深南电路公司点评：把握AI行业发展机遇 PCB与载板需求加速释放</div></td><td class="tech-cell"><strong>多头持仓趋势</strong><div class="buy-signals"><span class="bias-badge healthy" title="20EMA乖离5%-12%，趋势健康，强势股可持有但不追高。">20乖 +11.6% · 健康</span><div class="overlay-badges"><span class="model-chip stage-hot">末端过热 · 斜率12.98%</span><span class="model-chip stage-good">A6强 5/5</span><span class="model-chip stage-risk">RS偏弱 · 29%</span><span class="model-chip stage-neutral">技术观察 · ATR10 0.91</span></div></div><div class="subtle"><span class="mini-tag">涨价</span><span class="mini-tag">瓶颈</span><span class="mini-tag">修5</span><span class="mini-tag">底反</span><span class="mini-tag">持仓趋势</span></div></td><td class="next-action-cell"><span class="action watch">观察</span><div class="subtle">不追高；等待回踩关键线、站回5/10/20日线或量价承接后再评估。</div></td><td class="reason-cell">涨价/供货紧张；瓶颈供给；均线多头；20日线向上；极强曲线；站回5日/EMA5，短线修复；强趋势不等20日线</td></tr>
-<tr data-score="93" data-special="0" data-pool="core" data-action="watch" data-search="沪硅产业 688126 huguichanye hgcy 必选池 半导体材料 / 大硅片 多头持仓趋势 健康 瓶颈；修5；底反；持仓趋势；强趋势不等20；强候选 非反人性 中性 -0.0；多空交织：2条利好 vs 3条利空；解禁/限售 / 技术突破/国产替代 / 业绩预增/盈利"><td class="stock"><strong>沪硅产业</strong><code>688126</code></td><td><span class="pool-badge core" title="必选池">必</span></td><td><span class="vertical-badge">半导体材料 / 大硅片</span></td><td><span class="trade-tier watch">观察低吸</span></td><td><span class="score100 elite">95</span></td><td><span class="score100 strong">93</span></td><td><span class="muted-text">-</span></td><td><span class="anti muted">非反人性</span></td><td><span class="pill up">2.3%</span></td><td class="news-cell">中性 -0.0；多空交织：2条利好 vs 3条利空；解禁/限售 / 技术突破/国产替代 / 业绩预增/盈利<div class="subtle">偏利空：沪硅产业（688126）1.1亿股限售股将于6月25日解禁，占总股本3.34%；沪硅产业倾尽所有都要赌一把</div></td><td class="tech-cell"><strong>多头持仓趋势</strong><div class="buy-signals"><span class="bias-badge healthy" title="20EMA乖离5%-12%，趋势健康，强势股可持有但不追高。">20乖 +9.2% · 健康</span><div class="overlay-badges"><span class="model-chip stage-watch">二阶段偏热 · 斜率7.75%</span><span class="model-chip stage-good">A6强 5/5</span><span class="model-chip stage-risk">RS偏弱 · 19%</span><span class="model-chip stage-neutral">技术观察 · ATR10 0.43</span></div></div><div class="subtle"><span class="mini-tag">瓶颈</span><span class="mini-tag">修5</span><span class="mini-tag">底反</span><span class="mini-tag">持仓趋势</span><span class="mini-tag">强趋势不等20</span></div></td><td class="next-action-cell"><span class="action watch">观察</span><div class="subtle">不追高；等待回踩关键线、站回5/10/20日线或量价承接后再评估。</div></td><td class="reason-cell">瓶颈供给；均线多头；20日线向上；极强曲线；站回5日/EMA5，短线修复；强趋势不等20日线</td></tr>
-<tr data-score="88" data-special="0" data-pool="wild" data-action="watch" data-search="生益电子 688183 shengyidianzi sydz 打野池 pcb制造 多头持仓趋势 全球优势:ai服务器pcb；供给瓶颈:高阶服务器板 健康 涨价；瓶颈；底反；持仓趋势；强趋势不等20；低吸观察 非反人性 中性 -0.1；澄清/否认(中性偏负)等1条利空"><td class="stock"><strong>生益电子</strong><code>688183</code></td><td><span class="pool-badge wild" title="打野池">野</span></td><td><span class="vertical-badge">PCB制造</span><div class="structure-tags"><span class="structure-badge edge">全球优势 · AI服务器PCB</span><span class="structure-badge bottleneck">供给瓶颈 · 高阶服务器板</span><span class="structure-bonus">结构加权 +0.8</span></div></td><td><span class="trade-tier watch">候选观察</span></td><td><span class="score100 mid">75</span></td><td><span class="score100 good">88</span></td><td><span class="muted-text">-</span></td><td><span class="anti muted">非反人性</span></td><td><span class="pill up">1.2%</span></td><td class="news-cell">中性 -0.1；澄清/否认(中性偏负)等1条利空<div class="subtle">【机构调研记录】汇添富基金调研生益电子、安迪苏；生益电子：6月23日进行路演，泰康基金、汇添富基金等多家机构参与</div></td><td class="tech-cell"><strong>多头持仓趋势</strong><div class="buy-signals"><span class="bias-badge healthy" title="20EMA乖离5%-12%，趋势健康，强势股可持有但不追高。">20乖 +7.8% · 健康</span><div class="overlay-badges"><span class="model-chip stage-watch">二阶段偏热 · 斜率8.53%</span><span class="model-chip stage-good">A6强 4/5</span><span class="model-chip stage-risk">RS偏弱 · 12%</span><span class="model-chip stage-neutral">技术观察 · ATR10 0.48</span></div></div><div class="subtle"><span class="mini-tag">涨价</span><span class="mini-tag">瓶颈</span><span class="mini-tag">底反</span><span class="mini-tag">持仓趋势</span><span class="mini-tag">强趋势不等20</span></div></td><td class="next-action-cell"><span class="action watch">观察</span><div class="subtle">不追高；等待回踩关键线、站回5/10/20日线或量价承接后再评估。</div></td><td class="reason-cell">涨价/供货紧张；瓶颈供给；均线多头；20日线向上；强势曲线；强趋势不等20日线</td></tr>
-<tr data-score="85" data-special="0" data-pool="core" data-action="watch" data-search="石英股份 603688 shiyinggufen sygf 必选池 半导体材料 / 高纯石英 多头持仓趋势 健康 涨价；瓶颈；修5；底反；持仓趋势；强趋势不等20；强候选 非反人性 中性 +0.1；多空交织：1条利好 vs 1条利空"><td class="stock"><strong>石英股份</strong><code>603688</code></td><td><span class="pool-badge core" title="必选池">必</span></td><td><span class="vertical-badge">半导体材料 / 高纯石英</span></td><td><span class="trade-tier watch">候选观察</span></td><td><span class="score100 elite">95</span></td><td><span class="score100 good">85</span></td><td><span class="muted-text">-</span></td><td><span class="anti muted">非反人性</span></td><td><span class="pill up">4.6%</span></td><td class="news-cell">中性 +0.1；多空交织：1条利好 vs 1条利空<div class="subtle">石英股份：马来西亚子公司主要生产半导体用石英材料；石英股份：该项目不涉及合成石英砂</div></td><td class="tech-cell"><strong>多头持仓趋势</strong><div class="buy-signals"><span class="bias-badge healthy" title="20EMA乖离5%-12%，趋势健康，强势股可持有但不追高。">20乖 +10.4% · 健康</span><div class="overlay-badges"><span class="model-chip stage-hot">末端过热 · 斜率10.98%</span><span class="model-chip stage-good">A6强 5/5</span><span class="model-chip stage-risk">RS偏弱 · 37%</span><span class="model-chip stage-neutral">技术观察 · ATR10 0.59</span></div></div><div class="subtle"><span class="mini-tag">涨价</span><span class="mini-tag">瓶颈</span><span class="mini-tag">修5</span><span class="mini-tag">底反</span><span class="mini-tag">持仓趋势</span></div></td><td class="next-action-cell"><span class="action watch">观察</span><div class="subtle">不追高；等待回踩关键线、站回5/10/20日线或量价承接后再评估。</div></td><td class="reason-cell">涨价/供货紧张；瓶颈供给；均线多头；20日线向上；极强曲线；站回5日/EMA5，短线修复；强趋势不等20日线</td></tr></tbody>
+          <tbody id="candidateRows"><tr class="focus-row" data-score="100" data-special="0" data-pool="wild" data-action="buy" data-search="胜宏科技 300476 shenghongkeji shkj 打野池 pcb制造 / 高速pcb/ai服务器板 反弹买入趋势 全球优势:ai服务器pcb；供给瓶颈:高层高速pcb 贴线 涨价；瓶颈；修5；确10；趋20；底反；支撑确认；假破修复；近20；近30；近50；强候选 非反人性 利好 +0.6；技术突破/国产替代等3条利好；技术突破/国产替代"><td class="stock"><strong>胜宏科技</strong><code>300476</code></td><td><span class="pool-badge wild" title="打野池">野</span></td><td><span class="vertical-badge">PCB制造 / 高速PCB/AI服务器板</span><div class="structure-tags"><span class="structure-badge edge">全球优势 · AI服务器PCB</span><span class="structure-badge bottleneck">供给瓶颈 · 高层高速PCB</span><span class="structure-bonus">结构加权 +0.8</span></div></td><td><span class="trade-tier focus">建议买入</span></td><td><span class="score100 elite">100</span></td><td><span class="score100 elite">100</span></td><td><span class="muted-text">-</span></td><td><span class="anti muted">非反人性</span></td><td><span class="pill up">2.0%</span></td><td class="news-cell"><div class="cell-main">利好 +0.6；技术突破/国产替代等3条利好；技术突破/国产替代</div><div class="subtle compact-text">利好：胜宏科技回应压价：已量产高端PCB价格稳定 新产品遵循市场化定价原则；胜宏科技：6月23日组织现场参观活动，国联民生证券、幻方私募基金等多家机构参与</div></td><td class="tech-cell"><strong>反弹买入趋势</strong><div class="buy-signals"><span class="bias-badge near" title="20EMA乖离0%-5%，贴线健康，适合看承接和低吸确认。">20乖 +0.4% · 贴线</span><div class="overlay-badges"><span class="model-chip stage-good">二阶段推进 · 斜率4.19%</span><span class="model-chip stage-risk">A6弱 2/5</span><span class="model-chip stage-risk">RS偏弱 · 5%</span><span class="model-chip stage-neutral">EMA55深回踩观察 · ATR10 0.04</span></div></div><div class="subtle"><span class="mini-tag">涨价</span><span class="mini-tag">瓶颈</span><span class="mini-tag">修5</span><span class="mini-tag">确10</span><span class="mini-tag">趋20</span></div></td><td class="next-action-cell"><span class="action buy">买入</span><div class="subtle">围绕 342.90-353.35 小仓试探；站稳5/10日线再加，防守参考 349.9。</div></td><td class="reason-cell"><div class="compact-text">涨价/供货紧张；瓶颈供给；回踩20日线附近；回踩30日线附近；回踩50日线附近；站回5日/EMA5，短线修复；站回10日/EMA10，短线确认；站回20日/EMA20，趋势修复；关键线底部反转观察；踩上50日线并拉回；30日线辅助买点；50日线假破位修复</div></td></tr>
+<tr data-score="93" data-special="0" data-pool="wild" data-action="watch" data-search="深南电路 002916 shennandianlu sndl 打野池 pcb封装基板 / pcb/封装基板 多头持仓趋势 全球优势:pcb/封装基板；供给瓶颈:abf/封装基板 健康 涨价；瓶颈；修5；底反；持仓趋势；强趋势不等20；强候选 非反人性 中性 -0.1；多空交织：1条利好 vs 1条利空；涨价/供给紧"><td class="stock"><strong>深南电路</strong><code>002916</code></td><td><span class="pool-badge wild" title="打野池">野</span></td><td><span class="vertical-badge">PCB封装基板 / PCB/封装基板</span><div class="structure-tags"><span class="structure-badge edge">全球优势 · PCB/封装基板</span><span class="structure-badge bottleneck">供给瓶颈 · ABF/封装基板</span><span class="structure-bonus">结构加权 +0.8</span></div></td><td><span class="trade-tier watch">观察低吸</span></td><td><span class="score100 elite">95</span></td><td><span class="score100 strong">93</span></td><td><span class="muted-text">-</span></td><td><span class="anti muted">非反人性</span></td><td><span class="pill up">5.3%</span></td><td class="news-cell"><div class="cell-main">中性 -0.1；多空交织：1条利好 vs 1条利空；涨价/供给紧</div><div class="subtle compact-text">中航光电：与深南电路在HDI印制板、PCBA等方面有深度合作；深南电路公司点评：把握AI行业发展机遇 PCB与载板需求加速释放</div></td><td class="tech-cell"><strong>多头持仓趋势</strong><div class="buy-signals"><span class="bias-badge healthy" title="20EMA乖离5%-12%，趋势健康，强势股可持有但不追高。">20乖 +11.6% · 健康</span><div class="overlay-badges"><span class="model-chip stage-hot">末端过热 · 斜率12.98%</span><span class="model-chip stage-good">A6强 5/5</span><span class="model-chip stage-risk">RS偏弱 · 29%</span><span class="model-chip stage-neutral">技术观察 · ATR10 0.91</span></div></div><div class="subtle"><span class="mini-tag">涨价</span><span class="mini-tag">瓶颈</span><span class="mini-tag">修5</span><span class="mini-tag">底反</span><span class="mini-tag">持仓趋势</span></div></td><td class="next-action-cell"><span class="action watch">观察</span><div class="subtle">不追高；等待回踩关键线、站回5/10/20日线或量价承接后再评估。</div></td><td class="reason-cell"><div class="compact-text">涨价/供货紧张；瓶颈供给；均线多头；20日线向上；极强曲线；站回5日/EMA5，短线修复；强趋势不等20日线</div></td></tr>
+<tr data-score="93" data-special="0" data-pool="core" data-action="watch" data-search="沪硅产业 688126 huguichanye hgcy 必选池 半导体材料 / 大硅片 多头持仓趋势 健康 瓶颈；修5；底反；持仓趋势；强趋势不等20；强候选 非反人性 中性 -0.0；多空交织：2条利好 vs 3条利空；解禁/限售 / 技术突破/国产替代 / 业绩预增/盈利"><td class="stock"><strong>沪硅产业</strong><code>688126</code></td><td><span class="pool-badge core" title="必选池">必</span></td><td><span class="vertical-badge">半导体材料 / 大硅片</span></td><td><span class="trade-tier watch">观察低吸</span></td><td><span class="score100 elite">95</span></td><td><span class="score100 strong">93</span></td><td><span class="muted-text">-</span></td><td><span class="anti muted">非反人性</span></td><td><span class="pill up">2.3%</span></td><td class="news-cell"><div class="cell-main">中性 -0.0；多空交织：2条利好 vs 3条利空；解禁/限售 / 技术突破/国产替代 / 业绩预增/盈利</div><div class="subtle compact-text">偏利空：沪硅产业（688126）1.1亿股限售股将于6月25日解禁，占总股本3.34%；沪硅产业倾尽所有都要赌一把</div></td><td class="tech-cell"><strong>多头持仓趋势</strong><div class="buy-signals"><span class="bias-badge healthy" title="20EMA乖离5%-12%，趋势健康，强势股可持有但不追高。">20乖 +9.2% · 健康</span><div class="overlay-badges"><span class="model-chip stage-watch">二阶段偏热 · 斜率7.75%</span><span class="model-chip stage-good">A6强 5/5</span><span class="model-chip stage-risk">RS偏弱 · 19%</span><span class="model-chip stage-neutral">技术观察 · ATR10 0.43</span></div></div><div class="subtle"><span class="mini-tag">瓶颈</span><span class="mini-tag">修5</span><span class="mini-tag">底反</span><span class="mini-tag">持仓趋势</span><span class="mini-tag">强趋势不等20</span></div></td><td class="next-action-cell"><span class="action watch">观察</span><div class="subtle">不追高；等待回踩关键线、站回5/10/20日线或量价承接后再评估。</div></td><td class="reason-cell"><div class="compact-text">瓶颈供给；均线多头；20日线向上；极强曲线；站回5日/EMA5，短线修复；强趋势不等20日线</div></td></tr>
+<tr data-score="88" data-special="0" data-pool="wild" data-action="watch" data-search="生益电子 688183 shengyidianzi sydz 打野池 pcb制造 多头持仓趋势 全球优势:ai服务器pcb；供给瓶颈:高阶服务器板 健康 涨价；瓶颈；底反；持仓趋势；强趋势不等20；低吸观察 非反人性 中性 -0.1；澄清/否认(中性偏负)等1条利空"><td class="stock"><strong>生益电子</strong><code>688183</code></td><td><span class="pool-badge wild" title="打野池">野</span></td><td><span class="vertical-badge">PCB制造</span><div class="structure-tags"><span class="structure-badge edge">全球优势 · AI服务器PCB</span><span class="structure-badge bottleneck">供给瓶颈 · 高阶服务器板</span><span class="structure-bonus">结构加权 +0.8</span></div></td><td><span class="trade-tier watch">候选观察</span></td><td><span class="score100 mid">75</span></td><td><span class="score100 good">88</span></td><td><span class="muted-text">-</span></td><td><span class="anti muted">非反人性</span></td><td><span class="pill up">1.2%</span></td><td class="news-cell"><div class="cell-main">中性 -0.1；澄清/否认(中性偏负)等1条利空</div><div class="subtle compact-text">【机构调研记录】汇添富基金调研生益电子、安迪苏；生益电子：6月23日进行路演，泰康基金、汇添富基金等多家机构参与</div></td><td class="tech-cell"><strong>多头持仓趋势</strong><div class="buy-signals"><span class="bias-badge healthy" title="20EMA乖离5%-12%，趋势健康，强势股可持有但不追高。">20乖 +7.8% · 健康</span><div class="overlay-badges"><span class="model-chip stage-watch">二阶段偏热 · 斜率8.53%</span><span class="model-chip stage-good">A6强 4/5</span><span class="model-chip stage-risk">RS偏弱 · 12%</span><span class="model-chip stage-neutral">技术观察 · ATR10 0.48</span></div></div><div class="subtle"><span class="mini-tag">涨价</span><span class="mini-tag">瓶颈</span><span class="mini-tag">底反</span><span class="mini-tag">持仓趋势</span><span class="mini-tag">强趋势不等20</span></div></td><td class="next-action-cell"><span class="action watch">观察</span><div class="subtle">不追高；等待回踩关键线、站回5/10/20日线或量价承接后再评估。</div></td><td class="reason-cell"><div class="compact-text">涨价/供货紧张；瓶颈供给；均线多头；20日线向上；强势曲线；强趋势不等20日线</div></td></tr>
+<tr data-score="85" data-special="0" data-pool="core" data-action="watch" data-search="石英股份 603688 shiyinggufen sygf 必选池 半导体材料 / 高纯石英 多头持仓趋势 健康 涨价；瓶颈；修5；底反；持仓趋势；强趋势不等20；强候选 非反人性 中性 +0.1；多空交织：1条利好 vs 1条利空"><td class="stock"><strong>石英股份</strong><code>603688</code></td><td><span class="pool-badge core" title="必选池">必</span></td><td><span class="vertical-badge">半导体材料 / 高纯石英</span></td><td><span class="trade-tier watch">候选观察</span></td><td><span class="score100 elite">95</span></td><td><span class="score100 good">85</span></td><td><span class="muted-text">-</span></td><td><span class="anti muted">非反人性</span></td><td><span class="pill up">4.6%</span></td><td class="news-cell"><div class="cell-main">中性 +0.1；多空交织：1条利好 vs 1条利空</div><div class="subtle compact-text">石英股份：马来西亚子公司主要生产半导体用石英材料；石英股份：该项目不涉及合成石英砂</div></td><td class="tech-cell"><strong>多头持仓趋势</strong><div class="buy-signals"><span class="bias-badge healthy" title="20EMA乖离5%-12%，趋势健康，强势股可持有但不追高。">20乖 +10.4% · 健康</span><div class="overlay-badges"><span class="model-chip stage-hot">末端过热 · 斜率10.98%</span><span class="model-chip stage-good">A6强 5/5</span><span class="model-chip stage-risk">RS偏弱 · 37%</span><span class="model-chip stage-neutral">技术观察 · ATR10 0.59</span></div></div><div class="subtle"><span class="mini-tag">涨价</span><span class="mini-tag">瓶颈</span><span class="mini-tag">修5</span><span class="mini-tag">底反</span><span class="mini-tag">持仓趋势</span></div></td><td class="next-action-cell"><span class="action watch">观察</span><div class="subtle">不追高；等待回踩关键线、站回5/10/20日线或量价承接后再评估。</div></td><td class="reason-cell"><div class="compact-text">涨价/供货紧张；瓶颈供给；均线多头；20日线向上；极强曲线；站回5日/EMA5，短线修复；强趋势不等20日线</div></td></tr></tbody>
         </table>
       </div>
     </section>
