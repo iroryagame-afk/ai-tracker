@@ -51,13 +51,13 @@
 <body>
   <header class="top">
     <h1>当前算法说明</h1>
-    <p>这是 md50 / mda100 当前选股页面的算法口径汇总。主页面只放结果和筛选，这里集中放 S 形态、结构加权、反人性、多周期温度过滤和新闻排雷规则。</p>
+    <p>这是 md50 / mda100 当前选股页面的算法口径汇总。主页面只放结果和筛选，这里集中放 S 形态、结构加权、反人性、多周期温度、量价确认和新闻排雷规则。</p>
     <a href="md50.html">返回选股页面</a>
   </header>
   <main class="wrap">
     <section>
       <h2>一、数据与边界</h2>
-      <div class="note">新闻扫描：news_scan_20260629_203655.json · 2026-06-29T20:36:55 · 已匹配本次复盘</div>
+      <div class="note">新闻扫描：news_scan_20260630_203921.json · 2026-06-30T20:39:21 · 已匹配本次复盘</div>
       <div class="grid">
         <div class="card"><strong>行情口径</strong><br>行情、K线、指数和股票池数据优先使用 Futu OpenD / a-stock-data 核验。页面必须保留 <code>DOUBLE_VERIFIED_MDA100_DATA_INDEX_MATCH</code>，并确认 Report 日期等于 Index 日期。</div>
         <div class="card"><strong>股票池边界</strong><br>A 股页面只保留 mda100 / md50。港股通、港股、美股等只作为外部线索，不并入 A 股评分体系。</div>
@@ -90,7 +90,7 @@
       <h2>三、排序口径</h2>
       <table>
         <tbody>
-          <tr><th>优先顺序</th><td>最终分 &gt; S标记 &gt; 反人性评分 &gt; 技术分 &gt; 追高风险 &gt; 新闻排雷。</td></tr>
+          <tr><th>优先顺序</th><td>最终分 &gt; S标记 &gt; 反人性评分 &gt; 技术分 &gt; 冰神量价确认 &gt; 追高风险 &gt; 新闻排雷。</td></tr>
           <tr><th>必选池</th><td>核心资产容错更高，允许围绕关键支撑、假破位修复和缩量回踩做低吸预案。</td></tr>
           <tr><th>打野池</th><td>阶段性机会要求更严，必须右侧确认、量价承接，不做高位追涨。</td></tr>
           <tr><th>反人性</th><td>空到极致只是观察条件；站回关键均线、假破位修复、缩量回踩或放量承接出现后，才进入极值反转候选。</td></tr>
@@ -113,6 +113,7 @@
           <tr><th>A6强弱</th><td>MTM、LWR、RSI、KDJ、MACD 五票投票。4-5为强，3为中，0-2为弱；A6弱的新仓不主动追买。</td></tr>
           <tr><th>动态RS</th><td>120/60/20日涨幅按 50%/30%/20% 加权，并在本次已核验池内做分位，用于同分排序和主线强弱过滤。</td></tr>
           <tr><th>ATR动作树</th><td>用 ATR14 和价格相对 EMA10/50 的扩展判断追高风险、回踩深度、20日新高放量、跳空放量和过热不追。</td></tr>
+          <tr><th>冰神量价层</th><td>识别爆量阳线、缩量回踩、半分位买点和爆量阳底部止损。N字量价只做买点确认和排序加权；高位放量阴、持续放量跌、跌破爆量阳底部会降权或进入减仓观察。</td></tr>
         </tbody>
       </table>
     </section>
