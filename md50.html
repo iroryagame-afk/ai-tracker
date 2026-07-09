@@ -24,6 +24,23 @@
     .kpi { background:white; border:1px solid var(--line); border-radius:8px; padding:14px 16px; box-shadow:0 4px 14px rgba(30,48,80,.035); }
     .kpi span { display:block; color:var(--muted); font-weight:700; margin-bottom:8px; }
     .kpi strong { font-size:26px; }
+    .rec-review { margin:16px 0; padding:20px 22px 18px; border:1px solid #cbd5e1; border-left:8px solid #2563eb; border-radius:0 14px 14px 0; background:#eff6ff; box-shadow:0 10px 26px rgba(15,23,42,.06); }
+    .rec-review.negative { border-left-color:#dc2626; background:#fff7f7; }
+    .rec-review.positive { border-left-color:#2563eb; background:#eff6ff; }
+    .rec-review-head { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; }
+    .rec-review h2 { margin:0 0 8px; color:#2563eb; font-size:20px; }
+    .rec-review.negative h2 { color:#dc2626; }
+    .rec-review-head p { margin:0; color:#475569; font-weight:900; font-size:16px; }
+    .rec-review-head p span { color:#94a3b8; margin:0 6px; }
+    .rec-review-head > strong { color:#2563eb; font-size:46px; line-height:1; letter-spacing:0; font-variant-numeric:tabular-nums; }
+    .rec-review.negative .rec-review-head > strong { color:#dc2626; }
+    .rec-review-metrics { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:18px 0; }
+    .rec-review-metrics div { background:white; border:1px solid #bfdbfe; border-radius:10px; padding:12px 14px; }
+    .rec-review.negative .rec-review-metrics div { border-color:#fecaca; }
+    .rec-review-metrics b { display:block; color:#0f172a; font-size:20px; line-height:1.1; font-variant-numeric:tabular-nums; }
+    .rec-review-metrics span { display:block; margin-top:6px; color:#64748b; font-size:13px; font-weight:900; }
+    .rec-review p { margin:8px 0 0; color:#475569; font-size:15px; font-weight:750; }
+    .rec-review.muted-review { display:flex; gap:12px; align-items:center; color:#64748b; background:#f8fafc; border-left-color:#94a3b8; }
     section { background:white; border:1px solid var(--line); border-radius:8px; padding:20px; margin:14px 0; box-shadow:0 4px 16px rgba(30,48,80,.035); }
     section.priority-section { border-color:#bfdbfe; background:#f8fbff; box-shadow:0 8px 26px rgba(36,87,214,.08); }
     h2 { font-size:24px; margin:0 0 12px; }
@@ -323,6 +340,9 @@
 	      .top { padding:26px 20px; }
 	      .top h1 { font-size:32px; }
 	      .kpis,.memory-grid { grid-template-columns:repeat(2,1fr); }
+	      .rec-review-head { flex-direction:column; }
+	      .rec-review-head > strong { font-size:38px; }
+	      .rec-review-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); }
 	      .setup-grid,.two-col,.workflow,.buy-focus-grid,.radar-meta,.radar-status-grid,.mainline-card-grid { grid-template-columns:1fr; }
       .algo-link { align-items:flex-start; flex-direction:column; }
       .filter-panel { align-items:stretch; }
@@ -351,7 +371,6 @@
     <h1>md50 A股智能投研服务</h1>
     <p>最终保留三个高频场景：先用主线雷达拆市场热点，再生成次日可执行选股清单；用户上传持仓截图后，输出持有、加仓、减仓三类诊断建议。</p>
     <nav class="nav">
-	      <a href="#memory">持仓/明日操作</a>
 	      <a href="#mainline">主线雷达</a>
 	      <a href="#select">MD50选股</a>
 	      <a href="#fullscores">全量评分</a>
@@ -363,35 +382,28 @@
   </header>
   <main class="wrap">
     <div class="kpis"><div class="kpi"><span>md50核心池</span><strong>49/50</strong></div><div class="kpi"><span>行情覆盖</span><strong>98.0%</strong></div><div class="kpi"><span>上涨/下跌</span><strong>49/0</strong></div><div class="kpi"><span>平均分</span><strong>42.1</strong></div><div class="kpi"><span>95分+</span><strong>7</strong></div><div class="kpi"><span>90分+</span><strong>7</strong></div></div>
-
-	    <section id="memory" class="priority-section">
-	      <h2>一、当前持仓 / 明日操作</h2>
-	      <p class="lead">单独跟踪当前账户里的核心持仓、ETF底仓和防守资产。这个模块放在最前面，用于每日仓位节奏；短线防守环境下，先看资金承接和5/10日纪律，不用旧仓位目标硬推加仓。</p>
-	      <div class="note decision-note">每日节奏：7月9日半导体、存储、先进封装主线收盘强验证，持仓普遍大涨；动作重点不是追高，而是控集中度、看换手承接。兆易第一大仓涨停后仍需减集中度；华丰继续拿但不追；中芯、长电、澜起验证成功后持有不加；中船特气冲高降风险；两只半导体ETF保留底仓。</div>
-	      <div class="memory-grid">
-	        <div class="memory-card"><span>市场状态</span><strong>主线强验证 / 不追高</strong></div>
-	        <div class="memory-card"><span>优先处理</span><strong>兆易减集中度</strong></div>
-	        <div class="memory-card"><span>强势兑现</span><strong>华丰 / 中船冲高减</strong></div>
-	        <div class="memory-card"><span>继续保留</span><strong>中芯 + ETF底仓</strong></div>
-	      </div>
-	      <div class="candidate-table-wrap">
-	        <table class="memory-table">
-	          <thead><tr><th>标的</th><th>环节阶段</th><th>评分/涨跌</th><th>温度</th><th>目标仓位</th><th>今日动作</th><th>买点/触发条件</th></tr></thead>
-	          <tbody><tr><td class="stock"><strong>兆易创新</strong><code>603986</code><div class="subtle">内存主仓</div></td><td>规模放量期</td><td><span class="score100 low">70</span><div class="subtle"><span class="pill up">10.0%</span></div></td><td><span class="bias-badge near" title="20EMA乖离0%-5%，贴线健康，适合看承接和低吸确认。">20乖 +2.7% · 贴线</span><div class="subtle temp-summary">E5/10/20/55/200：5:+3.1% / 10:-6.7% / 20:+0.9% / 55:+25.0% / 200:+88.2%</div></td><td><strong>控集中度</strong></td><td><span class="action sell">减仓</span><div class="subtle">涨停修复成功，但第一大仓不再追加。</div></td><td>若次日高开回落或放量滞涨，优先把仓位压到更舒服区间。</td></tr>
-<tr><td class="stock"><strong>华丰科技</strong><code>688629</code><div class="subtle">高速连接器/华为算力</div></td><td>规模放量期</td><td><span class="score100 weak">-</span><div class="subtle"><span class="pill muted">未入池</span></div></td><td><span class="pill muted">手动策略</span></td><td><strong>继续拿</strong></td><td><span class="action watch">观察</span><div class="subtle">评分池外但趋势强，持有不追。</div></td><td>若继续急拉可小兑现；若缩量回踩不破关键线，继续观察。</td></tr>
-<tr><td class="stock"><strong>中芯国际</strong><code>688981</code><div class="subtle">晶圆制造中军</div></td><td>规模放量期</td><td><span class="score100 weak">41</span><div class="subtle"><span class="pill up">13.7%</span></div></td><td><span class="bias-badge overheat" title="20EMA乖离&gt;=15%，极端过热，原则上不新买。">20乖 +18.1% · 极热</span><div class="subtle temp-summary">E5/10/20/55/200：5:+14.6% / 10:+14.4% / 20:+19.5% / 55:+28.4% / 200:+43.0%</div></td><td><strong>持有不加</strong></td><td><span class="action watch">观察</span><div class="subtle">大阳线验证制造链中军，持有为主不追。</div></td><td>守住5日线且制造链继续扩散则保留；跌回短均线下再降温。</td></tr>
-<tr><td class="stock"><strong>中船特气</strong><code>688146</code><div class="subtle">电子特气</div></td><td>规模放量期</td><td><span class="score100 weak">26</span><div class="subtle"><span class="pill up">9.8%</span></div></td><td><span class="bias-badge overheat" title="20EMA乖离&gt;=15%，极端过热，原则上不新买。">20乖 +15.1% · 极热</span><div class="subtle temp-summary">E5/10/20/55/200：5:+10.6% / 10:+4.1% / 20:+9.0% / 55:+60.0% / 200:+215.0%</div></td><td><strong>冲高减风险</strong></td><td><span class="action watch">观察</span><div class="subtle">强修复但波动大，冲高接近前高区先降风险。</div></td><td>等5/10日线消化后再重新评估；否则不追。</td></tr>
-<tr><td class="stock"><strong>长电科技</strong><code>600584</code><div class="subtle">先进封装中军</div></td><td>规模放量期</td><td><span class="score100 weak">30</span><div class="subtle"><span class="pill up">10.0%</span></div></td><td><span class="bias-badge overheat" title="20EMA乖离12%-15%，偏热，持有为主，等回踩。">20乖 +12.1% · 偏热</span><div class="subtle temp-summary">E5/10/20/55/200：5:+6.8% / 10:+4.0% / 20:+13.3% / 55:+34.0% / 200:+85.3%</div></td><td><strong>继续拿</strong></td><td><span class="action watch">观察</span><div class="subtle">涨停反包完成修复，继续拿，明天看换手承接。</div></td><td>若高开低走且跌回短均线，重新降为观察；不追高加仓。</td></tr>
-<tr><td class="stock"><strong>澜起科技</strong><code>688008</code><div class="subtle">内存接口/CXL</div></td><td>规模放量期</td><td><span class="score100 low">73</span><div class="subtle"><span class="pill up">15.6%</span></div></td><td><span class="bias-badge healthy" title="20EMA乖离5%-12%，趋势健康，强势股可持有但不追高。">20乖 +7.2% · 健康</span><div class="subtle temp-summary">E5/10/20/55/200：5:+8.1% / 10:+3.0% / 20:+7.3% / 55:+19.0% / 200:+58.7%</div></td><td><strong>持有不加</strong></td><td><span class="action watch">观察</span><div class="subtle">MRDIMM/内存接口强验证，继续拿但不追。</div></td><td>等5/10日线消化，若仍强于兆易再评估加仓。</td></tr>
-<tr><td class="stock"><strong>科创半导体ETF华夏</strong><code>588170</code><div class="subtle">科创半导体ETF</div></td><td>底仓工具</td><td><span class="score100 weak">-</span><div class="subtle"><span class="pill muted">未入池</span></div></td><td><span class="pill muted">手动策略</span></td><td><strong>底仓保留</strong></td><td><span class="action watch">观察</span><div class="subtle">底仓工具保留，不因单日大阳追加。</div></td><td>若需要现金，优先处理集中个股，不先动ETF底仓。</td></tr>
-<tr><td class="stock"><strong>半导体设备ETF国泰</strong><code>159516</code><div class="subtle">设备/材料ETF</div></td><td>底仓工具</td><td><span class="score100 weak">15</span><div class="subtle"><span class="pill up">10.0%</span></div></td><td><span class="bias-badge overheat" title="20EMA乖离&gt;=15%，极端过热，原则上不新买。">20乖 +16.1% · 极热</span><div class="subtle temp-summary">E5/10/20/55/200：5:+9.2% / 10:+6.0% / 20:+16.7% / 55:+38.6% / 200:+88.7%</div></td><td><strong>底仓保留</strong></td><td><span class="action watch">观察</span><div class="subtle">设备ETF确认主线热度，但20日乖离偏高，不主动追。</div></td><td>等设备链换手确认后再评估；优先看中芯/设备龙头承接强弱。</td></tr>
-<tr><td class="stock"><strong>中国海油</strong><code>600938</code><div class="subtle">能源/高股息防守</div></td><td>成熟现金流</td><td><span class="score100 weak">-</span><div class="subtle"><span class="pill muted">未入池</span></div></td><td><span class="pill muted">手动策略</span></td><td><strong>防守仓保留</strong></td><td><span class="action watch">观察</span><div class="subtle">科技主线日自然偏弱，可作为防守垫。</div></td><td>除非需要现金，否则不作为本轮科技仓位调整的主要资金来源。</td></tr></tbody>
-	        </table>
-	      </div>
-	    </section>
+    
+    <section class="rec-review positive">
+      <div class="rec-review-head">
+        <div>
+          <h2>昨日推荐回看</h2>
+          <p>2026-07-08 推荐 <span>|</span> 2026-07-09 表现</p>
+        </div>
+        <strong>+9.86%</strong>
+      </div>
+      <div class="rec-review-metrics">
+        <div><b>5</b><span>推荐数</span></div>
+        <div><b>+8.80%</b><span>中位数</span></div>
+        <div><b>5/5</b><span>胜率</span></div>
+        <div><b>100%</b><span>正收益占比</span></div>
+      </div>
+      <p><b>Top：</b>中芯国际 +13.74% / 东山精密 +10.00% / 安集科技 +8.80%</p>
+      <p><b>Bottom：</b>南大光电 +8.16% / 寒武纪 +8.59% / 安集科技 +8.80%</p>
+    </section>
+    
 
     <section id="mainline" class="priority-section">
-      <h2>二、主线雷达</h2>
+      <h2>一、主线雷达</h2>
       <p class="lead">这个模块只拆“市场现在在炒什么、为什么涨、有没有扩散、明天验证什么”，不直接给买卖建议。QVeris 负责能力发现和外部数据，Futu/mda100 负责技术位置和股票池交叉验证；未调用的新闻、公告、社媒热词会明确标注。</p>
       
       <div class="radar-meta">
@@ -497,7 +509,7 @@
     </section>
 
     <section id="select">
-      <h2>三、MD50选股服务</h2>
+      <h2>二、MD50选股服务</h2>
       <p class="lead">基于 2026-07-09 收盘后 Futu OpenD 已核验行情，按 100 分制筛选次一交易日优先研究和布局的 A 股候选。新版股票池收缩为 md50：只保留 AI 科技链中各细分环节的龙一/龙二，PCB、电子料、光通信按产业链环节拆分，MLCC 仅保留龙一龙二。模型以技术图形、K线和成交量为主；新闻资讯只做排雷、解释和确认，不再把正面新闻作为主要加分项，避免追到已经 price in 的小作文。</p>
       <div class="note">新闻扫描：news_scan_20260709_171541.json · 2026-07-09T17:15:41 · 已匹配本次复盘</div>
       <div class="algo-link">
@@ -604,7 +616,7 @@
 	    </section>
 
 	    <section id="fullscores">
-	      <h2>四、全量100池评分</h2>
+	      <h2>三、全量100池评分</h2>
       <p class="lead">这里展示本次 Futu OpenD 已核验的全量股票池评分。它用于观察强弱和候选扩散，不等同于“建议买入”；真正的交易建议仍以上方 md50 龙一/龙二收敛清单为主。</p>
       
       <div class="filter-panel" id="fullScoreFilter">
@@ -747,8 +759,8 @@
       </div>
     </section>
 
-    <section id="holdings">
-	      <h2>五、收盘持仓诊断服务</h2>
+	    <section id="holdings">
+	      <h2>四、收盘持仓诊断服务</h2>
       <p class="lead">每日 A 股收盘后上传持仓截图，系统会把持仓标的与 md50 当日评分、均线位置、资讯修正和风控位合并，明确给出持有、加仓、减仓动作。</p>
       <div class="holding-snapshot"><span>2026-07-09 15:13 持仓截图（列表9只；农业银行未显示，按外部观察）</span><span>用户最新上传截图</span></div>
       <div class="candidate-table-wrap">
@@ -774,8 +786,8 @@
       </table>
     </section>
 
-    <section id="qveris">
-	      <h2>六、新股票 / qveris 初评入口</h2>
+	    <section id="qveris">
+	      <h2>五、新股票 / qveris 初评入口</h2>
       <div class="workflow">
         <div class="step"><h3>1. 输入</h3><p>你给股票截图、代码或一段自媒体线索。系统先识别股票和所属细分赛道。</p></div>
         <div class="step"><h3>2. qveris 初评</h3><p>按 discover → inspect → call 顺序调用能力，先看公司业务、新闻事件、同赛道对手和初步风险。</p></div>
