@@ -29,4 +29,8 @@ C27,C1_CALC,"Anthropic SpaceXAI headline price can imply up to about USD50bn per
 C28,C1_CALC,"Oracle OpenAI headline obligation can imply about USD13.3bn per GW-year",S14,derived_from_reported_contract,medium,"300/5/4.5; verify exact term and scope before valuation use"
 C29,C1_FCST,"2026Q2E compute-related supplier revenue estimates are not reported actuals",S05|S06|S08|S14,estimate,medium,"Label E and show method/range"
 C30,C1_INFERENCE,"Risk-adjusted business quality favors load owners over pure capacity owners",S05|S06|S08|S14|S15|S16|S17,inference,medium_high,"Investment judgment not a reported fact"
-
+C31,C1,"Jensen Huang publicly stated that 6m Blackwell GPUs shipped in the prior four quarters",S25,executive_disclosure_via_media,medium_high,"Use as the hard supply anchor; period differs from calendar-year model estimates"
+C32,C1,"AWS Project Rainier was operational with nearly 500k Trainium2 chips and AWS expected Anthropic to use more than 1m by 2025 year-end",S28,confirmed_current_plus_forward_target,high,"Keep nearly 500k operational separate from the more-than-1m target"
+C33,C1_EST,"Epoch AI estimates cumulative AI-chip units by designer including Nvidia Google Amazon AMD Huawei and Cambricon",S26,model_estimate,medium_low,"Use for order of magnitude only; do not present model medians as company-reported actuals"
+C34,C1_EST,"Epoch AI estimates Nvidia Q1 2026 shipments at about 1.34m units including about 0.99m B300 and 0.35m B200",S26,model_estimate,medium_low,"Latest complete quarter; exclude Q2 2026 rows marked Incomplete from ranking"
+C35,C1_EST,"Epoch AI combines H100 and H200 rather than providing a reliable standalone H200 shipment series",S26,confirmed_dataset_scope_limit,medium,"Do not fabricate a standalone H200 unit estimate"

@@ -23,4 +23,7 @@ S21,Google,First AI hub in India with USD15bn investment,2025,Company announceme
 S22,Government of India PIB,Vizag project official release,2025,Government release,A,200,https://www.pib.gov.in/PressReleasePage.aspx?PRID=2178852&lang=1&reg=3,"Official 1GW Vizag commitment"
 S23,Meta,Meta and Blue Owl develop Hyperion data center,2025-10-21,Company announcement,B,200,https://about.fb.com/news/2025/10/meta-blue-owl-capital-develop-hyperion-data-center/,"Hyperion ownership and financing structure"
 S24,Microsoft,Inside the world's most powerful AI datacenter,2025-09-18,Company infrastructure post,B,200,https://blogs.microsoft.com/blog/2025/09/18/inside-the-worlds-most-powerful-ai-datacenter/,"Fairwater project context without a total-fleet GW claim"
-
+S25,CNBC,Jensen Huang GTC Washington DC AI remarks,2025-10-28,Reputable media quoting company CEO,C,200,https://www.cnbc.com/2025/10/28/nvidia-jensen-huang-gtc-washington-dc-ai.html,"Official public anchor of 6m Blackwell GPUs shipped in the prior four quarters"
+S26,Epoch AI,Data on AI Chip Sales,2026-06,Research dataset,C,200,https://epoch.ai/data/ai-chip-sales,"Modeled cumulative quarterly and product-level AI chip shipments"
+S27,Omdia,Demand for Google TPU chips accelerates,2024-12,Industry research estimate,C,200,https://omdia.tech.informa.com/pr/2024/dec/omdia-demand-for-googles-tpu-chips-accelerates-challenging-nvidias-dominance,"TPU demand and spending context; not an official unit count"
+S28,AWS,Project Rainier AI Trainium cluster,2025-10,Company infrastructure announcement,B,200,https://www.aboutamazon.com/news/aws/aws-project-rainier-ai-trainium-chips-compute-cluster,"Nearly 500k Trainium2 operational and Anthropic year-end target"
