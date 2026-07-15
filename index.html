@@ -71,6 +71,19 @@
     .pill.up { background:#ffe4e6; color:#a2161a; border:1px solid #fecdd3; }
     .pill.down { background:#dcfce7; color:#166534; border:1px solid #bbf7d0; }
     .pill.muted { background:#eef2f7; color:#64748b; }
+    .bias-temp { display:inline-flex; align-items:center; justify-content:center; min-width:70px; border-radius:999px; padding:4px 9px; font-weight:900; white-space:nowrap; font-variant-numeric:tabular-nums; }
+    .bias-temp.stage { min-width:0; white-space:normal; line-height:1.35; text-align:center; }
+    .bias-temp.scorching { background:#7f1d1d; color:#fff; border:1px solid #991b1b; box-shadow:0 4px 12px rgba(127,29,29,.18); }
+    .bias-temp.hot { background:#ffedd5; color:#c2410c; border:1px solid #fdba74; }
+    .bias-temp.warm { background:#fef3c7; color:#a16207; border:1px solid #fcd34d; }
+    .bias-temp.cool { background:#cffafe; color:#0e7490; border:1px solid #67e8f9; }
+    .bias-temp.cold { background:#dbeafe; color:#1d4ed8; border:1px solid #93c5fd; }
+    .bias-delta { display:inline-flex; min-width:58px; justify-content:center; border-radius:999px; padding:3px 8px; font-weight:900; font-variant-numeric:tabular-nums; }
+    .bias-delta.warming { color:#c2410c; background:#fff7ed; }
+    .bias-delta.cooling { color:#1d4ed8; background:#eff6ff; }
+    .bias-delta.steady { color:#64748b; background:#f1f5f9; }
+    .bias-legend { display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 0; }
+    .bias-legend .bias-temp { min-width:0; padding:3px 8px; font-size:11px; }
     .action.buy { background:#fee2e2; color:#b91c1c; border:1px solid #fecaca; }
     .action.hold { background:#dbeafe; color:#1d4ed8; border:1px solid #bfdbfe; }
     .action.sell { background:#ffedd5; color:#c2410c; border:1px solid #fed7aa; }
@@ -114,6 +127,23 @@
     .radar-meta > div { flex:1 1 260px; min-width:0; }
     .radar-meta strong { display:block; color:#52627a; font-size:12px; margin-bottom:4px; }
     .radar-meta span { color:#1f2937; font-weight:750; line-height:1.5; }
+    .whole-market-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin:10px 0; }
+    .whole-market-stat { border:1px solid #dbeafe; background:#f8fbff; border-radius:8px; padding:13px 14px; }
+    .whole-market-stat span { display:block; color:#64748b; font-size:12px; font-weight:850; margin-bottom:6px; }
+    .whole-market-stat strong { display:block; color:#0f172a; font-size:20px; line-height:1.2; font-variant-numeric:tabular-nums; }
+    .whole-market-stat.positive { border-color:#fecaca; background:#fff7f7; }
+    .whole-market-stat.positive strong { color:#b91c1c; }
+    .whole-market-stat.negative { border-color:#bfdbfe; background:#eff6ff; }
+    .whole-market-stat.negative strong { color:#1d4ed8; }
+    .whole-market-stat.gate { border-color:#fed7aa; background:#fff7ed; }
+    .whole-market-stat.gate strong { color:#9a3412; }
+    .market-source-note { color:#52627a; font-size:12px; line-height:1.6; margin:4px 0 18px; }
+    .industry-fund-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:10px 0 20px; }
+    .industry-fund-block { min-width:0; }
+    .industry-fund-block h4 { margin:0 0 7px; font-size:13px; }
+    .industry-fund-block.inflow h4 { color:#b91c1c; }
+    .industry-fund-block.outflow h4 { color:#1d4ed8; }
+    .industry-fund-block th,.industry-fund-block td { padding:8px 9px; font-size:12px; }
     .radar-status-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:12px 0 18px; }
     .radar-status-item { border:1px solid #e2e8f0; background:#fbfdff; border-radius:8px; padding:12px; }
     .radar-status-item > div { display:flex; align-items:center; justify-content:space-between; gap:8px; }
@@ -344,7 +374,7 @@
 	      .rec-review-head { flex-direction:column; }
 	      .rec-review-head > strong { font-size:38px; }
 	      .rec-review-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); }
-	      .setup-grid,.two-col,.workflow,.buy-focus-grid,.radar-meta,.radar-status-grid,.mainline-card-grid { grid-template-columns:1fr; }
+	      .setup-grid,.two-col,.workflow,.buy-focus-grid,.radar-meta,.radar-status-grid,.whole-market-grid,.industry-fund-grid,.mainline-card-grid { grid-template-columns:1fr; }
       .mainline-card { padding:16px 0; }
       .mainline-card + .mainline-card { border-left:0; border-top:1px solid #dbeafe; padding-left:0; }
       .algo-link { align-items:flex-start; flex-direction:column; }
@@ -407,14 +437,25 @@
 
     <section id="mainline" class="priority-section">
       <h2>一、主线雷达</h2>
-      <p class="lead">先看风格资金，再看市场宽度和核心池；只保留结论、依据与明日验证，不直接给买卖建议。</p>
+      <p class="lead">先看全A总资金，再看行业分配，最后用ETF风格与乖离率确认；不直接给买卖建议。</p>
 
       <div class="radar-meta">
         <div><strong>数据日期</strong><span>2026-07-15</span></div>
-        <div><strong>核验覆盖</strong><span>行情 102/102 已核验；新闻 31只重点候选/持仓部分核验；资金闸门已核验。</span></div>
-        <div><strong>数据边界</strong><span>持仓采用 2026-07-14 17:10 持仓截图（列表10只；新易盛、杭氧股份为0市值观察记录）；行业来源：新浪行业行情快照（东财行业接口风控回退）；ETF订单流：Futu OpenD，且不等于净申购；社媒/QVeris未调用。</span></div>
+        <div><strong>核验覆盖</strong><span>行情 102/102 已核验；新闻 31只重点候选/持仓部分核验；全A总闸门、行业资金和ETF风格已核验。</span></div>
+        <div><strong>数据边界</strong><span>持仓采用 2026-07-14 17:10 持仓截图（列表10只；新易盛、杭氧股份为0市值观察记录）；全A/行业资金：东方财富延迟行业资金快照（主域风控回退）；ETF订单流：Futu OpenD；订单流均不等于外部净增资金或ETF净申购。</span></div>
       </div>
-      <h3>风格资金闸门</h3><div class="table-scroll"><table><thead><tr><th>风格</th><th>闸门分</th><th>乖离阶段</th><th>当日乖离率</th><th>3日变化</th><th>成交额温度</th><th>上涨宽度</th><th>ETF订单流</th></tr></thead><tbody><tr><td><strong>医药</strong></td><td>100.0</td><td>主线甜点区</td><td>+6.84%</td><td>+3.34</td><td>2.18x</td><td>100.0%</td><td>+2.17亿</td></tr><tr><td><strong>消费</strong></td><td>83.1</td><td>偏强，未进主线</td><td>+2.37%</td><td>+3.10</td><td>1.54x</td><td>100.0%</td><td>+0.64亿</td></tr><tr><td><strong>高股息/银行</strong></td><td>78.6</td><td>价值流震荡区</td><td>+2.89%</td><td>+3.03</td><td>1.11x</td><td>100.0%</td><td>+0.45亿</td></tr><tr><td><strong>科技成长</strong></td><td>27.6</td><td>跌穿走弱，接近止损</td><td>-4.14%</td><td>-5.88</td><td>1.06x</td><td>0.0%</td><td>-3.93亿</td></tr><tr><td><strong>周期资源</strong></td><td>20.4</td><td>早期修复，待转正</td><td>-1.53%</td><td>+2.86</td><td>0.65x</td><td>33.3%</td><td>-0.43亿</td></tr><tr><td><strong>工业制造/防守</strong></td><td>17.8</td><td>止损区，回避</td><td>-7.39%</td><td>-5.00</td><td>0.62x</td><td>0.0%</td><td>-0.06亿</td></tr></tbody></table></div><div class="note">乖离率=(ln收盘价−EMA20(ln收盘价))×100；3日变化判断修复/恶化；银行与红利按±5%震荡区逆向观察。</div>
+
+        <h3>全A市场资金总闸门</h3>
+        <div class="whole-market-grid">
+          <div class="whole-market-stat negative"><span>全A主力净流入</span><strong>-501.63亿</strong></div>
+          <div class="whole-market-stat"><span>全A成交额</span><strong>25,874亿</strong></div>
+          <div class="whole-market-stat"><span>市场宽度</span><strong>3351涨 / 2098跌</strong></div>
+          <div class="whole-market-stat gate"><span>总闸门</span><strong>存量分化</strong></div>
+        </div>
+        <div class="market-source-note">主力净占比 -1.94%；全A订单流覆盖 5875/5875；Futu沪深全A交叉核验 25,706亿。</div>
+
+      <h3>行业资金雷达</h3><div class="industry-fund-grid"><div class="industry-fund-block inflow"><h4>净流入 TOP5</h4><div class="table-scroll"><table><thead><tr><th>行业</th><th>主力净额</th><th>净占比</th><th>涨跌</th><th>涨/跌</th></tr></thead><tbody><tr><td><strong>医药生物</strong></td><td>+99.81亿</td><td>+4.40%</td><td>+3.23%</td><td>453/49</td></tr><tr><td><strong>化学制药</strong></td><td>+49.38亿</td><td>+5.45%</td><td>+3.77%</td><td>147/11</td></tr><tr><td><strong>医疗服务</strong></td><td>+35.06亿</td><td>+6.34%</td><td>+5.44%</td><td>49/4</td></tr><tr><td><strong>非银金融</strong></td><td>+34.63亿</td><td>+4.95%</td><td>+2.43%</td><td>77/3</td></tr><tr><td><strong>证券Ⅱ</strong></td><td>+29.29亿</td><td>+6.16%</td><td>+2.37%</td><td>49/0</td></tr></tbody></table></div></div><div class="industry-fund-block outflow"><h4>净流出 TOP5</h4><div class="table-scroll"><table><thead><tr><th>行业</th><th>主力净额</th><th>净占比</th><th>涨跌</th><th>涨/跌</th></tr></thead><tbody><tr><td><strong>电子</strong></td><td>-447.73亿</td><td>-5.44%</td><td>-4.01%</td><td>85/427</td></tr><tr><td><strong>半导体</strong></td><td>-304.61亿</td><td>-6.60%</td><td>-5.55%</td><td>13/168</td></tr><tr><td><strong>光学光电子</strong></td><td>-45.22亿</td><td>-6.70%</td><td>-3.28%</td><td>19/77</td></tr><tr><td><strong>国防军工</strong></td><td>-42.58亿</td><td>-6.48%</td><td>-1.05%</td><td>65/73</td></tr><tr><td><strong>元件</strong></td><td>-40.35亿</td><td>-2.59%</td><td>-4.23%</td><td>9/57</td></tr></tbody></table></div></div></div>
+      <h3>ETF风格与乖离率确认</h3><div class="table-scroll"><table><thead><tr><th>风格</th><th>风格分</th><th>乖离阶段</th><th>当日乖离率</th><th>3日变化</th><th>成交额温度</th><th>上涨宽度</th><th>ETF订单流</th></tr></thead><tbody><tr><td><strong>医药</strong></td><td>100.0</td><td><span class="bias-temp hot stage">主线甜点区</span></td><td><span class="bias-temp hot">+6.84%</span></td><td><span class="bias-delta warming">+3.34</span></td><td>2.18x</td><td>100.0%</td><td>+2.17亿</td></tr><tr><td><strong>消费</strong></td><td>83.1</td><td><span class="bias-temp warm stage">偏强，未进主线</span></td><td><span class="bias-temp warm">+2.37%</span></td><td><span class="bias-delta warming">+3.10</span></td><td>1.54x</td><td>100.0%</td><td>+0.64亿</td></tr><tr><td><strong>高股息/银行</strong></td><td>78.6</td><td><span class="bias-temp warm stage">价值流震荡区</span></td><td><span class="bias-temp warm">+2.89%</span></td><td><span class="bias-delta warming">+3.03</span></td><td>1.11x</td><td>100.0%</td><td>+0.45亿</td></tr><tr><td><strong>科技成长</strong></td><td>27.6</td><td><span class="bias-temp cool stage">跌穿走弱，接近止损</span></td><td><span class="bias-temp cool">-4.14%</span></td><td><span class="bias-delta cooling">-5.88</span></td><td>1.06x</td><td>0.0%</td><td>-3.93亿</td></tr><tr><td><strong>周期资源</strong></td><td>20.4</td><td><span class="bias-temp cool stage">早期修复，待转正</span></td><td><span class="bias-temp cool">-1.53%</span></td><td><span class="bias-delta warming">+2.86</span></td><td>0.65x</td><td>33.3%</td><td>-0.43亿</td></tr><tr><td><strong>工业制造/防守</strong></td><td>17.8</td><td><span class="bias-temp cold stage">止损区，回避</span></td><td><span class="bias-temp cold">-7.39%</span></td><td><span class="bias-delta cooling">-5.00</span></td><td>0.62x</td><td>0.0%</td><td>-0.06亿</td></tr></tbody></table></div><div class="bias-legend"><span class="bias-temp scorching">极热</span><span class="bias-temp hot">热</span><span class="bias-temp warm">温</span><span class="bias-temp cool">偏冷</span><span class="bias-temp cold">冷</span></div><div class="note">乖离率=(ln收盘价−EMA20(ln收盘价))×100；3日变化判断修复/恶化；银行与红利按±5%震荡区逆向观察。</div>
       <div class="mainline-card-grid">
             <article class="mainline-card">
               <div class="mainline-head">
