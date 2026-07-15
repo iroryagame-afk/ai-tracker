@@ -138,6 +138,19 @@
     .whole-market-stat.gate { border-color:#fed7aa; background:#fff7ed; }
     .whole-market-stat.gate strong { color:#9a3412; }
     .market-source-note { color:#52627a; font-size:12px; line-height:1.6; margin:4px 0 18px; }
+    .market-flow-summary { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:10px 0 12px; }
+    .flow-summary-card { border:1px solid #dbeafe; background:#f8fbff; border-radius:8px; padding:12px 14px; min-width:0; }
+    .flow-summary-card span { display:block; color:#64748b; font-size:12px; font-weight:900; margin-bottom:6px; }
+    .flow-summary-card strong { display:block; color:#1f2937; font-size:13px; line-height:1.65; }
+    .flow-summary-card.inflow { border-color:#fecaca; background:#fff7f7; }
+    .flow-summary-card.inflow span { color:#b91c1c; }
+    .flow-summary-card.outflow { border-color:#bfdbfe; background:#eff6ff; }
+    .flow-summary-card.outflow span { color:#1d4ed8; }
+    .flow-summary-card.style { border-color:#fed7aa; background:#fff7ed; }
+    .flow-summary-card.style span { color:#9a3412; }
+    .industry-details { margin:0 0 20px; border:1px solid #e2e8f0; border-radius:8px; background:#fbfdff; }
+    .industry-details summary { cursor:pointer; padding:10px 13px; color:#1d4ed8; font-size:12px; font-weight:900; user-select:none; }
+    .industry-details .industry-fund-grid { padding:0 12px 12px; margin:0; }
     .industry-fund-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:10px 0 20px; }
     .industry-fund-block { min-width:0; }
     .industry-fund-block h4 { margin:0 0 7px; font-size:13px; }
@@ -374,7 +387,7 @@
 	      .rec-review-head { flex-direction:column; }
 	      .rec-review-head > strong { font-size:38px; }
 	      .rec-review-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); }
-	      .setup-grid,.two-col,.workflow,.buy-focus-grid,.radar-meta,.radar-status-grid,.whole-market-grid,.industry-fund-grid,.mainline-card-grid { grid-template-columns:1fr; }
+	      .setup-grid,.two-col,.workflow,.buy-focus-grid,.radar-meta,.radar-status-grid,.whole-market-grid,.market-flow-summary,.industry-fund-grid,.mainline-card-grid { grid-template-columns:1fr; }
       .mainline-card { padding:16px 0; }
       .mainline-card + .mainline-card { border-left:0; border-top:1px solid #dbeafe; padding-left:0; }
       .algo-link { align-items:flex-start; flex-direction:column; }
@@ -437,7 +450,7 @@
 
     <section id="mainline" class="priority-section">
       <h2>一、主线雷达</h2>
-      <p class="lead">先看全A总资金，再看行业分配，最后用ETF风格与乖离率确认；不直接给买卖建议。</p>
+      <p class="lead">先看全A总资金、成交额与涨跌宽度，再看行业资金分配；代表ETF只用于确认风格位置和温度，不代替大盘判断。</p>
 
       <div class="radar-meta">
         <div><strong>数据日期</strong><span>2026-07-15</span></div>
@@ -454,24 +467,24 @@
         </div>
         <div class="market-source-note">主力净占比 -1.94%；全A订单流覆盖 5875/5875；Futu沪深全A交叉核验 25,706亿。</div>
 
-      <h3>行业资金雷达</h3><div class="industry-fund-grid"><div class="industry-fund-block inflow"><h4>净流入 TOP5</h4><div class="table-scroll"><table><thead><tr><th>行业</th><th>主力净额</th><th>净占比</th><th>涨跌</th><th>涨/跌</th></tr></thead><tbody><tr><td><strong>医药生物</strong></td><td>+99.81亿</td><td>+4.40%</td><td>+3.23%</td><td>453/49</td></tr><tr><td><strong>化学制药</strong></td><td>+49.38亿</td><td>+5.45%</td><td>+3.77%</td><td>147/11</td></tr><tr><td><strong>医疗服务</strong></td><td>+35.06亿</td><td>+6.34%</td><td>+5.44%</td><td>49/4</td></tr><tr><td><strong>非银金融</strong></td><td>+34.63亿</td><td>+4.95%</td><td>+2.43%</td><td>77/3</td></tr><tr><td><strong>证券Ⅱ</strong></td><td>+29.29亿</td><td>+6.16%</td><td>+2.37%</td><td>49/0</td></tr></tbody></table></div></div><div class="industry-fund-block outflow"><h4>净流出 TOP5</h4><div class="table-scroll"><table><thead><tr><th>行业</th><th>主力净额</th><th>净占比</th><th>涨跌</th><th>涨/跌</th></tr></thead><tbody><tr><td><strong>电子</strong></td><td>-447.73亿</td><td>-5.44%</td><td>-4.01%</td><td>85/427</td></tr><tr><td><strong>半导体</strong></td><td>-304.61亿</td><td>-6.60%</td><td>-5.55%</td><td>13/168</td></tr><tr><td><strong>光学光电子</strong></td><td>-45.22亿</td><td>-6.70%</td><td>-3.28%</td><td>19/77</td></tr><tr><td><strong>国防军工</strong></td><td>-42.58亿</td><td>-6.48%</td><td>-1.05%</td><td>65/73</td></tr><tr><td><strong>元件</strong></td><td>-40.35亿</td><td>-2.59%</td><td>-4.23%</td><td>9/57</td></tr></tbody></table></div></div></div>
-      <h3>ETF风格与乖离率确认</h3><div class="table-scroll"><table><thead><tr><th>风格</th><th>风格分</th><th>乖离阶段</th><th>当日乖离率</th><th>3日变化</th><th>成交额温度</th><th>上涨宽度</th><th>ETF订单流</th></tr></thead><tbody><tr><td><strong>医药</strong></td><td>100.0</td><td><span class="bias-temp hot stage">主线甜点区</span></td><td><span class="bias-temp hot">+6.84%</span></td><td><span class="bias-delta warming">+3.34</span></td><td>2.18x</td><td>100.0%</td><td>+2.17亿</td></tr><tr><td><strong>消费</strong></td><td>83.1</td><td><span class="bias-temp warm stage">偏强，未进主线</span></td><td><span class="bias-temp warm">+2.37%</span></td><td><span class="bias-delta warming">+3.10</span></td><td>1.54x</td><td>100.0%</td><td>+0.64亿</td></tr><tr><td><strong>高股息/银行</strong></td><td>78.6</td><td><span class="bias-temp warm stage">价值流震荡区</span></td><td><span class="bias-temp warm">+2.89%</span></td><td><span class="bias-delta warming">+3.03</span></td><td>1.11x</td><td>100.0%</td><td>+0.45亿</td></tr><tr><td><strong>科技成长</strong></td><td>27.6</td><td><span class="bias-temp cool stage">跌穿走弱，接近止损</span></td><td><span class="bias-temp cool">-4.14%</span></td><td><span class="bias-delta cooling">-5.88</span></td><td>1.06x</td><td>0.0%</td><td>-3.93亿</td></tr><tr><td><strong>周期资源</strong></td><td>20.4</td><td><span class="bias-temp cool stage">早期修复，待转正</span></td><td><span class="bias-temp cool">-1.53%</span></td><td><span class="bias-delta warming">+2.86</span></td><td>0.65x</td><td>33.3%</td><td>-0.43亿</td></tr><tr><td><strong>工业制造/防守</strong></td><td>17.8</td><td><span class="bias-temp cold stage">止损区，回避</span></td><td><span class="bias-temp cold">-7.39%</span></td><td><span class="bias-delta cooling">-5.00</span></td><td>0.62x</td><td>0.0%</td><td>-0.06亿</td></tr></tbody></table></div><div class="bias-legend"><span class="bias-temp scorching">极热</span><span class="bias-temp hot">热</span><span class="bias-temp warm">温</span><span class="bias-temp cool">偏冷</span><span class="bias-temp cold">冷</span></div><div class="note">乖离率=(ln收盘价−EMA20(ln收盘价))×100；3日变化判断修复/恶化；银行与红利按±5%震荡区逆向观察。</div>
+      <h3>大盘资金流向摘要（全A行业）</h3><div class="market-flow-summary"><div class="flow-summary-card inflow"><span>主要流入</span><strong>医药生物 +99.81亿；化学制药 +49.38亿；医疗服务 +35.06亿</strong></div><div class="flow-summary-card outflow"><span>主要流出</span><strong>电子 -447.73亿；半导体 -304.61亿；光学光电子 -45.22亿</strong></div><div class="flow-summary-card style"><span>风格前三</span><strong>医药 100.0分；消费 83.1分；高股息/银行 78.6分</strong></div></div><details class="industry-details"><summary>展开全A行业净流入 / 净流出 TOP5 明细</summary><div class="industry-fund-grid"><div class="industry-fund-block inflow"><h4>净流入 TOP5</h4><div class="table-scroll"><table><thead><tr><th>行业</th><th>主力净额</th><th>净占比</th><th>涨跌</th><th>涨/跌</th></tr></thead><tbody><tr><td><strong>医药生物</strong></td><td>+99.81亿</td><td>+4.40%</td><td>+3.23%</td><td>453/49</td></tr><tr><td><strong>化学制药</strong></td><td>+49.38亿</td><td>+5.45%</td><td>+3.77%</td><td>147/11</td></tr><tr><td><strong>医疗服务</strong></td><td>+35.06亿</td><td>+6.34%</td><td>+5.44%</td><td>49/4</td></tr><tr><td><strong>非银金融</strong></td><td>+34.63亿</td><td>+4.95%</td><td>+2.43%</td><td>77/3</td></tr><tr><td><strong>证券Ⅱ</strong></td><td>+29.29亿</td><td>+6.16%</td><td>+2.37%</td><td>49/0</td></tr></tbody></table></div></div><div class="industry-fund-block outflow"><h4>净流出 TOP5</h4><div class="table-scroll"><table><thead><tr><th>行业</th><th>主力净额</th><th>净占比</th><th>涨跌</th><th>涨/跌</th></tr></thead><tbody><tr><td><strong>电子</strong></td><td>-447.73亿</td><td>-5.44%</td><td>-4.01%</td><td>85/427</td></tr><tr><td><strong>半导体</strong></td><td>-304.61亿</td><td>-6.60%</td><td>-5.55%</td><td>13/168</td></tr><tr><td><strong>光学光电子</strong></td><td>-45.22亿</td><td>-6.70%</td><td>-3.28%</td><td>19/77</td></tr><tr><td><strong>国防军工</strong></td><td>-42.58亿</td><td>-6.48%</td><td>-1.05%</td><td>65/73</td></tr><tr><td><strong>元件</strong></td><td>-40.35亿</td><td>-2.59%</td><td>-4.23%</td><td>9/57</td></tr></tbody></table></div></div></div></details>
+      <h3>大盘风格轮动确认（行业宽度主判，代表ETF辅助）</h3><p class="subtle">综合分优先使用全A行业涨跌与上涨宽度；代表ETF只补充乖离率、成交温度和订单流确认，不代替大盘资金。</p><div class="table-scroll"><table><thead><tr><th>市场风格</th><th>综合分</th><th>综合结论</th><th>行业涨跌</th><th>行业上涨宽度</th><th>代表ETF乖离 / 3日变化</th><th>代表ETF成交温度</th><th>代表ETF订单流</th></tr></thead><tbody><tr><td><strong>医药</strong></td><td>100.0</td><td><strong>进攻闸门打开</strong><div class="subtle">主线甜点区</div></td><td>+3.22%</td><td>100.0%</td><td><span class="bias-temp hot">+6.84%</span><div class="subtle">3日 <span class="bias-delta warming">+3.34</span></div></td><td>2.18x</td><td>+2.17亿</td></tr><tr><td><strong>消费</strong></td><td>83.1</td><td><strong>进攻闸门打开</strong><div class="subtle">偏强，未进主线</div></td><td>+2.00%</td><td>100.0%</td><td><span class="bias-temp warm">+2.37%</span><div class="subtle">3日 <span class="bias-delta warming">+3.10</span></div></td><td>1.54x</td><td>+0.64亿</td></tr><tr><td><strong>高股息/银行</strong></td><td>78.6</td><td><strong>进攻闸门打开</strong><div class="subtle">价值流震荡区</div></td><td>+1.34%</td><td>100.0%</td><td><span class="bias-temp warm">+2.89%</span><div class="subtle">3日 <span class="bias-delta warming">+3.03</span></div></td><td>1.11x</td><td>+0.45亿</td></tr><tr><td><strong>科技成长</strong></td><td>27.6</td><td><strong>防守/降低新增仓位</strong><div class="subtle">跌穿走弱，接近止损</div></td><td>-2.25%</td><td>0.0%</td><td><span class="bias-temp cool">-4.14%</span><div class="subtle">3日 <span class="bias-delta cooling">-5.88</span></div></td><td>1.06x</td><td>-3.93亿</td></tr><tr><td><strong>周期资源</strong></td><td>20.4</td><td><strong>防守/降低新增仓位</strong><div class="subtle">早期修复，待转正</div></td><td>-1.22%</td><td>33.3%</td><td><span class="bias-temp cool">-1.53%</span><div class="subtle">3日 <span class="bias-delta warming">+2.86</span></div></td><td>0.65x</td><td>-0.43亿</td></tr><tr><td><strong>工业制造/防守</strong></td><td>17.8</td><td><strong>防守/降低新增仓位</strong><div class="subtle">止损区，回避</div></td><td>-0.23%</td><td>0.0%</td><td><span class="bias-temp cold">-7.39%</span><div class="subtle">3日 <span class="bias-delta cooling">-5.00</span></div></td><td>0.62x</td><td>-0.06亿</td></tr></tbody></table></div><div class="bias-legend"><span class="bias-temp scorching">极热</span><span class="bias-temp hot">热</span><span class="bias-temp warm">温</span><span class="bias-temp cool">偏冷</span><span class="bias-temp cold">冷</span></div><div class="note">代表ETF乖离率=(ln收盘价−EMA20(ln收盘价))×100；3日变化判断修复/恶化；银行与红利按±5%震荡区逆向观察。该列只做风格确认。</div>
       <div class="mainline-card-grid">
             <article class="mainline-card">
               <div class="mainline-head">
-                <h3>当日市场闸门</h3>
+                <h3>全A大盘风险结论（资金与涨跌宽度）</h3>
               </div>
               <div class="mainline-grid">
-                <div><h4>结论</h4><p>市场状态为“急跌防守”，主要观察线为“50日线”；当前先按防守处理。</p></div>
-                <div><h4>依据</h4><p>核心池 7只上涨、43只下跌、0只平盘，平均涨跌 -4.40%。 池内相对强势主题：光通信设备 +1.0%（1/1上涨）；机器人 -0.2%（0/1上涨）；算力基础设施 -1.2%（0/1上涨）；光纤材料 -2.0%（0/1上涨）。该结果是价格强弱代理，不等同于真实资金净流入。</p></div>
-                <div><h4>约束</h4><p>下跌家数占比 86%；若次日继续扩大，新增仓位默认降为观察。</p></div>
-                <div><h4>明日验证</h4><p>看宽基与科创方向能否止跌并收复短均线；看上涨家数和成交承接是否同步扩散；若仅少数高分股独强，继续控制追高和仓位集中度。</p></div>
+                <div><h4>结论</h4><p>全A总闸门为“存量分化”；当日风格优先级为 医药 100.0分、消费 83.1分、高股息/银行 78.6分。</p></div>
+                <div><h4>依据</h4><p>全A主力净流入 -501.63亿，成交额 25,874亿，3351只上涨、2098只下跌。 行业主要流入：医药生物 +99.81亿、化学制药 +49.38亿、医疗服务 +35.06亿；主要流出：电子 -447.73亿、半导体 -304.61亿、光学光电子 -45.22亿。</p></div>
+                <div><h4>约束</h4><p>全A下跌家数占比 39%；总资金未转正前，新增仓位继续从严。</p></div>
+                <div><h4>明日验证</h4><p>看全A主力净额能否转正；看上涨家数能否超过下跌家数；看宽基与科创方向能否同步收复短均线。</p></div>
               </div>
             </article>
 
             <article class="mainline-card">
               <div class="mainline-head">
-                <h3>核心池相对强弱</h3>
+                <h3>MD50核心池候选排序（仅研究优先级）</h3>
               </div>
               <div class="mainline-grid">
                 <div><h4>结论</h4><p>高分排序只决定研究优先级，不直接产生买点。</p></div>
