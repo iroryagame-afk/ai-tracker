@@ -21,10 +21,10 @@
     .verify { margin-top:20px; display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:8px; background:#dcfce7; color:#14532d; font-weight:800; }
     .wrap { width:min(1680px, calc(100vw - 28px)); margin:18px auto 52px; }
     .kpis { display:grid; grid-template-columns:repeat(6, minmax(118px,1fr)); gap:12px; margin-bottom:16px; }
-    .kpi { background:white; border:1px solid var(--line); border-radius:8px; padding:14px 16px; box-shadow:0 4px 14px rgba(30,48,80,.035); }
+    .kpi { background:white; border:1px solid var(--line); border-radius:8px; padding:14px 16px; box-shadow:none; }
     .kpi span { display:block; color:var(--muted); font-weight:700; margin-bottom:8px; }
     .kpi strong { font-size:26px; }
-    .rec-review { margin:16px 0; padding:20px 22px 18px; border:1px solid #cbd5e1; border-left:8px solid #2563eb; border-radius:0 14px 14px 0; background:#eff6ff; box-shadow:0 10px 26px rgba(15,23,42,.06); }
+    .rec-review { margin:16px 0; padding:20px 22px 18px; border:1px solid #cbd5e1; border-left:1px solid #2563eb; border-radius:0 14px 14px 0; background:#eff6ff; box-shadow:none; }
     .rec-review.negative { border-left-color:#dc2626; background:#fff7f7; }
     .rec-review.positive { border-left-color:#2563eb; background:#eff6ff; }
     .rec-review-head { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; }
@@ -41,8 +41,8 @@
     .rec-review-metrics span { display:block; margin-top:6px; color:#64748b; font-size:13px; font-weight:900; }
     .rec-review p { margin:8px 0 0; color:#475569; font-size:15px; font-weight:750; }
     .rec-review.muted-review { display:flex; gap:12px; align-items:center; color:#64748b; background:#f8fafc; border-left-color:#94a3b8; }
-    section { background:white; border:1px solid var(--line); border-radius:8px; padding:20px; margin:14px 0; box-shadow:0 4px 16px rgba(30,48,80,.035); }
-    section.priority-section { border-color:#bfdbfe; background:#f8fbff; box-shadow:0 8px 26px rgba(36,87,214,.08); }
+    section { background:white; border:1px solid var(--line); border-radius:8px; padding:20px; margin:14px 0; box-shadow:none; }
+    section.priority-section { border-color:#bfdbfe; background:#f8fbff; box-shadow:none; }
     h2 { font-size:24px; margin:0 0 12px; }
     h3 { margin:0 0 8px; font-size:20px; }
     .lead { color:#354258; line-height:1.8; margin:0 0 18px; }
@@ -62,7 +62,7 @@
     .score-2 { background:#fef3c7; color:#a16207; border:1px solid #fde68a; }
     .score-1,.score-0 { background:#eef2f7; color:#475569; border:1px solid #cbd5e1; }
     .score100 { display:inline-flex; flex:0 0 50px; align-items:center; justify-content:center; width:50px; min-width:50px; max-width:50px; height:32px; padding:0; box-sizing:border-box; border-radius:9px; font-size:14px; font-weight:950; line-height:1; white-space:nowrap; word-break:keep-all; overflow-wrap:normal; font-variant-numeric:tabular-nums; }
-    .score100.elite { background:#fee2e2; color:#b91c1c; border:1px solid #fecaca; box-shadow:0 8px 22px rgba(185,28,28,.12); }
+    .score100.elite { background:#fee2e2; color:#b91c1c; border:1px solid #fecaca; box-shadow:none; }
     .score100.strong { background:#dbeafe; color:#1d4ed8; border:1px solid #bfdbfe; }
     .score100.good { background:#ccfbf1; color:#0f766e; border:1px solid #99f6e4; }
     .score100.mid { background:#fef3c7; color:#a16207; border:1px solid #fde68a; }
@@ -73,7 +73,7 @@
     .pill.muted { background:#eef2f7; color:#64748b; }
     .bias-temp { display:inline-flex; align-items:center; justify-content:center; min-width:70px; border-radius:999px; padding:4px 9px; font-weight:900; white-space:nowrap; font-variant-numeric:tabular-nums; }
     .bias-temp.stage { min-width:0; white-space:normal; line-height:1.35; text-align:center; }
-    .bias-temp.scorching { background:#7f1d1d; color:#fff; border:1px solid #991b1b; box-shadow:0 4px 12px rgba(127,29,29,.18); }
+    .bias-temp.scorching { background:#7f1d1d; color:#fff; border:1px solid #991b1b; box-shadow:none; }
     .bias-temp.hot { background:#ffedd5; color:#c2410c; border:1px solid #fdba74; }
     .bias-temp.warm { background:#fef3c7; color:#a16207; border:1px solid #fcd34d; }
     .bias-temp.cool { background:#cffafe; color:#0e7490; border:1px solid #67e8f9; }
@@ -190,7 +190,7 @@
     .pool-focus-title h3 { margin:0; }
     .pool-focus-title p { margin:0; color:#64748b; font-weight:750; }
     .buy-focus-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,520px)); gap:14px; margin:12px 0 22px; align-items:start; }
-    .buy-card { position:relative; border:1px solid #fecaca; background:linear-gradient(180deg,#fff8f8,#fffdf9); border-radius:8px; padding:16px; box-shadow:0 8px 18px rgba(185,28,28,.07); }
+    .buy-card { position:relative; border:1px solid #fecaca; background:linear-gradient(180deg,#fff8f8,#fffdf9); border-radius:8px; padding:16px; box-shadow:none; }
     .buy-rank { position:absolute; right:16px; top:14px; color:#be123c; font-size:14px; font-weight:950; background:#ffe4e6; border:1px solid #fecdd3; border-radius:999px; padding:4px 9px; }
     .buy-head { display:flex; justify-content:space-between; gap:18px; align-items:flex-start; padding-right:52px; }
     .buy-head h3 { margin:0 0 7px; font-size:22px; }
@@ -199,7 +199,7 @@
     .buy-card p { margin:7px 0; color:#334155; line-height:1.55; }
     .empty-focus { border:1px dashed #cbd5e1; background:#f8fafc; color:#64748b; border-radius:8px; padding:18px; margin:12px 0 22px; }
     .trade-tier { display:inline-flex; align-items:center; border-radius:999px; padding:5px 10px; font-weight:900; white-space:nowrap; }
-    .trade-tier.focus { background:#dc2626; color:white; box-shadow:0 8px 18px rgba(220,38,38,.22); }
+    .trade-tier.focus { background:#dc2626; color:white; box-shadow:none; }
     .trade-tier.hot { background:#fee2e2; color:#b91c1c; border:1px solid #fecaca; }
     .trade-tier.watch { background:#dbeafe; color:#1d4ed8; border:1px solid #bfdbfe; }
     .trade-tier.setup { background:#fff1f2; color:#be123c; border:1px solid #fecdd3; }
@@ -248,7 +248,7 @@
     .row-details { position:relative; }
     .row-details summary { display:inline-flex; align-items:center; justify-content:center; cursor:pointer; border:1px solid #cbd5e1; background:#f8fafc; color:#334155; border-radius:999px; padding:5px 10px; font-weight:900; user-select:none; white-space:nowrap; }
     .row-details[open] summary { background:#eff6ff; color:#1d4ed8; border-color:#bfdbfe; }
-    .detail-grid { position:fixed; right:32px; top:18vh; z-index:50; width:min(760px, calc(100vw - 64px)); max-height:70vh; overflow:auto; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; padding:14px; text-align:left; background:white; border:1px solid #cbd5e1; border-radius:8px; box-shadow:0 18px 50px rgba(15,23,42,.18); }
+    .detail-grid { position:fixed; right:32px; top:18vh; z-index:50; width:min(760px, calc(100vw - 64px)); max-height:70vh; overflow:auto; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; padding:14px; text-align:left; background:white; border:1px solid #cbd5e1; border-radius:8px; box-shadow:none; }
     .detail-grid h4 { margin:0 0 6px; font-size:13px; color:#334155; }
     .detail-grid p { margin:0; line-height:1.55; color:#334155; }
     .detail-grid > div { min-width:0; }
@@ -303,7 +303,7 @@
     .top h1 { font-size:34px; line-height:1.15; text-wrap:balance; }
     .top p { max-width:1040px; color:#cbd7ee; font-size:16px; }
     .wrap { width:min(1440px, calc(100vw - 40px)); }
-    section { padding:18px; margin:16px 0; border-color:#e2e8f0; box-shadow:0 8px 24px rgba(15,23,42,.045); }
+    section { padding:18px; margin:16px 0; border-color:#e2e8f0; box-shadow:none; }
     h2 { font-size:22px; line-height:1.25; text-wrap:balance; }
     h3 { font-size:18px; line-height:1.3; }
     .lead { font-size:14px; line-height:1.7; color:#475569; }
@@ -411,16 +411,91 @@
 	      .memory-table { min-width:0; }
 	    }
   </style>
+
+  <style id="unified-a-share-design">
+    :root {
+      --research-bg:#f5f7fa;
+      --research-surface:#ffffff;
+      --research-ink:#111827;
+      --research-muted:#526071;
+      --research-line:#d9e1ea;
+      --research-brand:#123c69;
+      --research-accent:#0f766e;
+      --research-focus:#2563eb;
+      --z-sticky:20;
+    }
+    html { scroll-behavior:smooth; }
+    body { background:var(--research-bg); color:var(--research-ink); }
+    .research-platform-bar {
+      position:sticky; top:0; z-index:var(--z-sticky);
+      display:flex; align-items:center; justify-content:space-between; gap:18px;
+      min-height:52px; padding:8px max(18px,calc((100vw - 1480px)/2));
+      background:#0f1f33; color:#fff; border-bottom:1px solid #27415f;
+    }
+    .research-platform-brand {
+      display:flex; align-items:baseline; gap:9px; color:#fff; text-decoration:none;
+      font-weight:900; letter-spacing:-.01em; white-space:nowrap;
+    }
+    .research-platform-brand span { color:#b8c9dc; font-size:12px; font-weight:700; }
+    .research-platform-nav { display:flex; align-items:center; gap:4px; }
+    .research-platform-nav a {
+      display:inline-flex; align-items:center; min-height:34px; padding:6px 11px;
+      border-radius:7px; color:#cbd8e7; text-decoration:none; font-size:13px; font-weight:800;
+    }
+    .research-platform-nav a:hover { background:#1b3552; color:#fff; }
+    .research-platform-nav a[aria-current="page"] { background:#fff; color:#123c69; }
+    .research-platform-nav a:focus-visible,
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible,
+    summary:focus-visible { outline:3px solid #7db4ff; outline-offset:2px; }
+    .top { border-bottom:0 !important; }
+    .top h1, h1, h2, h3 { text-wrap:balance; }
+    p, .lead { text-wrap:pretty; }
+    section, .panel, .metric, .kpi, .step, .setup-card, .whole-market-stat,
+    .flow-summary-card, .radar-status-item, .detail-item {
+      border-radius:10px !important;
+      box-shadow:none !important;
+    }
+    .rec-review, .panel, .spotlight, .backtest-panel, .detail-grid,
+    td[data-label="标的"] { border-left-width:1px !important; }
+    .table-wrap, .candidate-table-wrap { scrollbar-gutter:stable; }
+    table { font-variant-numeric:tabular-nums; }
+    tbody tr { transition:background-color 180ms ease-out; }
+    @media (max-width:760px) {
+      .research-platform-bar { position:static; align-items:flex-start; padding:10px; }
+      .research-platform-brand span { display:none; }
+      .research-platform-nav { overflow-x:auto; max-width:68vw; }
+      .research-platform-nav a { white-space:nowrap; }
+      .system-nav { overflow-x:auto; }
+      .system-nav a { flex:0 0 auto !important; white-space:nowrap; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      *, *::before, *::after { transition-duration:.01ms !important; animation-duration:.01ms !important; }
+    }
+  </style>
+
 </head>
 <body>
+
+  <div class="research-platform-bar" data-design="A_SHARE_RESEARCH_DESIGN_V1">
+    <a class="research-platform-brand" href="https://csnpk.com/">
+      CSNPK 研究台 <span>公开研究视图 · 不含个人持仓</span>
+    </a>
+    <nav class="research-platform-nav" aria-label="公开研究系统">
+      <a href="https://csnpk.com/">总览</a>
+      <a href="https://csnpk.com/mda100/" aria-current="page">mda100</a>
+      <a href="https://csnpk.com/csn/">表姐严选</a>
+      <a href="https://csnpk.com/nav/">全部报告</a>
+    </nav>
+  </div>
+
   <header class="top">
     <h1>mda100 A股智能投研服务</h1>
-    <p>最终保留三个高频场景：先用主线雷达拆市场热点，再生成次日可执行选股清单；用户上传持仓截图后，输出持有、加仓、减仓三类诊断建议。</p>
+    <p>把市场闸门、主线强弱、候选排序与次日操作纪律放在同一张公开研究页中；不展示任何个人账户或持仓评估。</p>
     <nav class="nav">
 	      <a href="#mainline">主线雷达</a>
 	      <a href="#select">MD50选股</a>
 	      <a href="#fullscores">全量评分</a>
-      <a href="#holdings">收盘持仓诊断</a>
       <a href="#qveris">新股票初评</a>
       <a href="#algorithm">当前算法说明</a>
     </nav>
@@ -454,8 +529,8 @@
 
       <div class="radar-meta">
         <div><strong>数据日期</strong><span>2026-07-23</span></div>
-        <div><strong>核验覆盖</strong><span>行情 103/103 已核验；新闻 106只股票池/持仓已核验；全A总闸门、行业资金和ETF风格已核验。</span></div>
-        <div><strong>数据边界</strong><span>持仓采用 2026-07-23 15:00 持仓截图（实际持仓5只，全部为A股/ETF；另有3只0市值历史记录）；全A/行业资金：东方财富延迟行业资金快照（主域风控回退）；ETF订单流：Futu OpenD；订单流均不等于外部净增资金或ETF净申购。</span></div>
+        <div><strong>核验覆盖</strong><span>行情 103/103 已核验；新闻 106只股票池已核验；全A总闸门、行业资金和ETF风格已核验。</span></div>
+        <div><strong>数据边界</strong><span>全A/行业资金：东方财富延迟行业资金快照（主域风控回退）；ETF订单流：Futu OpenD；订单流均不等于外部净增资金或ETF净申购。</span></div>
       </div>
 
         <h3>全A市场资金总闸门</h3>
@@ -685,31 +760,8 @@
       </div>
     </section>
 
-	    <section id="holdings">
-	      <h2>四、收盘持仓诊断服务</h2>
-      <p class="lead">每日 A 股收盘后上传持仓截图，系统会把持仓标的与 md50 当日评分、均线位置、资讯修正和风控位合并，明确给出持有、加仓、减仓动作。</p>
-      <div class="holding-snapshot"><span>2026-07-23 15:00 持仓截图（实际持仓5只，全部为A股/ETF；另有3只0市值历史记录）</span><span>已收到当日新截图；使用 inputs/holdings/20260723_1500_holdings_snapshot.md</span></div>
-	      <p class="subtle">现价、成本、持仓盈亏及快照当日盈亏率以 2026-07-23 券商快照为准；均线、ATR、技术位置和同赛道强弱由 Futu OpenD 2026-07-23 日K核验。实际持仓5只，全部为A股/ETF，快照账户仓位40.80%，现金及其他约59.20%；长江电力、益方生物-U、星宸科技为0市值历史记录。</p>
-      <div class="candidate-table-wrap">
-        <table class="holding-table">
-          <thead><tr><th>持仓股票</th><th>md50评分</th><th>7月23日快照当日盈亏率</th><th>资讯公告复核</th><th>收盘后动作</th><th>风控说明</th></tr></thead>
-          <tbody><tr><td class="stock"><strong>科创50ETF华夏</strong><code>588000</code><div class="subtle">数量70000；快照现价1.888；成本1.7010；市值13.22万；持仓+10.99%；科创50宽基ETF；仓位 20.40%</div></td><td><span class="score100 mid">宽基ETF/集中</span><div class="subtle">未入md50评分池</div></td><td><span class="pill down">-3.4%</span></td><td>利好 +1.5；技术突破/国产替代等16条利好；技术突破/国产替代 / 机构看好/调入指数<div class="subtle">利好：科创50ETF华夏(588000)成交额连续第四个交易日突破100亿。；利好：据报「国家队」出手入市撑起科技股 科创50ETF华夏(588000.SH)昨录创纪录流入</div></td><td><span class="action sell">减集中度</span><div class="subtle">2026-07-23 OpenD收盘1.888（-3.4%），MA5/10/20乖离 -0.4% / -5.1% / -9.8%；单一标的按快照占总资产20.40%，已有明显降仓；继续分批降至更舒适的底仓，不追加。</div></td><td>未入md50评分池；本栏使用持仓择时模型结论，不并入核心池排序。</td></tr>
-<tr><td class="stock"><strong>澜起科技</strong><code>688008</code><div class="subtle">数量200；快照现价225.50；成本410.2017；市值4.51万；持仓-45.03%；内存接口/CXL/MRDIMM；仓位 6.96%</div></td><td><span class="score100 weak">0</span><div class="subtle">技术 12 / 结构 0 / 阶段 -29</div></td><td><span class="pill up">0.8%</span></td><td>利空 -1.1；利空/风险事件等3条利空<div class="subtle">澜起科技、中微公司等新设创投合伙企业；21亿重磅基金落地！中微公司、澜起科技联手成立半导体创投平台</div></td><td><span class="action sell">冲高减</span><div class="subtle">2026-07-23 OpenD收盘225.50（1.1%），MA5/10/20乖离 8.2% / -1.8% / -11.1%；二阶段预警-跌破55 / A6弱 / 量价中性；仍在MA10/20下方，反弹按修复而非反转处理；冲高降低风险敞口。</div></td><td>跌破20日线或放量大跌；跌破50日线未收回；偏离5日线过大，不宜追高；连续拉升后利好兑现/追高风险；大盘超跌修复，非关键支撑位需降仓位；大盘防守环境下追高风险放大；防守位 245.9<div class="subtle">温度：5:+8.2% / 10:-1.8% / 20:-11.1% / 55:-4.6% / 200:+21.6%；二阶段预警-跌破55 / A6弱 / RS中性</div></td></tr>
-<tr><td class="stock"><strong>芯片ETF易方达</strong><code>516350</code><div class="subtle">数量20000；快照现价1.781；成本1.7855；市值3.56万；持仓-0.25%；芯片行业ETF；仓位 5.50%</div></td><td><span class="score100 mid">行业ETF</span><div class="subtle">未入md50评分池</div></td><td><span class="pill down">-0.2%</span></td><td>利好 +1.5；机构看好/调入指数等15条利好；机构看好/调入指数<div class="subtle">利好：AI芯片需求驱动，科创芯片设计ETF易方达涨3.14%；利好：存储、红外芯片龙头业绩大爆发，科创芯片ETF易方达（589130）标的指数涨超9%</div></td><td><span class="action hold">持有不加</span><div class="subtle">2026-07-23 OpenD收盘1.781（-4.3%），MA5/10/20乖离 0.1% / -6.6% / -13.8%；行业ETF收于MA5附近但仍在MA10/20下方，持有不加，等待重新收复MA10。</div></td><td>未入md50评分池；本栏使用持仓择时模型结论，不并入核心池排序。</td></tr>
-<tr><td class="stock"><strong>中芯国际</strong><code>688981</code><div class="subtle">数量200；快照现价145.09；成本151.7865；市值2.90万；持仓-4.41%；晶圆制造；仓位 4.48%</div></td><td><span class="score100 strong">91</span><div class="subtle">技术 76 / 结构 0 / 阶段 -1</div></td><td><span class="pill down">-4.4%</span></td><td>中性 -0.1；多空交织：1条利好 vs 1条利空；涨价/供给紧<div class="subtle">恒指收涨1.28%，恒科指涨0.65%。成交额居前个股中，腾讯控股涨1.04%，中芯国际跌2.95%，华虹宏力跌7.49%，智谱跌0.34%，阿里巴巴-W涨1.14%。；港股芯片股震荡走低，华虹宏力(01347.HK)跌超6%，天数智芯(09903.HK)、中芯国际(00981.HK)、英诺赛科(02577.HK)、中兴通讯(00763.HK)、兆易创新(03986.HK)等个股跟跌。</div></td><td><span class="action hold">持有不加</span><div class="subtle">2026-07-23 OpenD收盘145.09（-6.8%），MA5/10/20乖离 -2.6% / -5.6% / -4.8%；二阶段推进 / A6弱 / N字失效；大跌后收于MA5/10/20下方，已有仓先观察，不在弱势日补仓。</div></td><td>跌破20日线或放量大跌；大盘超跌修复，非关键支撑位需降仓位；N字失效；爆量阳底部被跌破，按N字结构失效处理；防守位 147.9<div class="subtle">温度：5:-2.6% / 10:-5.6% / 20:-4.8% / 55:+3.4% / 200:+17.0%；二阶段推进 / A6弱 / RS偏弱</div></td></tr>
-<tr><td class="stock"><strong>农业银行</strong><code>601288</code><div class="subtle">数量3400；快照现价6.59；成本6.5011；市值2.24万；持仓+1.37%；高股息银行；仓位 3.46%</div></td><td><span class="score100 mid">高股息/银行</span><div class="subtle">未入md50评分池</div></td><td><span class="pill up">0.9%</span></td><td>偏利空 -0.3；多空交织：1条利好 vs 2条利空；资本运作(正向) / 减持/质押<div class="subtle">偏利好：农业银行：抢抓高质量发展中的结构性增长机遇 优化实体经济融资供给；农业银行：加力支持制造业提质升级和科技创新 着力提升制造业金融服务能力</div></td><td><span class="action hold">继续拿</span><div class="subtle">2026-07-23 OpenD收盘6.590（1.1%），MA5/10/20乖离 1.3% / 2.7% / 5.5%；MA5/10/20上方且高股息风格相对占优，继续拿；不因单日上涨追价加仓。</div></td><td>未入md50评分池；本栏使用持仓择时模型结论，不并入核心池排序。</td></tr></tbody>
-        </table>
-      </div>
-      <h3>港股通外部观察</h3>
-      <p class="lead">港股通标的不进入 md50 A 股评分池；仅用于持仓诊断、产业链映射和跨市场风险提示。</p>
-      <table>
-        <thead><tr><th>港股通标的</th><th>定位</th><th>产业角色</th><th>模型处理</th><th>操作纪律</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </section>
-
-    <section id="algorithm">
-      <h2>五、当前算法说明</h2>
+	    <section id="algorithm">
+      <h2>四、当前算法说明</h2>
       <p class="lead">这部分只保留稳定口径：先看全市场资金闸门，再看个股图形、S形态、量价确认、反人性修复和新闻排雷；新闻不替代买点。</p>
       <div class="setup-grid">
         <article class="setup-card">
@@ -734,7 +786,7 @@
     </section>
 
 	    <section id="qveris">
-	      <h2>六、新股票 / qveris 初评入口</h2>
+	      <h2>五、新股票 / qveris 初评入口</h2>
       <div class="workflow">
         <div class="step"><h3>1. 输入</h3><p>你给股票截图、代码或一段自媒体线索。系统先识别股票和所属细分赛道。</p></div>
         <div class="step"><h3>2. qveris 初评</h3><p>按 discover → inspect → call 顺序调用能力，先看公司业务、新闻事件、同赛道对手和初步风险。</p></div>
